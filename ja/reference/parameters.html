@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="ja" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>パラメーターリファレンス - ATSVisionTrainer ヘルプセンター</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ATSVisionTrainer ヘルプセンター</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">はじめに</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../index.html" class="dropdown-item">ヘルプホーム</a>
+</li>
+
+<li>
+    <a href="../getting-started.html" class="dropdown-item">クイックスタート</a>
+</li>
+
+<li>
+    <a href="../datasets.html" class="dropdown-item">データセットの準備</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">モダン構成</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../modern/common.html" class="dropdown-item">共通パラメーターとデータ拡張</a>
+</li>
+
+<li>
+    <a href="../modern/detection.html" class="dropdown-item">物体検出</a>
+</li>
+
+<li>
+    <a href="../modern/classification.html" class="dropdown-item">画像分類</a>
+</li>
+
+<li>
+    <a href="../modern/segmentation.html" class="dropdown-item">インスタンスセグメンテーション</a>
+</li>
+
+<li>
+    <a href="../modern/obb.html" class="dropdown-item">回転物体検出</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">クラシック構成</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../legacy/common.html" class="dropdown-item">共通パラメーターと独立環境</a>
+</li>
+
+<li>
+    <a href="../legacy/detection.html" class="dropdown-item">物体検出 2.7.0</a>
+</li>
+
+<li>
+    <a href="../legacy/classification.html" class="dropdown-item">画像分類 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../anomaly.html" class="nav-link">異常検出</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../inference-export.html" class="nav-link">推論とエクスポート</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ログと履歴</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../monitoring.html" class="dropdown-item">学習グラフと生ログ</a>
+</li>
+
+<li>
+    <a href="../history.html" class="dropdown-item">学習履歴と整理</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="parameters.html" class="nav-link active" aria-current="page">パラメーターリファレンス</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../troubleshooting.html" class="nav-link">よくある質問</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../feedback.html" class="nav-link">フィードバック</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> 検索
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../history.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> 前へ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../troubleshooting.html" class="nav-link">
+                                    次へ <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="文書の言語">
+
+<a href="../../reference/parameters.html">简体中文</a>
+
+<a href="../../en/reference/parameters.html">English</a>
+
+<a href="../../it/reference/parameters.html">Italiano</a>
+
+<a href="../../ja/reference/parameters.html" aria-current="true">日本語</a>
+
+<a href="../../zh_TW/reference/parameters.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps アノテーションソフト <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="目次">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">全アーキテクチャのパラメーター一覧</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#modern-detection" class="nav-link">モダン物体検出</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-classification" class="nav-link">モダン画像分類</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-segmentation" class="nav-link">モダンインスタンスセグメンテーション</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-obb" class="nav-link">モダン回転物体検出</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#legacy-detection" class="nav-link">クラシック物体検出 2.7.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#legacy-classification" class="nav-link">クラシック画像分類 2.5.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anomaly" class="nav-link">異常検出</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">全アーキテクチャのパラメーター一覧<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>以下の既定値と数値範囲は現在の画面から取得し、説明はソフトウェアの適用処理と照合しています。プリセット、デバイス、高度な YAML の変更後は、実験の最終設定が実際の学習値を決定します。</p>
+<p>「設定を継承」のプレースホルダー値はエンジンの学習値ではありません。空のパスは未選択を表します。モダンの <code>workers</code> と Windows のクラシック workers は実装が異なります。</p>
+<h2 id="modern-detection">モダン物体検出<a class="headerlink" href="#modern-detection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>パラメーター</th>
+<th>画面の既定値・渡される値</th>
+<th>入力可能な数値範囲</th>
+<th>実際の意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>モダン構成の単一入力サイズです。分類は前処理規則に従ってクロップし、検出・セグメンテーション・回転検出はエンジン規則に従って拡縮・パディングします。任意の高さと幅を直接設定するものではありません。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>学習の最大エポック数です。モダン構成では早期終了や手動停止によって、それ以前に終了する場合があります。</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>モダン構成の早期終了の待機エポック数です。検証指標が連続して改善しない回数を指定し、0 で早期終了を無効にします。</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>8</code></td>
+<td>0～64</td>
+<td>モダン構成ではデータ読み込みプロセス数です。クラシック構成の Windows 版では、0 より大きい値で画像読み込みと前処理をスレッド並列化し、0 では元の読み込み方法を使用します。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>バッチあたりの処理画像数です。異常検出では特徴量抽出のバッチサイズを指します。GPU メモリーが不足する場合は小さくしてください。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>計算デバイスを選択します。モダンの auto はエンジンが選び、gpu は 0 番を使用します。クラシックと異常検出の GPU は画面で指定したカードを使用し、失敗時に黙って CPU へ切り替えることはありません。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>乱数シードです。同じシードでも、異なるデバイスや環境で完全に同じ結果になる保証はありません。</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>混合精度です。モダン画面では True/False、クラシック画面では設定を使用／無効／有効を選択します。明示的な有効化は GPU のみです。CPU ではクラシック AMP を有効にしません。</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>オプティマイザーを選択します。モダンの auto は手動の初期学習率とモメンタムを上書きし、ウォームアップのバイアス学習率を 0 に設定します。クラシックの config は YAML を使用します。</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>SGD 系ではモーメンタム、Adam 系では通常 beta1 に対応します。モダンの auto で上書きされる場合があります。</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>重み減衰係数です。クラシック構成の既定の負値は設定の使用を意味し、負の減衰係数をエンジンに渡すものではありません。</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>ウォームアップのエポック数です。モダン構成は小数に対応し、クラシック構成はコサイン方針の場合のみ調整できます。総エポック数未満にしてください。</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>モダンの検出・セグメンテーション・回転検出で使用するウォームアップ時の初期モメンタムです。</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>モダンの検出・セグメンテーション・回転検出で、ウォームアップ中のバイアス初期学習率を指定します。auto オプティマイザーは 0 に設定します。</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>学習時のランダム回転の最大絶対角度です。0 で無効にします。分類では本ソフトウェアの明示的なランダム回転処理を使用します。</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>学習時に上下反転する確率です。</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>学習時に左右反転する確率です。</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>学習時の平行移動量です。画像サイズに対する比率であり、画素数ではありません。</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>学習時のランダムスケール変動幅です。入力サイズや推論時の拡大倍率ではありません。</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>学習時の Mosaic 適用確率です。エンジンの終盤無効化規則も適用されます。</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>ボックス位置損失の重みです。検出しきい値ではありません。</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>物体クラス損失の重みです。クラス数ではありません。</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>Distribution Focal Loss（DFL）の重みです。この損失の有無はモデル構造によります。</td>
+</tr>
+<tr>
+<td><code>copy_paste</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>検出では確率に従って同じ画像の物体を重ならない位置へコピーします。セグメンテーションではネイティブのマスクコピー割合を使用します。安全な配置先がない場合はスキップし、OBB にはこの設定はありません。</td>
+</tr>
+<tr>
+<td><code>erasing</code></td>
+<td><code>0.4</code></td>
+<td>0.0～1.0</td>
+<td>検出とセグメンテーションでは物体ボックス外の背景のみを消去し、物体とアノテーションを保持します。OBB にはこの設定はありません。</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m.pt"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>タスクに対応するプリセット重みを選択します。実際のファイルはソフトウェアの同梱フォルダーから検出します。</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>現在のタスク用のデータセットを選択します。形式と学習・検証の規則は対応する構成の章を参照してください。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-classification">モダン画像分類<a class="headerlink" href="#modern-classification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>パラメーター</th>
+<th>画面の既定値・渡される値</th>
+<th>入力可能な数値範囲</th>
+<th>実際の意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>960</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>モダン構成の単一入力サイズです。分類は前処理規則に従ってクロップし、検出・セグメンテーション・回転検出はエンジン規則に従って拡縮・パディングします。任意の高さと幅を直接設定するものではありません。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>500</code></td>
+<td>1～10000</td>
+<td>学習の最大エポック数です。モダン構成では早期終了や手動停止によって、それ以前に終了する場合があります。</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>モダン構成の早期終了の待機エポック数です。検証指標が連続して改善しない回数を指定し、0 で早期終了を無効にします。</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>4</code></td>
+<td>0～64</td>
+<td>モダン構成ではデータ読み込みプロセス数です。クラシック構成の Windows 版では、0 より大きい値で画像読み込みと前処理をスレッド並列化し、0 では元の読み込み方法を使用します。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>8</code></td>
+<td>1～512</td>
+<td>バッチあたりの処理画像数です。異常検出では特徴量抽出のバッチサイズを指します。GPU メモリーが不足する場合は小さくしてください。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>計算デバイスを選択します。モダンの auto はエンジンが選び、gpu は 0 番を使用します。クラシックと異常検出の GPU は画面で指定したカードを使用し、失敗時に黙って CPU へ切り替えることはありません。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>乱数シードです。同じシードでも、異なるデバイスや環境で完全に同じ結果になる保証はありません。</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>混合精度です。モダン画面では True/False、クラシック画面では設定を使用／無効／有効を選択します。明示的な有効化は GPU のみです。CPU ではクラシック AMP を有効にしません。</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"AdamW"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>オプティマイザーを選択します。モダンの auto は手動の初期学習率とモメンタムを上書きし、ウォームアップのバイアス学習率を 0 に設定します。クラシックの config は YAML を使用します。</td>
+</tr>
+<tr>
+<td><code>lr0</code></td>
+<td><code>0.0005</code></td>
+<td>1e-05～0.1</td>
+<td>モダン分類の初期学習率です。optimizer=auto の場合はエンジンが再選択します。検出・セグメンテーション・回転検出のページにはこの入力欄はありません。</td>
+</tr>
+<tr>
+<td><code>lrf</code></td>
+<td><code>0.01</code></td>
+<td>0.0001～1.0</td>
+<td>モダン分類の最終学習率倍率です。初期学習率に対する比率であり、独立した絶対学習率ではありません。</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.9</code></td>
+<td>0.0～1.0</td>
+<td>SGD 系ではモーメンタム、Adam 系では通常 beta1 に対応します。モダンの auto で上書きされる場合があります。</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.05</code></td>
+<td>0.0～0.5</td>
+<td>重み減衰係数です。クラシック構成の既定の負値は設定の使用を意味し、負の減衰係数をエンジンに渡すものではありません。</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>5.0</code></td>
+<td>0.0～50.0</td>
+<td>ウォームアップのエポック数です。モダン構成は小数に対応し、クラシック構成はコサイン方針の場合のみ調整できます。総エポック数未満にしてください。</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>180.0</code></td>
+<td>0.0～180.0</td>
+<td>学習時のランダム回転の最大絶対角度です。0 で無効にします。分類では本ソフトウェアの明示的なランダム回転処理を使用します。</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>学習時に上下反転する確率です。</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>学習時に左右反転する確率です。</td>
+</tr>
+<tr>
+<td><code>crop_fraction</code></td>
+<td><code>1.0</code></td>
+<td>0.1～1.0</td>
+<td>モダン分類の短辺保持率です。1 未満の場合、短辺を imgsz/比率 まで拡大してから中央クロップします。学習・検証・ソフトウェア推論で同じ中央領域の規則を使い、学習にはさらにランダム拡張を加えます。</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-cls.pt"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>タスクに対応するプリセット重みを選択します。実際のファイルはソフトウェアの同梱フォルダーから検出します。</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>現在のタスク用のデータセットを選択します。形式と学習・検証の規則は対応する構成の章を参照してください。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-segmentation">モダンインスタンスセグメンテーション<a class="headerlink" href="#modern-segmentation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>パラメーター</th>
+<th>画面の既定値・渡される値</th>
+<th>入力可能な数値範囲</th>
+<th>実際の意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>モダン構成の単一入力サイズです。分類は前処理規則に従ってクロップし、検出・セグメンテーション・回転検出はエンジン規則に従って拡縮・パディングします。任意の高さと幅を直接設定するものではありません。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>学習の最大エポック数です。モダン構成では早期終了や手動停止によって、それ以前に終了する場合があります。</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>モダン構成の早期終了の待機エポック数です。検証指標が連続して改善しない回数を指定し、0 で早期終了を無効にします。</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>8</code></td>
+<td>0～64</td>
+<td>モダン構成ではデータ読み込みプロセス数です。クラシック構成の Windows 版では、0 より大きい値で画像読み込みと前処理をスレッド並列化し、0 では元の読み込み方法を使用します。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>バッチあたりの処理画像数です。異常検出では特徴量抽出のバッチサイズを指します。GPU メモリーが不足する場合は小さくしてください。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>計算デバイスを選択します。モダンの auto はエンジンが選び、gpu は 0 番を使用します。クラシックと異常検出の GPU は画面で指定したカードを使用し、失敗時に黙って CPU へ切り替えることはありません。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>乱数シードです。同じシードでも、異なるデバイスや環境で完全に同じ結果になる保証はありません。</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>混合精度です。モダン画面では True/False、クラシック画面では設定を使用／無効／有効を選択します。明示的な有効化は GPU のみです。CPU ではクラシック AMP を有効にしません。</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>オプティマイザーを選択します。モダンの auto は手動の初期学習率とモメンタムを上書きし、ウォームアップのバイアス学習率を 0 に設定します。クラシックの config は YAML を使用します。</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>SGD 系ではモーメンタム、Adam 系では通常 beta1 に対応します。モダンの auto で上書きされる場合があります。</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>重み減衰係数です。クラシック構成の既定の負値は設定の使用を意味し、負の減衰係数をエンジンに渡すものではありません。</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>ウォームアップのエポック数です。モダン構成は小数に対応し、クラシック構成はコサイン方針の場合のみ調整できます。総エポック数未満にしてください。</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>モダンの検出・セグメンテーション・回転検出で使用するウォームアップ時の初期モメンタムです。</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>モダンの検出・セグメンテーション・回転検出で、ウォームアップ中のバイアス初期学習率を指定します。auto オプティマイザーは 0 に設定します。</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>学習時のランダム回転の最大絶対角度です。0 で無効にします。分類では本ソフトウェアの明示的なランダム回転処理を使用します。</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>学習時に上下反転する確率です。</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>学習時に左右反転する確率です。</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>学習時の平行移動量です。画像サイズに対する比率であり、画素数ではありません。</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>学習時のランダムスケール変動幅です。入力サイズや推論時の拡大倍率ではありません。</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>学習時の Mosaic 適用確率です。エンジンの終盤無効化規則も適用されます。</td>
+</tr>
+<tr>
+<td><code>copy_paste</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>検出では確率に従って同じ画像の物体を重ならない位置へコピーします。セグメンテーションではネイティブのマスクコピー割合を使用します。安全な配置先がない場合はスキップし、OBB にはこの設定はありません。</td>
+</tr>
+<tr>
+<td><code>erasing</code></td>
+<td><code>0.4</code></td>
+<td>0.0～1.0</td>
+<td>検出とセグメンテーションでは物体ボックス外の背景のみを消去し、物体とアノテーションを保持します。OBB にはこの設定はありません。</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>ボックス位置損失の重みです。検出しきい値ではありません。</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>物体クラス損失の重みです。クラス数ではありません。</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>Distribution Focal Loss（DFL）の重みです。この損失の有無はモデル構造によります。</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-seg.pt"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>タスクに対応するプリセット重みを選択します。実際のファイルはソフトウェアの同梱フォルダーから検出します。</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>現在のタスク用のデータセットを選択します。形式と学習・検証の規則は対応する構成の章を参照してください。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-obb">モダン回転物体検出<a class="headerlink" href="#modern-obb" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>パラメーター</th>
+<th>画面の既定値・渡される値</th>
+<th>入力可能な数値範囲</th>
+<th>実際の意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>モダン構成の単一入力サイズです。分類は前処理規則に従ってクロップし、検出・セグメンテーション・回転検出はエンジン規則に従って拡縮・パディングします。任意の高さと幅を直接設定するものではありません。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>学習の最大エポック数です。モダン構成では早期終了や手動停止によって、それ以前に終了する場合があります。</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>モダン構成の早期終了の待機エポック数です。検証指標が連続して改善しない回数を指定し、0 で早期終了を無効にします。</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>0</code></td>
+<td>0～64</td>
+<td>モダン構成ではデータ読み込みプロセス数です。クラシック構成の Windows 版では、0 より大きい値で画像読み込みと前処理をスレッド並列化し、0 では元の読み込み方法を使用します。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>バッチあたりの処理画像数です。異常検出では特徴量抽出のバッチサイズを指します。GPU メモリーが不足する場合は小さくしてください。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>計算デバイスを選択します。モダンの auto はエンジンが選び、gpu は 0 番を使用します。クラシックと異常検出の GPU は画面で指定したカードを使用し、失敗時に黙って CPU へ切り替えることはありません。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>乱数シードです。同じシードでも、異なるデバイスや環境で完全に同じ結果になる保証はありません。</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>混合精度です。モダン画面では True/False、クラシック画面では設定を使用／無効／有効を選択します。明示的な有効化は GPU のみです。CPU ではクラシック AMP を有効にしません。</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>オプティマイザーを選択します。モダンの auto は手動の初期学習率とモメンタムを上書きし、ウォームアップのバイアス学習率を 0 に設定します。クラシックの config は YAML を使用します。</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>SGD 系ではモーメンタム、Adam 系では通常 beta1 に対応します。モダンの auto で上書きされる場合があります。</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>重み減衰係数です。クラシック構成の既定の負値は設定の使用を意味し、負の減衰係数をエンジンに渡すものではありません。</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>ウォームアップのエポック数です。モダン構成は小数に対応し、クラシック構成はコサイン方針の場合のみ調整できます。総エポック数未満にしてください。</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>モダンの検出・セグメンテーション・回転検出で使用するウォームアップ時の初期モメンタムです。</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>モダンの検出・セグメンテーション・回転検出で、ウォームアップ中のバイアス初期学習率を指定します。auto オプティマイザーは 0 に設定します。</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>学習時のランダム回転の最大絶対角度です。0 で無効にします。分類では本ソフトウェアの明示的なランダム回転処理を使用します。</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>学習時に上下反転する確率です。</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>学習時に左右反転する確率です。</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>学習時の平行移動量です。画像サイズに対する比率であり、画素数ではありません。</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>学習時のランダムスケール変動幅です。入力サイズや推論時の拡大倍率ではありません。</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>学習時の Mosaic 適用確率です。エンジンの終盤無効化規則も適用されます。</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>ボックス位置損失の重みです。検出しきい値ではありません。</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>物体クラス損失の重みです。クラス数ではありません。</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>Distribution Focal Loss（DFL）の重みです。この損失の有無はモデル構造によります。</td>
+</tr>
+<tr>
+<td><code>angle</code></td>
+<td><code>1.0</code></td>
+<td>0.0～20.0</td>
+<td>回転ボックスの角度損失の重みです。データ拡張の回転角度ではありません。使用の有無は OBB モデルの構造に依存します。</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-obb.pt"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>タスクに対応するプリセット重みを選択します。実際のファイルはソフトウェアの同梱フォルダーから検出します。</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>現在のタスク用のデータセットを選択します。形式と学習・検証の規則は対応する構成の章を参照してください。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legacy-detection">クラシック物体検出 2.7.0<a class="headerlink" href="#legacy-detection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>パラメーター</th>
+<th>画面の既定値・渡される値</th>
+<th>入力可能な数値範囲</th>
+<th>実際の意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python</code></td>
+<td><code>"&lt;ソフトウェアディレクトリ&gt;\\Paddle\\runtime-cpu\\python.exe"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>独立したクラシック実行環境のインタープリターです。CPU/GPU の選択に応じて自動検出し、互換環境を手動指定することもできます。</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>"&lt;ソフトウェアディレクトリ&gt;\\Paddle\\PaddleDetection-2.7.0\\configs\\ppyoloe\\ppyoloe_plus_crn_s_80e_coco.yml"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>参照 YAML。s/m/l/x/sod はクラシック物体検出プリセットで、分類は実際のプリセット設定名を使用します。</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td><code>"&lt;ソフトウェアディレクトリ&gt;\\runs\\classic_det"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシック学習の出力ルートです。毎回、タイムスタンプ付きの独立した実験サブフォルダーを作成します。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>100</code></td>
+<td>1～100000</td>
+<td>学習の最大エポック数です。モダン構成では早期終了や手動停止によって、それ以前に終了する場合があります。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>4</code></td>
+<td>1～4096</td>
+<td>バッチあたりの処理画像数です。異常検出では特徴量抽出のバッチサイズを指します。GPU メモリーが不足する場合は小さくしてください。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>乱数シードです。同じシードでも、異なるデバイスや環境で完全に同じ結果になる保証はありません。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>計算デバイスを選択します。モダンの auto はエンジンが選び、gpu は 0 番を使用します。クラシックと異常検出の GPU は画面で指定したカードを使用し、失敗時に黙って CPU へ切り替えることはありません。</td>
+</tr>
+<tr>
+<td><code>weight_mode</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>config は設定内の事前学習指定を継承、local はローカルの .pdparams、random はランダム初期化です。config では重みをダウンロードする場合があります。</td>
+</tr>
+<tr>
+<td><code>weights</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>ローカルの事前学習済み重みを選択した場合にのみ使う .pdparams ファイルです。</td>
+</tr>
+<tr>
+<td><code>dataset.mode</code></td>
+<td><code>"coco"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシック検出の既定は coco、分類は classification です。config は YAML 内のデータ設定を使用します。</td>
+</tr>
+<tr>
+<td><code>dataset.root</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシックのデータセットルートです。フォルダーを一つ選択してください。認識規則はデータセットの章を参照してください。</td>
+</tr>
+<tr>
+<td><code>dataset.evaluate_on_train</code></td>
+<td><code>false</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>既定では無効です。有効にすると、独立した検証セットの代わりにすべての学習画像とアノテーションで評価します。指標は学習データへの適合度のみを示します。</td>
+</tr>
+<tr>
+<td><code>training_options.image_size_mode</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシック検出では config が設定内のサイズを使用し、fixed が学習・検証・エクスポートのサイズを統一し、eval が検証・テスト・エクスポートのみを変更します。</td>
+</tr>
+<tr>
+<td><code>training_options.image_height</code></td>
+<td><code>640</code></td>
+<td>96～8192</td>
+<td>クラシック検出のカスタム高さです。96～8192 かつ 32 の倍数で、サイズモードが config の場合は適用されません。</td>
+</tr>
+<tr>
+<td><code>training_options.image_width</code></td>
+<td><code>640</code></td>
+<td>96～8192</td>
+<td>クラシック検出のカスタム幅です。96～8192 かつ 32 の倍数で、サイズモードが config の場合は適用されません。</td>
+</tr>
+<tr>
+<td><code>training_options.workers</code></td>
+<td><code>0</code></td>
+<td>0～32</td>
+<td>モダン構成ではデータ読み込みプロセス数です。クラシック構成の Windows 版では、0 より大きい値で画像読み込みと前処理をスレッド並列化し、0 では元の読み込み方法を使用します。</td>
+</tr>
+<tr>
+<td><code>training_options.learning_rate</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>0.0～100.0</td>
+<td>クラシックの初期学習率です。画面の 0 は設定の使用を意味し、上書きしない場合は空の値を渡します。</td>
+</tr>
+<tr>
+<td><code>training_options.weight_decay</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>-1.0～10.0</td>
+<td>重み減衰係数です。クラシック構成の既定の負値は設定の使用を意味し、負の減衰係数をエンジンに渡すものではありません。</td>
+</tr>
+<tr>
+<td><code>training_options.optimizer</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>オプティマイザーを選択します。モダンの auto は手動の初期学習率とモメンタムを上書きし、ウォームアップのバイアス学習率を 0 に設定します。クラシックの config は YAML を使用します。</td>
+</tr>
+<tr>
+<td><code>training_options.scheduler</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシックの学習率方針です。config は YAML のマイルストーンと総期間を保持し、constant は固定、cosine は今回の総エポック数に合わせてコサインスケジュールを再構築します。</td>
+</tr>
+<tr>
+<td><code>training_options.warmup_epochs</code></td>
+<td><code>0</code></td>
+<td>0～10000</td>
+<td>ウォームアップのエポック数です。モダン構成は小数に対応し、クラシック構成はコサイン方針の場合のみ調整できます。総エポック数未満にしてください。</td>
+</tr>
+<tr>
+<td><code>training_options.amp</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>混合精度です。モダン画面では True/False、クラシック画面では設定を使用／無効／有効を選択します。明示的な有効化は GPU のみです。CPU ではクラシック AMP を有効にしません。</td>
+</tr>
+<tr>
+<td><code>training_options.augmentation</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシックの config はモデルのデータ拡張を保持します。off はランダム拡張を除き、検証用前処理を使います。正規化を無効にする意味ではありません。</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシック・異常検出で選択する物理 GPU 番号です。独立プロセス内では 0 番にマッピングし、毎回単一の GPU を使用します。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legacy-classification">クラシック画像分類 2.5.0<a class="headerlink" href="#legacy-classification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>パラメーター</th>
+<th>画面の既定値・渡される値</th>
+<th>入力可能な数値範囲</th>
+<th>実際の意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python</code></td>
+<td><code>"&lt;ソフトウェアディレクトリ&gt;\\Paddle\\runtime-cpu\\python.exe"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>独立したクラシック実行環境のインタープリターです。CPU/GPU の選択に応じて自動検出し、互換環境を手動指定することもできます。</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>"&lt;ソフトウェアディレクトリ&gt;\\Paddle\\PaddleClas-2.5.0\\ppcls\\configs\\ImageNet\\ResNet\\ResNet50.yaml"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>参照 YAML。s/m/l/x/sod はクラシック物体検出プリセットで、分類は実際のプリセット設定名を使用します。</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td><code>"&lt;ソフトウェアディレクトリ&gt;\\runs\\classic_cls"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシック学習の出力ルートです。毎回、タイムスタンプ付きの独立した実験サブフォルダーを作成します。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>100</code></td>
+<td>1～100000</td>
+<td>学習の最大エポック数です。モダン構成では早期終了や手動停止によって、それ以前に終了する場合があります。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>4</code></td>
+<td>1～4096</td>
+<td>バッチあたりの処理画像数です。異常検出では特徴量抽出のバッチサイズを指します。GPU メモリーが不足する場合は小さくしてください。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>乱数シードです。同じシードでも、異なるデバイスや環境で完全に同じ結果になる保証はありません。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>計算デバイスを選択します。モダンの auto はエンジンが選び、gpu は 0 番を使用します。クラシックと異常検出の GPU は画面で指定したカードを使用し、失敗時に黙って CPU へ切り替えることはありません。</td>
+</tr>
+<tr>
+<td><code>weight_mode</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>config は設定内の事前学習指定を継承、local はローカルの .pdparams、random はランダム初期化です。config では重みをダウンロードする場合があります。</td>
+</tr>
+<tr>
+<td><code>weights</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>ローカルの事前学習済み重みを選択した場合にのみ使う .pdparams ファイルです。</td>
+</tr>
+<tr>
+<td><code>dataset.mode</code></td>
+<td><code>"classification"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシック検出の既定は coco、分類は classification です。config は YAML 内のデータ設定を使用します。</td>
+</tr>
+<tr>
+<td><code>dataset.root</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシックのデータセットルートです。フォルダーを一つ選択してください。認識規則はデータセットの章を参照してください。</td>
+</tr>
+<tr>
+<td><code>training_options.image_size</code></td>
+<td><code>0</code></td>
+<td>0～8192</td>
+<td>クラシック分類では正方形の一辺で、0 は設定を使用します。異常検出では画像全体をこの正方形へ直接リサイズし、64～1024 かつ 32 の倍数である必要があります。</td>
+</tr>
+<tr>
+<td><code>training_options.workers</code></td>
+<td><code>0</code></td>
+<td>0～32</td>
+<td>モダン構成ではデータ読み込みプロセス数です。クラシック構成の Windows 版では、0 より大きい値で画像読み込みと前処理をスレッド並列化し、0 では元の読み込み方法を使用します。</td>
+</tr>
+<tr>
+<td><code>training_options.learning_rate</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>0.0～100.0</td>
+<td>クラシックの初期学習率です。画面の 0 は設定の使用を意味し、上書きしない場合は空の値を渡します。</td>
+</tr>
+<tr>
+<td><code>training_options.weight_decay</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>-1.0～10.0</td>
+<td>重み減衰係数です。クラシック構成の既定の負値は設定の使用を意味し、負の減衰係数をエンジンに渡すものではありません。</td>
+</tr>
+<tr>
+<td><code>training_options.optimizer</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>オプティマイザーを選択します。モダンの auto は手動の初期学習率とモメンタムを上書きし、ウォームアップのバイアス学習率を 0 に設定します。クラシックの config は YAML を使用します。</td>
+</tr>
+<tr>
+<td><code>training_options.scheduler</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシックの学習率方針です。config は YAML のマイルストーンと総期間を保持し、constant は固定、cosine は今回の総エポック数に合わせてコサインスケジュールを再構築します。</td>
+</tr>
+<tr>
+<td><code>training_options.warmup_epochs</code></td>
+<td><code>0</code></td>
+<td>0～10000</td>
+<td>ウォームアップのエポック数です。モダン構成は小数に対応し、クラシック構成はコサイン方針の場合のみ調整できます。総エポック数未満にしてください。</td>
+</tr>
+<tr>
+<td><code>training_options.amp</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>混合精度です。モダン画面では True/False、クラシック画面では設定を使用／無効／有効を選択します。明示的な有効化は GPU のみです。CPU ではクラシック AMP を有効にしません。</td>
+</tr>
+<tr>
+<td><code>training_options.augmentation</code></td>
+<td><code>"config"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシックの config はモデルのデータ拡張を保持します。off はランダム拡張を除き、検証用前処理を使います。正規化を無効にする意味ではありません。</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシック・異常検出で選択する物理 GPU 番号です。独立プロセス内では 0 番にマッピングし、毎回単一の GPU を使用します。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="anomaly">異常検出<a class="headerlink" href="#anomaly" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>パラメーター</th>
+<th>画面の既定値・渡される値</th>
+<th>入力可能な数値範囲</th>
+<th>実際の意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>train_dir</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>異常検出の OK 学習画像フォルダーです。正常画像のみを入れてください。</td>
+</tr>
+<tr>
+<td><code>calibration_dir</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>異常検出用の独立した OK 校正フォルダーです。空欄の場合は内容による重複除去後に約 20% を確保します。校正画像は特徴量バンクに入りません。</td>
+</tr>
+<tr>
+<td><code>backbone</code></td>
+<td><code>"resnet18"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>異常特徴量用の事前学習済みバックボーンです。resnet18 または wide_resnet50_2 を使用し、バックボーンのパラメーターは固定します。</td>
+</tr>
+<tr>
+<td><code>image_size</code></td>
+<td><code>256</code></td>
+<td>64～1024</td>
+<td>クラシック分類では正方形の一辺で、0 は設定を使用します。異常検出では画像全体をこの正方形へ直接リサイズし、64～1024 かつ 32 の倍数である必要があります。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>2</code></td>
+<td>1～16</td>
+<td>バッチあたりの処理画像数です。異常検出では特徴量抽出のバッチサイズを指します。GPU メモリーが不足する場合は小さくしてください。</td>
+</tr>
+<tr>
+<td><code>coreset_ratio</code></td>
+<td><code>0.01</code></td>
+<td>0.001～1.0</td>
+<td>異常検出の候補特徴量からコアセットに保持する割合です。コアセットの特徴量数上限も適用されます。</td>
+</tr>
+<tr>
+<td><code>max_patches</code></td>
+<td><code>50000</code></td>
+<td>100～250000</td>
+<td>異常検出の候補特徴量数の上限です。超過時は上限付きサンプリングを行います。学習画像数ではありません。</td>
+</tr>
+<tr>
+<td><code>max_bank</code></td>
+<td><code>5000</code></td>
+<td>1～10000</td>
+<td>異常検出の最終コアセット特徴量数の上限です。画像数やクラス数ではありません。</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>異常推論では学習で生成された model.patchcore.pt を使用します。</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>異常推論の画像または画像フォルダーです。出力先を入力フォルダー内に指定することはできません。</td>
+</tr>
+<tr>
+<td><code>threshold_multiplier</code></td>
+<td><code>1.0</code></td>
+<td>0.1～10.0</td>
+<td>異常推論のしきい値倍率です。1 未満では感度が上がり、1 を超えると判定が緩やかになります。異常スコアは確率ではありません。</td>
+</tr>
+<tr>
+<td><code>output_dir</code></td>
+<td><code>"&lt;ソフトウェアディレクトリ&gt;\\runs\\patchcore"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>異常検出の出力ルートです。学習と推論はそれぞれ独立した実験サブフォルダーを作成します。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>計算デバイスを選択します。モダンの auto はエンジンが選び、gpu は 0 番を使用します。クラシックと異常検出の GPU は画面で指定したカードを使用し、失敗時に黙って CPU へ切り替えることはありません。</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>クラシック・異常検出で選択する物理 GPU 番号です。独立プロセス内では 0 番にマッピングし、毎回単一の GPU を使用します。</td>
+</tr>
+</tbody>
+</table></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">ATSVisionTrainer オンライン文書 · Windows 版 · V1.0.0 / Build 2026.11 · パラメーターは実験の最終設定とログで確認してください</p>
+
+        </footer>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u30aa\u30f3\u30e9\u30a4\u30f3\u6587\u66f8 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u30d1\u30e9\u30e1\u30fc\u30bf\u30fc\u306f\u5b9f\u9a13\u306e\u6700\u7d42\u8a2d\u5b9a\u3068\u30ed\u30b0\u3067\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044", "found": "{0} \u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "language": "\u6587\u66f8\u306e\u8a00\u8a9e", "missing_body": "\u30ca\u30d3\u30b2\u30fc\u30b7\u30e7\u30f3\u307e\u305f\u306f\u30d8\u30eb\u30d7\u30db\u30fc\u30e0\u304b\u3089\u958b\u3044\u3066\u304f\u3060\u3055\u3044\u3002", "missing_title": "\u30d8\u30eb\u30d7\u30da\u30fc\u30b8\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093", "not_found": "\u4e00\u81f4\u3059\u308b\u5185\u5bb9\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u5225\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002", "search_error": "\u691c\u7d22\u30a4\u30f3\u30c7\u30c3\u30af\u30b9\u3092\u8aad\u307f\u8fbc\u3081\u307e\u305b\u3093\u3002\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u63a5\u7d9a\u3092\u78ba\u8a8d\u3057\u3066\u30da\u30fc\u30b8\u3092\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u304f\u3060\u3055\u3044\u3002"};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">検索</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+            <div class="modal-body">
+                <p>これらのドキュメントをこちらから検索できます。検索語句を以下に入力してください。</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="検索..." id="mkdocs-search-query" title="検索語句を入力してください">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="結果がありません"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">キーボードショートカット</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">キー</th>
+                    <th>アクション</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>このヘルプを開く</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>次のページ</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>前のページ</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>検索</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

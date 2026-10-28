@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Preparazione dei dataset - ATSVisionTrainer Guida</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link href="assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">ATSVisionTrainer Guida</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Introduzione</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="index.html" class="dropdown-item">Pagina iniziale</a>
+</li>
+
+<li>
+    <a href="getting-started.html" class="dropdown-item">Guida rapida</a>
+</li>
+
+<li>
+    <a href="datasets.html" class="dropdown-item active" aria-current="page">Preparazione dei dataset</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Architetture moderne</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="modern/common.html" class="dropdown-item">Parametri comuni e aumento dati</a>
+</li>
+
+<li>
+    <a href="modern/detection.html" class="dropdown-item">Rilevamento oggetti</a>
+</li>
+
+<li>
+    <a href="modern/classification.html" class="dropdown-item">Classificazione immagini</a>
+</li>
+
+<li>
+    <a href="modern/segmentation.html" class="dropdown-item">Segmentazione di istanze</a>
+</li>
+
+<li>
+    <a href="modern/obb.html" class="dropdown-item">Rilevamento orientato</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Architetture classiche</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="legacy/common.html" class="dropdown-item">Parametri comuni e ambienti indipendenti</a>
+</li>
+
+<li>
+    <a href="legacy/detection.html" class="dropdown-item">Rilevamento oggetti 2.7.0</a>
+</li>
+
+<li>
+    <a href="legacy/classification.html" class="dropdown-item">Classificazione immagini 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="anomaly.html" class="nav-link">Rilevamento anomalie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="inference-export.html" class="nav-link">Inferenza ed esportazione</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Log e cronologia</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="monitoring.html" class="dropdown-item">Grafici e log originali</a>
+</li>
+
+<li>
+    <a href="history.html" class="dropdown-item">Cronologia e pulizia</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reference/parameters.html" class="nav-link">Riferimento dei parametri</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="troubleshooting.html" class="nav-link">Domande frequenti</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feedback.html" class="nav-link">Segnalazioni</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Cerca
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="getting-started.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Precedente
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="modern/common.html" class="nav-link">
+                                    Successivo <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Lingua della documentazione">
+
+<a href="./../datasets.html">简体中文</a>
+
+<a href="./../en/datasets.html">English</a>
+
+<a href="./../it/datasets.html" aria-current="true">Italiano</a>
+
+<a href="./../ja/datasets.html">日本語</a>
+
+<a href="./../zh_TW/datasets.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">Software di annotazione ATSVisionOps <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Tabella dei Contenuti">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#preparazione-dei-dataset" class="nav-link">Preparazione dei dataset</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#rilevamento-oggetti-segmentazione-di-istanze-e-rilevamento-orientato-moderni" class="nav-link">Rilevamento oggetti, segmentazione di istanze e rilevamento orientato moderni</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#classificazione-moderna" class="nav-link">Classificazione moderna</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#rilevamento-classico-di-oggetti-una-cartella-coco" class="nav-link">Rilevamento classico di oggetti: una cartella COCO</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#classificazione-classica-una-cartella-di-dataset" class="nav-link">Classificazione classica: una cartella di dataset</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#rilevamento-anomalie-immagini-ok-e-calibrazione-indipendente" class="nav-link">Rilevamento anomalie: immagini OK e calibrazione indipendente</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="preparazione-dei-dataset">Preparazione dei dataset<a class="headerlink" href="#preparazione-dei-dataset" title="Permanent link">&para;</a></h1>
+<h2 id="rilevamento-oggetti-segmentazione-di-istanze-e-rilevamento-orientato-moderni">Rilevamento oggetti, segmentazione di istanze e rilevamento orientato moderni<a class="headerlink" href="#rilevamento-oggetti-segmentazione-di-istanze-e-rilevamento-orientato-moderni" title="Permanent link">&para;</a></h2>
+<p>Selezionare la radice del dataset contenente <code>data.yaml</code>; la pagina del rilevamento orientato accetta anche un percorso YAML. Lo YAML specifica addestramento, validazione e mappatura delle classi. Immagini ed etichette devono corrispondere; gli ID iniziano da 0 e coincidono con l'elenco delle classi.</p>
+<pre><code class="language-text">dataset/
+  data.yaml
+  images/train/
+  images/val/
+  labels/train/
+  labels/val/
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Attività</th>
+<th>Contenuto delle etichette: un oggetto per riga</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rilevamento standard</td>
+<td><code>id_classe centro_x centro_y larghezza altezza</code></td>
+</tr>
+<tr>
+<td>Segmentazione di istanze</td>
+<td><code>id_classe x1 y1 x2 y2 …</code>, poligono del contorno dell'oggetto</td>
+</tr>
+<tr>
+<td>Rilevamento di oggetti orientati</td>
+<td><code>id_classe x1 y1 x2 y2 x3 y3 x4 y4</code>, quattro vertici</td>
+</tr>
+</tbody>
+</table>
+<p>Normalizzare le coordinate tra 0 e 1. I vertici OBB devono seguire senso orario o antiorario. Riquadri ordinari a cinque colonne, annotazioni DOTA grezze e quadrilateri autointersecanti non sono input OBB validi. Il software verifica le annotazioni indicando file e riga.</p>
+<h2 id="classificazione-moderna">Classificazione moderna<a class="headerlink" href="#classificazione-moderna" title="Permanent link">&para;</a></h2>
+<p>Organizzare le immagini di addestramento e validazione per classe, usando i nomi delle sottocartelle come nomi di classe. Si consigliano cartelle esplicite <code>train/nome_classe</code> e <code>val/nome_classe</code>, lette dal motore di classificazione secondo le proprie regole. Questa pagina non importa gli elenchi TXT della classificazione classica.</p>
+<pre><code class="language-text">classification/
+  train/OK/...
+  train/NG/...
+  val/OK/...
+  val/NG/...
+</code></pre>
+<p>I risultati di classificazione sono salvati accanto al dataset in nome-dataset_runs, evitando che siano riconosciuti come classe. Non inserire vecchi risultati nelle cartelle delle classi.</p>
+<h2 id="rilevamento-classico-di-oggetti-una-cartella-coco">Rilevamento classico di oggetti: una cartella COCO<a class="headerlink" href="#rilevamento-classico-di-oggetti-una-cartella-coco" title="Permanent link">&para;</a></h2>
+<p>La modalità COCO è selezionata per impostazione predefinita. Scegliere la radice del dataset e fare clic su Controlla dataset. Il software riconosce immagini di addestramento, JSON COCO, classi ed eventuale set di validazione indipendente. Struttura tipica:</p>
+<pre><code class="language-text">coco/
+  images/train/...
+  images/val/...             # facoltativo
+  annotations/train.json
+  annotations/val.json      # facoltativo
+</code></pre>
+<p>Senza un set di validazione indipendente, tutte le immagini sono usate per addestrare, senza suddivisione automatica né calcolo di mAP. Le immagini OK di sfondo possono non avere riquadri: conservarne i record senza inventare elementi in <code>annotations</code> o creare una classe oggetto OK. Il software mantiene questi campioni negativi.</p>
+<p>La mappatura delle classi si basa sulle annotazioni di addestramento; i nomi delle classi di addestramento e validazione devono coincidere. Il software genera copie delle annotazioni e un elenco delle classi nell'esperimento senza modificare i file COCO originali.</p>
+<h2 id="classificazione-classica-una-cartella-di-dataset">Classificazione classica: una cartella di dataset<a class="headerlink" href="#classificazione-classica-una-cartella-di-dataset" title="Permanent link">&para;</a></h2>
+<p>Legge prima <code>train_list.txt</code>, <code>val_list.txt</code> e <code>Label.txt</code>; senza elenchi riconosce <code>train/nome_classe</code> e <code>val/nome_classe</code>. Conserva la suddivisione esistente senza ricrearla. Gli ID delle classi devono essere consecutivi e le classi di validazione devono essere presenti nell'addestramento.</p>
+<p>Con strutture o nomi diversi, eseguire prima Verifica dataset e controllare conteggi e classi riconosciuti. Non inventare ID per aggirare i controlli.</p>
+<h2 id="rilevamento-anomalie-immagini-ok-e-calibrazione-indipendente">Rilevamento anomalie: immagini OK e calibrazione indipendente<a class="headerlink" href="#rilevamento-anomalie-immagini-ok-e-calibrazione-indipendente" title="Permanent link">&para;</a></h2>
+<p>Inserire solo immagini OK nella directory di addestramento. La directory indipendente di calibrazione OK è facoltativa; se vuota, viene riservato circa il 20% dopo la deduplicazione per contenuto, con almeno 3 immagini OK distinte. Le immagini di calibrazione sono escluse dalla banca; i duplicati di contenuto tra addestramento e calibrazione sono rifiutati.</p>
+<p>Questa regola di suddivisione automatica vale solo per il rilevamento anomalie, non per il rilevamento COCO classico.</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
+
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Cerca</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body">
+                <p>Da qui puoi cercare questi documenti. Inserisci i termini di ricerca qui sotto.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Cerca..." id="mkdocs-search-query" title="Digita il termine di ricerca qui">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="Nessun risultato trovato"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Tastiera Rapida</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Chiavi</th>
+                    <th>Azione</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Apri questa guida</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Pagina successiva</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Pagina precedente</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Cerca</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

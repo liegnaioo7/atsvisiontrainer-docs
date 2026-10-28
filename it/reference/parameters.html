@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Riferimento dei parametri - ATSVisionTrainer Guida</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ATSVisionTrainer Guida</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Introduzione</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../index.html" class="dropdown-item">Pagina iniziale</a>
+</li>
+
+<li>
+    <a href="../getting-started.html" class="dropdown-item">Guida rapida</a>
+</li>
+
+<li>
+    <a href="../datasets.html" class="dropdown-item">Preparazione dei dataset</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Architetture moderne</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../modern/common.html" class="dropdown-item">Parametri comuni e aumento dati</a>
+</li>
+
+<li>
+    <a href="../modern/detection.html" class="dropdown-item">Rilevamento oggetti</a>
+</li>
+
+<li>
+    <a href="../modern/classification.html" class="dropdown-item">Classificazione immagini</a>
+</li>
+
+<li>
+    <a href="../modern/segmentation.html" class="dropdown-item">Segmentazione di istanze</a>
+</li>
+
+<li>
+    <a href="../modern/obb.html" class="dropdown-item">Rilevamento orientato</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Architetture classiche</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../legacy/common.html" class="dropdown-item">Parametri comuni e ambienti indipendenti</a>
+</li>
+
+<li>
+    <a href="../legacy/detection.html" class="dropdown-item">Rilevamento oggetti 2.7.0</a>
+</li>
+
+<li>
+    <a href="../legacy/classification.html" class="dropdown-item">Classificazione immagini 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../anomaly.html" class="nav-link">Rilevamento anomalie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../inference-export.html" class="nav-link">Inferenza ed esportazione</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Log e cronologia</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../monitoring.html" class="dropdown-item">Grafici e log originali</a>
+</li>
+
+<li>
+    <a href="../history.html" class="dropdown-item">Cronologia e pulizia</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="parameters.html" class="nav-link active" aria-current="page">Riferimento dei parametri</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../troubleshooting.html" class="nav-link">Domande frequenti</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../feedback.html" class="nav-link">Segnalazioni</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Cerca
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../history.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Precedente
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../troubleshooting.html" class="nav-link">
+                                    Successivo <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Lingua della documentazione">
+
+<a href="../../reference/parameters.html">简体中文</a>
+
+<a href="../../en/reference/parameters.html">English</a>
+
+<a href="../../it/reference/parameters.html" aria-current="true">Italiano</a>
+
+<a href="../../ja/reference/parameters.html">日本語</a>
+
+<a href="../../zh_TW/reference/parameters.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">Software di annotazione ATSVisionOps <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Tabella dei Contenuti">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#riferimento-parametri-di-tutte-le-architetture" class="nav-link">Riferimento parametri di tutte le architetture</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#modern-detection" class="nav-link">Rilevamento moderno di oggetti</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-classification" class="nav-link">Classificazione moderna delle immagini</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-segmentation" class="nav-link">Segmentazione moderna di istanze</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-obb" class="nav-link">Rilevamento moderno di oggetti orientati</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#legacy-detection" class="nav-link">Rilevamento classico di oggetti 2.7.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#legacy-classification" class="nav-link">Classificazione classica delle immagini 2.5.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anomaly" class="nav-link">Rilevamento anomalie</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="riferimento-parametri-di-tutte-le-architetture">Riferimento parametri di tutte le architetture<a class="headerlink" href="#riferimento-parametri-di-tutte-le-architetture" title="Permanent link">&para;</a></h1>
+<p>I valori predefiniti e gli intervalli seguenti vengono letti dall'interfaccia attuale; le spiegazioni sono state confrontate con gli adattatori del software. Dopo modifiche a preset, dispositivi o YAML avanzati, i valori effettivi dipendono dalla configurazione finale dell'esperimento.</p>
+<p>I valori segnaposto Usa configurazione non sono i valori effettivi del motore; un percorso vuoto indica una scelta non ancora effettuata. <code>workers</code> moderno e workers classico su Windows hanno implementazioni diverse.</p>
+<h2 id="modern-detection">Rilevamento moderno di oggetti<a class="headerlink" href="#modern-detection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore predefinito / trasmesso dall'interfaccia</th>
+<th>Intervallo numerico consentito</th>
+<th>Significato effettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Dimensione singola di input delle architetture moderne. La classificazione ritaglia secondo la propria preelaborazione; rilevamento, segmentazione e rilevamento orientato ridimensionano e aggiungono padding secondo il motore. Non imposta altezza e larghezza arbitrarie.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>Numero massimo di epoche; le architetture moderne possono terminare prima per arresto anticipato o interruzione manuale.</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>Pazienza dell'arresto anticipato moderno: epoche consecutive senza miglioramento della metrica di validazione. Impostare 0 per disattivarlo.</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>8</code></td>
+<td>0～64</td>
+<td>Le architetture moderne usano processi di caricamento dati; su Windows, quelle classiche usano thread per lettura e preelaborazione parallele con valori maggiori di 0, oppure il caricamento originale con 0.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Seme casuale; semi identici non garantiscono risultati identici tra dispositivi o ambienti diversi.</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Precisione mista. Interfaccia moderna: True/False. Interfaccia classica: configurazione/disattivata/attivata; l'attivazione esplicita richiede la GPU. AMP classico è disattivato sulla CPU.</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un ottimizzatore. Il moderno auto sovrascrive tasso iniziale e momentum manuali e imposta a 0 il tasso dei bias nel warmup; il classico config usa lo YAML.</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>Momento per gli ottimizzatori di tipo SGD; normalmente beta1 per quelli di tipo Adam. La modalità auto moderna può sovrascriverlo.</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>Coefficiente di decadimento dei pesi. Nelle architetture classiche, il valore negativo predefinito indica di usare la configurazione; non viene passato al motore un decadimento negativo.</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>Epoche di warmup. Le architetture moderne accettano decimali; quelle classiche consentono la regolazione solo con la strategia coseno e richiedono un valore inferiore alle epoche totali.</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>Momentum iniziale durante il warmup moderno di rilevamento/segmentazione/rilevamento orientato.</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Tasso di apprendimento iniziale dei bias durante il warmup moderno di rilevamento/segmentazione/rilevamento orientato; l'ottimizzatore auto lo imposta a 0.</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>Angolo massimo assoluto di rotazione casuale durante l'addestramento; 0 la disattiva. La classificazione usa l'adattatore esplicito di rotazione casuale del software.</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di ribaltamento verticale durante l'addestramento.</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di ribaltamento orizzontale durante l'addestramento.</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Entità della traslazione in addestramento relativa alla dimensione dell'immagine, non un numero di pixel.</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Entità della scala casuale in addestramento, non dimensione di input desiderata né ingrandimento di inferenza.</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di Mosaic durante l'addestramento; restano valide le regole del motore per disattivarlo nella fase finale.</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>Peso della perdita di localizzazione dei riquadri, non una soglia di rilevamento.</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>Peso della perdita di classificazione degli oggetti, non il numero di classi.</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>Peso della Distribution Focal Loss (DFL); la sua presenza dipende dall'architettura del modello.</td>
+</tr>
+<tr>
+<td><code>copy_paste</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Il rilevamento copia con una certa probabilità un oggetto della stessa immagine in una posizione senza sovrapposizioni; la segmentazione usa la frazione nativa di copia delle maschere. Si salta l'operazione se manca una posizione sicura; il controllo non è disponibile per OBB.</td>
+</tr>
+<tr>
+<td><code>erasing</code></td>
+<td><code>0.4</code></td>
+<td>0.0～1.0</td>
+<td>Rilevamento e segmentazione cancellano solo lo sfondo esterno ai riquadri, preservando oggetti e annotazioni; OBB non dispone di questo controllo.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m.pt"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare pesi predefiniti adatti all'attività. Il software individua i file effettivi nelle directory incluse.</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un dataset per l'attività attuale; vedere il capitolo dell'architettura per formati e regole di addestramento/validazione.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-classification">Classificazione moderna delle immagini<a class="headerlink" href="#modern-classification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore predefinito / trasmesso dall'interfaccia</th>
+<th>Intervallo numerico consentito</th>
+<th>Significato effettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>960</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Dimensione singola di input delle architetture moderne. La classificazione ritaglia secondo la propria preelaborazione; rilevamento, segmentazione e rilevamento orientato ridimensionano e aggiungono padding secondo il motore. Non imposta altezza e larghezza arbitrarie.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>500</code></td>
+<td>1～10000</td>
+<td>Numero massimo di epoche; le architetture moderne possono terminare prima per arresto anticipato o interruzione manuale.</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>Pazienza dell'arresto anticipato moderno: epoche consecutive senza miglioramento della metrica di validazione. Impostare 0 per disattivarlo.</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>4</code></td>
+<td>0～64</td>
+<td>Le architetture moderne usano processi di caricamento dati; su Windows, quelle classiche usano thread per lettura e preelaborazione parallele con valori maggiori di 0, oppure il caricamento originale con 0.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>8</code></td>
+<td>1～512</td>
+<td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Seme casuale; semi identici non garantiscono risultati identici tra dispositivi o ambienti diversi.</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Precisione mista. Interfaccia moderna: True/False. Interfaccia classica: configurazione/disattivata/attivata; l'attivazione esplicita richiede la GPU. AMP classico è disattivato sulla CPU.</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"AdamW"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un ottimizzatore. Il moderno auto sovrascrive tasso iniziale e momentum manuali e imposta a 0 il tasso dei bias nel warmup; il classico config usa lo YAML.</td>
+</tr>
+<tr>
+<td><code>lr0</code></td>
+<td><code>0.0005</code></td>
+<td>1e-05～0.1</td>
+<td>Tasso di apprendimento iniziale della classificazione moderna; con optimizer=auto il motore lo seleziona nuovamente. Le pagine di rilevamento, segmentazione e rilevamento orientato non hanno questo campo.</td>
+</tr>
+<tr>
+<td><code>lrf</code></td>
+<td><code>0.01</code></td>
+<td>0.0001～1.0</td>
+<td>Moltiplicatore del tasso finale della classificazione moderna rispetto al tasso iniziale; non è un tasso assoluto indipendente.</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.9</code></td>
+<td>0.0～1.0</td>
+<td>Momento per gli ottimizzatori di tipo SGD; normalmente beta1 per quelli di tipo Adam. La modalità auto moderna può sovrascriverlo.</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.05</code></td>
+<td>0.0～0.5</td>
+<td>Coefficiente di decadimento dei pesi. Nelle architetture classiche, il valore negativo predefinito indica di usare la configurazione; non viene passato al motore un decadimento negativo.</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>5.0</code></td>
+<td>0.0～50.0</td>
+<td>Epoche di warmup. Le architetture moderne accettano decimali; quelle classiche consentono la regolazione solo con la strategia coseno e richiedono un valore inferiore alle epoche totali.</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>180.0</code></td>
+<td>0.0～180.0</td>
+<td>Angolo massimo assoluto di rotazione casuale durante l'addestramento; 0 la disattiva. La classificazione usa l'adattatore esplicito di rotazione casuale del software.</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di ribaltamento verticale durante l'addestramento.</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di ribaltamento orizzontale durante l'addestramento.</td>
+</tr>
+<tr>
+<td><code>crop_fraction</code></td>
+<td><code>1.0</code></td>
+<td>0.1～1.0</td>
+<td>Frazione di mantenimento del lato corto per la classificazione moderna. Sotto 1, il lato corto viene prima ingrandito a imgsz/frazione e poi ritagliato al centro. Addestramento, validazione e inferenza del software condividono questa regola della regione centrale; l'addestramento aggiunge comunque aumenti casuali.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-cls.pt"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare pesi predefiniti adatti all'attività. Il software individua i file effettivi nelle directory incluse.</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un dataset per l'attività attuale; vedere il capitolo dell'architettura per formati e regole di addestramento/validazione.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-segmentation">Segmentazione moderna di istanze<a class="headerlink" href="#modern-segmentation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore predefinito / trasmesso dall'interfaccia</th>
+<th>Intervallo numerico consentito</th>
+<th>Significato effettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Dimensione singola di input delle architetture moderne. La classificazione ritaglia secondo la propria preelaborazione; rilevamento, segmentazione e rilevamento orientato ridimensionano e aggiungono padding secondo il motore. Non imposta altezza e larghezza arbitrarie.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>Numero massimo di epoche; le architetture moderne possono terminare prima per arresto anticipato o interruzione manuale.</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>Pazienza dell'arresto anticipato moderno: epoche consecutive senza miglioramento della metrica di validazione. Impostare 0 per disattivarlo.</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>8</code></td>
+<td>0～64</td>
+<td>Le architetture moderne usano processi di caricamento dati; su Windows, quelle classiche usano thread per lettura e preelaborazione parallele con valori maggiori di 0, oppure il caricamento originale con 0.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Seme casuale; semi identici non garantiscono risultati identici tra dispositivi o ambienti diversi.</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Precisione mista. Interfaccia moderna: True/False. Interfaccia classica: configurazione/disattivata/attivata; l'attivazione esplicita richiede la GPU. AMP classico è disattivato sulla CPU.</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un ottimizzatore. Il moderno auto sovrascrive tasso iniziale e momentum manuali e imposta a 0 il tasso dei bias nel warmup; il classico config usa lo YAML.</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>Momento per gli ottimizzatori di tipo SGD; normalmente beta1 per quelli di tipo Adam. La modalità auto moderna può sovrascriverlo.</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>Coefficiente di decadimento dei pesi. Nelle architetture classiche, il valore negativo predefinito indica di usare la configurazione; non viene passato al motore un decadimento negativo.</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>Epoche di warmup. Le architetture moderne accettano decimali; quelle classiche consentono la regolazione solo con la strategia coseno e richiedono un valore inferiore alle epoche totali.</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>Momentum iniziale durante il warmup moderno di rilevamento/segmentazione/rilevamento orientato.</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Tasso di apprendimento iniziale dei bias durante il warmup moderno di rilevamento/segmentazione/rilevamento orientato; l'ottimizzatore auto lo imposta a 0.</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>Angolo massimo assoluto di rotazione casuale durante l'addestramento; 0 la disattiva. La classificazione usa l'adattatore esplicito di rotazione casuale del software.</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di ribaltamento verticale durante l'addestramento.</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di ribaltamento orizzontale durante l'addestramento.</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Entità della traslazione in addestramento relativa alla dimensione dell'immagine, non un numero di pixel.</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Entità della scala casuale in addestramento, non dimensione di input desiderata né ingrandimento di inferenza.</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di Mosaic durante l'addestramento; restano valide le regole del motore per disattivarlo nella fase finale.</td>
+</tr>
+<tr>
+<td><code>copy_paste</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Il rilevamento copia con una certa probabilità un oggetto della stessa immagine in una posizione senza sovrapposizioni; la segmentazione usa la frazione nativa di copia delle maschere. Si salta l'operazione se manca una posizione sicura; il controllo non è disponibile per OBB.</td>
+</tr>
+<tr>
+<td><code>erasing</code></td>
+<td><code>0.4</code></td>
+<td>0.0～1.0</td>
+<td>Rilevamento e segmentazione cancellano solo lo sfondo esterno ai riquadri, preservando oggetti e annotazioni; OBB non dispone di questo controllo.</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>Peso della perdita di localizzazione dei riquadri, non una soglia di rilevamento.</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>Peso della perdita di classificazione degli oggetti, non il numero di classi.</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>Peso della Distribution Focal Loss (DFL); la sua presenza dipende dall'architettura del modello.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-seg.pt"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare pesi predefiniti adatti all'attività. Il software individua i file effettivi nelle directory incluse.</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un dataset per l'attività attuale; vedere il capitolo dell'architettura per formati e regole di addestramento/validazione.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-obb">Rilevamento moderno di oggetti orientati<a class="headerlink" href="#modern-obb" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore predefinito / trasmesso dall'interfaccia</th>
+<th>Intervallo numerico consentito</th>
+<th>Significato effettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Dimensione singola di input delle architetture moderne. La classificazione ritaglia secondo la propria preelaborazione; rilevamento, segmentazione e rilevamento orientato ridimensionano e aggiungono padding secondo il motore. Non imposta altezza e larghezza arbitrarie.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>Numero massimo di epoche; le architetture moderne possono terminare prima per arresto anticipato o interruzione manuale.</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>Pazienza dell'arresto anticipato moderno: epoche consecutive senza miglioramento della metrica di validazione. Impostare 0 per disattivarlo.</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>0</code></td>
+<td>0～64</td>
+<td>Le architetture moderne usano processi di caricamento dati; su Windows, quelle classiche usano thread per lettura e preelaborazione parallele con valori maggiori di 0, oppure il caricamento originale con 0.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Seme casuale; semi identici non garantiscono risultati identici tra dispositivi o ambienti diversi.</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Precisione mista. Interfaccia moderna: True/False. Interfaccia classica: configurazione/disattivata/attivata; l'attivazione esplicita richiede la GPU. AMP classico è disattivato sulla CPU.</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un ottimizzatore. Il moderno auto sovrascrive tasso iniziale e momentum manuali e imposta a 0 il tasso dei bias nel warmup; il classico config usa lo YAML.</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>Momento per gli ottimizzatori di tipo SGD; normalmente beta1 per quelli di tipo Adam. La modalità auto moderna può sovrascriverlo.</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>Coefficiente di decadimento dei pesi. Nelle architetture classiche, il valore negativo predefinito indica di usare la configurazione; non viene passato al motore un decadimento negativo.</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>Epoche di warmup. Le architetture moderne accettano decimali; quelle classiche consentono la regolazione solo con la strategia coseno e richiedono un valore inferiore alle epoche totali.</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>Momentum iniziale durante il warmup moderno di rilevamento/segmentazione/rilevamento orientato.</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Tasso di apprendimento iniziale dei bias durante il warmup moderno di rilevamento/segmentazione/rilevamento orientato; l'ottimizzatore auto lo imposta a 0.</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>Angolo massimo assoluto di rotazione casuale durante l'addestramento; 0 la disattiva. La classificazione usa l'adattatore esplicito di rotazione casuale del software.</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di ribaltamento verticale durante l'addestramento.</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di ribaltamento orizzontale durante l'addestramento.</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Entità della traslazione in addestramento relativa alla dimensione dell'immagine, non un numero di pixel.</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Entità della scala casuale in addestramento, non dimensione di input desiderata né ingrandimento di inferenza.</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Probabilità di Mosaic durante l'addestramento; restano valide le regole del motore per disattivarlo nella fase finale.</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>Peso della perdita di localizzazione dei riquadri, non una soglia di rilevamento.</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>Peso della perdita di classificazione degli oggetti, non il numero di classi.</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>Peso della Distribution Focal Loss (DFL); la sua presenza dipende dall'architettura del modello.</td>
+</tr>
+<tr>
+<td><code>angle</code></td>
+<td><code>1.0</code></td>
+<td>0.0～20.0</td>
+<td>Peso della perdita angolare dei riquadri orientati, non l'angolo di rotazione dell'aumento dati; l'utilizzo dipende dall'architettura del modello OBB.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-obb.pt"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare pesi predefiniti adatti all'attività. Il software individua i file effettivi nelle directory incluse.</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un dataset per l'attività attuale; vedere il capitolo dell'architettura per formati e regole di addestramento/validazione.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legacy-detection">Rilevamento classico di oggetti 2.7.0<a class="headerlink" href="#legacy-detection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore predefinito / trasmesso dall'interfaccia</th>
+<th>Intervallo numerico consentito</th>
+<th>Significato effettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python</code></td>
+<td><code>"&lt;cartella del software&gt;\\Paddle\\runtime-cpu\\python.exe"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Interprete dell'ambiente classico indipendente; individuato automaticamente dalla selezione CPU/GPU oppure impostato manualmente su un ambiente compatibile.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>"&lt;cartella del software&gt;\\Paddle\\PaddleDetection-2.7.0\\configs\\ppyoloe\\ppyoloe_plus_crn_s_80e_coco.yml"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>YAML di riferimento: s/m/l/x/sod sono preset di rilevamento classico; la classificazione usa i nomi reali delle configurazioni.</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td><code>"&lt;cartella del software&gt;\\runs\\classic_det"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Radice di output dell'addestramento classico; ogni esecuzione crea una sottodirectory di esperimento indipendente con data e ora.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>100</code></td>
+<td>1～100000</td>
+<td>Numero massimo di epoche; le architetture moderne possono terminare prima per arresto anticipato o interruzione manuale.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>4</code></td>
+<td>1～4096</td>
+<td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Seme casuale; semi identici non garantiscono risultati identici tra dispositivi o ambienti diversi.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+</tr>
+<tr>
+<td><code>weight_mode</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>config segue le impostazioni di preaddestramento; local usa un .pdparams locale; random inizializza casualmente. config può scaricare pesi.</td>
+</tr>
+<tr>
+<td><code>weights</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>File .pdparams locale usato solo selezionando pesi preaddestrati locali.</td>
+</tr>
+<tr>
+<td><code>dataset.mode</code></td>
+<td><code>"coco"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Il rilevamento classico usa coco come predefinito, la classificazione usa classification; config mantiene le impostazioni del dataset nello YAML.</td>
+</tr>
+<tr>
+<td><code>dataset.root</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Radice del dataset classico. Selezionare una cartella; le regole di riconoscimento sono nel capitolo sui dataset.</td>
+</tr>
+<tr>
+<td><code>dataset.evaluate_on_train</code></td>
+<td><code>false</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Disabilitato per impostazione predefinita. Se abilitato, tutte le immagini e annotazioni di addestramento sostituiscono il set di validazione separato; le metriche riflettono solo l’adattamento al set di addestramento.</td>
+</tr>
+<tr>
+<td><code>training_options.image_size_mode</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Rilevamento classico: config mantiene le dimensioni configurate; fixed unifica addestramento/validazione/esportazione; eval modifica solo validazione/test/esportazione.</td>
+</tr>
+<tr>
+<td><code>training_options.image_height</code></td>
+<td><code>640</code></td>
+<td>96～8192</td>
+<td>Altezza personalizzata del rilevamento classico, 96–8192 e multipla di 32; inattiva nella modalità dimensioni config.</td>
+</tr>
+<tr>
+<td><code>training_options.image_width</code></td>
+<td><code>640</code></td>
+<td>96～8192</td>
+<td>Larghezza personalizzata del rilevamento classico, 96–8192 e multipla di 32; inattiva nella modalità dimensioni config.</td>
+</tr>
+<tr>
+<td><code>training_options.workers</code></td>
+<td><code>0</code></td>
+<td>0～32</td>
+<td>Le architetture moderne usano processi di caricamento dati; su Windows, quelle classiche usano thread per lettura e preelaborazione parallele con valori maggiori di 0, oppure il caricamento originale con 0.</td>
+</tr>
+<tr>
+<td><code>training_options.learning_rate</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>0.0～100.0</td>
+<td>Tasso iniziale classico; 0 nell'interfaccia indica di usare la configurazione. Senza sovrascrittura viene passato un valore vuoto.</td>
+</tr>
+<tr>
+<td><code>training_options.weight_decay</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>-1.0～10.0</td>
+<td>Coefficiente di decadimento dei pesi. Nelle architetture classiche, il valore negativo predefinito indica di usare la configurazione; non viene passato al motore un decadimento negativo.</td>
+</tr>
+<tr>
+<td><code>training_options.optimizer</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un ottimizzatore. Il moderno auto sovrascrive tasso iniziale e momentum manuali e imposta a 0 il tasso dei bias nel warmup; il classico config usa lo YAML.</td>
+</tr>
+<tr>
+<td><code>training_options.scheduler</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Strategia del tasso classico. config mantiene milestone e durata totale dello YAML; constant mantiene il tasso fisso; cosine ricostruisce la pianificazione coseno sul totale delle epoche di questa esecuzione.</td>
+</tr>
+<tr>
+<td><code>training_options.warmup_epochs</code></td>
+<td><code>0</code></td>
+<td>0～10000</td>
+<td>Epoche di warmup. Le architetture moderne accettano decimali; quelle classiche consentono la regolazione solo con la strategia coseno e richiedono un valore inferiore alle epoche totali.</td>
+</tr>
+<tr>
+<td><code>training_options.amp</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Precisione mista. Interfaccia moderna: True/False. Interfaccia classica: configurazione/disattivata/attivata; l'attivazione esplicita richiede la GPU. AMP classico è disattivato sulla CPU.</td>
+</tr>
+<tr>
+<td><code>training_options.augmentation</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Nelle architetture classiche, config mantiene gli aumenti del modello; off rimuove quelli casuali e usa la preelaborazione di validazione, senza eliminare la normalizzazione.</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Indice fisico della GPU scelta per architetture classiche o anomalie; mappato al dispositivo 0 nel processo indipendente, con una GPU per esecuzione.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legacy-classification">Classificazione classica delle immagini 2.5.0<a class="headerlink" href="#legacy-classification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore predefinito / trasmesso dall'interfaccia</th>
+<th>Intervallo numerico consentito</th>
+<th>Significato effettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python</code></td>
+<td><code>"&lt;cartella del software&gt;\\Paddle\\runtime-cpu\\python.exe"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Interprete dell'ambiente classico indipendente; individuato automaticamente dalla selezione CPU/GPU oppure impostato manualmente su un ambiente compatibile.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>"&lt;cartella del software&gt;\\Paddle\\PaddleClas-2.5.0\\ppcls\\configs\\ImageNet\\ResNet\\ResNet50.yaml"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>YAML di riferimento: s/m/l/x/sod sono preset di rilevamento classico; la classificazione usa i nomi reali delle configurazioni.</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td><code>"&lt;cartella del software&gt;\\runs\\classic_cls"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Radice di output dell'addestramento classico; ogni esecuzione crea una sottodirectory di esperimento indipendente con data e ora.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>100</code></td>
+<td>1～100000</td>
+<td>Numero massimo di epoche; le architetture moderne possono terminare prima per arresto anticipato o interruzione manuale.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>4</code></td>
+<td>1～4096</td>
+<td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Seme casuale; semi identici non garantiscono risultati identici tra dispositivi o ambienti diversi.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+</tr>
+<tr>
+<td><code>weight_mode</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>config segue le impostazioni di preaddestramento; local usa un .pdparams locale; random inizializza casualmente. config può scaricare pesi.</td>
+</tr>
+<tr>
+<td><code>weights</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>File .pdparams locale usato solo selezionando pesi preaddestrati locali.</td>
+</tr>
+<tr>
+<td><code>dataset.mode</code></td>
+<td><code>"classification"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Il rilevamento classico usa coco come predefinito, la classificazione usa classification; config mantiene le impostazioni del dataset nello YAML.</td>
+</tr>
+<tr>
+<td><code>dataset.root</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Radice del dataset classico. Selezionare una cartella; le regole di riconoscimento sono nel capitolo sui dataset.</td>
+</tr>
+<tr>
+<td><code>training_options.image_size</code></td>
+<td><code>0</code></td>
+<td>0～8192</td>
+<td>Per la classificazione classica, lato del quadrato; 0 usa la configurazione. Il rilevamento anomalie ridimensiona direttamente l'intera immagine a questo quadrato, con lato 64–1024 e multiplo di 32.</td>
+</tr>
+<tr>
+<td><code>training_options.workers</code></td>
+<td><code>0</code></td>
+<td>0～32</td>
+<td>Le architetture moderne usano processi di caricamento dati; su Windows, quelle classiche usano thread per lettura e preelaborazione parallele con valori maggiori di 0, oppure il caricamento originale con 0.</td>
+</tr>
+<tr>
+<td><code>training_options.learning_rate</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>0.0～100.0</td>
+<td>Tasso iniziale classico; 0 nell'interfaccia indica di usare la configurazione. Senza sovrascrittura viene passato un valore vuoto.</td>
+</tr>
+<tr>
+<td><code>training_options.weight_decay</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>-1.0～10.0</td>
+<td>Coefficiente di decadimento dei pesi. Nelle architetture classiche, il valore negativo predefinito indica di usare la configurazione; non viene passato al motore un decadimento negativo.</td>
+</tr>
+<tr>
+<td><code>training_options.optimizer</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare un ottimizzatore. Il moderno auto sovrascrive tasso iniziale e momentum manuali e imposta a 0 il tasso dei bias nel warmup; il classico config usa lo YAML.</td>
+</tr>
+<tr>
+<td><code>training_options.scheduler</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Strategia del tasso classico. config mantiene milestone e durata totale dello YAML; constant mantiene il tasso fisso; cosine ricostruisce la pianificazione coseno sul totale delle epoche di questa esecuzione.</td>
+</tr>
+<tr>
+<td><code>training_options.warmup_epochs</code></td>
+<td><code>0</code></td>
+<td>0～10000</td>
+<td>Epoche di warmup. Le architetture moderne accettano decimali; quelle classiche consentono la regolazione solo con la strategia coseno e richiedono un valore inferiore alle epoche totali.</td>
+</tr>
+<tr>
+<td><code>training_options.amp</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Precisione mista. Interfaccia moderna: True/False. Interfaccia classica: configurazione/disattivata/attivata; l'attivazione esplicita richiede la GPU. AMP classico è disattivato sulla CPU.</td>
+</tr>
+<tr>
+<td><code>training_options.augmentation</code></td>
+<td><code>"config"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Nelle architetture classiche, config mantiene gli aumenti del modello; off rimuove quelli casuali e usa la preelaborazione di validazione, senza eliminare la normalizzazione.</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Indice fisico della GPU scelta per architetture classiche o anomalie; mappato al dispositivo 0 nel processo indipendente, con una GPU per esecuzione.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="anomaly">Rilevamento anomalie<a class="headerlink" href="#anomaly" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore predefinito / trasmesso dall'interfaccia</th>
+<th>Intervallo numerico consentito</th>
+<th>Significato effettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>train_dir</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Directory delle immagini OK per l'addestramento del rilevamento anomalie; inserire solo immagini normali.</td>
+</tr>
+<tr>
+<td><code>calibration_dir</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Directory OK indipendente per la calibrazione del rilevamento anomalie. Se vuota, viene riservato circa il 20% dopo la deduplicazione per contenuto; le immagini di calibrazione non entrano nella banca delle caratteristiche.</td>
+</tr>
+<tr>
+<td><code>backbone</code></td>
+<td><code>"resnet18"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Backbone preaddestrato per le caratteristiche delle anomalie: resnet18 o wide_resnet50_2; i parametri del backbone sono congelati.</td>
+</tr>
+<tr>
+<td><code>image_size</code></td>
+<td><code>256</code></td>
+<td>64～1024</td>
+<td>Per la classificazione classica, lato del quadrato; 0 usa la configurazione. Il rilevamento anomalie ridimensiona direttamente l'intera immagine a questo quadrato, con lato 64–1024 e multiplo di 32.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>2</code></td>
+<td>1～16</td>
+<td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
+</tr>
+<tr>
+<td><code>coreset_ratio</code></td>
+<td><code>0.01</code></td>
+<td>0.001～1.0</td>
+<td>Frazione delle caratteristiche candidate mantenute nel coreset per il rilevamento anomalie; è vincolata anche dal limite delle caratteristiche del coreset.</td>
+</tr>
+<tr>
+<td><code>max_patches</code></td>
+<td><code>50000</code></td>
+<td>100～250000</td>
+<td>Numero massimo di caratteristiche candidate per il rilevamento anomalie; oltre il limite si applica un campionamento limitato. Non è il numero di immagini di addestramento.</td>
+</tr>
+<tr>
+<td><code>max_bank</code></td>
+<td><code>5000</code></td>
+<td>1～10000</td>
+<td>Numero massimo finale di caratteristiche del coreset per il rilevamento anomalie, non un numero di immagini o classi.</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>L'inferenza delle anomalie usa il file model.patchcore.pt generato dall'addestramento.</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Immagine o cartella di immagini per l'inferenza delle anomalie; la directory di output non deve trovarsi all'interno della directory di input.</td>
+</tr>
+<tr>
+<td><code>threshold_multiplier</code></td>
+<td><code>1.0</code></td>
+<td>0.1～10.0</td>
+<td>Moltiplicatore della soglia di inferenza delle anomalie: sotto 1 è più sensibile, sopra 1 è più permissivo. I punteggi di anomalia non sono probabilità.</td>
+</tr>
+<tr>
+<td><code>output_dir</code></td>
+<td><code>"&lt;cartella del software&gt;\\runs\\patchcore"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Directory radice di output del rilevamento anomalie; addestramento e inferenza creano sottodirectory di esperimento separate.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Indice fisico della GPU scelta per architetture classiche o anomalie; mappato al dispositivo 0 nel processo indipendente, con una GPU per esecuzione.</td>
+</tr>
+</tbody>
+</table></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
+
+        </footer>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Cerca</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body">
+                <p>Da qui puoi cercare questi documenti. Inserisci i termini di ricerca qui sotto.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Cerca..." id="mkdocs-search-query" title="Digita il termine di ricerca qui">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="Nessun risultato trovato"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Tastiera Rapida</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Chiavi</th>
+                    <th>Azione</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Apri questa guida</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Pagina successiva</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Pagina precedente</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Cerca</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

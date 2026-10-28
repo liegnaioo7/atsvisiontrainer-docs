@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Dataset preparation - ATSVisionTrainer Help Center</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link href="assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">ATSVisionTrainer Help Center</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Getting started</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="index.html" class="dropdown-item">Help home</a>
+</li>
+
+<li>
+    <a href="getting-started.html" class="dropdown-item">Quick start</a>
+</li>
+
+<li>
+    <a href="datasets.html" class="dropdown-item active" aria-current="page">Dataset preparation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modern architectures</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="modern/common.html" class="dropdown-item">Common parameters and augmentation</a>
+</li>
+
+<li>
+    <a href="modern/detection.html" class="dropdown-item">Object detection</a>
+</li>
+
+<li>
+    <a href="modern/classification.html" class="dropdown-item">Image classification</a>
+</li>
+
+<li>
+    <a href="modern/segmentation.html" class="dropdown-item">Instance segmentation</a>
+</li>
+
+<li>
+    <a href="modern/obb.html" class="dropdown-item">Oriented object detection</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Classic architectures</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="legacy/common.html" class="dropdown-item">Common parameters and independent environments</a>
+</li>
+
+<li>
+    <a href="legacy/detection.html" class="dropdown-item">Object detection 2.7.0</a>
+</li>
+
+<li>
+    <a href="legacy/classification.html" class="dropdown-item">Image classification 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="anomaly.html" class="nav-link">Anomaly detection</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="inference-export.html" class="nav-link">Inference and export</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Logs and history</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="monitoring.html" class="dropdown-item">Training charts and raw logs</a>
+</li>
+
+<li>
+    <a href="history.html" class="dropdown-item">Training history and cleanup</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reference/parameters.html" class="nav-link">Parameter reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="troubleshooting.html" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feedback.html" class="nav-link">Feedback</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="getting-started.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="modern/common.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Documentation language">
+
+<a href="./../datasets.html">简体中文</a>
+
+<a href="./../en/datasets.html" aria-current="true">English</a>
+
+<a href="./../it/datasets.html">Italiano</a>
+
+<a href="./../ja/datasets.html">日本語</a>
+
+<a href="./../zh_TW/datasets.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps annotation software <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#dataset-preparation" class="nav-link">Dataset preparation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#modern-object-detection-instance-segmentation-and-oriented-object-detection" class="nav-link">Modern object detection, instance segmentation and oriented object detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-classification" class="nav-link">Modern classification</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#classic-object-detection-one-coco-folder" class="nav-link">Classic object detection: one COCO folder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#classic-classification-one-dataset-folder" class="nav-link">Classic classification: one dataset folder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anomaly-detection-ok-images-and-independent-calibration" class="nav-link">Anomaly detection: OK images and independent calibration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="dataset-preparation">Dataset preparation<a class="headerlink" href="#dataset-preparation" title="Permanent link">&para;</a></h1>
+<h2 id="modern-object-detection-instance-segmentation-and-oriented-object-detection">Modern object detection, instance segmentation and oriented object detection<a class="headerlink" href="#modern-object-detection-instance-segmentation-and-oriented-object-detection" title="Permanent link">&para;</a></h2>
+<p>Select the dataset root containing <code>data.yaml</code>; the oriented detection page also accepts a YAML path. YAML specifies training, validation and class mapping. Images and labels must correspond; class IDs start at 0 and match the class list.</p>
+<pre><code class="language-text">dataset/
+  data.yaml
+  images/train/
+  images/val/
+  labels/train/
+  labels/val/
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Label contents: one object per line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard detection</td>
+<td><code>class_id center_x center_y width height</code></td>
+</tr>
+<tr>
+<td>Instance segmentation</td>
+<td><code>class_id x1 y1 x2 y2 …</code>, an object's contour polygon</td>
+</tr>
+<tr>
+<td>Oriented object detection</td>
+<td><code>class_id x1 y1 x2 y2 x3 y3 x4 y4</code>, four corners</td>
+</tr>
+</tbody>
+</table>
+<p>Normalize coordinates to 0–1. OBB corners must run clockwise or counterclockwise. Ordinary five-column boxes, raw DOTA labels and self-intersecting quadrilaterals are not valid OBB input. The software checks labels and reports file and line numbers.</p>
+<h2 id="modern-classification">Modern classification<a class="headerlink" href="#modern-classification" title="Permanent link">&para;</a></h2>
+<p>Organize training/validation images by class, using the corresponding subfolder names as class names. Explicit <code>train/class_name</code> and <code>val/class_name</code> folders are recommended; the classification engine reads them according to its dataset rules. This page does not import classic classification TXT lists.</p>
+<pre><code class="language-text">classification/
+  train/OK/...
+  train/NG/...
+  val/OK/...
+  val/NG/...
+</code></pre>
+<p>Classification results are written beside the dataset in dataset-name_runs, preventing results from being treated as a class. Keep old result folders out of class directories.</p>
+<h2 id="classic-object-detection-one-coco-folder">Classic object detection: one COCO folder<a class="headerlink" href="#classic-object-detection-one-coco-folder" title="Permanent link">&para;</a></h2>
+<p>COCO mode is selected by default. Select the dataset root and click Check dataset. The software recognizes training images, COCO JSON, classes and an optional independent validation set. A typical layout is:</p>
+<pre><code class="language-text">coco/
+  images/train/...
+  images/val/...             # optional
+  annotations/train.json
+  annotations/val.json      # optional
+</code></pre>
+<p>Without an independent validation set, all training images are used for training, with no automatic split or mAP calculation. OK background images may have no boxes: keep their image records without fabricating entries in <code>annotations</code> or creating an OK object class. The software retains these negative samples.</p>
+<p>Class mapping is based on the training annotations; training and validation class names must match. The software creates annotation copies and a class list inside the experiment without changing the original COCO files.</p>
+<h2 id="classic-classification-one-dataset-folder">Classic classification: one dataset folder<a class="headerlink" href="#classic-classification-one-dataset-folder" title="Permanent link">&para;</a></h2>
+<p>Read <code>train_list.txt</code>, <code>val_list.txt</code> and <code>Label.txt</code> first; without lists, detect <code>train/class_name</code> and <code>val/class_name</code>. Preserve the existing split without automatic resplitting. Class IDs must be contiguous, and validation classes must belong to the training classes.</p>
+<p>For other folder naming conventions, first run Check dataset and inspect recognized counts and classes. Do not invent class IDs to bypass validation.</p>
+<h2 id="anomaly-detection-ok-images-and-independent-calibration">Anomaly detection: OK images and independent calibration<a class="headerlink" href="#anomaly-detection-ok-images-and-independent-calibration" title="Permanent link">&para;</a></h2>
+<p>Include only OK images in the training directory. An independent OK calibration directory is optional; if blank, approximately 20% is held out after content-based deduplication, requiring at least 3 distinct OK images. Calibration images are excluded from the memory bank; content duplicates between training and calibration are rejected.</p>
+<p>This automatic holdout rule applies only to anomaly detection, not classic COCO detection.</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 2026.11 · Verify parameters against the effective experiment configuration and logs</p>
+
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

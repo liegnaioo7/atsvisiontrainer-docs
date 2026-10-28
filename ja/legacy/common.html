@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>共通パラメーターと独立環境 - ATSVisionTrainer ヘルプセンター</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ATSVisionTrainer ヘルプセンター</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">はじめに</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../index.html" class="dropdown-item">ヘルプホーム</a>
+</li>
+
+<li>
+    <a href="../getting-started.html" class="dropdown-item">クイックスタート</a>
+</li>
+
+<li>
+    <a href="../datasets.html" class="dropdown-item">データセットの準備</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">モダン構成</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../modern/common.html" class="dropdown-item">共通パラメーターとデータ拡張</a>
+</li>
+
+<li>
+    <a href="../modern/detection.html" class="dropdown-item">物体検出</a>
+</li>
+
+<li>
+    <a href="../modern/classification.html" class="dropdown-item">画像分類</a>
+</li>
+
+<li>
+    <a href="../modern/segmentation.html" class="dropdown-item">インスタンスセグメンテーション</a>
+</li>
+
+<li>
+    <a href="../modern/obb.html" class="dropdown-item">回転物体検出</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">クラシック構成</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="common.html" class="dropdown-item active" aria-current="page">共通パラメーターと独立環境</a>
+</li>
+
+<li>
+    <a href="detection.html" class="dropdown-item">物体検出 2.7.0</a>
+</li>
+
+<li>
+    <a href="classification.html" class="dropdown-item">画像分類 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../anomaly.html" class="nav-link">異常検出</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../inference-export.html" class="nav-link">推論とエクスポート</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ログと履歴</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../monitoring.html" class="dropdown-item">学習グラフと生ログ</a>
+</li>
+
+<li>
+    <a href="../history.html" class="dropdown-item">学習履歴と整理</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reference/parameters.html" class="nav-link">パラメーターリファレンス</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../troubleshooting.html" class="nav-link">よくある質問</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../feedback.html" class="nav-link">フィードバック</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> 検索
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../modern/obb.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> 前へ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="detection.html" class="nav-link">
+                                    次へ <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="文書の言語">
+
+<a href="../../legacy/common.html">简体中文</a>
+
+<a href="../../en/legacy/common.html">English</a>
+
+<a href="../../it/legacy/common.html">Italiano</a>
+
+<a href="../../ja/legacy/common.html" aria-current="true">日本語</a>
+
+<a href="../../zh_TW/legacy/common.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps アノテーションソフト <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="目次">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">クラシック構成の共通パラメーターと独立環境</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">設定の上書き優先順位</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">重みの初期化</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">学習率と最適化手法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#amp" class="nav-link">データ拡張と AMP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#windows-workers-gpu" class="nav-link">Windows の workers と GPU 選択</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">クラシック構成の共通パラメーターと独立環境<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>クラシック物体検出は <strong>ATSLegacy 2.7.0</strong>、クラシック分類は <strong>ATSLegacy 2.5.0</strong> に対応します。バージョン表記は構成・設定のバージョンであり、モダン構成のバージョンではありません。一部の設定欄は共通ですが、データ前処理とパラメーター適用は個別に実装しています。</p>
+<h2 id="_2">設定の上書き優先順位<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>選択モデルの YAML と基底設定を読み込み、独立した実験設定を作り、画面で明示した上書きを適用します。内蔵 YAML は書き換えません。「設定を継承」は元の値を維持し、共通の固定値を使う意味ではありません。</p>
+<p>エポック数、バッチサイズ、乱数シードには画面の値を直接使用します。既定値はそれぞれ 100、4、42 で、他の最適化設定は既定でモデル設定を使用します。実験ごとに <code>effective_det.yaml</code> または <code>effective_clas.yaml</code> を保存し、実際のサイズ、データパス、クラス、学習率、ローダー設定を確認できます。</p>
+<h2 id="_3">重みの初期化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>選択肢</th>
+<th>実際の動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>設定ファイルの事前学習設定を使用</td>
+<td>YAML の設定を使用します。URL から重みをダウンロードする場合も、既存キャッシュを使用する場合もあります。すべての顧客端末にキャッシュがあるとは限りません。</td>
+</tr>
+<tr>
+<td>ローカルの事前学習済みの重みを使用</td>
+<td>今回の初期化に使う互換性のある <code>.pdparams</code> を指定します。学習再開のスイッチではありません。</td>
+</tr>
+<tr>
+<td>ランダム初期化</td>
+<td>設定の事前学習済み重みを読み込まず、ランダムなパラメーターから開始します。有効なモデル設定は必要です。</td>
+</tr>
+</tbody>
+</table>
+<p>オフラインではローカル重みまたはランダム初期化を選択してください。学習構成のフォルダーがあるだけでは、事前学習済み重みも同梱されているとは判断できません。</p>
+<h2 id="_4">学習率と最適化手法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>画面の初期学習率 0 は「設定を継承」で、エンジンの学習率を 0 にする意味ではありません。重み減衰の「設定を継承」も上書きしません。</p>
+<p>設定を継承するか、Momentum、SGD、Adam、AdamW を選択します。切り替え時に引数構造を調整し、AdamW には以前の正則化辞書ではなく数値の重み減衰を渡します。</p>
+<table>
+<thead>
+<tr>
+<th>学習率スケジュール</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>設定を引き継ぐ</td>
+<td>元のマイルストーン、全期間、ウォームアップを保持します。総学習エポック数を変えてもスケジュール全体は自動では変更しません。</td>
+</tr>
+<tr>
+<td>固定学習率</td>
+<td>今回の設定の初期学習率を使用し、画面からウォームアップは設定しません。</td>
+</tr>
+<tr>
+<td>コサインアニーリング</td>
+<td>今回の総エポック数に合わせてスケジュールを再構築します。ウォームアップのエポック数は総数より小さい整数にしてください。</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">学習期間とスケジュールを合わせる</p>
+<p>参照設定が 80 または 96 エポックで、今回 300 エポック学習する場合、設定継承では学習終了前に学習率が下限へ達することがあります。期間を合わせるには余弦を選び、最終 YAML を確認してください。</p>
+</div>
+<h2 id="amp">データ拡張と AMP<a class="headerlink" href="#amp" title="Permanent link">&para;</a></h2>
+<p>モデルの拡張設定を継承すると元の方針を保持します。ランダム拡張を無効にすると、学習時のランダム処理を検証用前処理に置き換えます。正規化、チャンネル並び替え、必要なサイズ処理は残ります。</p>
+<p>AMP は設定の継承・無効・有効から選択します。明示的な有効化には GPU が必要で、CPU 学習では無効です。設定を継承しても GPU 上で必ず有効になるわけではなく、モデル設定に従います。</p>
+<h2 id="windows-workers-gpu">Windows の workers と GPU 選択<a class="headerlink" href="#windows-workers-gpu" title="Permanent link">&para;</a></h2>
+<p>Windows のクラシック環境ではネイティブのマルチプロセス読み込みに制限があります。<code>workers&gt;0</code> の場合、独立プロセス内のスレッドで読み込みと前処理を並列化します。0 は従来の方式です。まず 2 または 4 を試し、大きい値ほど速いとは考えないでください。</p>
+<p>各タスクは選択した NVIDIA GPU を単独で使用します。複数搭載時は任意のカードを選択できますが、Windows ネイティブで同じクラシックモデルを複数 GPU によって共同学習することはできません。独立プロセス内では通常 GPU 0 と表示されます。これは可視デバイスのマッピングであり、物理カードの選択を無視したことを意味しません。</p>
+<p>出力ルート配下に毎回タイムスタンプ付きの独立フォルダーを生成します。学習と自動エクスポートにはクラシックの独立環境を使用し、モダン構成や異常検出の環境を変更しません。全パラメーターの範囲は<a href="../reference/parameters.html">パラメーター一覧</a>を参照してください。</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">ATSVisionTrainer オンライン文書 · Windows 版 · V1.0.0 / Build 2026.11 · パラメーターは実験の最終設定とログで確認してください</p>
+
+        </footer>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u30aa\u30f3\u30e9\u30a4\u30f3\u6587\u66f8 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u30d1\u30e9\u30e1\u30fc\u30bf\u30fc\u306f\u5b9f\u9a13\u306e\u6700\u7d42\u8a2d\u5b9a\u3068\u30ed\u30b0\u3067\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044", "found": "{0} \u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "language": "\u6587\u66f8\u306e\u8a00\u8a9e", "missing_body": "\u30ca\u30d3\u30b2\u30fc\u30b7\u30e7\u30f3\u307e\u305f\u306f\u30d8\u30eb\u30d7\u30db\u30fc\u30e0\u304b\u3089\u958b\u3044\u3066\u304f\u3060\u3055\u3044\u3002", "missing_title": "\u30d8\u30eb\u30d7\u30da\u30fc\u30b8\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093", "not_found": "\u4e00\u81f4\u3059\u308b\u5185\u5bb9\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u5225\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002", "search_error": "\u691c\u7d22\u30a4\u30f3\u30c7\u30c3\u30af\u30b9\u3092\u8aad\u307f\u8fbc\u3081\u307e\u305b\u3093\u3002\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u63a5\u7d9a\u3092\u78ba\u8a8d\u3057\u3066\u30da\u30fc\u30b8\u3092\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u304f\u3060\u3055\u3044\u3002"};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">検索</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+            <div class="modal-body">
+                <p>これらのドキュメントをこちらから検索できます。検索語句を以下に入力してください。</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="検索..." id="mkdocs-search-query" title="検索語句を入力してください">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="結果がありません"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">キーボードショートカット</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">キー</th>
+                    <th>アクション</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>このヘルプを開く</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>次のページ</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>前のページ</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>検索</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

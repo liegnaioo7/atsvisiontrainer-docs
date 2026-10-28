@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh_Hans_CN" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>目标检测 2.7.0 - ATSVisionTrainer 帮助中心</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ATSVisionTrainer 帮助中心</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">使用入门</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../index.html" class="dropdown-item">帮助首页</a>
+</li>
+
+<li>
+    <a href="../getting-started.html" class="dropdown-item">快速开始</a>
+</li>
+
+<li>
+    <a href="../datasets.html" class="dropdown-item">数据集准备</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">现代架构</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../modern/common.html" class="dropdown-item">通用参数与增强</a>
+</li>
+
+<li>
+    <a href="../modern/detection.html" class="dropdown-item">目标检测</a>
+</li>
+
+<li>
+    <a href="../modern/classification.html" class="dropdown-item">图像分类</a>
+</li>
+
+<li>
+    <a href="../modern/segmentation.html" class="dropdown-item">实例分割</a>
+</li>
+
+<li>
+    <a href="../modern/obb.html" class="dropdown-item">旋转框检测</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">经典架构</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="common.html" class="dropdown-item">通用参数与独立环境</a>
+</li>
+
+<li>
+    <a href="detection.html" class="dropdown-item active" aria-current="page">目标检测 2.7.0</a>
+</li>
+
+<li>
+    <a href="classification.html" class="dropdown-item">图像分类 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../anomaly.html" class="nav-link">异常检测</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../inference-export.html" class="nav-link">推理与导出</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">日志与历史</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../monitoring.html" class="dropdown-item">训练图表与原始日志</a>
+</li>
+
+<li>
+    <a href="../history.html" class="dropdown-item">训练历史与清理</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reference/parameters.html" class="nav-link">参数参考</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../troubleshooting.html" class="nav-link">常见问题</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../feedback.html" class="nav-link">意见反馈</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> 搜索
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="common.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> 上一章
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="classification.html" class="nav-link">
+                                    下一章 <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="文档语言">
+
+<a href="../legacy/detection.html" aria-current="true">简体中文</a>
+
+<a href="../en/legacy/detection.html">English</a>
+
+<a href="../it/legacy/detection.html">Italiano</a>
+
+<a href="../ja/legacy/detection.html">日本語</a>
+
+<a href="../zh_TW/legacy/detection.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 标注软件 <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="目录">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#270" class="nav-link">经典目标检测 2.7.0</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#coco" class="nav-link">从一个 COCO 文件夹训练</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">高度和宽度的三种模式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">验证指标</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">自动导出</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">训练集参与验证</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="270">经典目标检测 2.7.0<a class="headerlink" href="#270" title="Permanent link">&para;</a></h1>
+<p>用于普通目标检测。模型列表显示 <code>s / m / l / x / sod</code>，SOD 调用实际的小目标模型配置，并不是把普通模型尺寸简单改小。</p>
+<h2 id="coco">从一个 COCO 文件夹训练<a class="headerlink" href="#coco" title="Permanent link">&para;</a></h2>
+<p>选择 COCO 文件夹，点击“检查数据集”，确认类别、训练图片数量及验证图片数量。软件会自动生成实验内的数据配置，不需要手工修改内置 <code>coco_detection</code> 文件。</p>
+<p>OK 无框图片会作为背景负样本参与训练。没有独立验证集时，保留全部训练样本，不自动划分、不运行验证、不计算 mAP。损失和学习率仍会显示；这不是训练失败。</p>
+<p>高级选项“沿用 YAML 数据配置”保留模型文件的数据设置，使用者须保证路径与类别正确。相对路径按经典检测工作目录解释，不是按照任意外部 YAML 所在目录自动解释。</p>
+<h2 id="_1">高度和宽度的三种模式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>尺寸模式</th>
+<th>训练</th>
+<th>验证、测试及导出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>沿用模型尺寸配置</td>
+<td>保留参考配置，包括多尺度训练</td>
+<td>保留参考配置</td>
+</tr>
+<tr>
+<td>固定尺寸</td>
+<td>使用填写的高度 × 宽度，并关闭随机尺寸选择</td>
+<td>使用相同高度 × 宽度</td>
+</tr>
+<tr>
+<td>仅自定义验证与导出尺寸</td>
+<td>保留原有训练尺寸策略</td>
+<td>使用填写的高度 × 宽度</td>
+</tr>
+</tbody>
+</table>
+<p>高度和宽度分别填写，均须为 96～8192 且为 32 的倍数。自定义尺寸直接缩放图片，不保持原始宽高比。</p>
+<p>例如高 320、宽 640：如果只想复现以前修改 <code>eval_height=320</code>、<code>eval_width=640</code> 的操作，选择第三种模式。此时训练仍可能从原配置的多个正方形尺寸中随机选择，并不表示训练也改为 <code>320×640</code>。训练也要固定为这个矩形时，选择第二种模式。</p>
+<p>若同时“关闭随机增强”，训练预处理也会按该增强设置变化；尺寸模式不会重新启用被关闭的增强。</p>
+<h2 id="_2">验证指标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>有独立验证集时按模型配置的验证间隔运行评估，不保证每轮都有指标。图表显示实际产生的 mAP50-95、mAP50、mAP75 等检测评估结果；分类准确率不是本页面的通用检测指标。</p>
+<p>无验证集、尚未到验证轮次、以及验证没有取得有效结果，是不同状态，图表会分别提示。没有数值时不补 0；实际计算得到的 0 则正常保留。</p>
+<h2 id="_3">自动导出<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>训练结束后自动选择已保存的检查点，并执行官方推理导出。成功后在实验 <code>export/export_det</code> 中通常有：</p>
+<pre><code class="language-text">model.pdmodel
+model.pdiparams
+model.pdiparams.info
+infer_cfg.yml
+</code></pre>
+<p>实际路径以“推理模型已导出到”日志为准。<code>infer_cfg.yml</code> 记录实际推理预处理和类别；自定义高宽会同步到导出输入及预处理。导出过程使用 CPU，不说明前面的训练没有使用 GPU。</p>
+<p>其他优化器、加载器及初始化说明见<a href="common.html">经典通用参数</a>；所有控件见<a href="../reference/parameters.html#legacy-detection">检测参数表</a>。</p>
+<h2 id="_4">训练集参与验证<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>默认不勾选。COCO 模式下勾选后，使用全部训练图片和标注替代独立验证集进行评估，不自动划分，也不修改原始数据。即使提供了独立验证集，勾选后也使用训练集验证；沿用 YAML 数据配置时此选项禁用。</p>
+<p>训练集上的 AP/mAP 仅反映拟合情况，不能代表对新图片的泛化能力。验证按模型配置的间隔执行，原始日志保留最佳 AP 信息；图表和历史指标会注明验证数据来源。</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">ATSVisionTrainer 在线文档 · Windows 版 · V1.0.0 / Build 2026.11 · 参数以实验最终配置和日志为准</p>
+
+        </footer>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u5728\u7ebf\u6587\u6863 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u53c2\u6570\u4ee5\u5b9e\u9a8c\u6700\u7ec8\u914d\u7f6e\u548c\u65e5\u5fd7\u4e3a\u51c6", "found": "\u627e\u5230 {0} \u6761\u7ed3\u679c", "language": "\u6587\u6863\u8bed\u8a00", "missing_body": "\u8bf7\u4ece\u5de6\u4fa7\u5bfc\u822a\u6216\u5e2e\u52a9\u9996\u9875\u8fdb\u5165\u3002", "missing_title": "\u6ca1\u6709\u627e\u5230\u8fd9\u4e2a\u5e2e\u52a9\u9875\u9762", "not_found": "\u672a\u627e\u5230\u5339\u914d\u5185\u5bb9\uff0c\u8bf7\u6362\u4e00\u4e2a\u5173\u952e\u8bcd\u3002", "search_error": "\u65e0\u6cd5\u8bfb\u53d6\u641c\u7d22\u7d22\u5f15\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc\u8fde\u63a5\u5e76\u5237\u65b0\u9875\u9762\u3002"};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">搜索</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+            </div>
+            <div class="modal-body">
+                <p>从这里您可以搜索这些文档。在下面输入您需要搜索的内容。</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="搜索..." id="mkdocs-search-query" title="在此输入搜索内容">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="没有搜索到结果"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">键盘热键</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">键</th>
+                    <th>动作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>打开这个帮助</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>下一页面</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>上一页面</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>搜索</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

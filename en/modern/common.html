@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Common parameters and augmentation - ATSVisionTrainer Help Center</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ATSVisionTrainer Help Center</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Getting started</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../index.html" class="dropdown-item">Help home</a>
+</li>
+
+<li>
+    <a href="../getting-started.html" class="dropdown-item">Quick start</a>
+</li>
+
+<li>
+    <a href="../datasets.html" class="dropdown-item">Dataset preparation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modern architectures</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="common.html" class="dropdown-item active" aria-current="page">Common parameters and augmentation</a>
+</li>
+
+<li>
+    <a href="detection.html" class="dropdown-item">Object detection</a>
+</li>
+
+<li>
+    <a href="classification.html" class="dropdown-item">Image classification</a>
+</li>
+
+<li>
+    <a href="segmentation.html" class="dropdown-item">Instance segmentation</a>
+</li>
+
+<li>
+    <a href="obb.html" class="dropdown-item">Oriented object detection</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Classic architectures</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../legacy/common.html" class="dropdown-item">Common parameters and independent environments</a>
+</li>
+
+<li>
+    <a href="../legacy/detection.html" class="dropdown-item">Object detection 2.7.0</a>
+</li>
+
+<li>
+    <a href="../legacy/classification.html" class="dropdown-item">Image classification 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../anomaly.html" class="nav-link">Anomaly detection</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../inference-export.html" class="nav-link">Inference and export</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Logs and history</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../monitoring.html" class="dropdown-item">Training charts and raw logs</a>
+</li>
+
+<li>
+    <a href="../history.html" class="dropdown-item">Training history and cleanup</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reference/parameters.html" class="nav-link">Parameter reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../troubleshooting.html" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../feedback.html" class="nav-link">Feedback</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../datasets.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="detection.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Documentation language">
+
+<a href="../../modern/common.html">简体中文</a>
+
+<a href="../../en/modern/common.html" aria-current="true">English</a>
+
+<a href="../../it/modern/common.html">Italiano</a>
+
+<a href="../../ja/modern/common.html">日本語</a>
+
+<a href="../../zh_TW/modern/common.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps annotation software <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#modern-common-parameters-and-augmentation" class="nav-link">Modern common parameters and augmentation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic-parameters" class="nav-link">Basic parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#optimizer" class="nav-link">Optimizer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#position-and-geometry-augmentation" class="nav-link">Position and geometry augmentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#software-adapted-augmentation" class="nav-link">Software-adapted augmentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#loss-weights" class="nav-link">Loss weights</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#output-location" class="nav-link">Output location</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="modern-common-parameters-and-augmentation">Modern common parameters and augmentation<a class="headerlink" href="#modern-common-parameters-and-augmentation" title="Permanent link">&para;</a></h1>
+<p>The four tasks share basic parameters, but not every augmentation applies to every task. Actual controls and defaults are listed in the <a href="../reference/parameters.html">parameter reference</a>.</p>
+<h2 id="basic-parameters">Basic parameters<a class="headerlink" href="#basic-parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Function and usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model weights</td>
+<td>Select preset weights matching the task. Classification, detection, segmentation and OBB weights are not freely interchangeable.</td>
+</tr>
+<tr>
+<td>imgsz</td>
+<td>A single input size. Detection/segmentation/OBB resize and pad according to engine rules; classification additionally uses its own short-edge resize and crop.</td>
+</tr>
+<tr>
+<td>epochs</td>
+<td>Maximum epochs, not a guaranteed number of completed epochs.</td>
+</tr>
+<tr>
+<td>patience</td>
+<td>Consecutive epochs without validation metric improvement before early stopping; 0 disables it. Reaching epochs normally is not early stopping.</td>
+</tr>
+<tr>
+<td>batch</td>
+<td>Images per batch; increasing this generally uses more GPU memory and does not guarantee proportional speedup.</td>
+</tr>
+<tr>
+<td>workers</td>
+<td>Number of data loader processes; 0 loads in the main process. This is neither the training thread count nor the GPU count.</td>
+</tr>
+<tr>
+<td>device</td>
+<td>auto lets the engine choose; gpu maps to GPU 0; cpu trains on the CPU.</td>
+</tr>
+<tr>
+<td>seed</td>
+<td>Random seed for controlling reproducible randomness where supported.</td>
+</tr>
+<tr>
+<td>amp</td>
+<td>GPU automatic mixed precision; this does not force every tensor to half precision.</td>
+</tr>
+</tbody>
+</table>
+<p>The size field parses a single number. Non-digit text falls back to default size (640 for detection/segmentation/OBB, 960 for classification), rather than parsing <code>640×480</code> or lists. Check the logs; this field does not set rectangular dimensions.</p>
+<h2 id="optimizer">Optimizer<a class="headerlink" href="#optimizer" title="Permanent link">&para;</a></h2>
+<p><code>optimizer=auto</code> selects the optimizer, initial learning rate and momentum again, and sets <code>warmup_bias_lr</code> to 0. Select an explicit optimizer when you need manual learning-rate or momentum settings.</p>
+<p>Modern classification has <code>lr0</code> and <code>lrf</code> input fields; detection, segmentation and OBB pages have no separate learning rate field. Do not look for controls from tutorials for other software. Classification <code>lrf</code> is the final learning rate as a multiplier of the initial rate.</p>
+<p>SGD-type optimizers use momentum; Adam-type optimizers use beta1. <code>weight_decay</code> controls weight decay. <code>warmup_epochs</code> is the warmup duration and accepts fractions; detection, segmentation and OBB also expose warmup starting momentum and bias learning rate.</p>
+<h2 id="position-and-geometry-augmentation">Position and geometry augmentation<a class="headerlink" href="#position-and-geometry-augmentation" title="Permanent link">&para;</a></h2>
+<p><code>degrees</code> is the maximum absolute rotation angle; <code>flipud</code> and <code>fliplr</code> are flip probabilities; <code>translate</code> is a shift relative to image size; <code>scale</code> is random scale variation. These are training augmentations, not inference postprocessing settings.</p>
+<p><code>mosaic</code> is the mosaic probability, also subject to the engine's late-training disabling rule. The UI has no separate control for the disabling epoch count; the current probability does not guarantee activation in every final epoch.</p>
+<h2 id="software-adapted-augmentation">Software-adapted augmentation<a class="headerlink" href="#software-adapted-augmentation" title="Permanent link">&para;</a></h2>
+<p>For standard detection, <code>copy_paste</code> probabilistically copies a complete object within the same image to a non-overlapping position. It is skipped if the source overlaps another object or no safe destination exists. Polygon instance segmentation uses the native mask copy-paste fraction.</p>
+<p>For detection and segmentation, <code>erasing</code> erases only background outside object boxes, leaving their interiors and existing annotations intact. It differs from classification random erasing that may cover objects arbitrarily.</p>
+<p>The OBB page has no <code>copy_paste</code> or <code>erasing</code> controls. The classification page also has none of these background augmentations.</p>
+<h2 id="loss-weights">Loss weights<a class="headerlink" href="#loss-weights" title="Permanent link">&para;</a></h2>
+<p>For detection, segmentation and OBB, <code>box</code>, <code>cls</code> and <code>dfl</code> are loss coefficients, not prediction confidence or class counts. OBB <code>angle</code> is an angle loss coefficient, unrelated to rotation augmentation <code>degrees</code>. Passing a coefficient does not create a loss term that the model architecture does not use.</p>
+<h2 id="output-location">Output location<a class="headerlink" href="#output-location" title="Permanent link">&para;</a></h2>
+<p>Detection, segmentation and OBB results are stored in <code>runs</code> under the dataset directory; classification results use a sibling folder named after the dataset with the _runs suffix. The actual experiment path is the one recorded in the log, the chart's Open experiment directory action and training history.</p>
+<p>The software automatically exports ONNX with <code>simplify=False</code>, without automatically installing onnxslim for graph simplification. If export fails, inspect the log; existing checkpoints may still be retained.</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 2026.11 · Verify parameters against the effective experiment configuration and logs</p>
+
+        </footer>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

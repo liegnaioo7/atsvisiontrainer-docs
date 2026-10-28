@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Anomaly detection - ATSVisionTrainer Help Center</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link href="assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">ATSVisionTrainer Help Center</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Getting started</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="index.html" class="dropdown-item">Help home</a>
+</li>
+
+<li>
+    <a href="getting-started.html" class="dropdown-item">Quick start</a>
+</li>
+
+<li>
+    <a href="datasets.html" class="dropdown-item">Dataset preparation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modern architectures</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="modern/common.html" class="dropdown-item">Common parameters and augmentation</a>
+</li>
+
+<li>
+    <a href="modern/detection.html" class="dropdown-item">Object detection</a>
+</li>
+
+<li>
+    <a href="modern/classification.html" class="dropdown-item">Image classification</a>
+</li>
+
+<li>
+    <a href="modern/segmentation.html" class="dropdown-item">Instance segmentation</a>
+</li>
+
+<li>
+    <a href="modern/obb.html" class="dropdown-item">Oriented object detection</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Classic architectures</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="legacy/common.html" class="dropdown-item">Common parameters and independent environments</a>
+</li>
+
+<li>
+    <a href="legacy/detection.html" class="dropdown-item">Object detection 2.7.0</a>
+</li>
+
+<li>
+    <a href="legacy/classification.html" class="dropdown-item">Image classification 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="anomaly.html" class="nav-link active" aria-current="page">Anomaly detection</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="inference-export.html" class="nav-link">Inference and export</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Logs and history</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="monitoring.html" class="dropdown-item">Training charts and raw logs</a>
+</li>
+
+<li>
+    <a href="history.html" class="dropdown-item">Training history and cleanup</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reference/parameters.html" class="nav-link">Parameter reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="troubleshooting.html" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feedback.html" class="nav-link">Feedback</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="legacy/classification.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="inference-export.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Documentation language">
+
+<a href="./../anomaly.html">简体中文</a>
+
+<a href="./../en/anomaly.html" aria-current="true">English</a>
+
+<a href="./../it/anomaly.html">Italiano</a>
+
+<a href="./../ja/anomaly.html">日本語</a>
+
+<a href="./../zh_TW/anomaly.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps annotation software <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#atsanomaly-anomaly-detection" class="nav-link">ATSAnomaly anomaly detection</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#training-and-calibration-data" class="nav-link">Training and calibration data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#construction-parameters" class="nav-link">Construction parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#thresholds-and-inference" class="nav-link">Thresholds and inference</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="atsanomaly-anomaly-detection">ATSAnomaly anomaly detection<a class="headerlink" href="#atsanomaly-anomaly-detection" title="Permanent link">&para;</a></h1>
+<p>Suitable for building a memory bank from normal OK images only, then identifying new images that deviate from the normal distribution. The current implementation uses the PatchCore method, without multi-epoch gradient training as in ordinary classification.</p>
+<h2 id="training-and-calibration-data">Training and calibration data<a class="headerlink" href="#training-and-calibration-data" title="Permanent link">&para;</a></h2>
+<p>Training and independent calibration directories must contain only OK images. If calibration is blank, images are deduplicated by content and approximately 20% is held out using fixed random seed 42; at least 3 distinct images are required. Calibration images do not enter the memory bank; content duplicates between training and independent calibration cause an error.</p>
+<p>Thresholds estimated only from OK images cannot establish defect recall, false-positive rate or production accuracy. Validate business performance using independent OK/NG samples.</p>
+<h2 id="construction-parameters">Construction parameters<a class="headerlink" href="#construction-parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backbone</td>
+<td>ResNet18 (faster) or Wide ResNet50-2 (higher capacity), using bundled pretrained weights with frozen parameters.</td>
+</tr>
+<tr>
+<td>Image size</td>
+<td>Default 256; resizes the whole image to a square without center-cropping edges, potentially changing aspect ratio; 64–1024 and a multiple of 32</td>
+</tr>
+<tr>
+<td>Extraction batch size</td>
+<td>Default 2, range 1–16; controls feature extraction batch size; reduce if GPU memory is insufficient</td>
+</tr>
+<tr>
+<td>Coreset retention fraction</td>
+<td>Default 0.01; fraction of candidate features retained, not the fraction of training images retained</td>
+</tr>
+<tr>
+<td>Candidate feature limit</td>
+<td>Default 50000; bounded sampling above this limit caps candidates entering coreset selection</td>
+</tr>
+<tr>
+<td>Coreset feature limit</td>
+<td>Default 5000; caps the final memory bank feature count</td>
+</tr>
+</tbody>
+</table>
+<p>The final coreset size is <code>min(coreset feature limit, max(1, int(candidate feature count × retention fraction)))</code>. Larger memory banks and image sizes generally increase RAM, GPU memory and inference computation requirements.</p>
+<p>This page has no learning rate, optimizer, epochs or early stopping settings. Progress consists of normal feature extraction, coreset sampling and OK threshold calibration.</p>
+<h2 id="thresholds-and-inference">Thresholds and inference<a class="headerlink" href="#thresholds-and-inference" title="Permanent link">&para;</a></h2>
+<p>The model is saved as <code>model.patchcore.pt</code>. Use Anomaly inference validation on this page for inference, with a single image or image folder.</p>
+<p>Anomaly scores are feature distances, not probabilities, and need not be within 0–1. During construction, OK calibration scores estimate image-level and pixel-level thresholds. The inference threshold multiplier defaults to 1: below 1 is more sensitive; above 1 is more permissive. An image score reaching the image threshold is classified as NG; the pixel threshold determines the pixel mask. These are different statistics.</p>
+<p>Results include OK/NG, anomaly scores, heatmaps, overlays, masks, raw score maps and JSON/CSV. The output directory must not be inside the input image directory, preventing generated results from becoming inputs again.</p>
+<p>This model format is not a generic ONNX, ordinary classification PT or classic inference model; do not select it on the main Model inference validation page. CPU and single NVIDIA GPU execution both use the independent anomaly detection environment.</p>
+<p>See the <a href="reference/parameters.html#anomaly">anomaly parameter table</a> for complete ranges.</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 2026.11 · Verify parameters against the effective experiment configuration and logs</p>
+
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

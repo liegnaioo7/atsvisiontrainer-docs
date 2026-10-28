@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>画像分類 2.5.0 - ATSVisionTrainer ヘルプセンター</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ATSVisionTrainer ヘルプセンター</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">はじめに</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../index.html" class="dropdown-item">ヘルプホーム</a>
+</li>
+
+<li>
+    <a href="../getting-started.html" class="dropdown-item">クイックスタート</a>
+</li>
+
+<li>
+    <a href="../datasets.html" class="dropdown-item">データセットの準備</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">モダン構成</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../modern/common.html" class="dropdown-item">共通パラメーターとデータ拡張</a>
+</li>
+
+<li>
+    <a href="../modern/detection.html" class="dropdown-item">物体検出</a>
+</li>
+
+<li>
+    <a href="../modern/classification.html" class="dropdown-item">画像分類</a>
+</li>
+
+<li>
+    <a href="../modern/segmentation.html" class="dropdown-item">インスタンスセグメンテーション</a>
+</li>
+
+<li>
+    <a href="../modern/obb.html" class="dropdown-item">回転物体検出</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">クラシック構成</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="common.html" class="dropdown-item">共通パラメーターと独立環境</a>
+</li>
+
+<li>
+    <a href="detection.html" class="dropdown-item">物体検出 2.7.0</a>
+</li>
+
+<li>
+    <a href="classification.html" class="dropdown-item active" aria-current="page">画像分類 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../anomaly.html" class="nav-link">異常検出</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../inference-export.html" class="nav-link">推論とエクスポート</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ログと履歴</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../monitoring.html" class="dropdown-item">学習グラフと生ログ</a>
+</li>
+
+<li>
+    <a href="../history.html" class="dropdown-item">学習履歴と整理</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reference/parameters.html" class="nav-link">パラメーターリファレンス</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../troubleshooting.html" class="nav-link">よくある質問</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../feedback.html" class="nav-link">フィードバック</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> 検索
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="detection.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> 前へ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../anomaly.html" class="nav-link">
+                                    次へ <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="文書の言語">
+
+<a href="../../legacy/classification.html">简体中文</a>
+
+<a href="../../en/legacy/classification.html">English</a>
+
+<a href="../../it/legacy/classification.html">Italiano</a>
+
+<a href="../../ja/legacy/classification.html" aria-current="true">日本語</a>
+
+<a href="../../zh_TW/legacy/classification.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps アノテーションソフト <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="目次">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#250" class="nav-link">クラシック画像分類 2.5.0</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">サイズと最適化</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">指標</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">自動エクスポートとデプロイ</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="250">クラシック画像分類 2.5.0<a class="headerlink" href="#250" title="Permanent link">&para;</a></h1>
+<p>画像全体を分類します。現在のプリセットは ResNet50、ResNet18、ResNet101、MobileNetV3_small_x0_35、MobileNetV3_large_x1_0 で、同梱設定ファイルが存在するものだけ表示します。</p>
+<p>分類データセットのフォルダーを一つ選択します。<code>train_list.txt</code>、<code>val_list.txt</code>、<code>Label.txt</code> を優先し、リストがない場合は <code>train/クラス名</code>、<code>val/クラス名</code> を認識します。既存の学習・検証セットを保持し、自動再分割は行いません。クラス ID と名前順を確認し、学習・推論・エクスポートで一致させてください。</p>
+<h2 id="_1">サイズと最適化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>入力は正方形の辺長で、0 は設定継承です。変更すると学習・検証クロップ、モデル入力、出力前処理を同期します。Resize の短辺は元の分類比率 256/224 に従い、全処理を単純な非クロップ変形に置き換えるわけではありません。</p>
+<p>入力サイズは業務で必要な細部に合わせてください。このページにはクラシック検出の高さ・幅の個別指定や「検証サイズのみ変更」モードはありません。学習率、オプティマイザー、重み減衰、ウォームアップ、AMP、workers は<a href="common.html">クラシック共通パラメーター</a>に従い、分類エンジン固有の設定構造へ適用します。</p>
+<h2 id="_2">指標<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>分類エンジンが実際に出力した学習・検証の正解率、損失などを表示します。検出の Precision/Recall/mAP として解釈することはできません。指標の種類はモデル設定によって異なり、返されていない項目の曲線を作成することはありません。</p>
+<h2 id="_3">自動エクスポートとデプロイ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>学習終了後、実験の <code>export</code> フォルダーへ自動エクスポートします。通常のファイルは次のとおりです。</p>
+<pre><code class="language-text">inference.pdmodel
+inference.pdiparams
+inference.pdiparams.info
+ImageSize.txt
+inference_cls.yaml
+class_names.txt
+</code></pre>
+<p><code>ImageSize.txt</code>、クラス対応表、<code>inference_cls.yaml</code> は今回の最終設定から生成します。汎用 ImageNet 設定を利用者が手作業で置き換える必要はありません。配備用 YAML は相対パスを使用するため、エクスポート先を作業ディレクトリとし、実機に合わせて配備プログラムのデバイスを設定してください。</p>
+<p>「モデル推論検証」は学習チェックポイント <code>.pdparams</code> と学習設定を使用します。エクスポートした <code>.pdmodel</code> をこの画面の重み入力として直接使うものではありません。両者の用途は異なります。</p>
+<p>全設定は<a href="../reference/parameters.html#legacy-classification">分類パラメーター表</a>を参照してください。</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">ATSVisionTrainer オンライン文書 · Windows 版 · V1.0.0 / Build 2026.11 · パラメーターは実験の最終設定とログで確認してください</p>
+
+        </footer>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u30aa\u30f3\u30e9\u30a4\u30f3\u6587\u66f8 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u30d1\u30e9\u30e1\u30fc\u30bf\u30fc\u306f\u5b9f\u9a13\u306e\u6700\u7d42\u8a2d\u5b9a\u3068\u30ed\u30b0\u3067\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044", "found": "{0} \u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "language": "\u6587\u66f8\u306e\u8a00\u8a9e", "missing_body": "\u30ca\u30d3\u30b2\u30fc\u30b7\u30e7\u30f3\u307e\u305f\u306f\u30d8\u30eb\u30d7\u30db\u30fc\u30e0\u304b\u3089\u958b\u3044\u3066\u304f\u3060\u3055\u3044\u3002", "missing_title": "\u30d8\u30eb\u30d7\u30da\u30fc\u30b8\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093", "not_found": "\u4e00\u81f4\u3059\u308b\u5185\u5bb9\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u5225\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002", "search_error": "\u691c\u7d22\u30a4\u30f3\u30c7\u30c3\u30af\u30b9\u3092\u8aad\u307f\u8fbc\u3081\u307e\u305b\u3093\u3002\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u63a5\u7d9a\u3092\u78ba\u8a8d\u3057\u3066\u30da\u30fc\u30b8\u3092\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u304f\u3060\u3055\u3044\u3002"};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">検索</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+            <div class="modal-body">
+                <p>これらのドキュメントをこちらから検索できます。検索語句を以下に入力してください。</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="検索..." id="mkdocs-search-query" title="検索語句を入力してください">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="結果がありません"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">キーボードショートカット</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">キー</th>
+                    <th>アクション</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>このヘルプを開く</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>次のページ</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>前のページ</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>検索</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

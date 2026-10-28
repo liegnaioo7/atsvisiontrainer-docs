@@ -1,0 +1,38 @@
+:root {
+  --bs-primary: #1565c0;
+  --bs-primary-rgb: 21,101,192;
+  --bs-link-color: #1967d2;
+  --bs-link-color-rgb: 25,103,210;
+  --bs-link-hover-color: #174ea6;
+  --bs-link-hover-color-rgb: 23,78,166;
+}
+body { font-family: "Segoe UI", "Microsoft YaHei UI", system-ui, sans-serif; background: #fff; }
+body::before { background: #fff; }
+.navbar { background: #1565c0 !important; box-shadow: 0 2px 6px #0d47a12e; }
+.navbar-brand { font-weight: 600; font-size: 1.1rem; }
+h1, h2, h3 { color: #0d47a1; scroll-margin-top: 90px; }
+h1 { font-size: 2rem; margin-bottom: 1.2rem; }
+h2 { margin-top: 2rem; font-size: 1.45rem; }
+p, li { line-height: 1.85; }
+.bs-sidebar { border: 1px solid #e3e8ef; border-radius: 8px; background: #fff; box-shadow: 0 1px 3px #16324f14; }
+table { font-size: .91rem; }
+th { background: #e8f0fe; }
+td { overflow-wrap: anywhere; vertical-align: top; }
+pre { border: 1px solid #d2e3fc; background: #f8faff; padding: 1rem; border-radius: 8px; }
+.admonition { padding: .8rem 1rem; border-left: 4px solid #1565c0; background: #e8f0fe; margin: 1.2rem 0; }
+.admonition.warning { border-color: #c07819; background: #fff8ea; }
+.admonition-title { font-weight: 600; margin-bottom: .3rem; }
+.help-footer { color: #657982; text-align: center; font-size: .85rem; }
+.help-toolbar { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:0 1.5rem; margin-bottom:1.2rem; }
+.help-toolbar .help-languages { padding-bottom:0; }
+.help-ops-link { display:inline-block; padding:.5rem 0; font-size:.9rem; font-weight:600; text-decoration:none; }
+.help-ops-link:hover { text-decoration:underline; }
+.help-languages { display:flex; flex-wrap:wrap; gap:.5rem 1.2rem; padding:.5rem 0 1.2rem; }
+.help-languages a { color:#1967d2; text-decoration:none; font-size:.9rem; }
+.help-languages [aria-current] { font-weight:700; border-bottom:2px solid #1565c0; }
+mark.help-match { background: #fff3b0; color: #332600; border-radius: 3px; padding: 0 .12em; box-decoration-break: clone; }
+.modal-content { border: 0; border-radius: 12px; box-shadow: 0 12px 32px #102c4c33; }
+#mkdocs-search-results article { border-bottom: 1px solid #e1e8eb; padding: .7rem 0; }
+#mkdocs-search-results article a { font-weight: 600; }
+#mkdocs-search-results p { color: #53666f; font-size: .9rem; margin: .3rem 0; }
+@media print { .navbar,.bs-sidebar { display:none; } }

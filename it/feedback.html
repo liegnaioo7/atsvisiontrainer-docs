@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Segnalazioni - ATSVisionTrainer Guida</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link href="assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">ATSVisionTrainer Guida</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Introduzione</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="index.html" class="dropdown-item">Pagina iniziale</a>
+</li>
+
+<li>
+    <a href="getting-started.html" class="dropdown-item">Guida rapida</a>
+</li>
+
+<li>
+    <a href="datasets.html" class="dropdown-item">Preparazione dei dataset</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Architetture moderne</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="modern/common.html" class="dropdown-item">Parametri comuni e aumento dati</a>
+</li>
+
+<li>
+    <a href="modern/detection.html" class="dropdown-item">Rilevamento oggetti</a>
+</li>
+
+<li>
+    <a href="modern/classification.html" class="dropdown-item">Classificazione immagini</a>
+</li>
+
+<li>
+    <a href="modern/segmentation.html" class="dropdown-item">Segmentazione di istanze</a>
+</li>
+
+<li>
+    <a href="modern/obb.html" class="dropdown-item">Rilevamento orientato</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Architetture classiche</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="legacy/common.html" class="dropdown-item">Parametri comuni e ambienti indipendenti</a>
+</li>
+
+<li>
+    <a href="legacy/detection.html" class="dropdown-item">Rilevamento oggetti 2.7.0</a>
+</li>
+
+<li>
+    <a href="legacy/classification.html" class="dropdown-item">Classificazione immagini 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="anomaly.html" class="nav-link">Rilevamento anomalie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="inference-export.html" class="nav-link">Inferenza ed esportazione</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Log e cronologia</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="monitoring.html" class="dropdown-item">Grafici e log originali</a>
+</li>
+
+<li>
+    <a href="history.html" class="dropdown-item">Cronologia e pulizia</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reference/parameters.html" class="nav-link">Riferimento dei parametri</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="troubleshooting.html" class="nav-link">Domande frequenti</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feedback.html" class="nav-link active" aria-current="page">Segnalazioni</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Cerca
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="troubleshooting.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Precedente
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Successivo <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Lingua della documentazione">
+
+<a href="./../feedback.html">简体中文</a>
+
+<a href="./../en/feedback.html">English</a>
+
+<a href="./../it/feedback.html" aria-current="true">Italiano</a>
+
+<a href="./../ja/feedback.html">日本語</a>
+
+<a href="./../zh_TW/feedback.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">Software di annotazione ATSVisionOps <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Tabella dei Contenuti">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#segnalazioni-e-stato-di-avanzamento" class="nav-link">Segnalazioni e stato di avanzamento</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#descrizione-e-allegati" class="nav-link">Descrizione e allegati</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anteprima-e-invio" class="nav-link">Anteprima e invio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cronologia-e-stato" class="nav-link">Cronologia e stato</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="segnalazioni-e-stato-di-avanzamento">Segnalazioni e stato di avanzamento<a class="headerlink" href="#segnalazioni-e-stato-di-avanzamento" title="Permanent link">&para;</a></h1>
+<p>Segnalazioni in fondo alla barra laterale invia problemi all'assistenza tecnica. Invio, caricamento allegati e consultazione dello stato richiedono Internet. Bozze, cronologia locale e anteprime delle schermate funzionano offline.</p>
+<h2 id="descrizione-e-allegati">Descrizione e allegati<a class="headerlink" href="#descrizione-e-allegati" title="Permanent link">&para;</a></h2>
+<p>Scegliere un tipo e descrivere problema, passaggi per riprodurlo e risultato atteso. La descrizione accetta fino a 30000 caratteri; i contatti sono facoltativi e limitati a 500 caratteri.</p>
+<p>Includi informazioni di sistema è attivo per impostazione predefinita. Raccoglie versione del software, sistema operativo, CPU, RAM, modello e memoria GPU, driver grafico e versioni delle dipendenze principali senza avviare i motori di addestramento. Non raccoglie attivamente codici macchina, chiavi di licenza, nomi utente o dataset.</p>
+<p>Includi log di addestramento è attivo per impostazione predefinita. Include console attuale e file esistenti <code>engine.log</code>, <code>results.csv</code> e <code>training_metrics.jsonl</code> dell'esperimento selezionato. Viene selezionato l'esperimento registrato più di recente; è possibile scegliere Solo log della console attuale. Si acquisiscono solo gli ultimi 256 KB circa di ogni file, senza modificarlo né caricare modelli o immagini di addestramento.</p>
+<p>Percorsi locali comuni e credenziali vengono nascosti automaticamente nei log, ma non tutti i dati sensibili possono essere riconosciuti. Controllare l'anteprima prima dell'invio e deselezionare log o informazioni di sistema non necessari.</p>
+<p>Selezionare immagini locali o incollare schermate dagli appunti. Fare doppio clic sull'elenco per l'anteprima, oppure rimuovere un allegato. Sono ammesse fino a 4 immagini, convertite in PNG; il lato lungo oltre 4096 pixel viene ridotto e ogni immagine elaborata può occupare al massimo 4 MB.</p>
+<h2 id="anteprima-e-invio">Anteprima e invio<a class="headerlink" href="#anteprima-e-invio" title="Permanent link">&para;</a></h2>
+<p>Fare clic su Anteprima e invio segnalazione, verificare contatti, informazioni di sistema, log ed elenco schermate, poi Conferma invio. Annullare l'anteprima non carica nulla sulla piattaforma di feedback; bozza e anteprima rimangono locali.</p>
+<p>Gli allegati vengono caricati prima della creazione della segnalazione. La visibilità di descrizione e allegati dipende dai permessi della piattaforma di feedback; non è una chat privata. Il modulo viene bloccato durante l'invio per evitare modifiche. È possibile richiedere l'annullamento, attendendo però la fine della richiesta di rete attuale.</p>
+<h2 id="cronologia-e-stato">Cronologia e stato<a class="headerlink" href="#cronologia-e-stato" title="Permanent link">&para;</a></h2>
+<p>La cronologia contiene solo le registrazioni di questo computer: numero, stato, ultima sincronizzazione, descrizione e risposte sincronizzate. Bozze e registrazioni sono salvate nei dati applicativi locali dell'utente e rimangono dopo la chiusura del software.</p>
+<p>Dopo l'invio riuscito, Consulta stato recupera stato e risposte della segnalazione. Gli stati comprendono Ricevuta, In lavorazione, Chiusa e Rifiutata. Chiusa non significa che il software abbia verificato la soluzione. L'assistenza tecnica gestisce e risponde; il client non genera automaticamente conclusioni sulla risoluzione.</p>
+<p>Vengono recuperate al massimo le prime 100 risposte. Per la registrazione completa, contattare l'assistenza tecnica.</p>
+<p>Le registrazioni con caricamento fallito o invio sicuramente non riuscito possono essere riviste e ritentate. Gli allegati già caricati vengono riutilizzati, senza nuovo caricamento.</p>
+<p>Se la creazione della segnalazione scade, perde la connessione o restituisce una risposta ambigua, lo stato diventa Da verificare e il nuovo invio diretto viene bloccato. Contattare l'assistenza per confermare l'esito. Se la segnalazione esiste, associarla inserendo il numero fornito dall'assistenza; il software ne verifica la corrispondenza con il feedback locale prima di associarla e consultarne lo stato.</p>
+<p>L'uscita è bloccata durante un'operazione di feedback. Annullare o attenderne la conclusione prima di chiudere. L'uscita normale salva la bozza attuale.</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
+
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Cerca</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body">
+                <p>Da qui puoi cercare questi documenti. Inserisci i termini di ricerca qui sotto.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Cerca..." id="mkdocs-search-query" title="Digita il termine di ricerca qui">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="Nessun risultato trovato"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Tastiera Rapida</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Chiavi</th>
+                    <th>Azione</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Apri questa guida</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Pagina successiva</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Pagina precedente</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Cerca</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh_Hant_TW" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>異常偵測 - ATSVisionTrainer 說明中心</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link href="assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">ATSVisionTrainer 說明中心</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">使用入門</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="index.html" class="dropdown-item">說明首頁</a>
+</li>
+
+<li>
+    <a href="getting-started.html" class="dropdown-item">快速入門</a>
+</li>
+
+<li>
+    <a href="datasets.html" class="dropdown-item">資料集準備</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">現代架構</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="modern/common.html" class="dropdown-item">通用參數與增強</a>
+</li>
+
+<li>
+    <a href="modern/detection.html" class="dropdown-item">目標偵測</a>
+</li>
+
+<li>
+    <a href="modern/classification.html" class="dropdown-item">影像分類</a>
+</li>
+
+<li>
+    <a href="modern/segmentation.html" class="dropdown-item">實例分割</a>
+</li>
+
+<li>
+    <a href="modern/obb.html" class="dropdown-item">旋轉框偵測</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">經典架構</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="legacy/common.html" class="dropdown-item">通用參數與獨立環境</a>
+</li>
+
+<li>
+    <a href="legacy/detection.html" class="dropdown-item">目標偵測 2.7.0</a>
+</li>
+
+<li>
+    <a href="legacy/classification.html" class="dropdown-item">影像分類 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="anomaly.html" class="nav-link active" aria-current="page">異常偵測</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="inference-export.html" class="nav-link">推論與匯出</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">日誌與歷史</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="monitoring.html" class="dropdown-item">訓練圖表與原始日誌</a>
+</li>
+
+<li>
+    <a href="history.html" class="dropdown-item">訓練歷史與清理</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reference/parameters.html" class="nav-link">參數參考</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="troubleshooting.html" class="nav-link">常見問題</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feedback.html" class="nav-link">意見回饋</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> 搜尋
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="legacy/classification.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> 上一頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="inference-export.html" class="nav-link">
+                                    下一頁 <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="文件語言">
+
+<a href="./../anomaly.html">简体中文</a>
+
+<a href="./../en/anomaly.html">English</a>
+
+<a href="./../it/anomaly.html">Italiano</a>
+
+<a href="./../ja/anomaly.html">日本語</a>
+
+<a href="./../zh_TW/anomaly.html" aria-current="true">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 標註軟體 <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="目錄">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#atsanomaly" class="nav-link">ATSAnomaly 異常偵測</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">訓練與校準資料</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">構建參數</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">閾值與推論</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="atsanomaly">ATSAnomaly 異常偵測<a class="headerlink" href="#atsanomaly" title="Permanent link">&para;</a></h1>
+<p>適合僅使用正常 OK 圖片建立特徵庫，再判斷新圖片是否偏離正常分佈的場景。當前實現基於 PatchCore 方法，不按普通分類方式進行多輪梯度訓練。</p>
+<h2 id="_1">訓練與校準資料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>訓練目錄只放 OK 圖片。獨立校準目錄也只放 OK 圖；留空時按內容去重，固定隨機種子 42，留出約 20% 做校準，至少需要 3 張不同圖片。校準圖不參與特徵庫構建，訓練與獨立校準之間內容重複會報錯。</p>
+<p>僅用 OK 圖估計閾值，不能據此聲稱已測得缺陷召回率、誤檢率或生產精度；需要獨立 OK/NG 測試樣本驗證業務效果。</p>
+<h2 id="_2">構建參數<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>骨幹</td>
+<td>ResNet18（較快）或 Wide ResNet50-2（高容量），使用隨附預訓練權重且凍結參數</td>
+</tr>
+<tr>
+<td>影像尺寸</td>
+<td>預設 256；完整圖片縮放為正方形，不中心裁掉邊緣，可能改變長寬比；64～1024 且為 32 的倍數</td>
+</tr>
+<tr>
+<td>提取批大小</td>
+<td>預設 2，範圍 1～16；決定特徵提取批次，顯示記憶體不足時減小</td>
+</tr>
+<tr>
+<td>核心集保留比例</td>
+<td>預設 0.01；從候選特徵中保留的比例，不是保留訓練圖片的比例</td>
+</tr>
+<tr>
+<td>候選特徵上限</td>
+<td>預設 50000，超出時有界抽樣，限制參與核心集選擇的候選數量</td>
+</tr>
+<tr>
+<td>核心集特徵上限</td>
+<td>預設 5000，限制最終記憶庫特徵數</td>
+</tr>
+</tbody>
+</table>
+<p>最終核心集數量為 <code>min(核心集特徵上限, max(1, int(候選特徵數 × 保留比例)))</code>。特徵庫和影像尺寸增大通常會增加記憶體、顯示記憶體及推論計算量。</p>
+<p>此頁面沒有學習率、最佳化器、epochs 或早停參數；進度分為正常特徵提取、核心集取樣和 OK 閾值校準三個階段。</p>
+<h2 id="_3">閾值與推論<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>模型儲存為 <code>model.patchcore.pt</code>，推論位於本頁面的“異常推論驗證”。支援單圖或圖片資料夾。</p>
+<p>異常分數是特徵距離，不是機率，不要求落在 0～1。構建時用 OK 校準分數估計影像級和像素級閾值。推論閾值倍率預設 1：小於 1 更敏感，大於 1 更寬鬆。影像分數達到影像閾值判為 NG，像素遮罩由像素閾值決定，二者不是同一個統計量。</p>
+<p>結果包括 OK/NG、異常分數、熱力圖、疊加圖、遮罩、原始分數圖及 JSON/CSV。輸出目錄不得位於輸入圖片目錄中，防止結果再次被當作輸入。</p>
+<p>當前模型格式不是通用 ONNX、普通分類 PT 或經典推論模型；不要在主“模型推論驗證”裡選擇它。CPU 和單張 NVIDIA GPU 均使用獨立異常偵測環境。</p>
+<p>完整範圍見<a href="reference/parameters.html#anomaly">異常偵測參數表</a>。</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">ATSVisionTrainer 線上文件 · Windows 版 · V1.0.0 / Build 2026.11 · 參數以實驗最終設定和日誌為準</p>
+
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u7dda\u4e0a\u6587\u4ef6 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u53c3\u6578\u4ee5\u5be6\u9a57\u6700\u7d42\u8a2d\u5b9a\u548c\u65e5\u8a8c\u70ba\u6e96", "found": "\u627e\u5230 {0} \u7b46\u7d50\u679c", "language": "\u6587\u4ef6\u8a9e\u8a00", "missing_body": "\u8acb\u5f9e\u5c0e\u89bd\u6216\u8aaa\u660e\u9996\u9801\u9032\u5165\u3002", "missing_title": "\u627e\u4e0d\u5230\u6b64\u8aaa\u660e\u9801\u9762", "not_found": "\u627e\u4e0d\u5230\u7b26\u5408\u7684\u5167\u5bb9\uff0c\u8acb\u5617\u8a66\u5176\u4ed6\u95dc\u9375\u5b57\u3002", "search_error": "\u7121\u6cd5\u8b80\u53d6\u641c\u5c0b\u7d22\u5f15\uff0c\u8acb\u6aa2\u67e5\u7db2\u8def\u9023\u7dda\u4e26\u91cd\u65b0\u6574\u7406\u9801\u9762\u3002"};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">搜尋</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+            </div>
+            <div class="modal-body">
+                <p>從這裡您可以搜尋這些文件。請在下方輸入您要搜尋的內容。</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="搜尋..." id="mkdocs-search-query" title="在此輸入要搜尋的內容">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="沒有找到結果"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">鍵盤快捷鍵</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">按鍵</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>開啟這個說明</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>下一頁</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>上一頁</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>搜尋</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

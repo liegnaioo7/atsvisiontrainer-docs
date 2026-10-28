@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Grafici e log originali - ATSVisionTrainer Guida</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link href="assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">ATSVisionTrainer Guida</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Introduzione</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="index.html" class="dropdown-item">Pagina iniziale</a>
+</li>
+
+<li>
+    <a href="getting-started.html" class="dropdown-item">Guida rapida</a>
+</li>
+
+<li>
+    <a href="datasets.html" class="dropdown-item">Preparazione dei dataset</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Architetture moderne</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="modern/common.html" class="dropdown-item">Parametri comuni e aumento dati</a>
+</li>
+
+<li>
+    <a href="modern/detection.html" class="dropdown-item">Rilevamento oggetti</a>
+</li>
+
+<li>
+    <a href="modern/classification.html" class="dropdown-item">Classificazione immagini</a>
+</li>
+
+<li>
+    <a href="modern/segmentation.html" class="dropdown-item">Segmentazione di istanze</a>
+</li>
+
+<li>
+    <a href="modern/obb.html" class="dropdown-item">Rilevamento orientato</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Architetture classiche</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="legacy/common.html" class="dropdown-item">Parametri comuni e ambienti indipendenti</a>
+</li>
+
+<li>
+    <a href="legacy/detection.html" class="dropdown-item">Rilevamento oggetti 2.7.0</a>
+</li>
+
+<li>
+    <a href="legacy/classification.html" class="dropdown-item">Classificazione immagini 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="anomaly.html" class="nav-link">Rilevamento anomalie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="inference-export.html" class="nav-link">Inferenza ed esportazione</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Log e cronologia</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="monitoring.html" class="dropdown-item active" aria-current="page">Grafici e log originali</a>
+</li>
+
+<li>
+    <a href="history.html" class="dropdown-item">Cronologia e pulizia</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reference/parameters.html" class="nav-link">Riferimento dei parametri</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="troubleshooting.html" class="nav-link">Domande frequenti</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feedback.html" class="nav-link">Segnalazioni</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Cerca
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="inference-export.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Precedente
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="history.html" class="nav-link">
+                                    Successivo <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Lingua della documentazione">
+
+<a href="./../monitoring.html">简体中文</a>
+
+<a href="./../en/monitoring.html">English</a>
+
+<a href="./../it/monitoring.html" aria-current="true">Italiano</a>
+
+<a href="./../ja/monitoring.html">日本語</a>
+
+<a href="./../zh_TW/monitoring.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">Software di annotazione ATSVisionOps <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Tabella dei Contenuti">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#grafici-di-addestramento-e-log-originali" class="nav-link">Grafici di addestramento e log originali</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#metriche-per-architettura" class="nav-link">Metriche per architettura</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#controlli-dei-grafici" class="nav-link">Controlli dei grafici</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#diagnostica-e-stato-delle-attivita" class="nav-link">Diagnostica e stato delle attività</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="grafici-di-addestramento-e-log-originali">Grafici di addestramento e log originali<a class="headerlink" href="#grafici-di-addestramento-e-log-originali" title="Permanent link">&para;</a></h1>
+<p>La console mantiene due viste: Grafici di addestramento e Log originali. I grafici non sostituiscono i log e non inventano metriche non prodotte.</p>
+<h2 id="metriche-per-architettura">Metriche per architettura<a class="headerlink" href="#metriche-per-architettura" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Attività</th>
+<th>Significato dei grafici</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rilevamento/segmentazione/OBB moderni</td>
+<td>Perdita di addestramento e validazione, metriche effettive di rilevamento, tasso di apprendimento</td>
+</tr>
+<tr>
+<td>Classificazione moderna</td>
+<td>Loss di classificazione, accuratezza effettiva e tasso di apprendimento</td>
+</tr>
+<tr>
+<td>Rilevamento classico</td>
+<td>Perdita di addestramento, risultati reali di validazione come mAP, tasso di apprendimento</td>
+</tr>
+<tr>
+<td>Classificazione classica</td>
+<td>Perdita di addestramento/validazione, accuratezza effettiva e altre metriche, tasso di apprendimento</td>
+</tr>
+<tr>
+<td>Rilevamento anomalie</td>
+<td>Dimensioni delle caratteristiche e del coreset, soglie di calibrazione e durata delle fasi di costruzione; non curve della perdita basate sul gradiente</td>
+</tr>
+</tbody>
+</table>
+<p>Senza un set di validazione indipendente per COCO classico, il pannello segnala solo addestramento, senza calcolo di mAP. Anche con validazione, la valutazione segue l'intervallo della configurazione del modello e non garantisce valori a ogni epoca. Gli zeri validi sono mantenuti; i valori mancanti non vengono sostituiti con zero.</p>
+<h2 id="controlli-dei-grafici">Controlli dei grafici<a class="headerlink" href="#controlli-dei-grafici" title="Permanent link">&para;</a></h2>
+<p>Passare sulle curve per visualizzare i valori; fare clic sulla legenda per mostrarle o nasconderle, trascinare un rettangolo per ingrandire e fare doppio clic per ripristinare. È possibile esportare le metriche in CSV, salvare i grafici PNG, aprire la cartella dell'esperimento e caricare metriche storiche JSONL/CSV.</p>
+<p>File come <code>training_metrics.jsonl</code> generati durante l'addestramento permettono di ripristinare i valori registrati. Se un vecchio log non contiene una metrica, il caricamento della cronologia non riesegue la validazione e non deduce l'accuratezza dalla loss.</p>
+<h2 id="diagnostica-e-stato-delle-attivita">Diagnostica e stato delle attività<a class="headerlink" href="#diagnostica-e-stato-delle-attivita" title="Permanent link">&para;</a></h2>
+<p>In caso di errore, passare ai log originali e leggere la prima eccezione reale con il contesto, non solo il codice di uscita finale. Fine delle epoche, arresto anticipato, interruzione dell'utente ed errore sono stati diversi.</p>
+<p>Gli esperimenti classici e di anomalie salvano <code>engine.log</code>. Dopo una chiusura imprevista, aprire la directory dell'esperimento dalla cronologia per leggere il log salvato. Le architetture moderne hanno generalmente anche <code>results.csv</code>, configurazione e metriche; il log completo dell'interfaccia non è garantito dopo il riavvio del processo. Usare Esporta log per conservare il testo attuale della console.</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
+
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Cerca</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body">
+                <p>Da qui puoi cercare questi documenti. Inserisci i termini di ricerca qui sotto.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Cerca..." id="mkdocs-search-query" title="Digita il termine di ricerca qui">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="Nessun risultato trovato"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Tastiera Rapida</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Chiavi</th>
+                    <th>Azione</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Apri questa guida</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Pagina successiva</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Pagina precedente</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Cerca</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

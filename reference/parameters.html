@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="zh_Hans_CN" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>参数参考 - ATSVisionTrainer 帮助中心</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ATSVisionTrainer 帮助中心</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">使用入门</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../index.html" class="dropdown-item">帮助首页</a>
+</li>
+
+<li>
+    <a href="../getting-started.html" class="dropdown-item">快速开始</a>
+</li>
+
+<li>
+    <a href="../datasets.html" class="dropdown-item">数据集准备</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">现代架构</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../modern/common.html" class="dropdown-item">通用参数与增强</a>
+</li>
+
+<li>
+    <a href="../modern/detection.html" class="dropdown-item">目标检测</a>
+</li>
+
+<li>
+    <a href="../modern/classification.html" class="dropdown-item">图像分类</a>
+</li>
+
+<li>
+    <a href="../modern/segmentation.html" class="dropdown-item">实例分割</a>
+</li>
+
+<li>
+    <a href="../modern/obb.html" class="dropdown-item">旋转框检测</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">经典架构</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../legacy/common.html" class="dropdown-item">通用参数与独立环境</a>
+</li>
+
+<li>
+    <a href="../legacy/detection.html" class="dropdown-item">目标检测 2.7.0</a>
+</li>
+
+<li>
+    <a href="../legacy/classification.html" class="dropdown-item">图像分类 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../anomaly.html" class="nav-link">异常检测</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../inference-export.html" class="nav-link">推理与导出</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">日志与历史</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../monitoring.html" class="dropdown-item">训练图表与原始日志</a>
+</li>
+
+<li>
+    <a href="../history.html" class="dropdown-item">训练历史与清理</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="parameters.html" class="nav-link active" aria-current="page">参数参考</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../troubleshooting.html" class="nav-link">常见问题</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../feedback.html" class="nav-link">意见反馈</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> 搜索
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../history.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> 上一章
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../troubleshooting.html" class="nav-link">
+                                    下一章 <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="文档语言">
+
+<a href="../reference/parameters.html" aria-current="true">简体中文</a>
+
+<a href="../en/reference/parameters.html">English</a>
+
+<a href="../it/reference/parameters.html">Italiano</a>
+
+<a href="../ja/reference/parameters.html">日本語</a>
+
+<a href="../zh_TW/reference/parameters.html">繁體中文</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 标注软件 <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="目录">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">全架构参数核对表</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#modern-detection" class="nav-link">现代目标检测</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-classification" class="nav-link">现代图像分类</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-segmentation" class="nav-link">现代实例分割</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-obb" class="nav-link">现代旋转框检测</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#legacy-detection" class="nav-link">经典目标检测 2.7.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#legacy-classification" class="nav-link">经典图像分类 2.5.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anomaly" class="nav-link">异常检测</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">全架构参数核对表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>以下默认值和数值范围由当前实际界面读取；功能说明与软件适配代码逐项核对。切换预设、设备或高级 YAML 后，实际生效值以实验中的最终配置为准。</p>
+<p>“沿用配置”的占位值不是引擎训练值；空路径表示用户尚未选择。现代 <code>workers</code> 与经典 Windows 的 <code>workers</code> 实现不同。</p>
+<h2 id="modern-detection">现代目标检测<a class="headerlink" href="#modern-detection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>界面默认/传递值</th>
+<th>可输入数值范围</th>
+<th>实际含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>现代架构的单个输入尺寸。分类按其预处理裁剪，检测/分割/旋转框按引擎规则缩放及填充；不是直接设置任意高宽。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>最大训练轮数；现代架构可能因早停或手动停止提前结束。</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>现代架构连续无验证指标改善的早停耐心轮数；0 关闭早停。</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>8</code></td>
+<td>0～64</td>
+<td>现代架构是数据加载进程数；经典架构在 Windows 上大于 0 使用线程并行读图及预处理，0 使用原有加载方式。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>随机种子；相同种子不保证跨设备、跨环境的结果完全一致。</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>混合精度。现代界面 True/False；经典界面沿用配置/关闭/开启，仅 GPU 可显式开启。CPU 不启用经典 AMP。</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择优化器。现代 auto 会覆盖手动初始学习率、动量，并将热身偏置学习率设为 0；经典 config 沿用 YAML。</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>SGD 类优化器的动量；Adam 类通常作为 beta1。现代 auto 可能覆盖此项。</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>权重衰减系数；经典负值默认表示沿用配置，不向引擎传递负衰减。</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>预热轮数。现代支持小数；经典仅在选择余弦策略时可调，必须小于总轮数。</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>现代检测/分割/旋转框预热阶段的初始动量。</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>现代检测/分割/旋转框预热阶段的偏置初始学习率；auto 优化器会将其设为 0。</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>训练时随机旋转的最大绝对角度；0 关闭。分类使用本软件的显式随机旋转适配。</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>训练时上下翻转的概率。</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>训练时左右翻转的概率。</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>训练时平移幅度，相对图像尺寸，不是像素数量。</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>训练时随机缩放幅度；不是目标输入尺寸或推理放大倍数。</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>训练时马赛克拼图概率；仍遵循引擎的末期关闭规则。</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>框定位损失权重，不是检测阈值。</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>目标类别损失权重，不是类别数。</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>分布焦点损失（DFL）权重；是否产生该损失由当前模型结构决定。</td>
+</tr>
+<tr>
+<td><code>copy_paste</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>检测按概率复制同图目标到不重叠位置；分割为原生掩膜复制粘贴比例。没有安全位置会跳过；OBB 无此控件。</td>
+</tr>
+<tr>
+<td><code>erasing</code></td>
+<td><code>0.4</code></td>
+<td>0.0～1.0</td>
+<td>检测和分割只擦除目标框之外的背景，保留目标和标注；OBB 无此控件。</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m.pt"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择与任务匹配的预置权重。实际文件由软件随附目录定位。</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择当前任务的数据集；格式与训练/验证规则见对应架构章节。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-classification">现代图像分类<a class="headerlink" href="#modern-classification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>界面默认/传递值</th>
+<th>可输入数值范围</th>
+<th>实际含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>960</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>现代架构的单个输入尺寸。分类按其预处理裁剪，检测/分割/旋转框按引擎规则缩放及填充；不是直接设置任意高宽。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>500</code></td>
+<td>1～10000</td>
+<td>最大训练轮数；现代架构可能因早停或手动停止提前结束。</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>现代架构连续无验证指标改善的早停耐心轮数；0 关闭早停。</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>4</code></td>
+<td>0～64</td>
+<td>现代架构是数据加载进程数；经典架构在 Windows 上大于 0 使用线程并行读图及预处理，0 使用原有加载方式。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>8</code></td>
+<td>1～512</td>
+<td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>随机种子；相同种子不保证跨设备、跨环境的结果完全一致。</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>混合精度。现代界面 True/False；经典界面沿用配置/关闭/开启，仅 GPU 可显式开启。CPU 不启用经典 AMP。</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"AdamW"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择优化器。现代 auto 会覆盖手动初始学习率、动量，并将热身偏置学习率设为 0；经典 config 沿用 YAML。</td>
+</tr>
+<tr>
+<td><code>lr0</code></td>
+<td><code>0.0005</code></td>
+<td>1e-05～0.1</td>
+<td>现代分类的初始学习率；optimizer=auto 时由引擎重新选择。检测、分割、旋转框页面没有这个输入框。</td>
+</tr>
+<tr>
+<td><code>lrf</code></td>
+<td><code>0.01</code></td>
+<td>0.0001～1.0</td>
+<td>现代分类的最终学习率倍率，相对初始学习率，不是一个独立的绝对学习率。</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.9</code></td>
+<td>0.0～1.0</td>
+<td>SGD 类优化器的动量；Adam 类通常作为 beta1。现代 auto 可能覆盖此项。</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.05</code></td>
+<td>0.0～0.5</td>
+<td>权重衰减系数；经典负值默认表示沿用配置，不向引擎传递负衰减。</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>5.0</code></td>
+<td>0.0～50.0</td>
+<td>预热轮数。现代支持小数；经典仅在选择余弦策略时可调，必须小于总轮数。</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>180.0</code></td>
+<td>0.0～180.0</td>
+<td>训练时随机旋转的最大绝对角度；0 关闭。分类使用本软件的显式随机旋转适配。</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>训练时上下翻转的概率。</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>训练时左右翻转的概率。</td>
+</tr>
+<tr>
+<td><code>crop_fraction</code></td>
+<td><code>1.0</code></td>
+<td>0.1～1.0</td>
+<td>现代分类短边保留比例；小于 1 时先将短边放大至 imgsz/比例再中心裁剪。训练、验证、软件推理保持这一中心区域规则；训练仍叠加随机增强。</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-cls.pt"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择与任务匹配的预置权重。实际文件由软件随附目录定位。</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择当前任务的数据集；格式与训练/验证规则见对应架构章节。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-segmentation">现代实例分割<a class="headerlink" href="#modern-segmentation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>界面默认/传递值</th>
+<th>可输入数值范围</th>
+<th>实际含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>现代架构的单个输入尺寸。分类按其预处理裁剪，检测/分割/旋转框按引擎规则缩放及填充；不是直接设置任意高宽。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>最大训练轮数；现代架构可能因早停或手动停止提前结束。</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>现代架构连续无验证指标改善的早停耐心轮数；0 关闭早停。</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>8</code></td>
+<td>0～64</td>
+<td>现代架构是数据加载进程数；经典架构在 Windows 上大于 0 使用线程并行读图及预处理，0 使用原有加载方式。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>随机种子；相同种子不保证跨设备、跨环境的结果完全一致。</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>混合精度。现代界面 True/False；经典界面沿用配置/关闭/开启，仅 GPU 可显式开启。CPU 不启用经典 AMP。</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择优化器。现代 auto 会覆盖手动初始学习率、动量，并将热身偏置学习率设为 0；经典 config 沿用 YAML。</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>SGD 类优化器的动量；Adam 类通常作为 beta1。现代 auto 可能覆盖此项。</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>权重衰减系数；经典负值默认表示沿用配置，不向引擎传递负衰减。</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>预热轮数。现代支持小数；经典仅在选择余弦策略时可调，必须小于总轮数。</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>现代检测/分割/旋转框预热阶段的初始动量。</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>现代检测/分割/旋转框预热阶段的偏置初始学习率；auto 优化器会将其设为 0。</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>训练时随机旋转的最大绝对角度；0 关闭。分类使用本软件的显式随机旋转适配。</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>训练时上下翻转的概率。</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>训练时左右翻转的概率。</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>训练时平移幅度，相对图像尺寸，不是像素数量。</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>训练时随机缩放幅度；不是目标输入尺寸或推理放大倍数。</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>训练时马赛克拼图概率；仍遵循引擎的末期关闭规则。</td>
+</tr>
+<tr>
+<td><code>copy_paste</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>检测按概率复制同图目标到不重叠位置；分割为原生掩膜复制粘贴比例。没有安全位置会跳过；OBB 无此控件。</td>
+</tr>
+<tr>
+<td><code>erasing</code></td>
+<td><code>0.4</code></td>
+<td>0.0～1.0</td>
+<td>检测和分割只擦除目标框之外的背景，保留目标和标注；OBB 无此控件。</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>框定位损失权重，不是检测阈值。</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>目标类别损失权重，不是类别数。</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>分布焦点损失（DFL）权重；是否产生该损失由当前模型结构决定。</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-seg.pt"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择与任务匹配的预置权重。实际文件由软件随附目录定位。</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择当前任务的数据集；格式与训练/验证规则见对应架构章节。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-obb">现代旋转框检测<a class="headerlink" href="#modern-obb" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>界面默认/传递值</th>
+<th>可输入数值范围</th>
+<th>实际含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>现代架构的单个输入尺寸。分类按其预处理裁剪，检测/分割/旋转框按引擎规则缩放及填充；不是直接设置任意高宽。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>最大训练轮数；现代架构可能因早停或手动停止提前结束。</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>现代架构连续无验证指标改善的早停耐心轮数；0 关闭早停。</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>0</code></td>
+<td>0～64</td>
+<td>现代架构是数据加载进程数；经典架构在 Windows 上大于 0 使用线程并行读图及预处理，0 使用原有加载方式。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>随机种子；相同种子不保证跨设备、跨环境的结果完全一致。</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>混合精度。现代界面 True/False；经典界面沿用配置/关闭/开启，仅 GPU 可显式开启。CPU 不启用经典 AMP。</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择优化器。现代 auto 会覆盖手动初始学习率、动量，并将热身偏置学习率设为 0；经典 config 沿用 YAML。</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>SGD 类优化器的动量；Adam 类通常作为 beta1。现代 auto 可能覆盖此项。</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>权重衰减系数；经典负值默认表示沿用配置，不向引擎传递负衰减。</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>预热轮数。现代支持小数；经典仅在选择余弦策略时可调，必须小于总轮数。</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>现代检测/分割/旋转框预热阶段的初始动量。</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>现代检测/分割/旋转框预热阶段的偏置初始学习率；auto 优化器会将其设为 0。</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>训练时随机旋转的最大绝对角度；0 关闭。分类使用本软件的显式随机旋转适配。</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>训练时上下翻转的概率。</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>训练时左右翻转的概率。</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>训练时平移幅度，相对图像尺寸，不是像素数量。</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>训练时随机缩放幅度；不是目标输入尺寸或推理放大倍数。</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>训练时马赛克拼图概率；仍遵循引擎的末期关闭规则。</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>框定位损失权重，不是检测阈值。</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>目标类别损失权重，不是类别数。</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>分布焦点损失（DFL）权重；是否产生该损失由当前模型结构决定。</td>
+</tr>
+<tr>
+<td><code>angle</code></td>
+<td><code>1.0</code></td>
+<td>0.0～20.0</td>
+<td>旋转框角度损失权重，不是增强旋转角度；是否使用该项由 OBB 模型结构决定。</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-obb.pt"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择与任务匹配的预置权重。实际文件由软件随附目录定位。</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择当前任务的数据集；格式与训练/验证规则见对应架构章节。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legacy-detection">经典目标检测 2.7.0<a class="headerlink" href="#legacy-detection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>界面默认/传递值</th>
+<th>可输入数值范围</th>
+<th>实际含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python</code></td>
+<td><code>"&lt;软件目录&gt;\\Paddle\\runtime-cpu\\python.exe"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典架构独立运行环境的解释器；由 CPU/GPU 选择自动定位，也可手动指定兼容环境。</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>"&lt;软件目录&gt;\\Paddle\\PaddleDetection-2.7.0\\configs\\ppyoloe\\ppyoloe_plus_crn_s_80e_coco.yml"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>参考 YAML；s/m/l/x/sod 为经典检测预设，分类为实际预置配置名称。</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td><code>"&lt;软件目录&gt;\\runs\\classic_det"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典训练输出根目录；每次新建独立时间戳实验子目录。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>100</code></td>
+<td>1～100000</td>
+<td>最大训练轮数；现代架构可能因早停或手动停止提前结束。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>4</code></td>
+<td>1～4096</td>
+<td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>随机种子；相同种子不保证跨设备、跨环境的结果完全一致。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+</tr>
+<tr>
+<td><code>weight_mode</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>config 沿用配置中的预训练设置；local 使用本地 .pdparams；random 随机初始化。config 可能联网下载权重。</td>
+</tr>
+<tr>
+<td><code>weights</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>仅在选择本地预训练权重时使用的 .pdparams 文件。</td>
+</tr>
+<tr>
+<td><code>dataset.mode</code></td>
+<td><code>"coco"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典检测默认 coco，分类默认 classification；config 表示沿用 YAML 中的数据设置。</td>
+</tr>
+<tr>
+<td><code>dataset.root</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典数据集根目录。只选一个文件夹，识别规则见数据集章节。</td>
+</tr>
+<tr>
+<td><code>dataset.evaluate_on_train</code></td>
+<td><code>false</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>默认关闭；开启后用全部训练图片和标注替代独立验证集执行评估，指标仅反映训练集拟合情况。</td>
+</tr>
+<tr>
+<td><code>training_options.image_size_mode</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典检测 config 沿用尺寸，fixed 统一训练/验证/导出尺寸，eval 只改验证/测试/导出尺寸。</td>
+</tr>
+<tr>
+<td><code>training_options.image_height</code></td>
+<td><code>640</code></td>
+<td>96～8192</td>
+<td>经典检测自定义高度，96～8192 且为 32 的倍数；尺寸模式为 config 时不生效。</td>
+</tr>
+<tr>
+<td><code>training_options.image_width</code></td>
+<td><code>640</code></td>
+<td>96～8192</td>
+<td>经典检测自定义宽度，96～8192 且为 32 的倍数；尺寸模式为 config 时不生效。</td>
+</tr>
+<tr>
+<td><code>training_options.workers</code></td>
+<td><code>0</code></td>
+<td>0～32</td>
+<td>现代架构是数据加载进程数；经典架构在 Windows 上大于 0 使用线程并行读图及预处理，0 使用原有加载方式。</td>
+</tr>
+<tr>
+<td><code>training_options.learning_rate</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>0.0～100.0</td>
+<td>经典初始学习率，0 在界面中表示沿用配置；实际未覆盖时传空值。</td>
+</tr>
+<tr>
+<td><code>training_options.weight_decay</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>-1.0～10.0</td>
+<td>权重衰减系数；经典负值默认表示沿用配置，不向引擎传递负衰减。</td>
+</tr>
+<tr>
+<td><code>training_options.optimizer</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择优化器。现代 auto 会覆盖手动初始学习率、动量，并将热身偏置学习率设为 0；经典 config 沿用 YAML。</td>
+</tr>
+<tr>
+<td><code>training_options.scheduler</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典学习率策略。config 保留 YAML 的里程碑和总周期；constant 固定；cosine 按本次总轮数重建余弦计划。</td>
+</tr>
+<tr>
+<td><code>training_options.warmup_epochs</code></td>
+<td><code>0</code></td>
+<td>0～10000</td>
+<td>预热轮数。现代支持小数；经典仅在选择余弦策略时可调，必须小于总轮数。</td>
+</tr>
+<tr>
+<td><code>training_options.amp</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>混合精度。现代界面 True/False；经典界面沿用配置/关闭/开启，仅 GPU 可显式开启。CPU 不启用经典 AMP。</td>
+</tr>
+<tr>
+<td><code>training_options.augmentation</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典 config 保留模型增强；off 去除随机增强并使用验证预处理，不代表取消归一化。</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典/异常检测选择的物理显卡编号；独立进程内映射为第 0 张，每次只用一张。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legacy-classification">经典图像分类 2.5.0<a class="headerlink" href="#legacy-classification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>界面默认/传递值</th>
+<th>可输入数值范围</th>
+<th>实际含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python</code></td>
+<td><code>"&lt;软件目录&gt;\\Paddle\\runtime-cpu\\python.exe"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典架构独立运行环境的解释器；由 CPU/GPU 选择自动定位，也可手动指定兼容环境。</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>"&lt;软件目录&gt;\\Paddle\\PaddleClas-2.5.0\\ppcls\\configs\\ImageNet\\ResNet\\ResNet50.yaml"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>参考 YAML；s/m/l/x/sod 为经典检测预设，分类为实际预置配置名称。</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td><code>"&lt;软件目录&gt;\\runs\\classic_cls"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典训练输出根目录；每次新建独立时间戳实验子目录。</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>100</code></td>
+<td>1～100000</td>
+<td>最大训练轮数；现代架构可能因早停或手动停止提前结束。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>4</code></td>
+<td>1～4096</td>
+<td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>随机种子；相同种子不保证跨设备、跨环境的结果完全一致。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+</tr>
+<tr>
+<td><code>weight_mode</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>config 沿用配置中的预训练设置；local 使用本地 .pdparams；random 随机初始化。config 可能联网下载权重。</td>
+</tr>
+<tr>
+<td><code>weights</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>仅在选择本地预训练权重时使用的 .pdparams 文件。</td>
+</tr>
+<tr>
+<td><code>dataset.mode</code></td>
+<td><code>"classification"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典检测默认 coco，分类默认 classification；config 表示沿用 YAML 中的数据设置。</td>
+</tr>
+<tr>
+<td><code>dataset.root</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典数据集根目录。只选一个文件夹，识别规则见数据集章节。</td>
+</tr>
+<tr>
+<td><code>training_options.image_size</code></td>
+<td><code>0</code></td>
+<td>0～8192</td>
+<td>经典分类为正方形边长，0 沿用配置；异常检测完整图片直接缩放到这个正方形边长，须为 64～1024 且为 32 的倍数。</td>
+</tr>
+<tr>
+<td><code>training_options.workers</code></td>
+<td><code>0</code></td>
+<td>0～32</td>
+<td>现代架构是数据加载进程数；经典架构在 Windows 上大于 0 使用线程并行读图及预处理，0 使用原有加载方式。</td>
+</tr>
+<tr>
+<td><code>training_options.learning_rate</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>0.0～100.0</td>
+<td>经典初始学习率，0 在界面中表示沿用配置；实际未覆盖时传空值。</td>
+</tr>
+<tr>
+<td><code>training_options.weight_decay</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>-1.0～10.0</td>
+<td>权重衰减系数；经典负值默认表示沿用配置，不向引擎传递负衰减。</td>
+</tr>
+<tr>
+<td><code>training_options.optimizer</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择优化器。现代 auto 会覆盖手动初始学习率、动量，并将热身偏置学习率设为 0；经典 config 沿用 YAML。</td>
+</tr>
+<tr>
+<td><code>training_options.scheduler</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典学习率策略。config 保留 YAML 的里程碑和总周期；constant 固定；cosine 按本次总轮数重建余弦计划。</td>
+</tr>
+<tr>
+<td><code>training_options.warmup_epochs</code></td>
+<td><code>0</code></td>
+<td>0～10000</td>
+<td>预热轮数。现代支持小数；经典仅在选择余弦策略时可调，必须小于总轮数。</td>
+</tr>
+<tr>
+<td><code>training_options.amp</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>混合精度。现代界面 True/False；经典界面沿用配置/关闭/开启，仅 GPU 可显式开启。CPU 不启用经典 AMP。</td>
+</tr>
+<tr>
+<td><code>training_options.augmentation</code></td>
+<td><code>"config"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典 config 保留模型增强；off 去除随机增强并使用验证预处理，不代表取消归一化。</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典/异常检测选择的物理显卡编号；独立进程内映射为第 0 张，每次只用一张。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="anomaly">异常检测<a class="headerlink" href="#anomaly" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>界面默认/传递值</th>
+<th>可输入数值范围</th>
+<th>实际含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>train_dir</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>异常检测的 OK 训练图片目录，只放正常图。</td>
+</tr>
+<tr>
+<td><code>calibration_dir</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>异常检测的独立 OK 校准目录；留空按内容去重后自动留出约 20%，校准图不进入特征库。</td>
+</tr>
+<tr>
+<td><code>backbone</code></td>
+<td><code>"resnet18"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>异常检测的预训练特征骨干：resnet18 或 wide_resnet50_2；骨干参数被冻结。</td>
+</tr>
+<tr>
+<td><code>image_size</code></td>
+<td><code>256</code></td>
+<td>64～1024</td>
+<td>经典分类为正方形边长，0 沿用配置；异常检测完整图片直接缩放到这个正方形边长，须为 64～1024 且为 32 的倍数。</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>2</code></td>
+<td>1～16</td>
+<td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
+</tr>
+<tr>
+<td><code>coreset_ratio</code></td>
+<td><code>0.01</code></td>
+<td>0.001～1.0</td>
+<td>异常检测从候选特征中保留的核心集比例，还会受到核心集特征上限约束。</td>
+</tr>
+<tr>
+<td><code>max_patches</code></td>
+<td><code>50000</code></td>
+<td>100～250000</td>
+<td>异常检测候选特征数量上限，超过时有界抽样，不是训练图片数。</td>
+</tr>
+<tr>
+<td><code>max_bank</code></td>
+<td><code>5000</code></td>
+<td>1～10000</td>
+<td>异常检测最终核心集特征数量上限，不是图片数或类别数。</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>异常检测推理使用训练生成的 model.patchcore.pt。</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>未选择 / 沿用配置</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>异常检测推理的图片或图片文件夹；输出目录不能放在输入目录内。</td>
+</tr>
+<tr>
+<td><code>threshold_multiplier</code></td>
+<td><code>1.0</code></td>
+<td>0.1～10.0</td>
+<td>异常检测推理阈值倍率，小于 1 更敏感，大于 1 更宽松；异常分数不是概率。</td>
+</tr>
+<tr>
+<td><code>output_dir</code></td>
+<td><code>"&lt;软件目录&gt;\\runs\\patchcore"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>异常检测输出根目录，训练/推理分别创建独立实验子目录。</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典/异常检测选择的物理显卡编号；独立进程内映射为第 0 张，每次只用一张。</td>
+</tr>
+</tbody>
+</table></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">ATSVisionTrainer 在线文档 · Windows 版 · V1.0.0 / Build 2026.11 · 参数以实验最终配置和日志为准</p>
+
+        </footer>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u5728\u7ebf\u6587\u6863 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u53c2\u6570\u4ee5\u5b9e\u9a8c\u6700\u7ec8\u914d\u7f6e\u548c\u65e5\u5fd7\u4e3a\u51c6", "found": "\u627e\u5230 {0} \u6761\u7ed3\u679c", "language": "\u6587\u6863\u8bed\u8a00", "missing_body": "\u8bf7\u4ece\u5de6\u4fa7\u5bfc\u822a\u6216\u5e2e\u52a9\u9996\u9875\u8fdb\u5165\u3002", "missing_title": "\u6ca1\u6709\u627e\u5230\u8fd9\u4e2a\u5e2e\u52a9\u9875\u9762", "not_found": "\u672a\u627e\u5230\u5339\u914d\u5185\u5bb9\uff0c\u8bf7\u6362\u4e00\u4e2a\u5173\u952e\u8bcd\u3002", "search_error": "\u65e0\u6cd5\u8bfb\u53d6\u641c\u7d22\u7d22\u5f15\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc\u8fde\u63a5\u5e76\u5237\u65b0\u9875\u9762\u3002"};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">搜索</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+            </div>
+            <div class="modal-body">
+                <p>从这里您可以搜索这些文档。在下面输入您需要搜索的内容。</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="搜索..." id="mkdocs-search-query" title="在此输入搜索内容">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="没有搜索到结果"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">键盘热键</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">键</th>
+                    <th>动作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>打开这个帮助</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>下一页面</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>上一页面</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>搜索</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
