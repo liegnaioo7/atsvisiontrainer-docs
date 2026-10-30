@@ -185,6 +185,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#coda-di-addestramento-sequenziale" class="nav-link">Coda di addestramento sequenziale</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -231,7 +235,11 @@
 <p>File come <code>training_metrics.jsonl</code> generati durante l'addestramento permettono di ripristinare i valori registrati. Se un vecchio log non contiene una metrica, il caricamento della cronologia non riesegue la validazione e non deduce l'accuratezza dalla loss.</p>
 <h2 id="diagnostica-e-stato-delle-attivita">Diagnostica e stato delle attività<a class="headerlink" href="#diagnostica-e-stato-delle-attivita" title="Permanent link">&para;</a></h2>
 <p>In caso di errore, passare ai log originali e leggere la prima eccezione reale con il contesto, non solo il codice di uscita finale. Fine delle epoche, arresto anticipato, interruzione dell'utente ed errore sono stati diversi.</p>
-<p>Gli esperimenti classici e di anomalie salvano <code>engine.log</code>. Dopo una chiusura imprevista, aprire la directory dell'esperimento dalla cronologia per leggere il log salvato. Le architetture moderne hanno generalmente anche <code>results.csv</code>, configurazione e metriche; il log completo dell'interfaccia non è garantito dopo il riavvio del processo. Usare Esporta log per conservare il testo attuale della console.</p></div>
+<p>Gli esperimenti classici e di anomalie salvano <code>engine.log</code>. Dopo una chiusura imprevista, aprire la directory dell'esperimento dalla cronologia per leggere il log salvato. Le architetture moderne hanno generalmente anche <code>results.csv</code>, configurazione e metriche; il log completo dell'interfaccia non è garantito dopo il riavvio del processo. Usare Esporta log per conservare il testo attuale della console.</p>
+<h2 id="coda-di-addestramento-sequenziale">Coda di addestramento sequenziale<a class="headerlink" href="#coda-di-addestramento-sequenziale" title="Permanent link">&para;</a></h2>
+<p>Fare clic su “Aggiungi alla coda” in qualsiasi pagina di addestramento per salvare modello, percorsi dei dati e parametri. Le attività classiche salvano anche la configurazione YAML risolta. Le modifiche successive alla pagina o al file YAML originale non influiscono sulle attività in coda. Immagini, annotazioni e pesi vengono letti dai rispettivi percorsi: non spostarli né sostituirli durante l’attesa.</p>
+<p>Usare la coda per avviare, riordinare, duplicare o modificare le attività in attesa. Viene eseguita una sola attività alla volta; addestramento, esportazione automatica e rilascio delle risorse devono terminare prima della successiva. La pausa blocca solo le attività successive. Interrompere l’attività corrente sospende anche la coda. Gli errori di addestramento causano una pausa per impostazione predefinita, con la possibilità di proseguire. Un errore di esportazione sospende sempre la coda e viene indicato come addestramento riuscito ed esportazione non riuscita.</p>
+<p>La coda è salvata localmente e l’uscita richiede sempre conferma. Dopo il riavvio rimane in pausa; le attività non terminate normalmente sono indicate come interrotte. La riesecuzione avvia l’addestramento dall’inizio, senza ripresa automatica da checkpoint. Rimuovere una voce non elimina i file dell’esperimento; usare la cronologia per liberare spazio. I parametri si visualizzano e modificano in formato JSON. Sono modificabili solo le attività in attesa e ogni motore verifica comunque percorsi e parametri prima dell’esecuzione.</p></div>
 
             </div>
         </div>

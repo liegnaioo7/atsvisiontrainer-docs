@@ -185,6 +185,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#serial-training-queue" class="nav-link">Serial training queue</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -231,7 +235,11 @@
 <p>Files such as <code>training_metrics.jsonl</code> generated during training can restore recorded values. If an older log did not save a metric, loading history does not rerun validation or infer accuracy from loss.</p>
 <h2 id="troubleshooting-and-task-status">Troubleshooting and task status<a class="headerlink" href="#troubleshooting-and-task-status" title="Permanent link">&para;</a></h2>
 <p>After a failure, switch to raw logs and inspect the first actual exception with its context, not only the final exit code. Reaching the epoch limit, early stopping, user cancellation and errors are different states.</p>
-<p>Classic and anomaly experiments save <code>engine.log</code>. After an unexpected software exit, open the experiment directory from training history to read the saved log. Modern architectures usually also have <code>results.csv</code>, configuration and metric files; full UI raw logs are not guaranteed to survive process restarts. Use Export log to preserve the current console text.</p></div>
+<p>Classic and anomaly experiments save <code>engine.log</code>. After an unexpected software exit, open the experiment directory from training history to read the saved log. Modern architectures usually also have <code>results.csv</code>, configuration and metric files; full UI raw logs are not guaranteed to survive process restarts. Use Export log to preserve the current console text.</p>
+<h2 id="serial-training-queue">Serial training queue<a class="headerlink" href="#serial-training-queue" title="Permanent link">&para;</a></h2>
+<p>Click “Add to training queue” on any training page to capture the model, data paths and settings. Classic tasks also save the resolved YAML configuration. Later edits to the page or original YAML do not affect queued tasks. Images, annotations and weights are still read from their paths; do not move or replace them while tasks are pending.</p>
+<p>Use Training queue to start, reorder, duplicate or edit pending tasks. Only one task runs at a time; training, automatic export and resource cleanup must finish before the next starts. Pausing blocks subsequent tasks only. Stopping the current task also pauses the queue. Training failures pause by default, with an option to continue. Export failures always pause and are labeled as successful training with failed export.</p>
+<p>The queue is stored locally, and exiting still requires confirmation. After restart it remains paused; tasks that did not finish normally are marked as interrupted. Running again starts training from the beginning without automatic checkpoint resume. Removing a queue entry does not delete experiment files; use Training history to free disk space. Settings snapshots are viewed or edited as JSON. Only pending tasks can be edited, and each engine still validates paths and settings before execution.</p></div>
 
             </div>
         </div>
