@@ -156,6 +156,10 @@
 
 <a href="../../zh_TW/reference/parameters.html">繁體中文</a>
 
+<a href="../../ru/reference/parameters.html">Русский</a>
+
+<a href="../../vi/reference/parameters.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps annotation software <span aria-hidden="true">↗</span></a>
 </div>
@@ -253,10 +257,16 @@
 <td>Images processed per batch; for anomaly detection, this is the feature extraction batch size. Reduce it if GPU memory is insufficient.</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Modern validation batch size: 0 follows the effective training batch; 1–512 sets it independently. Validation workers follow the training setting, subject to engine and system limits, without automatic doubling. The final best-model validation uses the same settings.</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>Not selected / use configuration</code></td>
 <td>See description (text, option or path)</td>
-<td>Select the compute device. Modern auto lets the engine decide; gpu uses device 0. Classic and anomaly GPU tasks use the selected card and do not silently fall back to CPU on failure.</td>
+<td>Select the compute device. Modern auto lets the engine choose; gpu uses the single card selected in the GPU list. Classic and anomaly tasks also use the selected card. An unavailable explicitly selected GPU causes an error, without silent CPU fallback.</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -428,10 +438,16 @@
 <td>Images processed per batch; for anomaly detection, this is the feature extraction batch size. Reduce it if GPU memory is insufficient.</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Modern validation batch size: 0 follows the effective training batch; 1–512 sets it independently. Validation workers follow the training setting, subject to engine and system limits, without automatic doubling. The final best-model validation uses the same settings.</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>Not selected / use configuration</code></td>
 <td>See description (text, option or path)</td>
-<td>Select the compute device. Modern auto lets the engine decide; gpu uses device 0. Classic and anomaly GPU tasks use the selected card and do not silently fall back to CPU on failure.</td>
+<td>Select the compute device. Modern auto lets the engine choose; gpu uses the single card selected in the GPU list. Classic and anomaly tasks also use the selected card. An unavailable explicitly selected GPU causes an error, without silent CPU fallback.</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -561,10 +577,16 @@
 <td>Images processed per batch; for anomaly detection, this is the feature extraction batch size. Reduce it if GPU memory is insufficient.</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Modern validation batch size: 0 follows the effective training batch; 1–512 sets it independently. Validation workers follow the training setting, subject to engine and system limits, without automatic doubling. The final best-model validation uses the same settings.</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>Not selected / use configuration</code></td>
 <td>See description (text, option or path)</td>
-<td>Select the compute device. Modern auto lets the engine decide; gpu uses device 0. Classic and anomaly GPU tasks use the selected card and do not silently fall back to CPU on failure.</td>
+<td>Select the compute device. Modern auto lets the engine choose; gpu uses the single card selected in the GPU list. Classic and anomaly tasks also use the selected card. An unavailable explicitly selected GPU causes an error, without silent CPU fallback.</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -736,10 +758,16 @@
 <td>Images processed per batch; for anomaly detection, this is the feature extraction batch size. Reduce it if GPU memory is insufficient.</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Modern validation batch size: 0 follows the effective training batch; 1–512 sets it independently. Validation workers follow the training setting, subject to engine and system limits, without automatic doubling. The final best-model validation uses the same settings.</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>Not selected / use configuration</code></td>
 <td>See description (text, option or path)</td>
-<td>Select the compute device. Modern auto lets the engine decide; gpu uses device 0. Classic and anomaly GPU tasks use the selected card and do not silently fall back to CPU on failure.</td>
+<td>Select the compute device. Modern auto lets the engine choose; gpu uses the single card selected in the GPU list. Classic and anomaly tasks also use the selected card. An unavailable explicitly selected GPU causes an error, without silent CPU fallback.</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -914,13 +942,13 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>See description (text, option or path)</td>
-<td>Select the compute device. Modern auto lets the engine decide; gpu uses device 0. Classic and anomaly GPU tasks use the selected card and do not silently fall back to CPU on failure.</td>
+<td>Select the compute device. Modern auto lets the engine choose; gpu uses the single card selected in the GPU list. Classic and anomaly tasks also use the selected card. An unavailable explicitly selected GPU causes an error, without silent CPU fallback.</td>
 </tr>
 <tr>
 <td><code>weight_mode</code></td>
 <td><code>"config"</code></td>
 <td>See description (text, option or path)</td>
-<td>config follows pretrained settings in the configuration; local uses local .pdparams; random initializes randomly. config may download weights.</td>
+<td>config uses the configuration and resolves pretrained URLs to bundled local weights; local uses a local .pdparams file; random initializes randomly. Missing or damaged bundled weights cause an error instead of a download.</td>
 </tr>
 <tr>
 <td><code>weights</code></td>
@@ -1071,13 +1099,13 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>See description (text, option or path)</td>
-<td>Select the compute device. Modern auto lets the engine decide; gpu uses device 0. Classic and anomaly GPU tasks use the selected card and do not silently fall back to CPU on failure.</td>
+<td>Select the compute device. Modern auto lets the engine choose; gpu uses the single card selected in the GPU list. Classic and anomaly tasks also use the selected card. An unavailable explicitly selected GPU causes an error, without silent CPU fallback.</td>
 </tr>
 <tr>
 <td><code>weight_mode</code></td>
 <td><code>"config"</code></td>
 <td>See description (text, option or path)</td>
-<td>config follows pretrained settings in the configuration; local uses local .pdparams; random initializes randomly. config may download weights.</td>
+<td>config uses the configuration and resolves pretrained URLs to bundled local weights; local uses a local .pdparams file; random initializes randomly. Missing or damaged bundled weights cause an error instead of a download.</td>
 </tr>
 <tr>
 <td><code>weights</code></td>
@@ -1246,7 +1274,7 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>See description (text, option or path)</td>
-<td>Select the compute device. Modern auto lets the engine decide; gpu uses device 0. Classic and anomaly GPU tasks use the selected card and do not silently fall back to CPU on failure.</td>
+<td>Select the compute device. Modern auto lets the engine choose; gpu uses the single card selected in the GPU list. Classic and anomaly tasks also use the selected card. An unavailable explicitly selected GPU causes an error, without silent CPU fallback.</td>
 </tr>
 <tr>
 <td><code>gpu_id</code></td>

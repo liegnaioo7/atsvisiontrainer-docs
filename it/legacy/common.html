@@ -156,6 +156,10 @@
 
 <a href="../../zh_TW/legacy/common.html">繁體中文</a>
 
+<a href="../../ru/legacy/common.html">Русский</a>
+
+<a href="../../vi/legacy/common.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">Software di annotazione ATSVisionOps <span aria-hidden="true">↗</span></a>
 </div>
@@ -216,7 +220,7 @@
 <tbody>
 <tr>
 <td>Usa le impostazioni di preaddestramento della configurazione</td>
-<td>Usa l'impostazione YAML; un URL può scaricare i pesi o usare una cache esistente. La cache non è garantita su ogni computer del cliente.</td>
+<td>Usa le impostazioni YAML; gli URL dei pesi preaddestrati vengono risolti nei file locali inclusi, verificandone l’integrità. File mancanti o danneggiati causano un errore senza avviare download.</td>
 </tr>
 <tr>
 <td>Usa pesi preaddestrati locali</td>
@@ -228,7 +232,7 @@
 </tr>
 </tbody>
 </table>
-<p>Offline, scegliere pesi locali o inizializzazione casuale. La sola presenza della cartella dell'architettura non implica che siano inclusi i pesi preaddestrati.</p>
+<p>I preset di rilevamento integrati usano automaticamente i pesi inclusi; SOD e l condividono lo stesso file. I preset di classificazione non attivano il preaddestramento per impostazione predefinita. Per utilizzarlo, selezionare i pesi preaddestrati locali e scegliere il modello corrispondente nella cartella inclusa. La cartella di installazione può essere spostata: i pesi non dipendono dalla cache dello sviluppatore.</p>
 <h2 id="tasso-di-apprendimento-e-ottimizzatore">Tasso di apprendimento e ottimizzatore<a class="headerlink" href="#tasso-di-apprendimento-e-ottimizzatore" title="Permanent link">&para;</a></h2>
 <p>Il valore iniziale 0 nell'interfaccia indica Usa configurazione: non imposta il tasso del motore a 0. Anche il segnaposto della regolarizzazione non sovrascrive la configurazione.</p>
 <p>Usare l'ottimizzatore configurato oppure scegliere Momentum, SGD, Adam o AdamW. Il software adatta la struttura dei parametri: AdamW riceve un decadimento numerico, non il dizionario di regolarizzazione del precedente ottimizzatore.</p>

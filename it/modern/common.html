@@ -156,6 +156,10 @@
 
 <a href="../../zh_TW/modern/common.html">繁體中文</a>
 
+<a href="../../ru/modern/common.html">Русский</a>
+
+<a href="../../vi/modern/common.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">Software di annotazione ATSVisionOps <span aria-hidden="true">↗</span></a>
 </div>
@@ -177,6 +181,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#risorse-di-validazione-e-memoria" class="nav-link">Risorse di validazione e memoria</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#ottimizzatore" class="nav-link">Ottimizzatore</a>
               <ul class="nav flex-column">
               </ul>
@@ -194,6 +202,10 @@
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#posizione-di-output" class="nav-link">Posizione di output</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#selezionare-la-gpu-di-addestramento" class="nav-link">Selezionare la GPU di addestramento</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -241,7 +253,7 @@
 </tr>
 <tr>
 <td>device</td>
-<td>auto lascia scegliere al motore; gpu usa la GPU 0; cpu addestra sulla CPU.</td>
+<td>auto lascia scegliere il motore; gpu usa la singola GPU selezionata in GPU di addestramento; cpu usa la CPU.</td>
 </tr>
 <tr>
 <td>seed</td>
@@ -254,6 +266,9 @@
 </tbody>
 </table>
 <p>Il campo interpreta un solo numero. Il testo non numerico ripristina il valore predefinito (640 per rilevamento, segmentazione e OBB; 960 per classificazione), senza interpretare <code>640×480</code> o elenchi. Controllare i log: questo campo non imposta dimensioni rettangolari.</p>
+<h2 id="risorse-di-validazione-e-memoria">Risorse di validazione e memoria<a class="headerlink" href="#risorse-di-validazione-e-memoria" title="Permanent link">&para;</a></h2>
+<p>Dimensione del batch di validazione dei modelli moderni: 0 segue il batch di addestramento effettivo; 1–512 imposta un valore indipendente. I workers di validazione seguono l’impostazione di addestramento, entro i limiti del motore e del sistema, senza raddoppio automatico. La validazione finale del modello migliore usa le stesse impostazioni.</p>
+<p>Usare il campo del batch di validazione nella configurazione di base per ridurre il batch di validazione indipendentemente. L’addestramento diretto e le attività in coda usano le rispettive impostazioni salvate. Per la segmentazione di istanze, iniziare con un batch più piccolo. La validazione differisce dall’addestramento: batch uguali non garantiscono memoria sufficiente.</p>
 <h2 id="ottimizzatore">Ottimizzatore<a class="headerlink" href="#ottimizzatore" title="Permanent link">&para;</a></h2>
 <p><code>optimizer=auto</code> seleziona nuovamente ottimizzatore, tasso iniziale e momento, e imposta <code>warmup_bias_lr</code> a 0. Scegliere un ottimizzatore esplicito per usare impostazioni manuali di tasso o momento.</p>
 <p>La classificazione moderna dispone dei campi <code>lr0</code> e <code>lrf</code>; le pagine di rilevamento, segmentazione e OBB non hanno un campo separato per il tasso di apprendimento. Non cercare controlli descritti da guide di altri software. <code>lrf</code> è il moltiplicatore del tasso finale rispetto a quello iniziale.</p>
@@ -269,7 +284,9 @@
 <p>Per rilevamento, segmentazione e OBB, <code>box</code>, <code>cls</code> e <code>dfl</code> sono coefficienti delle perdite, non confidenze di previsione o numeri di classi. In OBB, <code>angle</code> è il coefficiente della perdita angolare, indipendente da <code>degrees</code> dell'aumento per rotazione. Passare un coefficiente non crea un termine di perdita non previsto dall'architettura.</p>
 <h2 id="posizione-di-output">Posizione di output<a class="headerlink" href="#posizione-di-output" title="Permanent link">&para;</a></h2>
 <p>I risultati di rilevamento, segmentazione e OBB sono in <code>runs</code> sotto il dataset; la classificazione usa una cartella allo stesso livello, con il nome del dataset e il suffisso _runs. Il percorso effettivo è quello registrato nel log, nell'azione Apri directory esperimento dei grafici e nella cronologia.</p>
-<p>Il software esporta automaticamente ONNX con <code>simplify=False</code>, senza installare automaticamente onnxslim per la semplificazione. Se l'esportazione fallisce, controllare il log; i checkpoint esistenti possono essere ancora presenti.</p></div>
+<p>Il software esporta automaticamente ONNX con <code>simplify=False</code>, senza installare automaticamente onnxslim per la semplificazione. Se l'esportazione fallisce, controllare il log; i checkpoint esistenti possono essere ancora presenti.</p>
+<h2 id="selezionare-la-gpu-di-addestramento">Selezionare la GPU di addestramento<a class="headerlink" href="#selezionare-la-gpu-di-addestramento" title="Permanent link">&para;</a></h2>
+<p>Dopo aver selezionato gpu, aggiornare l’elenco e scegliere una scheda per indice, nome e memoria. Gli indici corrispondono ai dispositivi CUDA visibili al motore moderno e possono differire dagli indici fisici se la visibilità è limitata. Le attività in coda conservano la selezione e la verificano prima dell’esecuzione. Se è disponibile un UUID, la scheda viene identificata tramite esso; se scompare, l’attività fallisce invece di usare un’altra scheda. Si seleziona una sola GPU per attività, non un addestramento distribuito su più GPU.</p></div>
 
             </div>
         </div>

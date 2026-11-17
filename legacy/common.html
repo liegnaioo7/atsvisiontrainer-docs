@@ -156,6 +156,10 @@
 
 <a href="../zh_TW/legacy/common.html">繁體中文</a>
 
+<a href="../ru/legacy/common.html">Русский</a>
+
+<a href="../vi/legacy/common.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 标注软件 <span aria-hidden="true">↗</span></a>
 </div>
@@ -216,7 +220,7 @@
 <tbody>
 <tr>
 <td>使用配置文件中的预训练设置</td>
-<td>沿用 YAML；URL 可能下载权重，也可能命中已有缓存。不保证每台客户机都已有缓存。</td>
+<td>沿用 YAML；预训练 URL 通过随附清单解析为本地权重并校验完整性，缺失或损坏会报错，不临时下载。</td>
 </tr>
 <tr>
 <td>使用本地预训练权重</td>
@@ -228,7 +232,7 @@
 </tr>
 </tbody>
 </table>
-<p>离线时选择本地权重或随机初始化。仅凭训练架构文件夹存在，不能认为预训练权重也已随附。</p>
+<p>内置检测预设自动使用随附权重；SOD 与 l 共用权重。分类预设默认未启用预训练，需要时选择“使用本地预训练权重”，从预置目录选择匹配型号。软件安装目录可以移动，预置权重不依赖开发机缓存。</p>
 <h2 id="_4">学习率与优化器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>初始学习率为 0 的界面显示“沿用配置”；它不会向引擎设置一个 0 学习率。权重衰减为界面“沿用配置”占位值时同样不覆盖。</p>
 <p>优化器可沿用配置或明确选择 Momentum、SGD、Adam、AdamW。切换时软件会适配其参数结构；AdamW 使用数值衰减，而不是把旧优化器的正则化字典直接传入。</p>

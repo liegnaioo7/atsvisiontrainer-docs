@@ -156,6 +156,10 @@
 
 <a href="../../zh_TW/reference/parameters.html" aria-current="true">繁體中文</a>
 
+<a href="../../ru/reference/parameters.html">Русский</a>
+
+<a href="../../vi/reference/parameters.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 標註軟體 <span aria-hidden="true">↗</span></a>
 </div>
@@ -253,10 +257,16 @@
 <td>每批處理圖片數；異常偵測是特徵提取批大小。顯示記憶體不足時減小。</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>現代驗證批次大小；0 跟隨實際訓練批次，1～512 獨立設定。驗證 workers 跟隨訓練且受引擎與系統限制，不自動翻倍；同樣應用於最終最佳模型複驗。</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>未選擇 / 沿用配置</code></td>
 <td>見說明（文字、選項或路徑）</td>
-<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用第 0 張；經典及異常偵測 GPU 使用介面指定的一張卡，失敗不會靜默切回 CPU。</td>
+<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用顯示卡列表中選定的一張；經典及異常偵測同樣使用指定的一張卡。顯式選擇 GPU 後不可用會報錯，不會靜默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -428,10 +438,16 @@
 <td>每批處理圖片數；異常偵測是特徵提取批大小。顯示記憶體不足時減小。</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>現代驗證批次大小；0 跟隨實際訓練批次，1～512 獨立設定。驗證 workers 跟隨訓練且受引擎與系統限制，不自動翻倍；同樣應用於最終最佳模型複驗。</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>未選擇 / 沿用配置</code></td>
 <td>見說明（文字、選項或路徑）</td>
-<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用第 0 張；經典及異常偵測 GPU 使用介面指定的一張卡，失敗不會靜默切回 CPU。</td>
+<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用顯示卡列表中選定的一張；經典及異常偵測同樣使用指定的一張卡。顯式選擇 GPU 後不可用會報錯，不會靜默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -561,10 +577,16 @@
 <td>每批處理圖片數；異常偵測是特徵提取批大小。顯示記憶體不足時減小。</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>現代驗證批次大小；0 跟隨實際訓練批次，1～512 獨立設定。驗證 workers 跟隨訓練且受引擎與系統限制，不自動翻倍；同樣應用於最終最佳模型複驗。</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>未選擇 / 沿用配置</code></td>
 <td>見說明（文字、選項或路徑）</td>
-<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用第 0 張；經典及異常偵測 GPU 使用介面指定的一張卡，失敗不會靜默切回 CPU。</td>
+<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用顯示卡列表中選定的一張；經典及異常偵測同樣使用指定的一張卡。顯式選擇 GPU 後不可用會報錯，不會靜默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -736,10 +758,16 @@
 <td>每批處理圖片數；異常偵測是特徵提取批大小。顯示記憶體不足時減小。</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>現代驗證批次大小；0 跟隨實際訓練批次，1～512 獨立設定。驗證 workers 跟隨訓練且受引擎與系統限制，不自動翻倍；同樣應用於最終最佳模型複驗。</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>未選擇 / 沿用配置</code></td>
 <td>見說明（文字、選項或路徑）</td>
-<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用第 0 張；經典及異常偵測 GPU 使用介面指定的一張卡，失敗不會靜默切回 CPU。</td>
+<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用顯示卡列表中選定的一張；經典及異常偵測同樣使用指定的一張卡。顯式選擇 GPU 後不可用會報錯，不會靜默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -914,13 +942,13 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>見說明（文字、選項或路徑）</td>
-<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用第 0 張；經典及異常偵測 GPU 使用介面指定的一張卡，失敗不會靜默切回 CPU。</td>
+<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用顯示卡列表中選定的一張；經典及異常偵測同樣使用指定的一張卡。顯式選擇 GPU 後不可用會報錯，不會靜默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>weight_mode</code></td>
 <td><code>"config"</code></td>
 <td>見說明（文字、選項或路徑）</td>
-<td>config 沿用配置中的預訓練設定；local 使用本地 .pdparams；random 隨機初始化。config 可能聯網下載權重。</td>
+<td>config 沿用配置，預訓練 URL 解析為隨附本地權重；local 使用本地 .pdparams；random 隨機初始化。缺失或損壞的隨附權重會報錯，不臨時下載。</td>
 </tr>
 <tr>
 <td><code>weights</code></td>
@@ -1071,13 +1099,13 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>見說明（文字、選項或路徑）</td>
-<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用第 0 張；經典及異常偵測 GPU 使用介面指定的一張卡，失敗不會靜默切回 CPU。</td>
+<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用顯示卡列表中選定的一張；經典及異常偵測同樣使用指定的一張卡。顯式選擇 GPU 後不可用會報錯，不會靜默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>weight_mode</code></td>
 <td><code>"config"</code></td>
 <td>見說明（文字、選項或路徑）</td>
-<td>config 沿用配置中的預訓練設定；local 使用本地 .pdparams；random 隨機初始化。config 可能聯網下載權重。</td>
+<td>config 沿用配置，預訓練 URL 解析為隨附本地權重；local 使用本地 .pdparams；random 隨機初始化。缺失或損壞的隨附權重會報錯，不臨時下載。</td>
 </tr>
 <tr>
 <td><code>weights</code></td>
@@ -1246,7 +1274,7 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>見說明（文字、選項或路徑）</td>
-<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用第 0 張；經典及異常偵測 GPU 使用介面指定的一張卡，失敗不會靜默切回 CPU。</td>
+<td>選擇計算裝置。現代 auto 由引擎選擇，gpu 使用顯示卡列表中選定的一張；經典及異常偵測同樣使用指定的一張卡。顯式選擇 GPU 後不可用會報錯，不會靜默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>gpu_id</code></td>

@@ -156,6 +156,10 @@
 
 <a href="../zh_TW/reference/parameters.html">繁體中文</a>
 
+<a href="../ru/reference/parameters.html">Русский</a>
+
+<a href="../vi/reference/parameters.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 标注软件 <span aria-hidden="true">↗</span></a>
 </div>
@@ -253,10 +257,16 @@
 <td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>现代验证批次大小；0 跟随实际训练批次，1～512 独立设置。验证 workers 跟随训练且受引擎与系统限制，不自动翻倍；同样应用于最终最佳模型复验。</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>未选择 / 沿用配置</code></td>
 <td>见说明（文本、选项或路径）</td>
-<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用显卡列表中选定的一张；经典及异常检测同样使用指定的一张卡。显式选择 GPU 后不可用会报错，不会静默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -428,10 +438,16 @@
 <td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>现代验证批次大小；0 跟随实际训练批次，1～512 独立设置。验证 workers 跟随训练且受引擎与系统限制，不自动翻倍；同样应用于最终最佳模型复验。</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>未选择 / 沿用配置</code></td>
 <td>见说明（文本、选项或路径）</td>
-<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用显卡列表中选定的一张；经典及异常检测同样使用指定的一张卡。显式选择 GPU 后不可用会报错，不会静默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -561,10 +577,16 @@
 <td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>现代验证批次大小；0 跟随实际训练批次，1～512 独立设置。验证 workers 跟随训练且受引擎与系统限制，不自动翻倍；同样应用于最终最佳模型复验。</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>未选择 / 沿用配置</code></td>
 <td>见说明（文本、选项或路径）</td>
-<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用显卡列表中选定的一张；经典及异常检测同样使用指定的一张卡。显式选择 GPU 后不可用会报错，不会静默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -736,10 +758,16 @@
 <td>每批处理图片数；异常检测是特征提取批大小。显存不足时减小。</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>现代验证批次大小；0 跟随实际训练批次，1～512 独立设置。验证 workers 跟随训练且受引擎与系统限制，不自动翻倍；同样应用于最终最佳模型复验。</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>未选择 / 沿用配置</code></td>
 <td>见说明（文本、选项或路径）</td>
-<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用显卡列表中选定的一张；经典及异常检测同样使用指定的一张卡。显式选择 GPU 后不可用会报错，不会静默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -914,13 +942,13 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>见说明（文本、选项或路径）</td>
-<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用显卡列表中选定的一张；经典及异常检测同样使用指定的一张卡。显式选择 GPU 后不可用会报错，不会静默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>weight_mode</code></td>
 <td><code>"config"</code></td>
 <td>见说明（文本、选项或路径）</td>
-<td>config 沿用配置中的预训练设置；local 使用本地 .pdparams；random 随机初始化。config 可能联网下载权重。</td>
+<td>config 沿用配置，预训练 URL 解析为随附本地权重；local 使用本地 .pdparams；random 随机初始化。缺失或损坏的随附权重会报错，不临时下载。</td>
 </tr>
 <tr>
 <td><code>weights</code></td>
@@ -1071,13 +1099,13 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>见说明（文本、选项或路径）</td>
-<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用显卡列表中选定的一张；经典及异常检测同样使用指定的一张卡。显式选择 GPU 后不可用会报错，不会静默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>weight_mode</code></td>
 <td><code>"config"</code></td>
 <td>见说明（文本、选项或路径）</td>
-<td>config 沿用配置中的预训练设置；local 使用本地 .pdparams；random 随机初始化。config 可能联网下载权重。</td>
+<td>config 沿用配置，预训练 URL 解析为随附本地权重；local 使用本地 .pdparams；random 随机初始化。缺失或损坏的随附权重会报错，不临时下载。</td>
 </tr>
 <tr>
 <td><code>weights</code></td>
@@ -1246,7 +1274,7 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>见说明（文本、选项或路径）</td>
-<td>选择计算设备。现代 auto 由引擎选择，gpu 使用第 0 张；经典及异常检测 GPU 使用界面指定的一张卡，失败不会静默切回 CPU。</td>
+<td>选择计算设备。现代 auto 由引擎选择，gpu 使用显卡列表中选定的一张；经典及异常检测同样使用指定的一张卡。显式选择 GPU 后不可用会报错，不会静默切回 CPU。</td>
 </tr>
 <tr>
 <td><code>gpu_id</code></td>

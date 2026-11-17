@@ -1,6 +1,6 @@
 # ATSVisionTrainer 在线文档
 
-五语言 MkDocs 静态文档，对应 Windows V1.0.0 / Build 2026.11。
+七语言 MkDocs 静态文档，对应 Windows V1.0.0 / Build 2026.11。
 
 ## Vercel 部署
 
@@ -10,4 +10,4 @@
 
 ## 内容维护
 
-正文与训练项目的五语言帮助共用来源；请在训练项目中维护并核对参数，然后使用 .venv-docs/Scripts/python.exe tools/export_online_help.py --output <新目录> 重新导出。导出后同步网站内容至本仓库，再提交推送。在线导出不修改软件自带的 help_site。
+正文与训练项目的离线帮助共用来源；请在训练项目中维护并核对参数，然后使用 .venv-docs/Scripts/python.exe tools/export_online_help.py --output <新目录> 重新导出。导出后同步网站内容至本仓库，再提交推送。在线导出不修改软件自带的 help_site。

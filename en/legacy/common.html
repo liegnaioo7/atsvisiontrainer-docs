@@ -156,6 +156,10 @@
 
 <a href="../../zh_TW/legacy/common.html">繁體中文</a>
 
+<a href="../../ru/legacy/common.html">Русский</a>
+
+<a href="../../vi/legacy/common.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps annotation software <span aria-hidden="true">↗</span></a>
 </div>
@@ -216,7 +220,7 @@
 <tbody>
 <tr>
 <td>Use pretrained settings from the configuration</td>
-<td>Uses the YAML setting; a URL may download weights or hit an existing cache. A cache is not guaranteed on every customer's computer.</td>
+<td>Use the YAML settings; pretrained URLs are resolved to bundled local weights and checked for integrity. Missing or damaged files cause an error instead of a download.</td>
 </tr>
 <tr>
 <td>Use local pretrained weights</td>
@@ -228,7 +232,7 @@
 </tr>
 </tbody>
 </table>
-<p>Offline, choose local weights or random initialization. The presence of an architecture folder alone does not mean pretrained weights are included.</p>
+<p>Built-in detection presets automatically use bundled weights; SOD and l share the same file. Classification presets do not enable pretraining by default. To use it, select local pretrained weights and choose the matching model from the bundled directory. The installation directory can be moved; weights do not depend on the developer’s cache.</p>
 <h2 id="learning-rate-and-optimizer">Learning rate and optimizer<a class="headerlink" href="#learning-rate-and-optimizer" title="Permanent link">&para;</a></h2>
 <p>An initial-learning-rate UI value of 0 means Use configuration; it does not set the engine learning rate to 0. The weight-decay Use configuration placeholder likewise makes no override.</p>
 <p>Keep the configured optimizer or explicitly select Momentum, SGD, Adam or AdamW. The application adapts parameter structures when switching; AdamW receives numeric weight decay rather than the previous optimizer's regularizer dictionary.</p>

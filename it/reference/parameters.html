@@ -156,6 +156,10 @@
 
 <a href="../../zh_TW/reference/parameters.html">繁體中文</a>
 
+<a href="../../ru/reference/parameters.html">Русский</a>
+
+<a href="../../vi/reference/parameters.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">Software di annotazione ATSVisionOps <span aria-hidden="true">↗</span></a>
 </div>
@@ -253,10 +257,16 @@
 <td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Dimensione del batch di validazione dei modelli moderni: 0 segue il batch di addestramento effettivo; 1–512 imposta un valore indipendente. I workers di validazione seguono l’impostazione di addestramento, entro i limiti del motore e del sistema, senza raddoppio automatico. La validazione finale del modello migliore usa le stesse impostazioni.</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>Non selezionato / usa configurazione</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
-<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+<td>Selezionare il dispositivo. Nelle architetture moderne auto lascia scegliere il motore; gpu usa la singola scheda selezionata nell’elenco. Anche le architetture classiche e il rilevamento anomalie usano la scheda scelta. Una GPU esplicitamente selezionata ma non disponibile genera un errore, senza passare automaticamente alla CPU.</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -428,10 +438,16 @@
 <td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Dimensione del batch di validazione dei modelli moderni: 0 segue il batch di addestramento effettivo; 1–512 imposta un valore indipendente. I workers di validazione seguono l’impostazione di addestramento, entro i limiti del motore e del sistema, senza raddoppio automatico. La validazione finale del modello migliore usa le stesse impostazioni.</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>Non selezionato / usa configurazione</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
-<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+<td>Selezionare il dispositivo. Nelle architetture moderne auto lascia scegliere il motore; gpu usa la singola scheda selezionata nell’elenco. Anche le architetture classiche e il rilevamento anomalie usano la scheda scelta. Una GPU esplicitamente selezionata ma non disponibile genera un errore, senza passare automaticamente alla CPU.</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -561,10 +577,16 @@
 <td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Dimensione del batch di validazione dei modelli moderni: 0 segue il batch di addestramento effettivo; 1–512 imposta un valore indipendente. I workers di validazione seguono l’impostazione di addestramento, entro i limiti del motore e del sistema, senza raddoppio automatico. La validazione finale del modello migliore usa le stesse impostazioni.</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>Non selezionato / usa configurazione</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
-<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+<td>Selezionare il dispositivo. Nelle architetture moderne auto lascia scegliere il motore; gpu usa la singola scheda selezionata nell’elenco. Anche le architetture classiche e il rilevamento anomalie usano la scheda scelta. Una GPU esplicitamente selezionata ma non disponibile genera un errore, senza passare automaticamente alla CPU.</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -736,10 +758,16 @@
 <td>Immagini elaborate per batch; nel rilevamento anomalie è il batch di estrazione delle caratteristiche. Ridurre il valore se la memoria GPU è insufficiente.</td>
 </tr>
 <tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Dimensione del batch di validazione dei modelli moderni: 0 segue il batch di addestramento effettivo; 1–512 imposta un valore indipendente. I workers di validazione seguono l’impostazione di addestramento, entro i limiti del motore e del sistema, senza raddoppio automatico. La validazione finale del modello migliore usa le stesse impostazioni.</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td><code>Non selezionato / usa configurazione</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
-<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+<td>Selezionare il dispositivo. Nelle architetture moderne auto lascia scegliere il motore; gpu usa la singola scheda selezionata nell’elenco. Anche le architetture classiche e il rilevamento anomalie usano la scheda scelta. Una GPU esplicitamente selezionata ma non disponibile genera un errore, senza passare automaticamente alla CPU.</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -914,13 +942,13 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
-<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+<td>Selezionare il dispositivo. Nelle architetture moderne auto lascia scegliere il motore; gpu usa la singola scheda selezionata nell’elenco. Anche le architetture classiche e il rilevamento anomalie usano la scheda scelta. Una GPU esplicitamente selezionata ma non disponibile genera un errore, senza passare automaticamente alla CPU.</td>
 </tr>
 <tr>
 <td><code>weight_mode</code></td>
 <td><code>"config"</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
-<td>config segue le impostazioni di preaddestramento; local usa un .pdparams locale; random inizializza casualmente. config può scaricare pesi.</td>
+<td>config usa la configurazione e risolve gli URL dei pesi preaddestrati nei file locali inclusi; local usa un file .pdparams locale; random inizializza casualmente. Pesi inclusi mancanti o danneggiati causano un errore senza avviare download.</td>
 </tr>
 <tr>
 <td><code>weights</code></td>
@@ -1071,13 +1099,13 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
-<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+<td>Selezionare il dispositivo. Nelle architetture moderne auto lascia scegliere il motore; gpu usa la singola scheda selezionata nell’elenco. Anche le architetture classiche e il rilevamento anomalie usano la scheda scelta. Una GPU esplicitamente selezionata ma non disponibile genera un errore, senza passare automaticamente alla CPU.</td>
 </tr>
 <tr>
 <td><code>weight_mode</code></td>
 <td><code>"config"</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
-<td>config segue le impostazioni di preaddestramento; local usa un .pdparams locale; random inizializza casualmente. config può scaricare pesi.</td>
+<td>config usa la configurazione e risolve gli URL dei pesi preaddestrati nei file locali inclusi; local usa un file .pdparams locale; random inizializza casualmente. Pesi inclusi mancanti o danneggiati causano un errore senza avviare download.</td>
 </tr>
 <tr>
 <td><code>weights</code></td>
@@ -1246,7 +1274,7 @@
 <td><code>device</code></td>
 <td><code>"cpu"</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
-<td>Selezionare il dispositivo di calcolo. Il moderno auto lascia decidere al motore; gpu usa il dispositivo 0. Le attività GPU classiche e di anomalie usano la scheda scelta e non passano silenziosamente alla CPU in caso di errore.</td>
+<td>Selezionare il dispositivo. Nelle architetture moderne auto lascia scegliere il motore; gpu usa la singola scheda selezionata nell’elenco. Anche le architetture classiche e il rilevamento anomalie usano la scheda scelta. Una GPU esplicitamente selezionata ma non disponibile genera un errore, senza passare automaticamente alla CPU.</td>
 </tr>
 <tr>
 <td><code>gpu_id</code></td>

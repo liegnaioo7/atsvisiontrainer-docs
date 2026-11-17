@@ -156,6 +156,10 @@
 
 <a href="../zh_TW/modern/common.html">繁體中文</a>
 
+<a href="../ru/modern/common.html">Русский</a>
+
+<a href="../vi/modern/common.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 标注软件 <span aria-hidden="true">↗</span></a>
 </div>
@@ -177,23 +181,31 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">优化器</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">验证资源与内存</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">位置与几何增强</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">优化器</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">软件适配的增强</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">位置与几何增强</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">损失权重</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">软件适配的增强</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">输出位置</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">损失权重</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_8" class="nav-link">输出位置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_9" class="nav-link">指定训练显卡</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -241,7 +253,7 @@
 </tr>
 <tr>
 <td>device</td>
-<td>auto 由引擎选择；gpu 映射第 0 张 GPU；cpu 在 CPU 上训练。</td>
+<td>auto 由引擎选择；gpu 使用“训练显卡”中选定的一张 GPU；cpu 在 CPU 上训练。</td>
 </tr>
 <tr>
 <td>seed</td>
@@ -254,22 +266,27 @@
 </tbody>
 </table>
 <p>尺寸输入框当前只解析单个数字。输入非纯数字文本时，会回到默认尺寸（检测/分割/OBB 为 640，分类为 960），而不是解析 <code>640×480</code> 或尺寸列表。请核对实际日志，不要用这个输入框设置矩形高宽。</p>
-<h2 id="_3">优化器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">验证资源与内存<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>现代验证批次大小；0 跟随实际训练批次，1～512 独立设置。验证 workers 跟随训练且受引擎与系统限制，不自动翻倍；同样应用于最终最佳模型复验。</p>
+<p>在基础配置中可直接单独减小验证批次；直接训练和队列任务使用各自保存的设置。实例分割建议从较小批次开始。验证计算与训练不同，即使批次相同也不能保证不会内存不足。</p>
+<h2 id="_4">优化器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><code>optimizer=auto</code> 会重新选择优化器、初始学习率及动量，并将 <code>warmup_bias_lr</code> 设为 0。希望使用手动学习率或动量时，选择明确的优化器。</p>
 <p>现代分类有 <code>lr0</code>、<code>lrf</code> 输入框；检测、分割、OBB 页面没有单独的学习率输入框，不要按照其他软件的教程寻找不存在的控件。分类 <code>lrf</code> 是最终学习率相对初始值的倍率。</p>
 <p>SGD 类使用 momentum；Adam 类对应 beta1。<code>weight_decay</code> 为权重衰减。<code>warmup_epochs</code> 为预热轮数，可输入小数；检测、分割和 OBB 还提供预热初始动量及偏置学习率。</p>
-<h2 id="_4">位置与几何增强<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">位置与几何增强<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><code>degrees</code> 表示随机旋转的最大绝对角度；<code>flipud</code>、<code>fliplr</code> 为翻转概率；<code>translate</code> 为相对图像尺寸的平移幅度；<code>scale</code> 为随机缩放幅度。它们不是推理后处理参数。</p>
 <p><code>mosaic</code> 为拼图概率，同时遵循引擎自身的末期关闭规则。界面没有独立开放末期关闭轮数，不应把当前概率解释为最后每一轮都一定启用。</p>
-<h2 id="_5">软件适配的增强<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">软件适配的增强<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>普通检测的 <code>copy_paste</code> 按概率把同一图片中的一个完整目标复制到无重叠位置。目标源区域有重叠，或没有安全目标位置时跳过。多边形实例分割使用原生掩膜复制粘贴比例。</p>
 <p>检测和分割的 <code>erasing</code> 仅擦除目标框外的背景，不遮挡目标框内区域，保留已有标注。它不等同于会任意覆盖物体的分类随机擦除。</p>
 <p>OBB 页面不提供 <code>copy_paste</code> 和 <code>erasing</code>。分类页面也不提供上述背景增强。</p>
-<h2 id="_6">损失权重<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">损失权重<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>检测、分割、OBB 的 <code>box</code>、<code>cls</code>、<code>dfl</code> 是损失系数，不是预测置信度或类别数量。OBB 的 <code>angle</code> 是角度损失系数，与旋转增强的 <code>degrees</code> 无关。模型结构未使用的损失项，不会因为界面传递了系数就凭空出现。</p>
-<h2 id="_7">输出位置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">输出位置<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>检测、分割、OBB 结果位于数据集目录下的 <code>runs</code>；分类位于数据集同级的“数据集名_runs”。实际实验目录以日志、图表“打开实验目录”及训练历史登记的路径为准。</p>
-<p>软件会自动导出 ONNX，<code>simplify=False</code>，不为图简化自动安装 onnxslim。导出失败时查看日志，已有检查点仍可能保留。</p></div>
+<p>软件会自动导出 ONNX，<code>simplify=False</code>，不为图简化自动安装 onnxslim。导出失败时查看日志，已有检查点仍可能保留。</p>
+<h2 id="_9">指定训练显卡<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>选择 gpu 后点击“刷新显卡”，按编号、名称和显存选择一张显卡。编号按现代引擎实际可见的 CUDA 设备显示，设置了显卡可见性限制时可能与系统物理编号不同。队列保存选择并在执行前重新检查，能读取显卡 UUID 时会按身份定位；原显卡消失会报错，不会改用其他卡。此功能是单任务任选单卡，不是同一模型多卡联合训练。</p></div>
 
             </div>
         </div>

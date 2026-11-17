@@ -156,6 +156,10 @@
 
 <a href="./../zh_TW/troubleshooting.html" aria-current="true">繁體中文</a>
 
+<a href="./../ru/troubleshooting.html">Русский</a>
+
+<a href="./../vi/troubleshooting.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 標註軟體 <span aria-hidden="true">↗</span></a>
 </div>
@@ -189,7 +193,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">經典模型仍在下載預訓練權重</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">經典預訓練權重缺失或損壞</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -215,7 +219,7 @@
 <h1 id="_1">環境與常見問題<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">完整包應保留哪些內容<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>分發完整的軟體資料夾，包括主程式、<code>_internal</code>、經典環境目錄和異常偵測環境目錄。客戶需要可用的顯示卡驅動及適配的系統執行庫；軟體內包含框架執行庫，不代表可以替代 NVIDIA 驅動。</p>
-<p>MkDocs 只用於開發時生成文件，客戶不需要安裝 MkDocs、Python 或另一個網頁伺服器。說明由軟體開啟只監聽本機地址的輕量服務，五種語言頁面及搜尋資源隨包提供。</p>
+<p>MkDocs 只用於開發時生成文件，客戶不需要安裝 MkDocs、Python 或另一個網頁伺服器。說明由軟體開啟只監聽本機地址的輕量服務，各語言頁面及搜尋資源隨包提供。</p>
 <p>說明網頁位於隨包的 <code>_internal/help_site</code>。該目錄用於說明入口，不能按普通說明文件隨意刪掉。軟體根目錄的 <code>docs</code> 技術說明和 <code>package-manifest.json</code> 仍不是訓練/推論的執行依賴；manifest 用於檔案完整性排查。</p>
 <h2 id="map">為什麼沒有 mAP<a class="headerlink" href="#map" title="Permanent link">&para;</a></h2>
 <p>先確認是否有獨立驗證集，再看是否到了驗證輪次。經典 COCO 只有訓練集時不執行驗證，也不自動分出圖片。若已執行驗證仍沒有有效值，檢視原始驗證日誌，不使用 loss 替代評估。</p>
@@ -223,8 +227,8 @@
 <p>GPU 百分比取決於實際任務、批次、圖片尺寸、資料讀取、CPU 前處理和取樣間隔。GPU 利用率與顯示記憶體使用率不是同一概念。檢查日誌是否真的選中了 GPU，以及 <code>data_cost</code> 是否佔據較大比例；經典 Windows 可適度調整 workers，再比較實際吞吐量。</p>
 <h2 id="_3">記憶體或顯示記憶體不足<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>先減小 batch，再按任務降低影像尺寸。異常偵測還可降低候選特徵上限、核心集上限或保留比例。不同任務參數含義不同，不要把核心集上限理解成 batch。</p>
-<h2 id="_4">經典模型仍在下載預訓練權重<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>“使用配置檔案中的預訓練設定”會沿用 URL，客戶機不一定已有快取。離線時選本地相容權重或隨機初始化。程式結構存在不等於預訓練權重已快取。</p>
+<h2 id="_4">經典預訓練權重缺失或損壞<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>“使用配置檔案中的預訓練設定”會將配置裡的預訓練 URL 解析為隨軟體附帶的本地權重並校驗完整性。若權重缺失、損壞，或 URL 不在隨附清單中，軟體會報錯。請使用隨附權重完整的安裝包，或改用匹配的本地權重或隨機初始化。</p>
 <h2 id="_5">權重、類別或前處理不匹配<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>使用與權重一致的任務、配置、類別順序和前處理。經典模型可從訓練實驗匯入；現代分類要保留模型中的前處理後設資料。不要拿普通偵測模型到 OBB 頁面，或把匯出的經典靜態模型當作 <code>.pdparams</code> 檢查點。</p>
 <h2 id="onnx-cpu">ONNX 為什麼在 CPU 上執行<a class="headerlink" href="#onnx-cpu" title="Permanent link">&para;</a></h2>

@@ -156,6 +156,10 @@
 
 <a href="./../zh_TW/troubleshooting.html">繁體中文</a>
 
+<a href="./../ru/troubleshooting.html">Русский</a>
+
+<a href="./../vi/troubleshooting.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps アノテーションソフト <span aria-hidden="true">↗</span></a>
 </div>
@@ -189,7 +193,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">クラシックモデルが事前学習済み重みをダウンロードしている</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">クラシック構成の事前学習済み重みが欠落または破損している</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -215,7 +219,7 @@
 <h1 id="_1">環境とよくある質問<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">完全パッケージで保持するもの<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>実行ファイル、<code>_internal</code>、クラシック環境、異常検出環境を含むソフトウェアフォルダー全体を配布してください。動作する GPU ドライバーと対応システムランタイムが必要です。同梱フレームワークは NVIDIA ドライバーの代わりにはなりません。</p>
-<p>MkDocs は開発時の文書生成にのみ使用します。利用者が MkDocs、Python、別の Web サーバーをインストールする必要はありません。ソフトウェアがローカルマシンだけで利用できる軽量サービスを起動し、5 言語のページと検索リソースを同梱します。</p>
+<p>MkDocs は開発時の文書生成に使います。利用者が MkDocs、Python、別の Web サーバーをインストールする必要はありません。アプリが同梱のページと検索リソースをローカルで配信します。</p>
 <p>同梱ヘルプは <code>_internal/help_site</code> にあり、ヘルプ機能に必要です。ルートの <code>docs</code> 技術説明と <code>package-manifest.json</code> は学習・推論の実行依存ではありません。manifest はファイル整合性の調査用です。</p>
 <h2 id="map">mAP が表示されない理由<a class="headerlink" href="#map" title="Permanent link">&para;</a></h2>
 <p>まず独立検証セットの有無、次に検証エポックへの到達を確認します。学習セットだけのクラシック COCO は分割も検証も行いません。検証したのに有効な値がなければ元の検証ログを確認し、loss を代わりにしないでください。</p>
@@ -223,8 +227,8 @@
 <p>GPU 使用率はタスク、バッチサイズ、画像サイズ、データ読み込み、CPU 前処理、測定間隔に左右されます。GPU 使用率と GPU メモリ使用量は別の指標です。ログで GPU 実行と <code>data_cost</code> の割合を確認し、Windows のクラシック学習では workers を適度に調整して実際の処理速度を比較してください。</p>
 <h2 id="ram-gpu">RAM または GPU メモリ不足<a class="headerlink" href="#ram-gpu" title="Permanent link">&para;</a></h2>
 <p>まず batch を減らし、次にタスクに応じて画像サイズを下げます。異常検出では候補特徴数、コアセット上限、保持率も下げられます。タスクによって意味が異なり、コアセット上限は batch ではありません。</p>
-<h2 id="_3">クラシックモデルが事前学習済み重みをダウンロードしている<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>設定内の事前学習指定を使うと、その URL に従います。利用者のマシンにキャッシュがあるとは限りません。オフラインでは互換性のあるローカル重みかランダム初期化を選択してください。構造ファイルがあっても、事前学習済み重みのキャッシュがあるとは限りません。</p>
+<h2 id="_3">クラシック構成の事前学習済み重みが欠落または破損している<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>「設定ファイルの事前学習設定を使用」では、重みの URL に対応する同梱ファイルを使い、整合性を確認します。ファイルがない、破損している、または URL が同梱マニフェストにない場合はエラーになります。同梱ファイルの揃ったパッケージを使うか、対応するローカル重みまたはランダム初期化を選んでください。</p>
 <h2 id="_4">重み・クラス・前処理の不一致<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>重みと同じタスク、設定、クラス順序、前処理を使用してください。クラシックモデルは実験設定を取り込めます。モダン分類では前処理メタデータを保持します。水平枠検出器を OBB として使ったり、エクスポートしたクラシック静的モデルを <code>.pdparams</code> チェックポイントとして扱ったりしないでください。</p>
 <h2 id="onnx-cpu">ONNX が CPU で実行される理由<a class="headerlink" href="#onnx-cpu" title="Permanent link">&para;</a></h2>

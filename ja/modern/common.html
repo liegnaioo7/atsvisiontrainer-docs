@@ -156,6 +156,10 @@
 
 <a href="../../zh_TW/modern/common.html">繁體中文</a>
 
+<a href="../../ru/modern/common.html">Русский</a>
+
+<a href="../../vi/modern/common.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps アノテーションソフト <span aria-hidden="true">↗</span></a>
 </div>
@@ -177,23 +181,31 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">最適化手法</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">検証リソースとメモリー</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">位置と幾何形状の拡張</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">最適化手法</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">ソフトウェア独自のデータ拡張処理</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">位置と幾何形状の拡張</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">損失の重み</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">ソフトウェア独自のデータ拡張処理</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">出力先</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">損失の重み</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_8" class="nav-link">出力先</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#gpu" class="nav-link">学習 GPU の指定</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -241,7 +253,7 @@
 </tr>
 <tr>
 <td>device</td>
-<td>auto はエンジンが選択し、gpu は GPU 0、cpu は CPU で学習します。</td>
+<td>auto はエンジンに選択を任せ、gpu は学習 GPU 一覧で選択した GPU のみを使い、cpu は CPU で学習します。</td>
 </tr>
 <tr>
 <td>seed</td>
@@ -254,22 +266,27 @@
 </tbody>
 </table>
 <p>サイズ欄は単一の数字を解析します。数字以外の文字列は既定値（検出・セグメンテーション・OBB は 640、分類は 960）に戻り、<code>640×480</code> やリストとしては解釈しません。ログを確認し、矩形サイズの指定には使わないでください。</p>
-<h2 id="_3">最適化手法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">検証リソースとメモリー<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>モダンモデルの検証バッチサイズです。0 は実際の学習バッチに従い、1～512 は個別に設定します。検証 workers はエンジンとシステムの制限の範囲内で学習設定に従い、自動で倍増しません。最良モデルの最終再検証にも同じ設定を使用します。</p>
+<p>基本設定で検証バッチを直接、個別に小さくできます。直接実行する学習とキューのタスクには、それぞれ保存された設定を使用します。インスタンスセグメンテーションは小さめのバッチから始めてください。検証と学習では計算が異なるため、同じバッチサイズでもメモリー不足を完全に防げるとは限りません。</p>
+<h2 id="_4">最適化手法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><code>optimizer=auto</code> は最適化手法・初期学習率・モーメンタムを再選択し、<code>warmup_bias_lr</code> を 0 にします。手動の学習率やモーメンタムを使うには最適化手法を明示してください。</p>
 <p>モダン分類には <code>lr0</code> と <code>lrf</code> の入力欄があります。検出・セグメンテーション・OBB には独立した学習率入力欄がありません。他のソフトウェアの手順にある未実装の設定を探さないでください。分類の <code>lrf</code> は初期学習率に対する最終学習率の倍率です。</p>
 <p>SGD 系は momentum、Adam 系は beta1 を使用します。<code>weight_decay</code> は重み減衰です。<code>warmup_epochs</code> はウォームアップ期間で、小数も指定できます。物体検出・セグメンテーション・OBB では、ウォームアップ開始時のモーメンタムとバイアス学習率も設定できます。</p>
-<h2 id="_4">位置と幾何形状の拡張<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">位置と幾何形状の拡張<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><code>degrees</code> は回転の最大絶対角度、<code>flipud</code> と <code>fliplr</code> は反転確率、<code>translate</code> は画像サイズに対する移動量、<code>scale</code> はランダムな拡大縮小の幅です。推論の後処理設定ではありません。</p>
 <p><code>mosaic</code> はモザイク合成の確率で、エンジンによる学習終盤の無効化規則にも従います。無効化までのエポック数を別途設定する欄はなく、現在の確率が最後の各エポックでの有効化を保証するわけではありません。</p>
-<h2 id="_5">ソフトウェア独自のデータ拡張処理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">ソフトウェア独自のデータ拡張処理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>通常の検出の <code>copy_paste</code> は、同じ画像の完全な物体を、確率に従って重なりのない位置へコピーします。コピー元が他の物体と重なる場合や、安全な配置先がない場合はスキップします。ポリゴンのインスタンスセグメンテーションではネイティブのマスクコピー割合を使用します。</p>
 <p>検出とセグメンテーションの <code>erasing</code> は物体ボックス外の背景のみを消去し、ボックス内と既存アノテーションを保持します。物体を任意に隠す可能性のある分類のランダム消去とは動作が異なります。</p>
 <p>OBB ページには <code>copy_paste</code> と <code>erasing</code> はありません。分類ページにも、これらの背景拡張はありません。</p>
-<h2 id="_6">損失の重み<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">損失の重み<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>検出・セグメンテーション・OBB の <code>box</code>、<code>cls</code>、<code>dfl</code> は損失係数であり、予測信頼度やクラス数ではありません。OBB の <code>angle</code> は角度損失係数であり、回転拡張の <code>degrees</code> とは無関係です。係数を渡しても、モデル構造が使用しない損失項が追加されることはありません。</p>
-<h2 id="_7">出力先<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">出力先<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>検出・セグメンテーション・OBB の結果はデータセットフォルダー内の <code>runs</code> に、分類の結果はデータセットと同じ階層の「データセット名_runs」に保存します。実際の実験フォルダーは、ログ、グラフの「実験フォルダーを開く」、学習履歴に登録されたパスで確認してください。</p>
-<p>ソフトウェアは <code>simplify=False</code> で ONNX を自動エクスポートし、グラフ簡略化のために onnxslim を自動インストールしません。失敗した場合はログを確認してください。既存チェックポイントは残っている場合があります。</p></div>
+<p>ソフトウェアは <code>simplify=False</code> で ONNX を自動エクスポートし、グラフ簡略化のために onnxslim を自動インストールしません。失敗した場合はログを確認してください。既存チェックポイントは残っている場合があります。</p>
+<h2 id="gpu">学習 GPU の指定<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h2>
+<p>gpu を選択後、一覧を更新し、番号・名前・メモリー容量からカードを選択します。番号はモダンエンジンに見える CUDA デバイスに対応し、可視性が制限されている場合は物理番号と異なることがあります。キューは選択を保存し、実行前に再検証します。UUID を取得できる場合は同じカードを識別し、そのカードが見つからなければ別のカードに切り替えずエラーにします。タスクごとに GPU をひとつ選択する機能であり、複数 GPU による分散学習ではありません。</p></div>
 
             </div>
         </div>

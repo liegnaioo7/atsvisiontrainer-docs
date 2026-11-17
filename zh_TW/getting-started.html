@@ -156,6 +156,10 @@
 
 <a href="./../zh_TW/getting-started.html" aria-current="true">繁體中文</a>
 
+<a href="./../ru/getting-started.html">Русский</a>
+
+<a href="./../vi/getting-started.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 標註軟體 <span aria-hidden="true">↗</span></a>
 </div>
@@ -209,7 +213,7 @@
 <tr>
 <td>四種現代架構</td>
 <td>現代訓練引擎</td>
-<td>auto / gpu / cpu；gpu 為第 0 張</td>
+<td>auto / gpu / cpu；gpu 可任選一張可用顯示卡</td>
 </tr>
 <tr>
 <td>兩種經典架構</td>
@@ -223,7 +227,7 @@
 </tr>
 </tbody>
 </table>
-<p>手動選擇 GPU 後，不應把失敗理解為“軟體已經自動改用 CPU”。經典及異常偵測 GPU 不可用時會報錯，需檢視日誌並檢查環境。</p></div>
+<p>顯式選擇 GPU 後，不會因顯示卡不可用而自動改用 CPU。現代、經典及異常偵測均需檢視日誌並檢查所選裝置和環境；auto 模式仍由各引擎自行選擇。</p></div>
 
             </div>
         </div>

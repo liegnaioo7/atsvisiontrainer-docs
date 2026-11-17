@@ -156,6 +156,10 @@
 
 <a href="../../zh_TW/legacy/common.html" aria-current="true">繁體中文</a>
 
+<a href="../../ru/legacy/common.html">Русский</a>
+
+<a href="../../vi/legacy/common.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 標註軟體 <span aria-hidden="true">↗</span></a>
 </div>
@@ -216,7 +220,7 @@
 <tbody>
 <tr>
 <td>使用配置檔案中的預訓練設定</td>
-<td>沿用 YAML；URL 可能下載權重，也可能命中已有快取。不保證每臺客戶機都已有快取。</td>
+<td>沿用 YAML；預訓練 URL 透過隨附清單解析為本地權重並校驗完整性，缺失或損壞會報錯，不臨時下載。</td>
 </tr>
 <tr>
 <td>使用本地預訓練權重</td>
@@ -228,7 +232,7 @@
 </tr>
 </tbody>
 </table>
-<p>離線時選擇本地權重或隨機初始化。僅憑訓練架構資料夾存在，不能認為預訓練權重也已隨附。</p>
+<p>內建偵測預設自動使用隨附權重；SOD 與 l 共用權重。分類預設預設未啟用預訓練，需要時選擇“使用本地預訓練權重”，從預置目錄選擇匹配型號。軟體安裝目錄可以移動，預置權重不依賴開發機快取。</p>
 <h2 id="_4">學習率與最佳化器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>初始學習率為 0 的介面顯示“沿用配置”；它不會向引擎設定一個 0 學習率。權重衰減為介面“沿用配置”佔位值時同樣不覆蓋。</p>
 <p>最佳化器可沿用配置或明確選擇 Momentum、SGD、Adam、AdamW。切換時軟體會適配其參數結構；AdamW 使用數值衰減，而不是把舊最佳化器的正則化字典直接傳入。</p>

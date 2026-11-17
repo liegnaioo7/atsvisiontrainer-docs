@@ -156,6 +156,10 @@
 
 <a href="./zh_TW/troubleshooting.html">繁體中文</a>
 
+<a href="./ru/troubleshooting.html">Русский</a>
+
+<a href="./vi/troubleshooting.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps 标注软件 <span aria-hidden="true">↗</span></a>
 </div>
@@ -189,7 +193,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">经典模型仍在下载预训练权重</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">经典预训练权重缺失或损坏</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -215,7 +219,7 @@
 <h1 id="_1">环境与常见问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">完整包应保留哪些内容<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>分发完整的软件文件夹，包括主程序、<code>_internal</code>、经典环境目录和异常检测环境目录。客户需要可用的显卡驱动及适配的系统运行库；软件内包含框架运行库，不代表可以替代 NVIDIA 驱动。</p>
-<p>MkDocs 只用于开发时生成文档，客户不需要安装 MkDocs、Python 或另一个网页服务器。帮助由软件开启只监听本机地址的轻量服务，五种语言页面及搜索资源随包提供。</p>
+<p>MkDocs 只用于开发时生成文档，客户不需要安装 MkDocs、Python 或另一个网页服务器。帮助由软件开启只监听本机地址的轻量服务，各语言页面及搜索资源随包提供。</p>
 <p>帮助网页位于随包的 <code>_internal/help_site</code>。该目录用于帮助入口，不能按普通说明文档随意删掉。软件根目录的 <code>docs</code> 技术说明和 <code>package-manifest.json</code> 仍不是训练/推理的运行依赖；manifest 用于文件完整性排查。</p>
 <h2 id="map">为什么没有 mAP<a class="headerlink" href="#map" title="Permanent link">&para;</a></h2>
 <p>先确认是否有独立验证集，再看是否到了验证轮次。经典 COCO 只有训练集时不运行验证，也不自动分出图片。若已执行验证仍没有有效值，查看原始验证日志，不使用 loss 替代评估。</p>
@@ -223,8 +227,8 @@
 <p>GPU 百分比取决于实际任务、批次、图片尺寸、数据读取、CPU 预处理和采样间隔。GPU 利用率与显存使用率不是同一概念。检查日志是否真的选中了 GPU，以及 <code>data_cost</code> 是否占据较大比例；经典 Windows 可适度调整 workers，再比较实际吞吐量。</p>
 <h2 id="_3">内存或显存不足<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>先减小 batch，再按任务降低图像尺寸。异常检测还可降低候选特征上限、核心集上限或保留比例。不同任务参数含义不同，不要把核心集上限理解成 batch。</p>
-<h2 id="_4">经典模型仍在下载预训练权重<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>“使用配置文件中的预训练设置”会沿用 URL，客户机不一定已有缓存。离线时选本地兼容权重或随机初始化。程序结构存在不等于预训练权重已缓存。</p>
+<h2 id="_4">经典预训练权重缺失或损坏<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>“使用配置文件中的预训练设置”会将配置里的预训练 URL 解析为随软件附带的本地权重并校验完整性。若权重缺失、损坏，或 URL 不在随附清单中，软件会报错。请使用随附权重完整的安装包，或改用匹配的本地权重或随机初始化。</p>
 <h2 id="_5">权重、类别或预处理不匹配<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>使用与权重一致的任务、配置、类别顺序和预处理。经典模型可从训练实验导入；现代分类要保留模型中的预处理元数据。不要拿普通检测模型到 OBB 页面，或把导出的经典静态模型当作 <code>.pdparams</code> 检查点。</p>
 <h2 id="onnx-cpu">ONNX 为什么在 CPU 上运行<a class="headerlink" href="#onnx-cpu" title="Permanent link">&para;</a></h2>

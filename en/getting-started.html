@@ -156,6 +156,10 @@
 
 <a href="./../zh_TW/getting-started.html">繁體中文</a>
 
+<a href="./../ru/getting-started.html">Русский</a>
+
+<a href="./../vi/getting-started.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps annotation software <span aria-hidden="true">↗</span></a>
 </div>
@@ -209,7 +213,7 @@
 <tr>
 <td>Four modern architectures</td>
 <td>Modern training engine</td>
-<td>auto / gpu / cpu; gpu uses GPU 0</td>
+<td>auto / gpu / cpu; gpu allows selection of a single available GPU</td>
 </tr>
 <tr>
 <td>Two classic architectures</td>
@@ -223,7 +227,7 @@
 </tr>
 </tbody>
 </table>
-<p>After explicitly selecting GPU, a failure must not be interpreted as an automatic switch to CPU. Classic and anomaly tasks report errors when GPU is unavailable; inspect the log and environment.</p></div>
+<p>An explicitly selected GPU does not silently fall back to CPU when unavailable. For modern, classic and anomaly tasks, check the logs, selected device and environment. In auto mode the engine still chooses the device.</p></div>
 
             </div>
         </div>

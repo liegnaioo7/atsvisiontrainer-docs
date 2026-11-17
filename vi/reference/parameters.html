@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="vi" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Tham chiếu tham số - ATSVisionTrainer Trợ giúp</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ATSVisionTrainer Trợ giúp</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Bắt đầu</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../index.html" class="dropdown-item">Trang chủ trợ giúp</a>
+</li>
+
+<li>
+    <a href="../getting-started.html" class="dropdown-item">Hướng dẫn nhanh</a>
+</li>
+
+<li>
+    <a href="../datasets.html" class="dropdown-item">Chuẩn bị tập dữ liệu</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Kiến trúc hiện đại</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../modern/common.html" class="dropdown-item">Tham số chung và tăng cường dữ liệu</a>
+</li>
+
+<li>
+    <a href="../modern/detection.html" class="dropdown-item">Phát hiện đối tượng</a>
+</li>
+
+<li>
+    <a href="../modern/classification.html" class="dropdown-item">Phân loại ảnh</a>
+</li>
+
+<li>
+    <a href="../modern/segmentation.html" class="dropdown-item">Phân đoạn thực thể</a>
+</li>
+
+<li>
+    <a href="../modern/obb.html" class="dropdown-item">Phát hiện đối tượng bằng hộp xoay</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Kiến trúc cổ điển</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../legacy/common.html" class="dropdown-item">Tham số chung và môi trường riêng</a>
+</li>
+
+<li>
+    <a href="../legacy/detection.html" class="dropdown-item">Phát hiện đối tượng 2.7.0</a>
+</li>
+
+<li>
+    <a href="../legacy/classification.html" class="dropdown-item">Phân loại ảnh 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../anomaly.html" class="nav-link">Phát hiện bất thường</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../inference-export.html" class="nav-link">Suy luận và xuất mô hình</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Nhật ký và lịch sử</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="../monitoring.html" class="dropdown-item">Biểu đồ huấn luyện và nhật ký gốc</a>
+</li>
+
+<li>
+    <a href="../history.html" class="dropdown-item">Lịch sử huấn luyện và dọn dẹp</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="parameters.html" class="nav-link active" aria-current="page">Tham chiếu tham số</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../troubleshooting.html" class="nav-link">Câu hỏi thường gặp</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../feedback.html" class="nav-link">Góp ý</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Tìm kiếm
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../history.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Trang trước
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../troubleshooting.html" class="nav-link">
+                                    Trang sau <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Ngôn ngữ tài liệu">
+
+<a href="../../reference/parameters.html">简体中文</a>
+
+<a href="../../en/reference/parameters.html">English</a>
+
+<a href="../../it/reference/parameters.html">Italiano</a>
+
+<a href="../../ja/reference/parameters.html">日本語</a>
+
+<a href="../../zh_TW/reference/parameters.html">繁體中文</a>
+
+<a href="../../ru/reference/parameters.html">Русский</a>
+
+<a href="../../vi/reference/parameters.html" aria-current="true">Tiếng Việt</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">Công cụ gán nhãn ATSVisionOps <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Mục lục">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#tham-chieu-tham-so-cua-moi-kien-truc" class="nav-link">Tham chiếu tham số của mọi kiến trúc</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#modern-detection" class="nav-link">Phát hiện đối tượng hiện đại</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-classification" class="nav-link">Phân loại ảnh hiện đại</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-segmentation" class="nav-link">Phân đoạn thực thể hiện đại</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modern-obb" class="nav-link">Phát hiện đối tượng bằng hộp xoay hiện đại</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#legacy-detection" class="nav-link">Phát hiện vật thể cổ điển 2.7.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#legacy-classification" class="nav-link">Phân loại ảnh cổ điển 2.5.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anomaly" class="nav-link">Phát hiện bất thường</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="tham-chieu-tham-so-cua-moi-kien-truc">Tham chiếu tham số của mọi kiến trúc<a class="headerlink" href="#tham-chieu-tham-so-cua-moi-kien-truc" title="Permanent link">&para;</a></h1>
+<p>Bảng bên dưới lấy giá trị mặc định và phạm vi trực tiếp từ giao diện hiện tại. Sau khi đổi cấu hình có sẵn, thiết bị hoặc YAML nâng cao, giá trị thực tế được xác định bởi cấu hình cuối cùng của lần chạy.</p>
+<p>Dùng các bộ giữ chỗ cấu hình không phải là giá trị đào tạo của cơ chế; một đường dẫn trống có nghĩa là chưa chọn gì. <code>workers</code> và các công nhân Windows cổ điển sử dụng các thực hiện khác nhau.</p>
+<h2 id="modern-detection">Phát hiện đối tượng hiện đại<a class="headerlink" href="#modern-detection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tham số</th>
+<th>Giá trị mặc định UI / đã thông qua</th>
+<th>Phạm vi nhập thuộc số</th>
+<th>Ý nghĩa thật sự</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Một kích thước đầu vào cho kiến trúc hiện đại. Phân loại cắt ảnh theo quy tắc tiền xử lý. Phát hiện, phân đoạn và OBB đổi kích thước và đệm ảnh theo quy tắc của bộ máy. Không dùng tham số này để đặt riêng chiều cao và chiều rộng.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>Số epoch huấn luyện tối đa. Kiến trúc hiện đại có thể kết thúc sớm do cơ chế dừng sớm hoặc do người dùng dừng.</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>Số epoch liên tiếp không cải thiện chỉ số xác thực trước khi dừng sớm. Giá trị 0 tắt dừng sớm.</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>8</code></td>
+<td>0～64</td>
+<td>Ở kiến trúc hiện đại, đây là số tiến trình tải dữ liệu. Với kiến trúc cổ điển trên Windows, giá trị lớn hơn 0 dùng luồng để đọc và tiền xử lý ảnh song song. Giá trị 0 dùng cách tải gốc.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>Số ảnh xử lý trong một lô. Với phát hiện bất thường, đây là kích thước lô trích xuất đặc trưng. Giảm giá trị khi thiếu bộ nhớ GPU.</td>
+</tr>
+<tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Kích thước lô xác thực của kiến trúc hiện đại. Giá trị 0 dùng kích thước lô huấn luyện thực tế, còn 1～512 đặt kích thước riêng. Số tiến trình tải theo thiết lập huấn luyện trong giới hạn của bộ máy và hệ thống, không tự nhân đôi. Cấu hình này cũng dùng khi xác thực lại mô hình tốt nhất.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn thiết bị tính toán. Trong kiến trúc hiện đại, auto để bộ máy tự chọn, còn gpu dùng một GPU được chọn trong danh sách. Tác vụ cổ điển và phát hiện bất thường cũng dùng GPU chỉ định. Nếu GPU đã chọn không khả dụng, tác vụ báo lỗi và không tự chuyển sang CPU.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Hạt giống ngẫu nhiên. Cùng hạt giống không đảm bảo kết quả giống hệt trên các thiết bị hoặc môi trường khác nhau.</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Độ chính xác hỗn hợp. Giao diện hiện đại dùng True hoặc False. Giao diện cổ điển có các lựa chọn dùng cấu hình, tắt và bật. Bật trực tiếp yêu cầu GPU. AMP cổ điển không dùng khi huấn luyện bằng CPU.</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn bộ tối ưu. Chế độ auto của kiến trúc hiện đại ghi đè tốc độ học ban đầu và động lượng đặt thủ công, đồng thời đặt tốc độ học khởi động của độ lệch về 0. Chế độ config của kiến trúc cổ điển dùng cấu hình YAML.</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>Động lượng cho bộ tối ưu họ SGD. Với họ Adam, giá trị này thường tương ứng với beta1. Chế độ auto có thể ghi đè giá trị trong kiến trúc hiện đại.</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>Hệ số suy giảm trọng số. Giá trị âm mặc định trong kiến trúc cổ điển có nghĩa là dùng cấu hình. Bộ máy không nhận hệ số suy giảm âm.</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>Số epoch khởi động. Kiến trúc hiện đại chấp nhận số thập phân. Kiến trúc cổ điển chỉ cho chỉnh khi dùng lịch cosin và giá trị phải nhỏ hơn tổng số epoch.</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>Động lượng ban đầu trong giai đoạn khởi động cho phát hiện, phân đoạn và OBB hiện đại.</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Tốc độ học ban đầu của độ lệch trong giai đoạn khởi động cho phát hiện, phân đoạn và OBB hiện đại. Chế độ auto đặt giá trị này về 0.</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>Góc tuyệt đối tối đa của phép xoay ngẫu nhiên khi huấn luyện. Giá trị 0 tắt xoay. Phân loại dùng phép xoay ngẫu nhiên riêng của ứng dụng.</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất lật dọc khi huấn luyện.</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất lật ngang khi huấn luyện.</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Biên độ tịnh tiến khi huấn luyện theo tỷ lệ kích thước ảnh, không tính bằng pixel.</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Biên độ đổi tỷ lệ ngẫu nhiên khi huấn luyện. Tham số này không đặt kích thước đầu vào hay hệ số phóng to khi suy luận.</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất ghép ảnh Mosaic khi huấn luyện. Bộ máy vẫn áp dụng quy tắc tắt Mosaic ở giai đoạn cuối.</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số hàm mất mát định vị hộp. Đây không phải ngưỡng phát hiện.</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số hàm mất mát phân loại đối tượng. Đây không phải số lớp.</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số của Distribution Focal Loss (DFL). Kiến trúc mô hình quyết định có dùng hàm mất mát này hay không.</td>
+</tr>
+<tr>
+<td><code>copy_paste</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Khi phát hiện, đối tượng được sao chép theo xác suất sang vị trí không chồng lấn trong cùng ảnh. Khi phân đoạn, tham số là tỷ lệ sao chép và dán mặt nạ của bộ máy. Bỏ qua nếu không có vị trí an toàn. OBB không có tùy chọn này.</td>
+</tr>
+<tr>
+<td><code>erasing</code></td>
+<td><code>0.4</code></td>
+<td>0.0～1.0</td>
+<td>Phát hiện và phân đoạn chỉ xóa nền bên ngoài hộp. Đối tượng và nhãn được giữ lại. OBB không có tùy chọn này.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m.pt"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn trọng số có sẵn phù hợp với tác vụ. Ứng dụng tìm tệp trong thư mục đi kèm.</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn tập dữ liệu cho tác vụ hiện tại. Xem định dạng cùng quy tắc huấn luyện và xác thực trong mục kiến trúc tương ứng.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-classification">Phân loại ảnh hiện đại<a class="headerlink" href="#modern-classification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tham số</th>
+<th>Giá trị mặc định UI / đã thông qua</th>
+<th>Phạm vi nhập thuộc số</th>
+<th>Ý nghĩa thật sự</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>960</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Một kích thước đầu vào cho kiến trúc hiện đại. Phân loại cắt ảnh theo quy tắc tiền xử lý. Phát hiện, phân đoạn và OBB đổi kích thước và đệm ảnh theo quy tắc của bộ máy. Không dùng tham số này để đặt riêng chiều cao và chiều rộng.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>500</code></td>
+<td>1～10000</td>
+<td>Số epoch huấn luyện tối đa. Kiến trúc hiện đại có thể kết thúc sớm do cơ chế dừng sớm hoặc do người dùng dừng.</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>Số epoch liên tiếp không cải thiện chỉ số xác thực trước khi dừng sớm. Giá trị 0 tắt dừng sớm.</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>4</code></td>
+<td>0～64</td>
+<td>Ở kiến trúc hiện đại, đây là số tiến trình tải dữ liệu. Với kiến trúc cổ điển trên Windows, giá trị lớn hơn 0 dùng luồng để đọc và tiền xử lý ảnh song song. Giá trị 0 dùng cách tải gốc.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>8</code></td>
+<td>1～512</td>
+<td>Số ảnh xử lý trong một lô. Với phát hiện bất thường, đây là kích thước lô trích xuất đặc trưng. Giảm giá trị khi thiếu bộ nhớ GPU.</td>
+</tr>
+<tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Kích thước lô xác thực của kiến trúc hiện đại. Giá trị 0 dùng kích thước lô huấn luyện thực tế, còn 1～512 đặt kích thước riêng. Số tiến trình tải theo thiết lập huấn luyện trong giới hạn của bộ máy và hệ thống, không tự nhân đôi. Cấu hình này cũng dùng khi xác thực lại mô hình tốt nhất.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn thiết bị tính toán. Trong kiến trúc hiện đại, auto để bộ máy tự chọn, còn gpu dùng một GPU được chọn trong danh sách. Tác vụ cổ điển và phát hiện bất thường cũng dùng GPU chỉ định. Nếu GPU đã chọn không khả dụng, tác vụ báo lỗi và không tự chuyển sang CPU.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Hạt giống ngẫu nhiên. Cùng hạt giống không đảm bảo kết quả giống hệt trên các thiết bị hoặc môi trường khác nhau.</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Độ chính xác hỗn hợp. Giao diện hiện đại dùng True hoặc False. Giao diện cổ điển có các lựa chọn dùng cấu hình, tắt và bật. Bật trực tiếp yêu cầu GPU. AMP cổ điển không dùng khi huấn luyện bằng CPU.</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"AdamW"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn bộ tối ưu. Chế độ auto của kiến trúc hiện đại ghi đè tốc độ học ban đầu và động lượng đặt thủ công, đồng thời đặt tốc độ học khởi động của độ lệch về 0. Chế độ config của kiến trúc cổ điển dùng cấu hình YAML.</td>
+</tr>
+<tr>
+<td><code>lr0</code></td>
+<td><code>0.0005</code></td>
+<td>1e-05～0.1</td>
+<td>Tốc độ học ban đầu của phân loại hiện đại. Với optimizer=auto, bộ máy chọn lại giá trị này. Phát hiện, phân đoạn và OBB không có ô nhập riêng.</td>
+</tr>
+<tr>
+<td><code>lrf</code></td>
+<td><code>0.01</code></td>
+<td>0.0001～1.0</td>
+<td>Hệ số tốc độ học cuối của phân loại hiện đại so với tốc độ học ban đầu, không phải giá trị tuyệt đối độc lập.</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.9</code></td>
+<td>0.0～1.0</td>
+<td>Động lượng cho bộ tối ưu họ SGD. Với họ Adam, giá trị này thường tương ứng với beta1. Chế độ auto có thể ghi đè giá trị trong kiến trúc hiện đại.</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.05</code></td>
+<td>0.0～0.5</td>
+<td>Hệ số suy giảm trọng số. Giá trị âm mặc định trong kiến trúc cổ điển có nghĩa là dùng cấu hình. Bộ máy không nhận hệ số suy giảm âm.</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>5.0</code></td>
+<td>0.0～50.0</td>
+<td>Số epoch khởi động. Kiến trúc hiện đại chấp nhận số thập phân. Kiến trúc cổ điển chỉ cho chỉnh khi dùng lịch cosin và giá trị phải nhỏ hơn tổng số epoch.</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>180.0</code></td>
+<td>0.0～180.0</td>
+<td>Góc tuyệt đối tối đa của phép xoay ngẫu nhiên khi huấn luyện. Giá trị 0 tắt xoay. Phân loại dùng phép xoay ngẫu nhiên riêng của ứng dụng.</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất lật dọc khi huấn luyện.</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất lật ngang khi huấn luyện.</td>
+</tr>
+<tr>
+<td><code>crop_fraction</code></td>
+<td><code>1.0</code></td>
+<td>0.1～1.0</td>
+<td>Tỷ lệ giữ lại của cạnh ngắn trong phân loại hiện đại. Nếu nhỏ hơn 1, trước tiên phóng cạnh ngắn đến imgsz chia cho tỷ lệ rồi cắt giữa. Huấn luyện, xác thực và suy luận dùng cùng quy tắc vùng trung tâm. Huấn luyện còn áp dụng tăng cường ngẫu nhiên.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-cls.pt"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn trọng số có sẵn phù hợp với tác vụ. Ứng dụng tìm tệp trong thư mục đi kèm.</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn tập dữ liệu cho tác vụ hiện tại. Xem định dạng cùng quy tắc huấn luyện và xác thực trong mục kiến trúc tương ứng.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-segmentation">Phân đoạn thực thể hiện đại<a class="headerlink" href="#modern-segmentation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tham số</th>
+<th>Giá trị mặc định UI / đã thông qua</th>
+<th>Phạm vi nhập thuộc số</th>
+<th>Ý nghĩa thật sự</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Một kích thước đầu vào cho kiến trúc hiện đại. Phân loại cắt ảnh theo quy tắc tiền xử lý. Phát hiện, phân đoạn và OBB đổi kích thước và đệm ảnh theo quy tắc của bộ máy. Không dùng tham số này để đặt riêng chiều cao và chiều rộng.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>Số epoch huấn luyện tối đa. Kiến trúc hiện đại có thể kết thúc sớm do cơ chế dừng sớm hoặc do người dùng dừng.</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>Số epoch liên tiếp không cải thiện chỉ số xác thực trước khi dừng sớm. Giá trị 0 tắt dừng sớm.</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>8</code></td>
+<td>0～64</td>
+<td>Ở kiến trúc hiện đại, đây là số tiến trình tải dữ liệu. Với kiến trúc cổ điển trên Windows, giá trị lớn hơn 0 dùng luồng để đọc và tiền xử lý ảnh song song. Giá trị 0 dùng cách tải gốc.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>Số ảnh xử lý trong một lô. Với phát hiện bất thường, đây là kích thước lô trích xuất đặc trưng. Giảm giá trị khi thiếu bộ nhớ GPU.</td>
+</tr>
+<tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Kích thước lô xác thực của kiến trúc hiện đại. Giá trị 0 dùng kích thước lô huấn luyện thực tế, còn 1～512 đặt kích thước riêng. Số tiến trình tải theo thiết lập huấn luyện trong giới hạn của bộ máy và hệ thống, không tự nhân đôi. Cấu hình này cũng dùng khi xác thực lại mô hình tốt nhất.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn thiết bị tính toán. Trong kiến trúc hiện đại, auto để bộ máy tự chọn, còn gpu dùng một GPU được chọn trong danh sách. Tác vụ cổ điển và phát hiện bất thường cũng dùng GPU chỉ định. Nếu GPU đã chọn không khả dụng, tác vụ báo lỗi và không tự chuyển sang CPU.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Hạt giống ngẫu nhiên. Cùng hạt giống không đảm bảo kết quả giống hệt trên các thiết bị hoặc môi trường khác nhau.</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Độ chính xác hỗn hợp. Giao diện hiện đại dùng True hoặc False. Giao diện cổ điển có các lựa chọn dùng cấu hình, tắt và bật. Bật trực tiếp yêu cầu GPU. AMP cổ điển không dùng khi huấn luyện bằng CPU.</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn bộ tối ưu. Chế độ auto của kiến trúc hiện đại ghi đè tốc độ học ban đầu và động lượng đặt thủ công, đồng thời đặt tốc độ học khởi động của độ lệch về 0. Chế độ config của kiến trúc cổ điển dùng cấu hình YAML.</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>Động lượng cho bộ tối ưu họ SGD. Với họ Adam, giá trị này thường tương ứng với beta1. Chế độ auto có thể ghi đè giá trị trong kiến trúc hiện đại.</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>Hệ số suy giảm trọng số. Giá trị âm mặc định trong kiến trúc cổ điển có nghĩa là dùng cấu hình. Bộ máy không nhận hệ số suy giảm âm.</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>Số epoch khởi động. Kiến trúc hiện đại chấp nhận số thập phân. Kiến trúc cổ điển chỉ cho chỉnh khi dùng lịch cosin và giá trị phải nhỏ hơn tổng số epoch.</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>Động lượng ban đầu trong giai đoạn khởi động cho phát hiện, phân đoạn và OBB hiện đại.</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Tốc độ học ban đầu của độ lệch trong giai đoạn khởi động cho phát hiện, phân đoạn và OBB hiện đại. Chế độ auto đặt giá trị này về 0.</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>Góc tuyệt đối tối đa của phép xoay ngẫu nhiên khi huấn luyện. Giá trị 0 tắt xoay. Phân loại dùng phép xoay ngẫu nhiên riêng của ứng dụng.</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất lật dọc khi huấn luyện.</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất lật ngang khi huấn luyện.</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Biên độ tịnh tiến khi huấn luyện theo tỷ lệ kích thước ảnh, không tính bằng pixel.</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Biên độ đổi tỷ lệ ngẫu nhiên khi huấn luyện. Tham số này không đặt kích thước đầu vào hay hệ số phóng to khi suy luận.</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất ghép ảnh Mosaic khi huấn luyện. Bộ máy vẫn áp dụng quy tắc tắt Mosaic ở giai đoạn cuối.</td>
+</tr>
+<tr>
+<td><code>copy_paste</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Khi phát hiện, đối tượng được sao chép theo xác suất sang vị trí không chồng lấn trong cùng ảnh. Khi phân đoạn, tham số là tỷ lệ sao chép và dán mặt nạ của bộ máy. Bỏ qua nếu không có vị trí an toàn. OBB không có tùy chọn này.</td>
+</tr>
+<tr>
+<td><code>erasing</code></td>
+<td><code>0.4</code></td>
+<td>0.0～1.0</td>
+<td>Phát hiện và phân đoạn chỉ xóa nền bên ngoài hộp. Đối tượng và nhãn được giữ lại. OBB không có tùy chọn này.</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số hàm mất mát định vị hộp. Đây không phải ngưỡng phát hiện.</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số hàm mất mát phân loại đối tượng. Đây không phải số lớp.</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số của Distribution Focal Loss (DFL). Kiến trúc mô hình quyết định có dùng hàm mất mát này hay không.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-seg.pt"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn trọng số có sẵn phù hợp với tác vụ. Ứng dụng tìm tệp trong thư mục đi kèm.</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn tập dữ liệu cho tác vụ hiện tại. Xem định dạng cùng quy tắc huấn luyện và xác thực trong mục kiến trúc tương ứng.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modern-obb">Phát hiện đối tượng bằng hộp xoay hiện đại<a class="headerlink" href="#modern-obb" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tham số</th>
+<th>Giá trị mặc định UI / đã thông qua</th>
+<th>Phạm vi nhập thuộc số</th>
+<th>Ý nghĩa thật sự</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>imgsz</code></td>
+<td><code>640</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Một kích thước đầu vào cho kiến trúc hiện đại. Phân loại cắt ảnh theo quy tắc tiền xử lý. Phát hiện, phân đoạn và OBB đổi kích thước và đệm ảnh theo quy tắc của bộ máy. Không dùng tham số này để đặt riêng chiều cao và chiều rộng.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>1000</code></td>
+<td>1～10000</td>
+<td>Số epoch huấn luyện tối đa. Kiến trúc hiện đại có thể kết thúc sớm do cơ chế dừng sớm hoặc do người dùng dừng.</td>
+</tr>
+<tr>
+<td><code>patience</code></td>
+<td><code>100</code></td>
+<td>0～1000</td>
+<td>Số epoch liên tiếp không cải thiện chỉ số xác thực trước khi dừng sớm. Giá trị 0 tắt dừng sớm.</td>
+</tr>
+<tr>
+<td><code>workers</code></td>
+<td><code>0</code></td>
+<td>0～64</td>
+<td>Ở kiến trúc hiện đại, đây là số tiến trình tải dữ liệu. Với kiến trúc cổ điển trên Windows, giá trị lớn hơn 0 dùng luồng để đọc và tiền xử lý ảnh song song. Giá trị 0 dùng cách tải gốc.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>16</code></td>
+<td>1～512</td>
+<td>Số ảnh xử lý trong một lô. Với phát hiện bất thường, đây là kích thước lô trích xuất đặc trưng. Giảm giá trị khi thiếu bộ nhớ GPU.</td>
+</tr>
+<tr>
+<td><code>val_batch</code></td>
+<td><code>0</code></td>
+<td>0～512</td>
+<td>Kích thước lô xác thực của kiến trúc hiện đại. Giá trị 0 dùng kích thước lô huấn luyện thực tế, còn 1～512 đặt kích thước riêng. Số tiến trình tải theo thiết lập huấn luyện trong giới hạn của bộ máy và hệ thống, không tự nhân đôi. Cấu hình này cũng dùng khi xác thực lại mô hình tốt nhất.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn thiết bị tính toán. Trong kiến trúc hiện đại, auto để bộ máy tự chọn, còn gpu dùng một GPU được chọn trong danh sách. Tác vụ cổ điển và phát hiện bất thường cũng dùng GPU chỉ định. Nếu GPU đã chọn không khả dụng, tác vụ báo lỗi và không tự chuyển sang CPU.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Hạt giống ngẫu nhiên. Cùng hạt giống không đảm bảo kết quả giống hệt trên các thiết bị hoặc môi trường khác nhau.</td>
+</tr>
+<tr>
+<td><code>amp</code></td>
+<td><code>true</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Độ chính xác hỗn hợp. Giao diện hiện đại dùng True hoặc False. Giao diện cổ điển có các lựa chọn dùng cấu hình, tắt và bật. Bật trực tiếp yêu cầu GPU. AMP cổ điển không dùng khi huấn luyện bằng CPU.</td>
+</tr>
+<tr>
+<td><code>optimizer</code></td>
+<td><code>"auto"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn bộ tối ưu. Chế độ auto của kiến trúc hiện đại ghi đè tốc độ học ban đầu và động lượng đặt thủ công, đồng thời đặt tốc độ học khởi động của độ lệch về 0. Chế độ config của kiến trúc cổ điển dùng cấu hình YAML.</td>
+</tr>
+<tr>
+<td><code>momentum</code></td>
+<td><code>0.937</code></td>
+<td>0.0～1.0</td>
+<td>Động lượng cho bộ tối ưu họ SGD. Với họ Adam, giá trị này thường tương ứng với beta1. Chế độ auto có thể ghi đè giá trị trong kiến trúc hiện đại.</td>
+</tr>
+<tr>
+<td><code>weight_decay</code></td>
+<td><code>0.0005</code></td>
+<td>0.0～0.1</td>
+<td>Hệ số suy giảm trọng số. Giá trị âm mặc định trong kiến trúc cổ điển có nghĩa là dùng cấu hình. Bộ máy không nhận hệ số suy giảm âm.</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>3.0</code></td>
+<td>0.0～50.0</td>
+<td>Số epoch khởi động. Kiến trúc hiện đại chấp nhận số thập phân. Kiến trúc cổ điển chỉ cho chỉnh khi dùng lịch cosin và giá trị phải nhỏ hơn tổng số epoch.</td>
+</tr>
+<tr>
+<td><code>warmup_momentum</code></td>
+<td><code>0.8</code></td>
+<td>0.0～1.0</td>
+<td>Động lượng ban đầu trong giai đoạn khởi động cho phát hiện, phân đoạn và OBB hiện đại.</td>
+</tr>
+<tr>
+<td><code>warmup_bias_lr</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Tốc độ học ban đầu của độ lệch trong giai đoạn khởi động cho phát hiện, phân đoạn và OBB hiện đại. Chế độ auto đặt giá trị này về 0.</td>
+</tr>
+<tr>
+<td><code>degrees</code></td>
+<td><code>0.0</code></td>
+<td>0.0～180.0</td>
+<td>Góc tuyệt đối tối đa của phép xoay ngẫu nhiên khi huấn luyện. Giá trị 0 tắt xoay. Phân loại dùng phép xoay ngẫu nhiên riêng của ứng dụng.</td>
+</tr>
+<tr>
+<td><code>flipud</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất lật dọc khi huấn luyện.</td>
+</tr>
+<tr>
+<td><code>fliplr</code></td>
+<td><code>0.5</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất lật ngang khi huấn luyện.</td>
+</tr>
+<tr>
+<td><code>translate</code></td>
+<td><code>0.1</code></td>
+<td>0.0～1.0</td>
+<td>Biên độ tịnh tiến khi huấn luyện theo tỷ lệ kích thước ảnh, không tính bằng pixel.</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Biên độ đổi tỷ lệ ngẫu nhiên khi huấn luyện. Tham số này không đặt kích thước đầu vào hay hệ số phóng to khi suy luận.</td>
+</tr>
+<tr>
+<td><code>mosaic</code></td>
+<td><code>0.0</code></td>
+<td>0.0～1.0</td>
+<td>Xác suất ghép ảnh Mosaic khi huấn luyện. Bộ máy vẫn áp dụng quy tắc tắt Mosaic ở giai đoạn cuối.</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td><code>7.5</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số hàm mất mát định vị hộp. Đây không phải ngưỡng phát hiện.</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>0.5</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số hàm mất mát phân loại đối tượng. Đây không phải số lớp.</td>
+</tr>
+<tr>
+<td><code>dfl</code></td>
+<td><code>1.5</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số của Distribution Focal Loss (DFL). Kiến trúc mô hình quyết định có dùng hàm mất mát này hay không.</td>
+</tr>
+<tr>
+<td><code>angle</code></td>
+<td><code>1.0</code></td>
+<td>0.0～20.0</td>
+<td>Trọng số hàm mất mát góc của hộp xoay. Kiến trúc OBB quyết định có dùng tham số này không. Đây không phải góc xoay tăng cường.</td>
+</tr>
+<tr>
+<td><code>model_path</code></td>
+<td><code>"ats-m-obb.pt"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn trọng số có sẵn phù hợp với tác vụ. Ứng dụng tìm tệp trong thư mục đi kèm.</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn tập dữ liệu cho tác vụ hiện tại. Xem định dạng cùng quy tắc huấn luyện và xác thực trong mục kiến trúc tương ứng.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legacy-detection">Phát hiện vật thể cổ điển 2.7.0<a class="headerlink" href="#legacy-detection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tham số</th>
+<th>Giá trị mặc định UI / đã thông qua</th>
+<th>Phạm vi nhập thuộc số</th>
+<th>Ý nghĩa thật sự</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python</code></td>
+<td><code>"&lt;software directory&gt;\\Paddle\\runtime-cpu\\python.exe"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Trình thông dịch của môi trường cổ điển riêng. Ứng dụng tự tìm theo lựa chọn CPU hoặc GPU. Có thể chỉ định môi trường tương thích bằng tay.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>"&lt;software directory&gt;\\Paddle\\PaddleDetection-2.7.0\\configs\\ppyoloe\\ppyoloe_plus_crn_s_80e_coco.yml"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>YAML tham chiếu. s/m/l/x/sod là các cấu hình có sẵn của phát hiện cổ điển. Phân loại hiển thị tên cấu hình thực tế.</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td><code>"&lt;software directory&gt;\\runs\\classic_det"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Thư mục gốc kết quả huấn luyện cổ điển. Mỗi lần chạy tạo thư mục thử nghiệm riêng có dấu thời gian.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>100</code></td>
+<td>1～100000</td>
+<td>Số epoch huấn luyện tối đa. Kiến trúc hiện đại có thể kết thúc sớm do cơ chế dừng sớm hoặc do người dùng dừng.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>4</code></td>
+<td>1～4096</td>
+<td>Số ảnh xử lý trong một lô. Với phát hiện bất thường, đây là kích thước lô trích xuất đặc trưng. Giảm giá trị khi thiếu bộ nhớ GPU.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Hạt giống ngẫu nhiên. Cùng hạt giống không đảm bảo kết quả giống hệt trên các thiết bị hoặc môi trường khác nhau.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn thiết bị tính toán. Trong kiến trúc hiện đại, auto để bộ máy tự chọn, còn gpu dùng một GPU được chọn trong danh sách. Tác vụ cổ điển và phát hiện bất thường cũng dùng GPU chỉ định. Nếu GPU đã chọn không khả dụng, tác vụ báo lỗi và không tự chuyển sang CPU.</td>
+</tr>
+<tr>
+<td><code>weight_mode</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>config dùng YAML và ánh xạ URL trọng số tiền huấn luyện đến tệp cục bộ đi kèm. local dùng tệp .pdparams cục bộ. random khởi tạo ngẫu nhiên. Nếu trọng số đi kèm bị thiếu hoặc hỏng, ứng dụng báo lỗi và không tải tạm.</td>
+</tr>
+<tr>
+<td><code>weights</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Tệp .pdparams, chỉ dùng khi chọn trọng số tiền huấn luyện cục bộ.</td>
+</tr>
+<tr>
+<td><code>dataset.mode</code></td>
+<td><code>"coco"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Phát hiện cổ điển mặc định dùng coco, phân loại dùng classification. config dùng thiết lập dữ liệu từ YAML.</td>
+</tr>
+<tr>
+<td><code>dataset.root</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Thư mục gốc của tập dữ liệu cổ điển. Chỉ chọn một thư mục. Xem quy tắc nhận diện trong mục tập dữ liệu.</td>
+</tr>
+<tr>
+<td><code>dataset.evaluate_on_train</code></td>
+<td><code>false</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Mặc định tắt. Khi bật, dùng toàn bộ ảnh và nhãn huấn luyện thay cho tập xác thực độc lập để đánh giá. Chỉ số chỉ phản ánh mức khớp với tập huấn luyện.</td>
+</tr>
+<tr>
+<td><code>training_options.image_size_mode</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Trong phát hiện cổ điển, config dùng kích thước trong cấu hình. fixed đặt chung kích thước huấn luyện, xác thực và xuất. eval chỉ đổi kích thước xác thực, kiểm thử và xuất.</td>
+</tr>
+<tr>
+<td><code>training_options.image_height</code></td>
+<td><code>640</code></td>
+<td>96～8192</td>
+<td>Chiều cao tùy chỉnh của phát hiện cổ điển, từ 96 đến 8192 và là bội số của 32. Không áp dụng trong chế độ config.</td>
+</tr>
+<tr>
+<td><code>training_options.image_width</code></td>
+<td><code>640</code></td>
+<td>96～8192</td>
+<td>Chiều rộng tùy chỉnh của phát hiện cổ điển, từ 96 đến 8192 và là bội số của 32. Không áp dụng trong chế độ config.</td>
+</tr>
+<tr>
+<td><code>training_options.workers</code></td>
+<td><code>0</code></td>
+<td>0～32</td>
+<td>Ở kiến trúc hiện đại, đây là số tiến trình tải dữ liệu. Với kiến trúc cổ điển trên Windows, giá trị lớn hơn 0 dùng luồng để đọc và tiền xử lý ảnh song song. Giá trị 0 dùng cách tải gốc.</td>
+</tr>
+<tr>
+<td><code>training_options.learning_rate</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>0.0～100.0</td>
+<td>Tốc độ học ban đầu của kiến trúc cổ điển. Giá trị 0 trong giao diện nghĩa là dùng cấu hình. Khi đó ứng dụng không gửi giá trị ghi đè.</td>
+</tr>
+<tr>
+<td><code>training_options.weight_decay</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>-1.0～10.0</td>
+<td>Hệ số suy giảm trọng số. Giá trị âm mặc định trong kiến trúc cổ điển có nghĩa là dùng cấu hình. Bộ máy không nhận hệ số suy giảm âm.</td>
+</tr>
+<tr>
+<td><code>training_options.optimizer</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn bộ tối ưu. Chế độ auto của kiến trúc hiện đại ghi đè tốc độ học ban đầu và động lượng đặt thủ công, đồng thời đặt tốc độ học khởi động của độ lệch về 0. Chế độ config của kiến trúc cổ điển dùng cấu hình YAML.</td>
+</tr>
+<tr>
+<td><code>training_options.scheduler</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Lịch tốc độ học của kiến trúc cổ điển. config giữ các mốc và tổng chu kỳ trong YAML. constant giữ tốc độ cố định. cosine tạo lại lịch cosin theo tổng số epoch của lần chạy.</td>
+</tr>
+<tr>
+<td><code>training_options.warmup_epochs</code></td>
+<td><code>0</code></td>
+<td>0～10000</td>
+<td>Số epoch khởi động. Kiến trúc hiện đại chấp nhận số thập phân. Kiến trúc cổ điển chỉ cho chỉnh khi dùng lịch cosin và giá trị phải nhỏ hơn tổng số epoch.</td>
+</tr>
+<tr>
+<td><code>training_options.amp</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Độ chính xác hỗn hợp. Giao diện hiện đại dùng True hoặc False. Giao diện cổ điển có các lựa chọn dùng cấu hình, tắt và bật. Bật trực tiếp yêu cầu GPU. AMP cổ điển không dùng khi huấn luyện bằng CPU.</td>
+</tr>
+<tr>
+<td><code>training_options.augmentation</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Ở kiến trúc cổ điển, config giữ tăng cường của mô hình. off bỏ tăng cường ngẫu nhiên và dùng tiền xử lý xác thực. Chuẩn hóa vẫn được áp dụng.</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Số thứ tự GPU vật lý của tác vụ cổ điển hoặc phát hiện bất thường. Trong tiến trình riêng, GPU được ánh xạ thành GPU 0. Mỗi lần chạy chỉ dùng một GPU.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legacy-classification">Phân loại ảnh cổ điển 2.5.0<a class="headerlink" href="#legacy-classification" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tham số</th>
+<th>Giá trị mặc định UI / đã thông qua</th>
+<th>Phạm vi nhập thuộc số</th>
+<th>Ý nghĩa thật sự</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python</code></td>
+<td><code>"&lt;software directory&gt;\\Paddle\\runtime-cpu\\python.exe"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Trình thông dịch của môi trường cổ điển riêng. Ứng dụng tự tìm theo lựa chọn CPU hoặc GPU. Có thể chỉ định môi trường tương thích bằng tay.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>"&lt;software directory&gt;\\Paddle\\PaddleClas-2.5.0\\ppcls\\configs\\ImageNet\\ResNet\\ResNet50.yaml"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>YAML tham chiếu. s/m/l/x/sod là các cấu hình có sẵn của phát hiện cổ điển. Phân loại hiển thị tên cấu hình thực tế.</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td><code>"&lt;software directory&gt;\\runs\\classic_cls"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Thư mục gốc kết quả huấn luyện cổ điển. Mỗi lần chạy tạo thư mục thử nghiệm riêng có dấu thời gian.</td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>100</code></td>
+<td>1～100000</td>
+<td>Số epoch huấn luyện tối đa. Kiến trúc hiện đại có thể kết thúc sớm do cơ chế dừng sớm hoặc do người dùng dừng.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>4</code></td>
+<td>1～4096</td>
+<td>Số ảnh xử lý trong một lô. Với phát hiện bất thường, đây là kích thước lô trích xuất đặc trưng. Giảm giá trị khi thiếu bộ nhớ GPU.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>42</code></td>
+<td>0～99999</td>
+<td>Hạt giống ngẫu nhiên. Cùng hạt giống không đảm bảo kết quả giống hệt trên các thiết bị hoặc môi trường khác nhau.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn thiết bị tính toán. Trong kiến trúc hiện đại, auto để bộ máy tự chọn, còn gpu dùng một GPU được chọn trong danh sách. Tác vụ cổ điển và phát hiện bất thường cũng dùng GPU chỉ định. Nếu GPU đã chọn không khả dụng, tác vụ báo lỗi và không tự chuyển sang CPU.</td>
+</tr>
+<tr>
+<td><code>weight_mode</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>config dùng YAML và ánh xạ URL trọng số tiền huấn luyện đến tệp cục bộ đi kèm. local dùng tệp .pdparams cục bộ. random khởi tạo ngẫu nhiên. Nếu trọng số đi kèm bị thiếu hoặc hỏng, ứng dụng báo lỗi và không tải tạm.</td>
+</tr>
+<tr>
+<td><code>weights</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Tệp .pdparams, chỉ dùng khi chọn trọng số tiền huấn luyện cục bộ.</td>
+</tr>
+<tr>
+<td><code>dataset.mode</code></td>
+<td><code>"classification"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Phát hiện cổ điển mặc định dùng coco, phân loại dùng classification. config dùng thiết lập dữ liệu từ YAML.</td>
+</tr>
+<tr>
+<td><code>dataset.root</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Thư mục gốc của tập dữ liệu cổ điển. Chỉ chọn một thư mục. Xem quy tắc nhận diện trong mục tập dữ liệu.</td>
+</tr>
+<tr>
+<td><code>training_options.image_size</code></td>
+<td><code>0</code></td>
+<td>0～8192</td>
+<td>Với phân loại cổ điển, đây là cạnh ảnh vuông. Giá trị 0 dùng cấu hình. Với phát hiện bất thường, toàn bộ ảnh được đổi trực tiếp thành hình vuông có cạnh 64～1024, là bội số của 32.</td>
+</tr>
+<tr>
+<td><code>training_options.workers</code></td>
+<td><code>0</code></td>
+<td>0～32</td>
+<td>Ở kiến trúc hiện đại, đây là số tiến trình tải dữ liệu. Với kiến trúc cổ điển trên Windows, giá trị lớn hơn 0 dùng luồng để đọc và tiền xử lý ảnh song song. Giá trị 0 dùng cách tải gốc.</td>
+</tr>
+<tr>
+<td><code>training_options.learning_rate</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>0.0～100.0</td>
+<td>Tốc độ học ban đầu của kiến trúc cổ điển. Giá trị 0 trong giao diện nghĩa là dùng cấu hình. Khi đó ứng dụng không gửi giá trị ghi đè.</td>
+</tr>
+<tr>
+<td><code>training_options.weight_decay</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>-1.0～10.0</td>
+<td>Hệ số suy giảm trọng số. Giá trị âm mặc định trong kiến trúc cổ điển có nghĩa là dùng cấu hình. Bộ máy không nhận hệ số suy giảm âm.</td>
+</tr>
+<tr>
+<td><code>training_options.optimizer</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn bộ tối ưu. Chế độ auto của kiến trúc hiện đại ghi đè tốc độ học ban đầu và động lượng đặt thủ công, đồng thời đặt tốc độ học khởi động của độ lệch về 0. Chế độ config của kiến trúc cổ điển dùng cấu hình YAML.</td>
+</tr>
+<tr>
+<td><code>training_options.scheduler</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Lịch tốc độ học của kiến trúc cổ điển. config giữ các mốc và tổng chu kỳ trong YAML. constant giữ tốc độ cố định. cosine tạo lại lịch cosin theo tổng số epoch của lần chạy.</td>
+</tr>
+<tr>
+<td><code>training_options.warmup_epochs</code></td>
+<td><code>0</code></td>
+<td>0～10000</td>
+<td>Số epoch khởi động. Kiến trúc hiện đại chấp nhận số thập phân. Kiến trúc cổ điển chỉ cho chỉnh khi dùng lịch cosin và giá trị phải nhỏ hơn tổng số epoch.</td>
+</tr>
+<tr>
+<td><code>training_options.amp</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Độ chính xác hỗn hợp. Giao diện hiện đại dùng True hoặc False. Giao diện cổ điển có các lựa chọn dùng cấu hình, tắt và bật. Bật trực tiếp yêu cầu GPU. AMP cổ điển không dùng khi huấn luyện bằng CPU.</td>
+</tr>
+<tr>
+<td><code>training_options.augmentation</code></td>
+<td><code>"config"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Ở kiến trúc cổ điển, config giữ tăng cường của mô hình. off bỏ tăng cường ngẫu nhiên và dùng tiền xử lý xác thực. Chuẩn hóa vẫn được áp dụng.</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Số thứ tự GPU vật lý của tác vụ cổ điển hoặc phát hiện bất thường. Trong tiến trình riêng, GPU được ánh xạ thành GPU 0. Mỗi lần chạy chỉ dùng một GPU.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="anomaly">Phát hiện bất thường<a class="headerlink" href="#anomaly" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tham số</th>
+<th>Giá trị mặc định UI / đã thông qua</th>
+<th>Phạm vi nhập thuộc số</th>
+<th>Ý nghĩa thật sự</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>train_dir</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Thư mục ảnh OK dùng để huấn luyện phát hiện bất thường. Chỉ đặt ảnh bình thường trong thư mục này.</td>
+</tr>
+<tr>
+<td><code>calibration_dir</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Thư mục ảnh OK hiệu chuẩn riêng. Nếu bỏ trống, ứng dụng loại ảnh trùng nội dung rồi dành khoảng 20% để hiệu chuẩn. Ảnh hiệu chuẩn không vào kho đặc trưng.</td>
+</tr>
+<tr>
+<td><code>backbone</code></td>
+<td><code>"resnet18"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Mạng trích xuất đặc trưng tiền huấn luyện cho phát hiện bất thường: resnet18 hoặc wide_resnet50_2. Tham số của mạng được đóng băng.</td>
+</tr>
+<tr>
+<td><code>image_size</code></td>
+<td><code>256</code></td>
+<td>64～1024</td>
+<td>Với phân loại cổ điển, đây là cạnh ảnh vuông. Giá trị 0 dùng cấu hình. Với phát hiện bất thường, toàn bộ ảnh được đổi trực tiếp thành hình vuông có cạnh 64～1024, là bội số của 32.</td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td><code>2</code></td>
+<td>1～16</td>
+<td>Số ảnh xử lý trong một lô. Với phát hiện bất thường, đây là kích thước lô trích xuất đặc trưng. Giảm giá trị khi thiếu bộ nhớ GPU.</td>
+</tr>
+<tr>
+<td><code>coreset_ratio</code></td>
+<td><code>0.01</code></td>
+<td>0.001～1.0</td>
+<td>Tỷ lệ đặc trưng ứng viên giữ lại trong tập đại diện. Giá trị còn chịu giới hạn số đặc trưng của tập này.</td>
+</tr>
+<tr>
+<td><code>max_patches</code></td>
+<td><code>50000</code></td>
+<td>100～250000</td>
+<td>Giới hạn số đặc trưng ứng viên. Nếu vượt giới hạn, ứng dụng lấy mẫu. Đây không phải số ảnh huấn luyện.</td>
+</tr>
+<tr>
+<td><code>max_bank</code></td>
+<td><code>5000</code></td>
+<td>1～10000</td>
+<td>Giới hạn số đặc trưng trong tập đại diện cuối cùng. Đây không phải số ảnh hay số lớp.</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Suy luận phát hiện bất thường dùng tệp model.patchcore.pt do huấn luyện tạo ra.</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Ảnh hoặc thư mục ảnh dùng cho suy luận phát hiện bất thường. Thư mục đầu ra phải nằm ngoài thư mục đầu vào.</td>
+</tr>
+<tr>
+<td><code>threshold_multiplier</code></td>
+<td><code>1.0</code></td>
+<td>0.1～10.0</td>
+<td>Hệ số ngưỡng phát hiện bất thường. Nhỏ hơn 1 nhạy hơn, lớn hơn 1 ít nhạy hơn. Điểm bất thường không phải xác suất.</td>
+</tr>
+<tr>
+<td><code>output_dir</code></td>
+<td><code>"&lt;software directory&gt;\\runs\\patchcore"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Thư mục gốc kết quả phát hiện bất thường. Huấn luyện và suy luận tạo thư mục thử nghiệm riêng.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cpu"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Chọn thiết bị tính toán. Trong kiến trúc hiện đại, auto để bộ máy tự chọn, còn gpu dùng một GPU được chọn trong danh sách. Tác vụ cổ điển và phát hiện bất thường cũng dùng GPU chỉ định. Nếu GPU đã chọn không khả dụng, tác vụ báo lỗi và không tự chuyển sang CPU.</td>
+</tr>
+<tr>
+<td><code>gpu_id</code></td>
+<td><code>0</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Số thứ tự GPU vật lý của tác vụ cổ điển hoặc phát hiện bất thường. Trong tiến trình riêng, GPU được ánh xạ thành GPU 0. Mỗi lần chạy chỉ dùng một GPU.</td>
+</tr>
+</tbody>
+</table></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">Tài liệu ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Đối chiếu tham số với cấu hình cuối cùng và nhật ký của lần chạy</p>
+
+        </footer>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "T\u00e0i li\u1ec7u ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u0110\u1ed1i chi\u1ebfu tham s\u1ed1 v\u1edbi c\u1ea5u h\u00ecnh cu\u1ed1i c\u00f9ng v\u00e0 nh\u1eadt k\u00fd c\u1ee7a l\u1ea7n ch\u1ea1y", "found": "T\u00ecm th\u1ea5y {0} k\u1ebft qu\u1ea3", "language": "Ng\u00f4n ng\u1eef t\u00e0i li\u1ec7u", "missing_body": "D\u00f9ng thanh \u0111i\u1ec1u h\u01b0\u1edbng ho\u1eb7c quay l\u1ea1i trang ch\u1ee7 tr\u1ee3 gi\u00fap.", "missing_title": "Kh\u00f4ng t\u00ecm th\u1ea5y trang tr\u1ee3 gi\u00fap", "not_found": "Kh\u00f4ng t\u00ecm th\u1ea5y k\u1ebft qu\u1ea3. H\u00e3y th\u1eed t\u1eeb kh\u00f3a kh\u00e1c.", "search_error": "Kh\u00f4ng t\u1ea3i \u0111\u01b0\u1ee3c ch\u1ec9 m\u1ee5c t\u00ecm ki\u1ebfm. H\u00e3y ki\u1ec3m tra k\u1ebft n\u1ed1i v\u00e0 t\u1ea3i l\u1ea1i trang."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Tìm kiếm</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+            </div>
+            <div class="modal-body">
+                <p>Nhập từ khóa bên dưới để tìm trong tài liệu.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Tìm kiếm..." id="mkdocs-search-query" title="Nhập từ khóa tìm kiếm">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="Không tìm thấy kết quả"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Phím tắt</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Phím</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Mở trợ giúp này</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Trang sau</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Trang trước</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Tìm kiếm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

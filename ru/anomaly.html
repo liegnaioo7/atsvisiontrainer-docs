@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Обнаружение аномалий - ATSVisionTrainer Справка</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link href="assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">ATSVisionTrainer Справка</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Начало работы</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="index.html" class="dropdown-item">Главная</a>
+</li>
+
+<li>
+    <a href="getting-started.html" class="dropdown-item">Быстрый старт</a>
+</li>
+
+<li>
+    <a href="datasets.html" class="dropdown-item">Подготовка наборов данных</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Современные архитектуры</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="modern/common.html" class="dropdown-item">Общие параметры и аугментация</a>
+</li>
+
+<li>
+    <a href="modern/detection.html" class="dropdown-item">Обнаружение объектов</a>
+</li>
+
+<li>
+    <a href="modern/classification.html" class="dropdown-item">Классификация изображений</a>
+</li>
+
+<li>
+    <a href="modern/segmentation.html" class="dropdown-item">Сегментация экземпляров</a>
+</li>
+
+<li>
+    <a href="modern/obb.html" class="dropdown-item">Обнаружение объектов с повёрнутыми рамками</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Классические архитектуры</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="legacy/common.html" class="dropdown-item">Общие параметры и отдельные среды</a>
+</li>
+
+<li>
+    <a href="legacy/detection.html" class="dropdown-item">Обнаружение объектов 2.7.0</a>
+</li>
+
+<li>
+    <a href="legacy/classification.html" class="dropdown-item">Классификация изображений 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="anomaly.html" class="nav-link active" aria-current="page">Обнаружение аномалий</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="inference-export.html" class="nav-link">Инференс и экспорт</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Журналы и история</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="monitoring.html" class="dropdown-item">Графики обучения и исходные журналы</a>
+</li>
+
+<li>
+    <a href="history.html" class="dropdown-item">История обучения и очистка</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reference/parameters.html" class="nav-link">Справочник параметров</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="troubleshooting.html" class="nav-link">Частые вопросы</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feedback.html" class="nav-link">Обратная связь</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Поиск
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="legacy/classification.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Назад
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="inference-export.html" class="nav-link">
+                                    Вперед <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Язык документации">
+
+<a href="./../anomaly.html">简体中文</a>
+
+<a href="./../en/anomaly.html">English</a>
+
+<a href="./../it/anomaly.html">Italiano</a>
+
+<a href="./../ja/anomaly.html">日本語</a>
+
+<a href="./../zh_TW/anomaly.html">繁體中文</a>
+
+<a href="./../ru/anomaly.html" aria-current="true">Русский</a>
+
+<a href="./../vi/anomaly.html">Tiếng Việt</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps для разметки данных <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Содержание">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#atsanomaly" class="nav-link">Обнаружение аномалий ATSAnomaly</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">Учебные и калибровочные данные</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">Параметры строительства</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">Порог и инференс</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="atsanomaly">Обнаружение аномалий ATSAnomaly<a class="headerlink" href="#atsanomaly" title="Permanent link">&para;</a></h1>
+<p>Подходит для построения банка памяти только из нормальных ОК-изображений, затем для идентификации новых изображений, отклоняющихся от нормального распределения.Текущая реализация использует метод PatchCore, без многоэпохальной градиентной тренировки, как в обычной классификации.</p>
+<h2 id="_1">Учебные и калибровочные данные<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Учебные и независимые калибровочные каталоги должны содержать только ОК-изображения. Если калибровка пустая, изображения дублируются по содержанию и примерно 20% удерживается с помощью фиксированного случайного семени 42; требуется по меньшей мере 3 отдельные изображения. Калибровочные изображения не поступают в банк памяти; дубликаты контента между обучением и независимой калибровкой вызывают ошибку.</p>
+<p>Пороги, оцененные только по изображениям ОК, не могут установить отзыв дефектов, ложноположительную скорость или точность производства. Проверить эффективность бизнеса с использованием независимых образцов ОК/NG.</p>
+<h2 id="_2">Параметры строительства<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Эффект</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>костяк</td>
+<td>ResNet18 (быстрее) или Wide ResNet50-2 (более высокая емкость), с использованием упакованных предварительно подготовленных весов с замороженными параметрами.</td>
+</tr>
+<tr>
+<td>Размер изображения</td>
+<td>по умолчанию 256; изменяет размер всего изображения на квадрат без краев, потенциально изменяя соотношение сторон; 64–1024 и множественное число 32</td>
+</tr>
+<tr>
+<td>Размер пакета извлечения признаков</td>
+<td>по умолчанию 2диапазон 1–16; элементы управления размером партии извлечения; уменьшить, если память GPU недостаточна</td>
+</tr>
+<tr>
+<td>Фракция удержания крисета</td>
+<td>Дефолт 0.01; сохранена часть функций кандидата, а не часть сохраненных обучающих изображений</td>
+</tr>
+<tr>
+<td>Кандидатский лимит</td>
+<td>По умолчанию 50000; ограниченная выборка выше этого предела ограничивает кандидатов, входящих в выбор ядра</td>
+</tr>
+<tr>
+<td>Ограничение возможностей Coreset</td>
+<td>Default 5000; закрывает окончательный счет функций банка памяти</td>
+</tr>
+</tbody>
+</table>
+<p>Окончательный размер ядра - <code>min(coreset feature limit, max(1, int(candidate feature count × retention fraction)))</code>. Более крупные банки памяти и размеры изображений обычно увеличивают требования к оперативной памяти, памяти GPU и вычислениям выводов.</p>
+<p>Эта страница не имеет скорости обучения, оптимизатора, эпох или ранних настроек остановки.Прогресс состоит из обычного извлечения функций, выборки ядра и калибровки порога ОК.</p>
+<h2 id="_3">Порог и инференс<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Модель сохранена как <code>model.patchcore.pt</code>. Используйте проверку вывода аномалии на этой странице для вывода, с одним изображением или папкой изображения.</p>
+<p>Оценки аномалий — это расстояния признаков, а не вероятности, и не обязательно должны быть в пределах 0 1. Во время строительства оценки калибровки OK оценивают пороги уровня изображения и пикселя. По умолчанию порог множителя вывода 1: ниже 1 Z более чувствителен; выше 1 Z более разрешителен. Оценка изображения, достигающая порога изображения, классифицируется как NG; порог пикселя определяет маску пикселя. Это разные статистические данные.</p>
+<p>Результаты включают в себя OK/NG, оценки аномалий, тепловые карты, наложения, маски, необработанные карты оценок и JSON/CSV. Каталог выходных данных не должен находиться внутри каталога входных изображений, предотвращая повторный ввод полученных результатов.</p>
+<p>Этот формат модели не является общим ONNX, обычной классификацией PT или классической моделью вывода; не выберите его на главной странице валидации вывода модели. CPU и одно исполнение графического процессора NVIDIA используют независимую среду обнаружения аномалий.</p>
+<p>Полный список диапазонов приведён в <a href="reference/parameters.html#anomaly">таблице параметров обнаружения аномалий</a>.</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">Документация ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Сверяйте параметры с итоговой конфигурацией и журналом эксперимента</p>
+
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u044f ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u0421\u0432\u0435\u0440\u044f\u0439\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0441 \u0438\u0442\u043e\u0433\u043e\u0432\u043e\u0439 \u043a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u0435\u0439 \u0438 \u0436\u0443\u0440\u043d\u0430\u043b\u043e\u043c \u044d\u043a\u0441\u043f\u0435\u0440\u0438\u043c\u0435\u043d\u0442\u0430", "found": "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432: {0}", "language": "\u042f\u0437\u044b\u043a \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438", "missing_body": "\u0412\u043e\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435\u0441\u044c \u043c\u0435\u043d\u044e \u0438\u043b\u0438 \u0432\u0435\u0440\u043d\u0438\u0442\u0435\u0441\u044c \u043d\u0430 \u0433\u043b\u0430\u0432\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u0441\u043f\u0440\u0430\u0432\u043a\u0438.", "missing_title": "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u0441\u043f\u0440\u0430\u0432\u043a\u0438 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430", "not_found": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435\u0442. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0439 \u0437\u0430\u043f\u0440\u043e\u0441.", "search_error": "\u041d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043f\u043e\u0438\u0441\u043a\u043e\u0432\u044b\u0439 \u0438\u043d\u0434\u0435\u043a\u0441. \u041f\u0440\u043e\u0432\u0435\u0440\u044c\u0442\u0435 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u0438 \u043e\u0431\u043d\u043e\u0432\u0438\u0442\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Поиск</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p>Чтобы воспользоваться поиском по документам, введите поисковый запрос ниже.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Поиск..." id="mkdocs-search-query" title="Введите поисковый запрос">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="Ничего не найдено"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Сочетания клавиш</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Клавиши</th>
+                    <th>Действие</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Открыть справку</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Следующая страница</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Предыдущая страница</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Поиск</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

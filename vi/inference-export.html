@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="vi" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Suy luận và xuất mô hình - ATSVisionTrainer Trợ giúp</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link href="assets/help.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">ATSVisionTrainer Trợ giúp</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Bắt đầu</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="index.html" class="dropdown-item">Trang chủ trợ giúp</a>
+</li>
+
+<li>
+    <a href="getting-started.html" class="dropdown-item">Hướng dẫn nhanh</a>
+</li>
+
+<li>
+    <a href="datasets.html" class="dropdown-item">Chuẩn bị tập dữ liệu</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Kiến trúc hiện đại</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="modern/common.html" class="dropdown-item">Tham số chung và tăng cường dữ liệu</a>
+</li>
+
+<li>
+    <a href="modern/detection.html" class="dropdown-item">Phát hiện đối tượng</a>
+</li>
+
+<li>
+    <a href="modern/classification.html" class="dropdown-item">Phân loại ảnh</a>
+</li>
+
+<li>
+    <a href="modern/segmentation.html" class="dropdown-item">Phân đoạn thực thể</a>
+</li>
+
+<li>
+    <a href="modern/obb.html" class="dropdown-item">Phát hiện đối tượng bằng hộp xoay</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Kiến trúc cổ điển</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="legacy/common.html" class="dropdown-item">Tham số chung và môi trường riêng</a>
+</li>
+
+<li>
+    <a href="legacy/detection.html" class="dropdown-item">Phát hiện đối tượng 2.7.0</a>
+</li>
+
+<li>
+    <a href="legacy/classification.html" class="dropdown-item">Phân loại ảnh 2.5.0</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="anomaly.html" class="nav-link">Phát hiện bất thường</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="inference-export.html" class="nav-link active" aria-current="page">Suy luận và xuất mô hình</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Nhật ký và lịch sử</a>
+                                <ul class="dropdown-menu">
+
+<li>
+    <a href="monitoring.html" class="dropdown-item">Biểu đồ huấn luyện và nhật ký gốc</a>
+</li>
+
+<li>
+    <a href="history.html" class="dropdown-item">Lịch sử huấn luyện và dọn dẹp</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reference/parameters.html" class="nav-link">Tham chiếu tham số</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="troubleshooting.html" class="nav-link">Câu hỏi thường gặp</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feedback.html" class="nav-link">Góp ý</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Tìm kiếm
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="anomaly.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Trang trước
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="monitoring.html" class="nav-link">
+                                    Trang sau <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<div class="help-toolbar">
+<nav class="help-languages" aria-label="Ngôn ngữ tài liệu">
+
+<a href="./../inference-export.html">简体中文</a>
+
+<a href="./../en/inference-export.html">English</a>
+
+<a href="./../it/inference-export.html">Italiano</a>
+
+<a href="./../ja/inference-export.html">日本語</a>
+
+<a href="./../zh_TW/inference-export.html">繁體中文</a>
+
+<a href="./../ru/inference-export.html">Русский</a>
+
+<a href="./../vi/inference-export.html" aria-current="true">Tiếng Việt</a>
+
+</nav>
+<a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">Công cụ gán nhãn ATSVisionOps <span aria-hidden="true">↗</span></a>
+</div>
+
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Mục lục">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+
+            <li class="nav-item" data-bs-level="1"><a href="#suy-luan-mo-hinh-va-xuat-tu-ong" class="nav-link">Suy luận mô hình và xuất tự động</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#pham-vi-ho-tro-cua-trang-suy-luan" class="nav-link">Phạm vi hỗ trợ của trang suy luận</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#kieu-tac-vu-nguong-va-thiet-bi" class="nav-link">Kiểu tác vụ, ngưỡng và thiết bị</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tien-xu-ly" class="nav-link">Tiền xử lý</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#thu-muc-au-ra" class="nav-link">Thư mục đầu ra</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tu-ong-xuat-mo-hinh-sau-khi-huan-luyen" class="nav-link">Tự động xuất mô hình sau khi huấn luyện</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="suy-luan-mo-hinh-va-xuat-tu-ong">Suy luận mô hình và xuất tự động<a class="headerlink" href="#suy-luan-mo-hinh-va-xuat-tu-ong" title="Permanent link">&para;</a></h1>
+<h2 id="pham-vi-ho-tro-cua-trang-suy-luan">Phạm vi hỗ trợ của trang suy luận<a class="headerlink" href="#pham-vi-ho-tro-cua-trang-suy-luan" title="Permanent link">&para;</a></h2>
+<p>Mô hình suy luận hỗ trợ tất cả bốn nhiệm vụ hiện đại cộng với phát hiện và phân loại cổ điển. Hãy sử dụng quan điểm suy luận của trang bất thường cho phát hiện bất thường.</p>
+<table>
+<thead>
+<tr>
+<th>Kiến trúc</th>
+<th>Trái cân nhập</th>
+<th>Còn cần gì nữa không?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mô hình hiện đại</td>
+<td><code>.pt</code> hay <code>.onnx</code></td>
+<td>Kiểu tác vụ khớp; đặc biệt quan trọng đối với ONNX</td>
+</tr>
+<tr>
+<td>Phát hiện/ phân loại cổ điển</td>
+<td><code>.pdparams</code></td>
+<td>YAML huấn luyện khớp với mô hình. Có thể nhập từ lần huấn luyện.</td>
+</tr>
+<tr>
+<td>Trang phát hiện bất thường</td>
+<td><code>model.patchcore.pt</code></td>
+<td>Nguồn ảnh, thiết bị và trình tăng cường ngưỡng trên trang đó</td>
+</tr>
+</tbody>
+</table>
+<p>Nhập một thí nghiệm đào tạo cổ điển ưu tiên hình ảnh cuối cùng và kiểm tra thật sự; một URL đã đào tạo trong YAML không được xem như một mô hình đã được đào tạo. Một class TXT có thể được xác định nếu cần thiết. Hình khối kinh điển không tương ứng sẽ gây ra lỗi thay vì lặng lẽ sử dụng tham số ngẫu nhiên.</p>
+<h2 id="kieu-tac-vu-nguong-va-thiet-bi">Kiểu tác vụ, ngưỡng và thiết bị<a class="headerlink" href="#kieu-tac-vu-nguong-va-thiet-bi" title="Permanent link">&para;</a></h2>
+<p>Công việc hiện đại bao gồm phân loại, phát hiện vật thể, phân đoạn và phát hiện đối tượng định hướng, kiến trúc cổ điển, cấu trúc được chọn sửa đổi loại nhiệm vụ.</p>
+<p>Ngưỡng tin cậy mặc định là 0.3, trong khoảng 0.01～1.0. Các tác vụ phát hiện dùng ngưỡng để lọc kết quả. Phân loại cổ điển trả tối đa 5 lớp đạt ngưỡng. <strong>Phân loại hiện đại không dùng conf để lọc xác suất lớp</strong>. Không dùng conf làm quy tắc OK/NG cho phân loại hiện đại.</p>
+<p>Mô hình PT hiện đại dùng thiết bị đã chọn. Mô hình <strong>ONNX hiện đại chạy suy luận trên CPU</strong>, kể cả khi chọn GPU. Ứng dụng ghi thông báo trong nhật ký. Suy luận cổ điển chạy trên CPU hoặc một GPU NVIDIA đã chọn.</p>
+<h2 id="tien-xu-ly">Tiền xử lý<a class="headerlink" href="#tien-xu-ly" title="Permanent link">&para;</a></h2>
+<p>PT/ONNX phân loại hiện đại do ứng dụng tạo chứa siêu dữ liệu cắt giữa. Ứng dụng đọc siêu dữ liệu khi suy luận. Nếu chạy ONNX bằng chương trình bên ngoài, hãy tự triển khai tiền xử lý. Tệp JSON đi kèm không tự bật tiền xử lý trong chương trình khác.</p>
+<p>Phân loại kiểu cổ điển đọc bản đồ trước tiến trình và bản đồ lớp đã được cấu hình; phát hiện cổ điển sử dụng bộ thử ra khớp. Trọng lượng bên ngoài mà không có cấu hình đào tạo, không thể phục hồi tiến trình xử lý đúng chỉ riêng phần mở rộng tập tin.</p>
+<h2 id="thu-muc-au-ra">Thư mục đầu ra<a class="headerlink" href="#thu-muc-au-ra" title="Permanent link">&para;</a></h2>
+<p>Không có thư mục xuất rõ ràng, nhiệm vụ mô hình hiện thời xác định vị trí mặc định. Một thư mục được chọn một cách rõ ràng được dùng trực tiếp và có thể được dùng lại; kết quả với tên giống hệt có thể được ghi đè.</p>
+<p>Sự suy luận cổ điển và bất thường tạo thư mục thí nghiệm độc lập bên dưới gốc xuất, tiết kiệm hình ảnh hóa và kết quả cấu. Bản ghi hoàn thành cung cấp đường dẫn thực tế.</p>
+<h2 id="tu-ong-xuat-mo-hinh-sau-khi-huan-luyen">Tự động xuất mô hình sau khi huấn luyện<a class="headerlink" href="#tu-ong-xuat-mo-hinh-sau-khi-huan-luyen" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Luyện tập kiến trúc</th>
+<th>Xuất sau khi thành công</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bốn kiến trúc hiện đại</td>
+<td>ONNX. Phát hiện, phân đoạn và OBB còn xuất <code>infer_cfg.yml</code>. Phân loại còn xuất <code>Label.txt</code> và thông tin tiền xử lý.</td>
+</tr>
+<tr>
+<td>Phát hiện cổ điển</td>
+<td><code>model.pdmodel</code>, <code>model.pdiparams</code>, thông tin tham số và <code>infer_cfg.yml</code></td>
+</tr>
+<tr>
+<td>Phân loại Cổ điển</td>
+<td>Mô hình suy luận, tham số, <code>ImageSize.txt</code>triển khai YAML và danh sách lớp học</td>
+</tr>
+<tr>
+<td>Phát hiện bất thường</td>
+<td>Tự kiềm chế <code>model.patchcore.pt</code>; sử dụng dòng năng lượng bất thường</td>
+</tr>
+</tbody>
+</table>
+<p>Khi xuất ONNX hiện đại, ứng dụng mặc định không đơn giản hóa đồ thị và không tự cài onnxslim. OBB không nhúng NMS. Xuất mô hình cổ điển chạy trên CPU trong tiến trình riêng, dù có thể huấn luyện bằng GPU. Sau khi huấn luyện, hãy đợi việc xuất hoàn tất trước khi triển khai.</p>
+<p>Việc luyện tập hoàn tất không bảo đảm xuất khẩu hoàn tất. <code>export.json</code> và bản ghi thô. Đừng xoá toàn bộ thí nghiệm để thử lại xuất khẩu.</p></div>
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<hr><p class="help-footer">Tài liệu ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Đối chiếu tham số với cấu hình cuối cùng và nhật ký của lần chạy</p>
+
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="assets/help-search.js"></script>
+<script>window.helpTranslations = {"footer": "T\u00e0i li\u1ec7u ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u0110\u1ed1i chi\u1ebfu tham s\u1ed1 v\u1edbi c\u1ea5u h\u00ecnh cu\u1ed1i c\u00f9ng v\u00e0 nh\u1eadt k\u00fd c\u1ee7a l\u1ea7n ch\u1ea1y", "found": "T\u00ecm th\u1ea5y {0} k\u1ebft qu\u1ea3", "language": "Ng\u00f4n ng\u1eef t\u00e0i li\u1ec7u", "missing_body": "D\u00f9ng thanh \u0111i\u1ec1u h\u01b0\u1edbng ho\u1eb7c quay l\u1ea1i trang ch\u1ee7 tr\u1ee3 gi\u00fap.", "missing_title": "Kh\u00f4ng t\u00ecm th\u1ea5y trang tr\u1ee3 gi\u00fap", "not_found": "Kh\u00f4ng t\u00ecm th\u1ea5y k\u1ebft qu\u1ea3. H\u00e3y th\u1eed t\u1eeb kh\u00f3a kh\u00e1c.", "search_error": "Kh\u00f4ng t\u1ea3i \u0111\u01b0\u1ee3c ch\u1ec9 m\u1ee5c t\u00ecm ki\u1ebfm. H\u00e3y ki\u1ec3m tra k\u1ebft n\u1ed1i v\u00e0 t\u1ea3i l\u1ea1i trang."};</script>
+
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Tìm kiếm</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+            </div>
+            <div class="modal-body">
+                <p>Nhập từ khóa bên dưới để tìm trong tài liệu.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Tìm kiếm..." id="mkdocs-search-query" title="Nhập từ khóa tìm kiếm">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="Không tìm thấy kết quả"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Phím tắt</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Phím</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Mở trợ giúp này</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Trang sau</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Trang trước</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Tìm kiếm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

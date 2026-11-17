@@ -156,6 +156,10 @@
 
 <a href="../../zh_TW/modern/common.html">繁體中文</a>
 
+<a href="../../ru/modern/common.html">Русский</a>
+
+<a href="../../vi/modern/common.html">Tiếng Việt</a>
+
 </nav>
 <a class="help-ops-link" href="https://www.atsv.top" target="_blank" rel="noopener noreferrer">ATSVisionOps annotation software <span aria-hidden="true">↗</span></a>
 </div>
@@ -177,6 +181,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#validation-resources-and-memory" class="nav-link">Validation resources and memory</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#optimizer" class="nav-link">Optimizer</a>
               <ul class="nav flex-column">
               </ul>
@@ -194,6 +202,10 @@
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#output-location" class="nav-link">Output location</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#select-a-training-gpu" class="nav-link">Select a training GPU</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -241,7 +253,7 @@
 </tr>
 <tr>
 <td>device</td>
-<td>auto lets the engine choose; gpu maps to GPU 0; cpu trains on the CPU.</td>
+<td>auto lets the engine choose; gpu uses the single GPU selected under Training GPU; cpu trains on the CPU.</td>
 </tr>
 <tr>
 <td>seed</td>
@@ -254,6 +266,9 @@
 </tbody>
 </table>
 <p>The size field parses a single number. Non-digit text falls back to default size (640 for detection/segmentation/OBB, 960 for classification), rather than parsing <code>640×480</code> or lists. Check the logs; this field does not set rectangular dimensions.</p>
+<h2 id="validation-resources-and-memory">Validation resources and memory<a class="headerlink" href="#validation-resources-and-memory" title="Permanent link">&para;</a></h2>
+<p>Modern validation batch size: 0 follows the effective training batch; 1–512 sets it independently. Validation workers follow the training setting, subject to engine and system limits, without automatic doubling. The final best-model validation uses the same settings.</p>
+<p>Use the validation batch setting in the basic configuration to reduce the validation batch independently. Direct training and queued tasks use their saved settings. Start instance segmentation with a smaller batch. Validation differs from training; equal batch sizes do not guarantee sufficient memory.</p>
 <h2 id="optimizer">Optimizer<a class="headerlink" href="#optimizer" title="Permanent link">&para;</a></h2>
 <p><code>optimizer=auto</code> selects the optimizer, initial learning rate and momentum again, and sets <code>warmup_bias_lr</code> to 0. Select an explicit optimizer when you need manual learning-rate or momentum settings.</p>
 <p>Modern classification has <code>lr0</code> and <code>lrf</code> input fields; detection, segmentation and OBB pages have no separate learning rate field. Do not look for controls from tutorials for other software. Classification <code>lrf</code> is the final learning rate as a multiplier of the initial rate.</p>
@@ -269,7 +284,9 @@
 <p>For detection, segmentation and OBB, <code>box</code>, <code>cls</code> and <code>dfl</code> are loss coefficients, not prediction confidence or class counts. OBB <code>angle</code> is an angle loss coefficient, unrelated to rotation augmentation <code>degrees</code>. Passing a coefficient does not create a loss term that the model architecture does not use.</p>
 <h2 id="output-location">Output location<a class="headerlink" href="#output-location" title="Permanent link">&para;</a></h2>
 <p>Detection, segmentation and OBB results are stored in <code>runs</code> under the dataset directory; classification results use a sibling folder named after the dataset with the _runs suffix. The actual experiment path is the one recorded in the log, the chart's Open experiment directory action and training history.</p>
-<p>The software automatically exports ONNX with <code>simplify=False</code>, without automatically installing onnxslim for graph simplification. If export fails, inspect the log; existing checkpoints may still be retained.</p></div>
+<p>The software automatically exports ONNX with <code>simplify=False</code>, without automatically installing onnxslim for graph simplification. If export fails, inspect the log; existing checkpoints may still be retained.</p>
+<h2 id="select-a-training-gpu">Select a training GPU<a class="headerlink" href="#select-a-training-gpu" title="Permanent link">&para;</a></h2>
+<p>After selecting gpu, click Refresh GPUs and choose a card by index, name and memory. Indices reflect CUDA devices visible to the modern engine and may differ from physical indices when visibility is restricted. Queued tasks retain the selection and recheck it before execution. When the GPU UUID is available, the same card is located by identity; if it disappears, the task fails rather than using a different card. This selects a single GPU per task, not distributed training across multiple GPUs.</p></div>
 
             </div>
         </div>
