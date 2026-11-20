@@ -193,13 +193,14 @@
 <li>View training loss and actual validation metrics such as Precision, Recall and mAP. Only values returned by the engine are displayed; accuracy is not inferred from training loss.</li>
 <li>After completion, inspect checkpoints, ONNX and deployment class configuration in the experiment's <code>weights</code>; see <a href="../inference-export.html">inference and export</a>.</li>
 </ol>
+<p>For small defects, set Detection head to Small object detection (P2). P2 adds a finer feature map alongside the three standard scales. It transfers compatible parameters from the selected preset of the same size before training the new model. Use standard bounding box labels. Compare small-object recall, false positives and inference time on the same validation set.</p>
 <p>Defaults: input size 640, maximum epochs 1000, batch size 16, workers 8, patience 100, optimizer auto. Exact ranges and augmentation defaults are in the <a href="../reference/parameters.html#modern-detection">parameter checklist</a>.</p></div>
 
             </div>
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 2026.11 · Verify parameters against the effective experiment configuration and logs</p>
+<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 20261120.1 · Verify parameters against the effective experiment configuration and logs</p>
 
         </footer>
 
@@ -210,7 +211,7 @@
         </script>
         <script src="../js/base.js"></script>
         <script src="../assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 20261120.1 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

@@ -185,7 +185,15 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#roi" class="nav-link">ROI、切片與校準</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">閾值與推論</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#okng" class="nav-link">OK/NG 測試評估</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -216,7 +224,7 @@
 </tr>
 <tr>
 <td>影像尺寸</td>
-<td>預設 256；完整圖片縮放為正方形，不中心裁掉邊緣，可能改變長寬比；64～1024 且為 32 的倍數</td>
+<td>預設 256；完整圖片、ROI 或每個切片縮放為正方形，可能改變長寬比；64～1024 且為 32 的倍數</td>
 </tr>
 <tr>
 <td>提取批大小</td>
@@ -238,18 +246,29 @@
 </table>
 <p>最終核心集數量為 <code>min(核心集特徵上限, max(1, int(候選特徵數 × 保留比例)))</code>。特徵庫和影像尺寸增大通常會增加記憶體、顯示記憶體及推論計算量。</p>
 <p>此頁面沒有學習率、最佳化器、epochs 或早停參數；進度分為正常特徵提取、核心集取樣和 OK 閾值校準三個階段。</p>
+<h2 id="roi">ROI、切片與校準<a class="headerlink" href="#roi" title="Permanent link">&para;</a></h2>
+<p>點選“視覺化選擇 ROI”，開啟與訓練資料視角一致的參考圖片，在圖上拖動繪製矩形，並拖動邊角調整大小；百分比數值和圖上選區實時同步。暗色區域為偵測範圍之外。“完整影像”恢復全圖選區，“應用 ROI”自動啟用 ROI 並寫回訓練頁面，取消保留原設定。參考圖片用於定位偵測區域，訓練圖片由訓練目錄決定。</p>
+<p>ROI 預設關閉，啟用後按原圖寬高百分比設定左、上、右、下邊界，分別預設為 0、0、100、100。先裁出 ROI，再在區域內切片；切片預設關閉，啟用時預設邊長 512 像素、重疊比例 0.25。每塊縮放到“影像尺寸”，邊緣自動補齊覆蓋，區域不足一塊時按實際尺寸處理。重疊處取最大異常響應，熱力圖和遮罩還原到原圖座標；疊加圖在 ROI 外保留原圖，異常面積比例僅統計 ROI 內像素。</p>
+<p>近鄰數量預設 9，可設為 1～32，實際取值不超過特徵庫數量。校準分位數預設 0.99，可設為 0.9～1；安全係數預設 1.05，可設為 1～3。影像閾值和像素閾值分別由 OK 校準圖片的影像分數與像素峰值估計，閾值等於指定分位數乘以安全係數。更改這些建模參數後，應重新構建模型並用獨立 OK/NG 資料比較漏檢和誤報。</p>
+<p>ROI、切片和近鄰數量儲存為模型設定，推論與測試評估自動讀取。新版儲存模型格式 v2，並支援載入原有 v1 模型；原有模型按完整圖片處理。切片會增加特徵提取和推論耗時，核心集大小仍受候選上限、保留比例和特徵上限約束。</p>
 <h2 id="_3">閾值與推論<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在“異常推論驗證”中，可從“歷史訓練模型”選擇已有模型，也可瀏覽本地模型檔案。歷史列表僅顯示模型檔案仍存在的異常偵測記錄；匯入舊實驗可在“歷史訓練”頁面新增歷史目錄，再重新整理模型列表。推論完成後，“本次推論結果”顯示實際儲存目錄，點選旁邊的“開啟結果目錄”可直接訪問；輸出位於“結果輸出目錄”下新建的時間戳子目錄。</p>
 <p>模型儲存為 <code>model.patchcore.pt</code>，推論位於本頁面的“異常推論驗證”。支援單圖或圖片資料夾。</p>
-<p>異常分數是特徵距離，不是機率，不要求落在 0～1。構建時用 OK 校準分數估計影像級和像素級閾值。推論閾值倍率預設 1：小於 1 更敏感，大於 1 更寬鬆。影像分數達到影像閾值判為 NG，像素遮罩由像素閾值決定，二者不是同一個統計量。</p>
+<p>異常分數是特徵距離，不是機率，不要求落在 0～1。影像判定倍率和像素遮罩倍率分別預設為 1：小於 1 更敏感，大於 1 更寬鬆。影像分數達到影像閾值判為 NG，像素倍率單獨調整遮罩範圍；測試評估中選定的倍率只應用到影像判定。</p>
 <p>結果包括 OK/NG、異常分數、熱力圖、疊加圖、遮罩、原始分數圖及 JSON/CSV。輸出目錄不得位於輸入圖片目錄中，防止結果再次被當作輸入。</p>
 <p>當前模型格式不是通用 ONNX、普通分類 PT 或經典推論模型；不要在主“模型推論驗證”裡選擇它。CPU 和單張 NVIDIA GPU 均使用獨立異常偵測環境。</p>
+<h2 id="okng">OK/NG 測試評估<a class="headerlink" href="#okng" title="Permanent link">&para;</a></h2>
+<p>開啟“OK/NG 測試評估”，選擇歷史模型或本地模型，分別指定獨立的 OK、NG 測試圖片目錄。兩個目錄都必須有圖片，且不能相互包含；支援遞迴讀取子目錄。測試圖不得參與模型構建或閾值校準，同一圖片內容不能同時標為 OK 和 NG。</p>
+<p>倍率預設從 0.5 到 1.5，步長 0.1；按起點加步長取值，不強制追加終點，單次最多比較 201 個倍率。每張圖只評分一次，每個倍率的實際閾值等於模型原始影像閾值乘以倍率，分數大於等於閾值判為 NG。評估結果用於選擇後續推論倍率，模型檔案不因評估而改寫。</p>
+<p>NG 為正類。漏檢是 NG 判為 OK，誤報是 OK 判為 NG；NG 召回率為 TP / (TP + FN)，OK 誤報率為 FP / (FP + TN)，NG 精確率為 TP / (TP + FP)。沒有預測 NG 時精確率顯示為“—”。F1 為精確率與召回率的調和平均。這裡評估整張圖片，不計算像素級分割精度。</p>
+<p>結果目錄儲存 <code>evaluation.json</code>、倍率對比表 <code>threshold_comparison.csv</code> 和逐圖分數 <code>evaluation_scores.csv</code>。逐圖表包含真實 OK/NG 標籤、異常分數和原始倍率 1 的判定。選中對比表的一行，點選“將所選倍率用於推論”即可應用到同一模型；更換模型後須重新評估。閾值調整完成後，應再用另一份獨立驗收資料確認漏檢與誤報表現。</p>
 <p>完整範圍見<a href="reference/parameters.html#anomaly">異常偵測參數表</a>。</p></div>
 
             </div>
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">ATSVisionTrainer 線上文件 · Windows 版 · V1.0.0 / Build 2026.11 · 參數以實驗最終設定和日誌為準</p>
+<hr><p class="help-footer">ATSVisionTrainer 線上文件 · Windows 版 · V1.0.0 / Build 20261120.1 · 參數以實驗最終設定和日誌為準</p>
 
         </footer>
 
@@ -260,7 +279,7 @@
         </script>
         <script src="js/base.js"></script>
         <script src="assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u7dda\u4e0a\u6587\u4ef6 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u53c3\u6578\u4ee5\u5be6\u9a57\u6700\u7d42\u8a2d\u5b9a\u548c\u65e5\u8a8c\u70ba\u6e96", "found": "\u627e\u5230 {0} \u7b46\u7d50\u679c", "language": "\u6587\u4ef6\u8a9e\u8a00", "missing_body": "\u8acb\u5f9e\u5c0e\u89bd\u6216\u8aaa\u660e\u9996\u9801\u9032\u5165\u3002", "missing_title": "\u627e\u4e0d\u5230\u6b64\u8aaa\u660e\u9801\u9762", "not_found": "\u627e\u4e0d\u5230\u7b26\u5408\u7684\u5167\u5bb9\uff0c\u8acb\u5617\u8a66\u5176\u4ed6\u95dc\u9375\u5b57\u3002", "search_error": "\u7121\u6cd5\u8b80\u53d6\u641c\u5c0b\u7d22\u5f15\uff0c\u8acb\u6aa2\u67e5\u7db2\u8def\u9023\u7dda\u4e26\u91cd\u65b0\u6574\u7406\u9801\u9762\u3002"};</script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u7dda\u4e0a\u6587\u4ef6 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 20261120.1 \u00b7 \u53c3\u6578\u4ee5\u5be6\u9a57\u6700\u7d42\u8a2d\u5b9a\u548c\u65e5\u8a8c\u70ba\u6e96", "found": "\u627e\u5230 {0} \u7b46\u7d50\u679c", "language": "\u6587\u4ef6\u8a9e\u8a00", "missing_body": "\u8acb\u5f9e\u5c0e\u89bd\u6216\u8aaa\u660e\u9996\u9801\u9032\u5165\u3002", "missing_title": "\u627e\u4e0d\u5230\u6b64\u8aaa\u660e\u9801\u9762", "not_found": "\u627e\u4e0d\u5230\u7b26\u5408\u7684\u5167\u5bb9\uff0c\u8acb\u5617\u8a66\u5176\u4ed6\u95dc\u9375\u5b57\u3002", "search_error": "\u7121\u6cd5\u8b80\u53d6\u641c\u5c0b\u7d22\u5f15\uff0c\u8acb\u6aa2\u67e5\u7db2\u8def\u9023\u7dda\u4e26\u91cd\u65b0\u6574\u7406\u9801\u9762\u3002"};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

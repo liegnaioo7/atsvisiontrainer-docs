@@ -371,6 +371,12 @@
 <td>Distribution Focal Loss（DFL）の重みです。この損失の有無はモデル構造によります。</td>
 </tr>
 <tr>
+<td><code>detection_head</code></td>
+<td><code>"standard"</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>標準検出が既定値です。P2 は小物体向けの細かい検出スケールを追加します。</td>
+</tr>
+<tr>
 <td><code>copy_paste</code></td>
 <td><code>0.1</code></td>
 <td>0.0～1.0</td>
@@ -1129,7 +1135,7 @@
 <td><code>training_options.image_size</code></td>
 <td><code>0</code></td>
 <td>0～8192</td>
-<td>クラシック分類では正方形の一辺で、0 は設定を使用します。異常検出では画像全体をこの正方形へ直接リサイズし、64～1024 かつ 32 の倍数である必要があります。</td>
+<td>従来分類では正方形の辺長で、0 は設定を維持します。異常検知では画像全体・ROI・各タイルをこの正方形サイズに変換します。64～1024 の範囲で 32 の倍数です。</td>
 </tr>
 <tr>
 <td><code>training_options.workers</code></td>
@@ -1220,7 +1226,7 @@
 <td><code>image_size</code></td>
 <td><code>256</code></td>
 <td>64～1024</td>
-<td>クラシック分類では正方形の一辺で、0 は設定を使用します。異常検出では画像全体をこの正方形へ直接リサイズし、64～1024 かつ 32 の倍数である必要があります。</td>
+<td>従来分類では正方形の辺長で、0 は設定を維持します。異常検知では画像全体・ROI・各タイルをこの正方形サイズに変換します。64～1024 の範囲で 32 の倍数です。</td>
 </tr>
 <tr>
 <td><code>batch</code></td>
@@ -1247,6 +1253,72 @@
 <td>異常検出の最終コアセット特徴量数の上限です。画像数やクラス数ではありません。</td>
 </tr>
 <tr>
+<td><code>roi_enabled</code></td>
+<td><code>false</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>矩形の検査 ROI を有効にします。既定で無効、設定はモデルに保存されます。</td>
+</tr>
+<tr>
+<td><code>roi_left</code></td>
+<td><code>0.0</code></td>
+<td>0.0～100.0</td>
+<td>ROI 左端の元画像幅に対する割合です。既定値 0。ROI 有効時は右端より小さくしてください。</td>
+</tr>
+<tr>
+<td><code>roi_top</code></td>
+<td><code>0.0</code></td>
+<td>0.0～100.0</td>
+<td>ROI 上端の元画像高さに対する割合です。既定値 0。ROI 有効時は下端より小さくしてください。</td>
+</tr>
+<tr>
+<td><code>roi_right</code></td>
+<td><code>100.0</code></td>
+<td>0.0～100.0</td>
+<td>ROI 右端の元画像幅に対する割合です。既定値 100。</td>
+</tr>
+<tr>
+<td><code>roi_bottom</code></td>
+<td><code>100.0</code></td>
+<td>0.0～100.0</td>
+<td>ROI 下端の元画像高さに対する割合です。既定値 100。</td>
+</tr>
+<tr>
+<td><code>tiling_enabled</code></td>
+<td><code>false</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>異常検知モデルのタイル分割を有効にする設定です。既定で無効です。構築・校正・評価・推論にはモデル内の共通設定を使用します。</td>
+</tr>
+<tr>
+<td><code>tile_size</code></td>
+<td><code>512</code></td>
+<td>64～4096</td>
+<td>元画像におけるタイル辺長です。既定値 512 ピクセル、範囲 64～4096。タイルより小さい領域は実寸で処理します。</td>
+</tr>
+<tr>
+<td><code>tile_overlap</code></td>
+<td><code>0.25</code></td>
+<td>0.0～0.75</td>
+<td>隣接タイルの重複率です。既定値 0.25、範囲 0～0.75。端まで覆い、重複部分は最大の異常応答を採用します。</td>
+</tr>
+<tr>
+<td><code>neighbors</code></td>
+<td><code>9</code></td>
+<td>1～32</td>
+<td>特徴照合の近傍数です。既定値 9、範囲 1～32。実際には特徴メモリ数を超えず、設定はモデルに保存されます。</td>
+</tr>
+<tr>
+<td><code>calibration_quantile</code></td>
+<td><code>0.99</code></td>
+<td>0.9～1.0</td>
+<td>OK 校正スコアの分位数です。既定値 0.99、範囲 0.9～1。画像スコアとピクセル最大値に個別に適用します。</td>
+</tr>
+<tr>
+<td><code>calibration_margin</code></td>
+<td><code>1.05</code></td>
+<td>1.0～3.0</td>
+<td>校正安全係数です。既定値 1.05、範囲 1～3。最終しきい値は指定分位数と係数の積です。</td>
+</tr>
+<tr>
 <td><code>model</code></td>
 <td><code>未選択 / 設定を継承</code></td>
 <td>説明を参照（テキスト・選択肢・パス）</td>
@@ -1259,16 +1331,52 @@
 <td>異常推論の画像または画像フォルダーです。出力先を入力フォルダー内に指定することはできません。</td>
 </tr>
 <tr>
+<td><code>test_ok_dir</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>異常検知の評価用の独立した OK 画像フォルダーです。NG フォルダーと親子関係にしてはいけません。</td>
+</tr>
+<tr>
+<td><code>test_ng_dir</code></td>
+<td><code>未選択 / 設定を継承</code></td>
+<td>説明を参照（テキスト・選択肢・パス）</td>
+<td>異常検知の評価用の独立した NG 画像フォルダーです。NG を陽性とし、テスト画像はモデル構築や校正に使用しません。</td>
+</tr>
+<tr>
+<td><code>threshold_start</code></td>
+<td><code>0.5</code></td>
+<td>0.1～10.0</td>
+<td>異常検知評価のしきい値倍率の開始値です。既定値は 0.5。</td>
+</tr>
+<tr>
+<td><code>threshold_stop</code></td>
+<td><code>1.5</code></td>
+<td>0.1～10.0</td>
+<td>異常検知評価の倍率の上限です。既定値は 1.5。刻み幅に従って値を生成し、終了値は自動追加しません。</td>
+</tr>
+<tr>
+<td><code>threshold_step</code></td>
+<td><code>0.1</code></td>
+<td>0.01～10.0</td>
+<td>異常検知評価の倍率の刻み幅です。既定値は 0.1、実行ごとに最大 201 個の倍率を比較できます。</td>
+</tr>
+<tr>
 <td><code>threshold_multiplier</code></td>
 <td><code>1.0</code></td>
 <td>0.1～10.0</td>
-<td>異常推論のしきい値倍率です。1 未満では感度が上がり、1 を超えると判定が緩やかになります。異常スコアは確率ではありません。</td>
+<td>画像判定倍率です。画像単位の OK/NG しきい値のみを調整し、1 未満は敏感、1 超は緩い判定です。</td>
 </tr>
 <tr>
 <td><code>output_dir</code></td>
 <td><code>"&lt;ソフトウェアディレクトリ&gt;\\runs\\patchcore"</code></td>
 <td>説明を参照（テキスト・選択肢・パス）</td>
 <td>異常検出の出力ルートです。学習と推論はそれぞれ独立した実験サブフォルダーを作成します。</td>
+</tr>
+<tr>
+<td><code>pixel_threshold_multiplier</code></td>
+<td><code>1.0</code></td>
+<td>0.1～10.0</td>
+<td>ピクセルマスク倍率です。既定値 1。マスク範囲のみを調整し、異常面積は ROI 内で計算します。</td>
 </tr>
 <tr>
 <td><code>device</code></td>
@@ -1289,7 +1397,7 @@
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">ATSVisionTrainer オンライン文書 · Windows 版 · V1.0.0 / Build 2026.11 · パラメーターは実験の最終設定とログで確認してください</p>
+<hr><p class="help-footer">ATSVisionTrainer オンライン文書 · Windows 版 · V1.0.0 / Build 20261120.1 · パラメーターは実験の最終設定とログで確認してください</p>
 
         </footer>
 
@@ -1300,7 +1408,7 @@
         </script>
         <script src="../js/base.js"></script>
         <script src="../assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u30aa\u30f3\u30e9\u30a4\u30f3\u6587\u66f8 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u30d1\u30e9\u30e1\u30fc\u30bf\u30fc\u306f\u5b9f\u9a13\u306e\u6700\u7d42\u8a2d\u5b9a\u3068\u30ed\u30b0\u3067\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044", "found": "{0} \u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "language": "\u6587\u66f8\u306e\u8a00\u8a9e", "missing_body": "\u30ca\u30d3\u30b2\u30fc\u30b7\u30e7\u30f3\u307e\u305f\u306f\u30d8\u30eb\u30d7\u30db\u30fc\u30e0\u304b\u3089\u958b\u3044\u3066\u304f\u3060\u3055\u3044\u3002", "missing_title": "\u30d8\u30eb\u30d7\u30da\u30fc\u30b8\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093", "not_found": "\u4e00\u81f4\u3059\u308b\u5185\u5bb9\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u5225\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002", "search_error": "\u691c\u7d22\u30a4\u30f3\u30c7\u30c3\u30af\u30b9\u3092\u8aad\u307f\u8fbc\u3081\u307e\u305b\u3093\u3002\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u63a5\u7d9a\u3092\u78ba\u8a8d\u3057\u3066\u30da\u30fc\u30b8\u3092\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u304f\u3060\u3055\u3044\u3002"};</script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u30aa\u30f3\u30e9\u30a4\u30f3\u6587\u66f8 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 20261120.1 \u00b7 \u30d1\u30e9\u30e1\u30fc\u30bf\u30fc\u306f\u5b9f\u9a13\u306e\u6700\u7d42\u8a2d\u5b9a\u3068\u30ed\u30b0\u3067\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044", "found": "{0} \u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "language": "\u6587\u66f8\u306e\u8a00\u8a9e", "missing_body": "\u30ca\u30d3\u30b2\u30fc\u30b7\u30e7\u30f3\u307e\u305f\u306f\u30d8\u30eb\u30d7\u30db\u30fc\u30e0\u304b\u3089\u958b\u3044\u3066\u304f\u3060\u3055\u3044\u3002", "missing_title": "\u30d8\u30eb\u30d7\u30da\u30fc\u30b8\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093", "not_found": "\u4e00\u81f4\u3059\u308b\u5185\u5bb9\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u5225\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002", "search_error": "\u691c\u7d22\u30a4\u30f3\u30c7\u30c3\u30af\u30b9\u3092\u8aad\u307f\u8fbc\u3081\u307e\u305b\u3093\u3002\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u63a5\u7d9a\u3092\u78ba\u8a8d\u3057\u3066\u30da\u30fc\u30b8\u3092\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u304f\u3060\u3055\u3044\u3002"};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

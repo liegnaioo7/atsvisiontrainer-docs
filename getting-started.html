@@ -181,6 +181,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">软件更新</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -227,13 +231,16 @@
 </tr>
 </tbody>
 </table>
-<p>显式选择 GPU 后，不会因显卡不可用而自动改用 CPU。现代、经典及异常检测均需查看日志并检查所选设备和环境；auto 模式仍由各引擎自行选择。</p></div>
+<p>显式选择 GPU 后，不会因显卡不可用而自动改用 CPU。现代、经典及异常检测均需查看日志并检查所选设备和环境；auto 模式仍由各引擎自行选择。</p>
+<h2 id="_3">软件更新<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在侧边栏打开“软件更新”，填写发布方提供的 HTTPS 更新清单地址，点击“检查更新”查看新版说明，再下载、校验并安装。离线电脑可选择“导入离线更新包”读取官方 <code>.atsupdate</code> 文件。安装在训练、推理、队列和反馈操作空闲后进行；开发环境用于检查更新，实际安装使用完整发布包。</p>
+<p>请保留发布目录里的 <code>package-manifest.json</code> 和 <code>Updater.exe</code>，更新会使用它们检查版本并执行安装。下载与备份目录可以另选磁盘；失败或中断后可查看更新记录，必要时关闭其他实例，再运行 <code>Updater.exe</code> 尝试恢复。</p></div>
 
             </div>
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">ATSVisionTrainer 在线文档 · Windows 版 · V1.0.0 / Build 2026.11 · 参数以实验最终配置和日志为准</p>
+<hr><p class="help-footer">ATSVisionTrainer 在线文档 · Windows 版 · V1.0.0 / Build 20261120.1 · 参数以实验最终配置和日志为准</p>
 
         </footer>
 
@@ -244,7 +251,7 @@
         </script>
         <script src="js/base.js"></script>
         <script src="assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u5728\u7ebf\u6587\u6863 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u53c2\u6570\u4ee5\u5b9e\u9a8c\u6700\u7ec8\u914d\u7f6e\u548c\u65e5\u5fd7\u4e3a\u51c6", "found": "\u627e\u5230 {0} \u6761\u7ed3\u679c", "language": "\u6587\u6863\u8bed\u8a00", "missing_body": "\u8bf7\u4ece\u5de6\u4fa7\u5bfc\u822a\u6216\u5e2e\u52a9\u9996\u9875\u8fdb\u5165\u3002", "missing_title": "\u6ca1\u6709\u627e\u5230\u8fd9\u4e2a\u5e2e\u52a9\u9875\u9762", "not_found": "\u672a\u627e\u5230\u5339\u914d\u5185\u5bb9\uff0c\u8bf7\u6362\u4e00\u4e2a\u5173\u952e\u8bcd\u3002", "search_error": "\u65e0\u6cd5\u8bfb\u53d6\u641c\u7d22\u7d22\u5f15\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc\u8fde\u63a5\u5e76\u5237\u65b0\u9875\u9762\u3002"};</script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u5728\u7ebf\u6587\u6863 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 20261120.1 \u00b7 \u53c2\u6570\u4ee5\u5b9e\u9a8c\u6700\u7ec8\u914d\u7f6e\u548c\u65e5\u5fd7\u4e3a\u51c6", "found": "\u627e\u5230 {0} \u6761\u7ed3\u679c", "language": "\u6587\u6863\u8bed\u8a00", "missing_body": "\u8bf7\u4ece\u5de6\u4fa7\u5bfc\u822a\u6216\u5e2e\u52a9\u9996\u9875\u8fdb\u5165\u3002", "missing_title": "\u6ca1\u6709\u627e\u5230\u8fd9\u4e2a\u5e2e\u52a9\u9875\u9762", "not_found": "\u672a\u627e\u5230\u5339\u914d\u5185\u5bb9\uff0c\u8bf7\u6362\u4e00\u4e2a\u5173\u952e\u8bcd\u3002", "search_error": "\u65e0\u6cd5\u8bfb\u53d6\u641c\u7d22\u7d22\u5f15\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc\u8fde\u63a5\u5e76\u5237\u65b0\u9875\u9762\u3002"};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

@@ -220,7 +220,7 @@
 <h2 id="what-to-keep-in-the-complete-package">What to keep in the complete package<a class="headerlink" href="#what-to-keep-in-the-complete-package" title="Permanent link">&para;</a></h2>
 <p>Distribute the complete application folder, including the executable, <code>_internal</code>, classic runtimes and anomaly runtime. Customers need working GPU drivers and appropriate system runtime libraries; bundled framework libraries do not replace NVIDIA drivers.</p>
 <p>MkDocs builds the documentation during development. Users do not need to install MkDocs, Python, or a separate web server. The application serves the bundled pages and search resources locally.</p>
-<p>Bundled help lives in <code>_internal/help_site</code>; keep it for the Help action. The root <code>docs</code> technical notes and <code>package-manifest.json</code> are still not training/inference dependencies. The manifest supports file-integrity diagnosis.</p>
+<p>Bundled help is stored in <code>_internal/help_site</code>. Keep this folder to open the built-in help, and keep <code>Updater.exe</code> and the original <code>package-manifest.json</code> to install incremental updates.</p>
 <h2 id="why-map-is-missing">Why mAP is missing<a class="headerlink" href="#why-map-is-missing" title="Permanent link">&para;</a></h2>
 <p>First check for an independent validation set, then whether an evaluation epoch has been reached. Classic COCO training without validation does not split images or evaluate. If evaluation ran but yielded no valid metrics, inspect its raw logs; loss is not an evaluation substitute.</p>
 <h2 id="low-gpu-utilization">Low GPU utilization<a class="headerlink" href="#low-gpu-utilization" title="Permanent link">&para;</a></h2>
@@ -240,7 +240,7 @@
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 2026.11 · Verify parameters against the effective experiment configuration and logs</p>
+<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 20261120.1 · Verify parameters against the effective experiment configuration and logs</p>
 
         </footer>
 
@@ -251,7 +251,7 @@
         </script>
         <script src="js/base.js"></script>
         <script src="assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 20261120.1 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

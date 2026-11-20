@@ -193,13 +193,14 @@
 <li>Consultare la perdita di addestramento e le metriche effettive di validazione come Precision, Recall e mAP. Sono visualizzati solo i valori restituiti dal motore; l'accuratezza non viene dedotta dalla perdita di addestramento.</li>
 <li>Al termine, consultare checkpoint, ONNX e configurazione delle classi in <code>weights</code> dell'esperimento; vedere <a href="../inference-export.html">inferenza ed esportazione</a>.</li>
 </ol>
+<p>Per i difetti piccoli, selezionare Rilevamento di oggetti piccoli (P2) come testa di rilevamento. P2 aggiunge una mappa di caratteristiche più fine alle tre scale standard. Prima di addestrare il nuovo modello, trasferisce i parametri compatibili dai pesi predefiniti della stessa taglia. Usare annotazioni con riquadri standard. Confrontare richiamo sui piccoli oggetti, falsi positivi e tempi di inferenza sullo stesso insieme di validazione.</p>
 <p>Predefiniti: input 640, massimo 1000 epoche, batch 16, workers 8, patience 100, ottimizzatore auto. Intervalli esatti e valori iniziali degli aumenti sono nella <a href="../reference/parameters.html#modern-detection">tabella dei parametri</a>.</p></div>
 
             </div>
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
+<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 20261120.1 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
 
         </footer>
 
@@ -210,7 +211,7 @@
         </script>
         <script src="../js/base.js"></script>
         <script src="../assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
+<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 20261120.1 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

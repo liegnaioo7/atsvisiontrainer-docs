@@ -371,6 +371,12 @@
 <td>Peso della Distribution Focal Loss (DFL); la sua presenza dipende dall'architettura del modello.</td>
 </tr>
 <tr>
+<td><code>detection_head</code></td>
+<td><code>"standard"</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Il rilevamento standard è l’opzione predefinita. P2 aggiunge una scala più fine per gli oggetti piccoli.</td>
+</tr>
+<tr>
 <td><code>copy_paste</code></td>
 <td><code>0.1</code></td>
 <td>0.0～1.0</td>
@@ -1129,7 +1135,7 @@
 <td><code>training_options.image_size</code></td>
 <td><code>0</code></td>
 <td>0～8192</td>
-<td>Per la classificazione classica, lato del quadrato; 0 usa la configurazione. Il rilevamento anomalie ridimensiona direttamente l'intera immagine a questo quadrato, con lato 64–1024 e multiplo di 32.</td>
+<td>Lato quadrato per la classificazione classica; 0 mantiene la configurazione. Il rilevamento anomalie ridimensiona l’immagine intera, la ROI o ogni riquadro a questo lato, compreso tra 64 e 1024 e multiplo di 32.</td>
 </tr>
 <tr>
 <td><code>training_options.workers</code></td>
@@ -1220,7 +1226,7 @@
 <td><code>image_size</code></td>
 <td><code>256</code></td>
 <td>64～1024</td>
-<td>Per la classificazione classica, lato del quadrato; 0 usa la configurazione. Il rilevamento anomalie ridimensiona direttamente l'intera immagine a questo quadrato, con lato 64–1024 e multiplo di 32.</td>
+<td>Lato quadrato per la classificazione classica; 0 mantiene la configurazione. Il rilevamento anomalie ridimensiona l’immagine intera, la ROI o ogni riquadro a questo lato, compreso tra 64 e 1024 e multiplo di 32.</td>
 </tr>
 <tr>
 <td><code>batch</code></td>
@@ -1247,6 +1253,72 @@
 <td>Numero massimo finale di caratteristiche del coreset per il rilevamento anomalie, non un numero di immagini o classi.</td>
 </tr>
 <tr>
+<td><code>roi_enabled</code></td>
+<td><code>false</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Abilita una ROI rettangolare, disattivata per impostazione predefinita; salvata nel modello.</td>
+</tr>
+<tr>
+<td><code>roi_left</code></td>
+<td><code>0.0</code></td>
+<td>0.0～100.0</td>
+<td>Limite sinistro ROI in percentuale della larghezza originale, predefinito 0; deve precedere il limite destro quando la ROI è attiva.</td>
+</tr>
+<tr>
+<td><code>roi_top</code></td>
+<td><code>0.0</code></td>
+<td>0.0～100.0</td>
+<td>Limite superiore ROI in percentuale dell’altezza originale, predefinito 0; deve precedere il limite inferiore quando la ROI è attiva.</td>
+</tr>
+<tr>
+<td><code>roi_right</code></td>
+<td><code>100.0</code></td>
+<td>0.0～100.0</td>
+<td>Limite destro ROI in percentuale della larghezza originale, predefinito 100.</td>
+</tr>
+<tr>
+<td><code>roi_bottom</code></td>
+<td><code>100.0</code></td>
+<td>0.0～100.0</td>
+<td>Limite inferiore ROI in percentuale dell’altezza originale, predefinito 100.</td>
+</tr>
+<tr>
+<td><code>tiling_enabled</code></td>
+<td><code>false</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Abilita la creazione del modello per riquadri, disattivata per impostazione predefinita. Creazione, calibrazione, valutazione e inferenza usano le stesse impostazioni salvate nel modello.</td>
+</tr>
+<tr>
+<td><code>tile_size</code></td>
+<td><code>512</code></td>
+<td>64～4096</td>
+<td>Lato del riquadro in pixel originali, predefinito 512, intervallo 64–4096. Le regioni più piccole vengono elaborate alle dimensioni reali.</td>
+</tr>
+<tr>
+<td><code>tile_overlap</code></td>
+<td><code>0.25</code></td>
+<td>0.0～0.75</td>
+<td>Rapporto di sovrapposizione dei riquadri, predefinito 0.25, intervallo 0–0.75. I riquadri ai bordi assicurano copertura; le sovrapposizioni usano la risposta massima.</td>
+</tr>
+<tr>
+<td><code>neighbors</code></td>
+<td><code>9</code></td>
+<td>1～32</td>
+<td>Numero di vicini per il confronto delle caratteristiche, predefinito 9, intervallo 1–32. Il numero effettivo non supera la dimensione della banca; salvato nel modello.</td>
+</tr>
+<tr>
+<td><code>calibration_quantile</code></td>
+<td><code>0.99</code></td>
+<td>0.9～1.0</td>
+<td>Quantile dei punteggi OK di calibrazione, predefinito 0.99, intervallo 0.9–1; applicato separatamente ai punteggi delle immagini e ai picchi dei pixel.</td>
+</tr>
+<tr>
+<td><code>calibration_margin</code></td>
+<td><code>1.05</code></td>
+<td>1.0～3.0</td>
+<td>Fattore di sicurezza di calibrazione, predefinito 1.05, intervallo 1–3; la soglia finale è il quantile scelto moltiplicato per questo fattore.</td>
+</tr>
+<tr>
 <td><code>model</code></td>
 <td><code>Non selezionato / usa configurazione</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
@@ -1259,16 +1331,52 @@
 <td>Immagine o cartella di immagini per l'inferenza delle anomalie; la directory di output non deve trovarsi all'interno della directory di input.</td>
 </tr>
 <tr>
+<td><code>test_ok_dir</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Directory indipendente di immagini OK per la valutazione delle anomalie. Non può contenere la directory NG né essere contenuta al suo interno.</td>
+</tr>
+<tr>
+<td><code>test_ng_dir</code></td>
+<td><code>Non selezionato / usa configurazione</code></td>
+<td>Vedere la descrizione (testo, opzione o percorso)</td>
+<td>Directory indipendente di immagini NG per la valutazione delle anomalie. NG è la classe positiva; le immagini di test non devono essere usate per creare il modello o calibrarlo.</td>
+</tr>
+<tr>
+<td><code>threshold_start</code></td>
+<td><code>0.5</code></td>
+<td>0.1～10.0</td>
+<td>Moltiplicatore iniziale della soglia per la valutazione delle anomalie, predefinito 0.5.</td>
+</tr>
+<tr>
+<td><code>threshold_stop</code></td>
+<td><code>1.5</code></td>
+<td>0.1～10.0</td>
+<td>Limite superiore dei moltiplicatori per la valutazione delle anomalie, predefinito 1.5. I valori seguono il passo; il valore finale non viene aggiunto automaticamente.</td>
+</tr>
+<tr>
+<td><code>threshold_step</code></td>
+<td><code>0.1</code></td>
+<td>0.01～10.0</td>
+<td>Passo del moltiplicatore per la valutazione delle anomalie, predefinito 0.1; fino a 201 moltiplicatori per esecuzione.</td>
+</tr>
+<tr>
 <td><code>threshold_multiplier</code></td>
 <td><code>1.0</code></td>
 <td>0.1～10.0</td>
-<td>Moltiplicatore della soglia di inferenza delle anomalie: sotto 1 è più sensibile, sopra 1 è più permissivo. I punteggi di anomalia non sono probabilità.</td>
+<td>Moltiplicatore della decisione sull’immagine; regola solo la soglia OK/NG globale. Sotto 1 è più sensibile, sopra 1 più permissivo.</td>
 </tr>
 <tr>
 <td><code>output_dir</code></td>
 <td><code>"&lt;cartella del software&gt;\\runs\\patchcore"</code></td>
 <td>Vedere la descrizione (testo, opzione o percorso)</td>
 <td>Directory radice di output del rilevamento anomalie; addestramento e inferenza creano sottodirectory di esperimento separate.</td>
+</tr>
+<tr>
+<td><code>pixel_threshold_multiplier</code></td>
+<td><code>1.0</code></td>
+<td>0.1～10.0</td>
+<td>Moltiplicatore della maschera pixel, predefinito 1; regola solo la maschera. L’area anomala è misurata nella ROI.</td>
 </tr>
 <tr>
 <td><code>device</code></td>
@@ -1289,7 +1397,7 @@
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
+<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 20261120.1 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
 
         </footer>
 
@@ -1300,7 +1408,7 @@
         </script>
         <script src="../js/base.js"></script>
         <script src="../assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
+<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 20261120.1 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

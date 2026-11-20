@@ -371,6 +371,12 @@
 <td>Distribution Focal Loss (DFL) weight; whether the loss exists depends on the model architecture.</td>
 </tr>
 <tr>
+<td><code>detection_head</code></td>
+<td><code>"standard"</code></td>
+<td>See description (text, option or path)</td>
+<td>Standard detection is the default. P2 adds a finer scale for small objects.</td>
+</tr>
+<tr>
 <td><code>copy_paste</code></td>
 <td><code>0.1</code></td>
 <td>0.0～1.0</td>
@@ -1129,7 +1135,7 @@
 <td><code>training_options.image_size</code></td>
 <td><code>0</code></td>
 <td>0～8192</td>
-<td>For classic classification, square side length; 0 uses the configuration. Anomaly detection resizes the entire image directly to this square size, which must be 64–1024 and a multiple of 32.</td>
+<td>Square input size for classic classification, with 0 retaining the configuration. Anomaly detection resizes the full image, ROI or each tile to this square size, within 64–1024 and a multiple of 32.</td>
 </tr>
 <tr>
 <td><code>training_options.workers</code></td>
@@ -1220,7 +1226,7 @@
 <td><code>image_size</code></td>
 <td><code>256</code></td>
 <td>64～1024</td>
-<td>For classic classification, square side length; 0 uses the configuration. Anomaly detection resizes the entire image directly to this square size, which must be 64–1024 and a multiple of 32.</td>
+<td>Square input size for classic classification, with 0 retaining the configuration. Anomaly detection resizes the full image, ROI or each tile to this square size, within 64–1024 and a multiple of 32.</td>
 </tr>
 <tr>
 <td><code>batch</code></td>
@@ -1247,6 +1253,72 @@
 <td>Maximum final coreset feature count for anomaly detection, not an image or class count.</td>
 </tr>
 <tr>
+<td><code>roi_enabled</code></td>
+<td><code>false</code></td>
+<td>See description (text, option or path)</td>
+<td>Enable a rectangular inspection ROI, disabled by default; saved in the model.</td>
+</tr>
+<tr>
+<td><code>roi_left</code></td>
+<td><code>0.0</code></td>
+<td>0.0～100.0</td>
+<td>Left ROI boundary as a percentage of original image width, default 0; must precede the right boundary when ROI is enabled.</td>
+</tr>
+<tr>
+<td><code>roi_top</code></td>
+<td><code>0.0</code></td>
+<td>0.0～100.0</td>
+<td>Top ROI boundary as a percentage of original image height, default 0; must be above the bottom boundary when ROI is enabled.</td>
+</tr>
+<tr>
+<td><code>roi_right</code></td>
+<td><code>100.0</code></td>
+<td>0.0～100.0</td>
+<td>Right ROI boundary as a percentage of original image width, default 100.</td>
+</tr>
+<tr>
+<td><code>roi_bottom</code></td>
+<td><code>100.0</code></td>
+<td>0.0～100.0</td>
+<td>Bottom ROI boundary as a percentage of original image height, default 100.</td>
+</tr>
+<tr>
+<td><code>tiling_enabled</code></td>
+<td><code>false</code></td>
+<td>See description (text, option or path)</td>
+<td>Enable tiled anomaly model building, disabled by default. Model building, calibration, evaluation and inference use the same tiling settings saved in the model.</td>
+</tr>
+<tr>
+<td><code>tile_size</code></td>
+<td><code>512</code></td>
+<td>64～4096</td>
+<td>Tile size in original-image pixels, default 512, range 64–4096. Regions smaller than a tile are processed at their actual dimensions.</td>
+</tr>
+<tr>
+<td><code>tile_overlap</code></td>
+<td><code>0.25</code></td>
+<td>0.0～0.75</td>
+<td>Adjacent tile overlap ratio, default 0.25, range 0–0.75. Edge tiles ensure coverage; overlaps use the maximum anomaly response.</td>
+</tr>
+<tr>
+<td><code>neighbors</code></td>
+<td><code>9</code></td>
+<td>1～32</td>
+<td>Nearest neighbors for feature matching, default 9, range 1–32. The actual count cannot exceed the memory bank size; saved in the model.</td>
+</tr>
+<tr>
+<td><code>calibration_quantile</code></td>
+<td><code>0.99</code></td>
+<td>0.9～1.0</td>
+<td>Quantile of OK calibration scores, default 0.99, range 0.9–1; applied separately to image scores and pixel peaks.</td>
+</tr>
+<tr>
+<td><code>calibration_margin</code></td>
+<td><code>1.05</code></td>
+<td>1.0～3.0</td>
+<td>Calibration safety factor, default 1.05, range 1–3; the final threshold is the selected quantile multiplied by this factor.</td>
+</tr>
+<tr>
 <td><code>model</code></td>
 <td><code>Not selected / use configuration</code></td>
 <td>See description (text, option or path)</td>
@@ -1259,16 +1331,52 @@
 <td>Image or image folder for anomaly inference; the output directory must not be inside the input directory.</td>
 </tr>
 <tr>
+<td><code>test_ok_dir</code></td>
+<td><code>Not selected / use configuration</code></td>
+<td>See description (text, option or path)</td>
+<td>Independent OK image directory for anomaly evaluation. It must not contain or be contained by the NG directory.</td>
+</tr>
+<tr>
+<td><code>test_ng_dir</code></td>
+<td><code>Not selected / use configuration</code></td>
+<td>See description (text, option or path)</td>
+<td>Independent NG image directory for anomaly evaluation. NG is positive; test images must not be used for model building or calibration.</td>
+</tr>
+<tr>
+<td><code>threshold_start</code></td>
+<td><code>0.5</code></td>
+<td>0.1～10.0</td>
+<td>Starting threshold multiplier for anomaly evaluation, default 0.5.</td>
+</tr>
+<tr>
+<td><code>threshold_stop</code></td>
+<td><code>1.5</code></td>
+<td>0.1～10.0</td>
+<td>Upper limit for anomaly evaluation multipliers, default 1.5. Values follow the step; the endpoint is not appended automatically.</td>
+</tr>
+<tr>
+<td><code>threshold_step</code></td>
+<td><code>0.1</code></td>
+<td>0.01～10.0</td>
+<td>Anomaly evaluation multiplier step, default 0.1; compare up to 201 multipliers per run.</td>
+</tr>
+<tr>
 <td><code>threshold_multiplier</code></td>
 <td><code>1.0</code></td>
 <td>0.1～10.0</td>
-<td>Anomaly inference threshold multiplier: below 1 is more sensitive; above 1 is more permissive. Anomaly scores are not probabilities.</td>
+<td>Image decision multiplier; adjusts only the image-level OK/NG threshold. Below 1 is more sensitive; above 1 is more permissive.</td>
 </tr>
 <tr>
 <td><code>output_dir</code></td>
 <td><code>"&lt;software directory&gt;\\runs\\patchcore"</code></td>
 <td>See description (text, option or path)</td>
 <td>Anomaly detection output root; training and inference create separate experiment subdirectories.</td>
+</tr>
+<tr>
+<td><code>pixel_threshold_multiplier</code></td>
+<td><code>1.0</code></td>
+<td>0.1～10.0</td>
+<td>Pixel mask multiplier, default 1; adjusts mask extent only. Anomaly area is measured within the ROI.</td>
 </tr>
 <tr>
 <td><code>device</code></td>
@@ -1289,7 +1397,7 @@
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 2026.11 · Verify parameters against the effective experiment configuration and logs</p>
+<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 20261120.1 · Verify parameters against the effective experiment configuration and logs</p>
 
         </footer>
 
@@ -1300,7 +1408,7 @@
         </script>
         <script src="../js/base.js"></script>
         <script src="../assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 20261120.1 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

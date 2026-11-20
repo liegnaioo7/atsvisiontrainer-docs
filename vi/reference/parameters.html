@@ -371,6 +371,12 @@
 <td>Trọng số của Distribution Focal Loss (DFL). Kiến trúc mô hình quyết định có dùng hàm mất mát này hay không.</td>
 </tr>
 <tr>
+<td><code>detection_head</code></td>
+<td><code>"standard"</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Phát hiện tiêu chuẩn là mặc định. P2 bổ sung tỷ lệ chi tiết hơn cho vật thể nhỏ.</td>
+</tr>
+<tr>
 <td><code>copy_paste</code></td>
 <td><code>0.1</code></td>
 <td>0.0～1.0</td>
@@ -1129,7 +1135,7 @@
 <td><code>training_options.image_size</code></td>
 <td><code>0</code></td>
 <td>0～8192</td>
-<td>Với phân loại cổ điển, đây là cạnh ảnh vuông. Giá trị 0 dùng cấu hình. Với phát hiện bất thường, toàn bộ ảnh được đổi trực tiếp thành hình vuông có cạnh 64～1024, là bội số của 32.</td>
+<td>Cạnh đầu vào vuông của phân loại cổ điển; 0 giữ cấu hình. Phát hiện bất thường đổi toàn ảnh, ROI hoặc từng ô về cạnh vuông này, trong 64–1024 và là bội số của 32.</td>
 </tr>
 <tr>
 <td><code>training_options.workers</code></td>
@@ -1220,7 +1226,7 @@
 <td><code>image_size</code></td>
 <td><code>256</code></td>
 <td>64～1024</td>
-<td>Với phân loại cổ điển, đây là cạnh ảnh vuông. Giá trị 0 dùng cấu hình. Với phát hiện bất thường, toàn bộ ảnh được đổi trực tiếp thành hình vuông có cạnh 64～1024, là bội số của 32.</td>
+<td>Cạnh đầu vào vuông của phân loại cổ điển; 0 giữ cấu hình. Phát hiện bất thường đổi toàn ảnh, ROI hoặc từng ô về cạnh vuông này, trong 64–1024 và là bội số của 32.</td>
 </tr>
 <tr>
 <td><code>batch</code></td>
@@ -1247,6 +1253,72 @@
 <td>Giới hạn số đặc trưng trong tập đại diện cuối cùng. Đây không phải số ảnh hay số lớp.</td>
 </tr>
 <tr>
+<td><code>roi_enabled</code></td>
+<td><code>false</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Bật ROI hình chữ nhật để kiểm tra, mặc định tắt; lưu trong mô hình.</td>
+</tr>
+<tr>
+<td><code>roi_left</code></td>
+<td><code>0.0</code></td>
+<td>0.0～100.0</td>
+<td>Biên trái ROI theo phần trăm chiều rộng ảnh gốc, mặc định 0; phải nhỏ hơn biên phải khi bật ROI.</td>
+</tr>
+<tr>
+<td><code>roi_top</code></td>
+<td><code>0.0</code></td>
+<td>0.0～100.0</td>
+<td>Biên trên ROI theo phần trăm chiều cao ảnh gốc, mặc định 0; phải nhỏ hơn biên dưới khi bật ROI.</td>
+</tr>
+<tr>
+<td><code>roi_right</code></td>
+<td><code>100.0</code></td>
+<td>0.0～100.0</td>
+<td>Biên phải ROI theo phần trăm chiều rộng ảnh gốc, mặc định 100.</td>
+</tr>
+<tr>
+<td><code>roi_bottom</code></td>
+<td><code>100.0</code></td>
+<td>0.0～100.0</td>
+<td>Biên dưới ROI theo phần trăm chiều cao ảnh gốc, mặc định 100.</td>
+</tr>
+<tr>
+<td><code>tiling_enabled</code></td>
+<td><code>false</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Bật xây dựng mô hình bất thường theo ô, mặc định tắt. Xây dựng, hiệu chuẩn, đánh giá và suy luận dùng cùng cấu hình chia ô đã lưu trong mô hình.</td>
+</tr>
+<tr>
+<td><code>tile_size</code></td>
+<td><code>512</code></td>
+<td>64～4096</td>
+<td>Cạnh ô theo điểm ảnh gốc, mặc định 512, khoảng 64–4096. Vùng nhỏ hơn ô được xử lý theo kích thước thực.</td>
+</tr>
+<tr>
+<td><code>tile_overlap</code></td>
+<td><code>0.25</code></td>
+<td>0.0～0.75</td>
+<td>Tỷ lệ chồng lấp ô liền kề, mặc định 0.25, khoảng 0–0.75. Các ô biên phủ kín vùng; chồng lấp lấy đáp ứng bất thường lớn nhất.</td>
+</tr>
+<tr>
+<td><code>neighbors</code></td>
+<td><code>9</code></td>
+<td>1～32</td>
+<td>Số láng giềng gần nhất để đối sánh, mặc định 9, khoảng 1–32. Số thực tế không vượt quá kích thước bộ nhớ; lưu trong mô hình.</td>
+</tr>
+<tr>
+<td><code>calibration_quantile</code></td>
+<td><code>0.99</code></td>
+<td>0.9～1.0</td>
+<td>Phân vị điểm OK hiệu chuẩn, mặc định 0.99, khoảng 0.9–1; áp dụng riêng cho điểm ảnh toàn cục và giá trị đỉnh điểm ảnh.</td>
+</tr>
+<tr>
+<td><code>calibration_margin</code></td>
+<td><code>1.05</code></td>
+<td>1.0～3.0</td>
+<td>Hệ số an toàn hiệu chuẩn, mặc định 1.05, khoảng 1–3; ngưỡng cuối bằng phân vị đã chọn nhân với hệ số này.</td>
+</tr>
+<tr>
 <td><code>model</code></td>
 <td><code>Chưa chọn / dùng cấu hình</code></td>
 <td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
@@ -1259,16 +1331,52 @@
 <td>Ảnh hoặc thư mục ảnh dùng cho suy luận phát hiện bất thường. Thư mục đầu ra phải nằm ngoài thư mục đầu vào.</td>
 </tr>
 <tr>
+<td><code>test_ok_dir</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Thư mục ảnh OK độc lập để đánh giá bất thường. Không được chứa thư mục NG hoặc nằm trong thư mục NG.</td>
+</tr>
+<tr>
+<td><code>test_ng_dir</code></td>
+<td><code>Chưa chọn / dùng cấu hình</code></td>
+<td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
+<td>Thư mục ảnh NG độc lập để đánh giá bất thường. NG là lớp dương; ảnh kiểm tra không được dùng để xây dựng mô hình hoặc hiệu chuẩn.</td>
+</tr>
+<tr>
+<td><code>threshold_start</code></td>
+<td><code>0.5</code></td>
+<td>0.1～10.0</td>
+<td>Hệ số ngưỡng bắt đầu khi đánh giá bất thường, mặc định 0.5.</td>
+</tr>
+<tr>
+<td><code>threshold_stop</code></td>
+<td><code>1.5</code></td>
+<td>0.1～10.0</td>
+<td>Giới hạn trên của hệ số đánh giá bất thường, mặc định 1.5. Giá trị theo bước; điểm cuối không được tự động thêm.</td>
+</tr>
+<tr>
+<td><code>threshold_step</code></td>
+<td><code>0.1</code></td>
+<td>0.01～10.0</td>
+<td>Bước hệ số khi đánh giá bất thường, mặc định 0.1; tối đa 201 hệ số mỗi lần chạy.</td>
+</tr>
+<tr>
 <td><code>threshold_multiplier</code></td>
 <td><code>1.0</code></td>
 <td>0.1～10.0</td>
-<td>Hệ số ngưỡng phát hiện bất thường. Nhỏ hơn 1 nhạy hơn, lớn hơn 1 ít nhạy hơn. Điểm bất thường không phải xác suất.</td>
+<td>Hệ số phán định ảnh; chỉ điều chỉnh ngưỡng OK/NG toàn ảnh. Dưới 1 nhạy hơn, trên 1 ít nhạy hơn.</td>
 </tr>
 <tr>
 <td><code>output_dir</code></td>
 <td><code>"&lt;software directory&gt;\\runs\\patchcore"</code></td>
 <td>Xem mô tả ( văn bản, tùy chọn hay đường dẫn)</td>
 <td>Thư mục gốc kết quả phát hiện bất thường. Huấn luyện và suy luận tạo thư mục thử nghiệm riêng.</td>
+</tr>
+<tr>
+<td><code>pixel_threshold_multiplier</code></td>
+<td><code>1.0</code></td>
+<td>0.1～10.0</td>
+<td>Hệ số mặt nạ điểm ảnh, mặc định 1; chỉ điều chỉnh phạm vi mặt nạ. Diện tích bất thường tính trong ROI.</td>
 </tr>
 <tr>
 <td><code>device</code></td>
@@ -1289,7 +1397,7 @@
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">Tài liệu ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Đối chiếu tham số với cấu hình cuối cùng và nhật ký của lần chạy</p>
+<hr><p class="help-footer">Tài liệu ATSVisionTrainer · Windows · V1.0.0 / Build 20261120.1 · Đối chiếu tham số với cấu hình cuối cùng và nhật ký của lần chạy</p>
 
         </footer>
 
@@ -1300,7 +1408,7 @@
         </script>
         <script src="../js/base.js"></script>
         <script src="../assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "T\u00e0i li\u1ec7u ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u0110\u1ed1i chi\u1ebfu tham s\u1ed1 v\u1edbi c\u1ea5u h\u00ecnh cu\u1ed1i c\u00f9ng v\u00e0 nh\u1eadt k\u00fd c\u1ee7a l\u1ea7n ch\u1ea1y", "found": "T\u00ecm th\u1ea5y {0} k\u1ebft qu\u1ea3", "language": "Ng\u00f4n ng\u1eef t\u00e0i li\u1ec7u", "missing_body": "D\u00f9ng thanh \u0111i\u1ec1u h\u01b0\u1edbng ho\u1eb7c quay l\u1ea1i trang ch\u1ee7 tr\u1ee3 gi\u00fap.", "missing_title": "Kh\u00f4ng t\u00ecm th\u1ea5y trang tr\u1ee3 gi\u00fap", "not_found": "Kh\u00f4ng t\u00ecm th\u1ea5y k\u1ebft qu\u1ea3. H\u00e3y th\u1eed t\u1eeb kh\u00f3a kh\u00e1c.", "search_error": "Kh\u00f4ng t\u1ea3i \u0111\u01b0\u1ee3c ch\u1ec9 m\u1ee5c t\u00ecm ki\u1ebfm. H\u00e3y ki\u1ec3m tra k\u1ebft n\u1ed1i v\u00e0 t\u1ea3i l\u1ea1i trang."};</script>
+<script>window.helpTranslations = {"footer": "T\u00e0i li\u1ec7u ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 20261120.1 \u00b7 \u0110\u1ed1i chi\u1ebfu tham s\u1ed1 v\u1edbi c\u1ea5u h\u00ecnh cu\u1ed1i c\u00f9ng v\u00e0 nh\u1eadt k\u00fd c\u1ee7a l\u1ea7n ch\u1ea1y", "found": "T\u00ecm th\u1ea5y {0} k\u1ebft qu\u1ea3", "language": "Ng\u00f4n ng\u1eef t\u00e0i li\u1ec7u", "missing_body": "D\u00f9ng thanh \u0111i\u1ec1u h\u01b0\u1edbng ho\u1eb7c quay l\u1ea1i trang ch\u1ee7 tr\u1ee3 gi\u00fap.", "missing_title": "Kh\u00f4ng t\u00ecm th\u1ea5y trang tr\u1ee3 gi\u00fap", "not_found": "Kh\u00f4ng t\u00ecm th\u1ea5y k\u1ebft qu\u1ea3. H\u00e3y th\u1eed t\u1eeb kh\u00f3a kh\u00e1c.", "search_error": "Kh\u00f4ng t\u1ea3i \u0111\u01b0\u1ee3c ch\u1ec9 m\u1ee5c t\u00ecm ki\u1ebfm. H\u00e3y ki\u1ec3m tra k\u1ebft n\u1ed1i v\u00e0 t\u1ea3i l\u1ea1i trang."};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

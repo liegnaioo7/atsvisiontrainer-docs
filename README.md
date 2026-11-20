@@ -1,6 +1,6 @@
 # ATSVisionTrainer 在线文档
 
-七语言 MkDocs 静态文档，对应 Windows V1.0.0 / Build 2026.11。
+七语言 MkDocs 静态文档，对应 Windows V1.0.0 / Build 20261120.1。
 
 ## Vercel 部署
 

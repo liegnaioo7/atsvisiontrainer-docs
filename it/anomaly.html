@@ -185,7 +185,15 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#roi-suddivisione-e-calibrazione" class="nav-link">ROI, suddivisione e calibrazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#soglie-e-inferenza" class="nav-link">Soglie e inferenza</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#valutazione-del-test-okng" class="nav-link">Valutazione del test OK/NG</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -216,7 +224,7 @@
 </tr>
 <tr>
 <td>Dimensioni immagine</td>
-<td>Predefinito 256; ridimensiona l'intera immagine a quadrato senza ritaglio centrale dei bordi, potendo alterare il rapporto d'aspetto; 64–1024 e multiplo di 32</td>
+<td>Predefinito 256; l’immagine intera, la ROI o ogni riquadro sono ridimensionati a un quadrato, con possibile variazione delle proporzioni. Intervallo 64–1024, multipli di 32.</td>
 </tr>
 <tr>
 <td>Dimensione del batch di estrazione</td>
@@ -238,18 +246,29 @@
 </table>
 <p>La dimensione finale del coreset è <code>min(limite caratteristiche coreset, max(1, int(numero caratteristiche candidate × frazione mantenuta)))</code>. Banche delle caratteristiche e dimensioni immagine maggiori aumentano generalmente RAM, memoria GPU e calcolo richiesto per l'inferenza.</p>
 <p>Questa pagina non ha parametri di tasso di apprendimento, ottimizzatore, epochs o arresto anticipato. L'avanzamento comprende estrazione delle caratteristiche normali, campionamento del coreset e calibrazione delle soglie OK.</p>
+<h2 id="roi-suddivisione-e-calibrazione">ROI, suddivisione e calibrazione<a class="headerlink" href="#roi-suddivisione-e-calibrazione" title="Permanent link">&para;</a></h2>
+<p>Fare clic su Seleziona ROI visivamente e aprire un’immagine di riferimento con la stessa inquadratura dei dati di addestramento. Trascinare per disegnare il rettangolo, poi trascinare bordi o angoli per ridimensionarlo. Percentuali e selezione sull’immagine si aggiornano insieme. Le parti scure sono esterne alla regione di ispezione. Immagine intera ripristina la selezione completa. Applica ROI attiva la ROI e riporta la selezione nella pagina di addestramento; annullare conserva le impostazioni precedenti. L’immagine di riferimento serve a individuare l’area; le immagini di addestramento sono definite dalla cartella scelta.</p>
+<p>La ROI è disattivata per impostazione predefinita. I limiti sinistro, superiore, destro e inferiore sono percentuali delle dimensioni originali, con valori 0, 0, 100, 100. La ROI viene ritagliata prima della suddivisione. La suddivisione è disattivata per impostazione predefinita; se attiva, usa un lato di 512 pixel e sovrapposizione 0.25. Ogni riquadro viene ridimensionato all’ingresso del modello. Riquadri aggiuntivi coprono i bordi; le regioni più piccole usano le dimensioni reali. Le sovrapposizioni prendono la risposta massima. Mappe e maschere ritornano alle coordinate originali. Fuori dalla ROI la sovrapposizione conserva l’immagine originale; la quota di area anomala considera solo i pixel interni.</p>
+<p>I vicini sono 9 per impostazione predefinita, intervallo 1–32, limitati dalla banca. Il quantile predefinito è 0.99, intervallo 0.9–1; il fattore di sicurezza è 1.05, intervallo 1–3. Le soglie di immagine e pixel sono stimate separatamente dai punteggi e dai picchi delle immagini OK di calibrazione, usando il quantile moltiplicato per il fattore. Dopo aver modificato questi parametri, ricreare il modello e confrontare difetti non rilevati e falsi allarmi su dati OK/NG indipendenti.</p>
+<p>ROI, suddivisione e numero di vicini sono salvati nel modello e caricati automaticamente per inferenza e valutazione. I nuovi modelli usano il formato v2, con supporto al caricamento dei modelli v1 esistenti. I modelli precedenti elaborano l’immagine intera. La suddivisione aumenta il tempo di estrazione e inferenza; la banca delle caratteristiche resta limitata da candidati, rapporto di campionamento e limite della banca.</p>
 <h2 id="soglie-e-inferenza">Soglie e inferenza<a class="headerlink" href="#soglie-e-inferenza" title="Permanent link">&para;</a></h2>
+<p>In Inferenza delle anomalie, selezionare un modello dalla cronologia oppure un file locale. Sono elencati i record di rilevamento anomalie con un file modello ancora disponibile. Per importare esperimenti precedenti, aggiungere la relativa directory nella pagina Cronologia addestramenti, quindi aggiornare l’elenco dei modelli. Al termine dell’inferenza, Risultati dell’ultima inferenza mostra la directory effettiva; il pulsante adiacente Apri directory dei risultati consente di aprirla. Ogni esecuzione viene salvata in una nuova sottocartella con data e ora nella directory dei risultati.</p>
 <p>Il modello viene salvato come <code>model.patchcore.pt</code>. Per l'inferenza usare Verifica inferenza anomalie in questa pagina, con un'immagine singola o una cartella di immagini.</p>
-<p>I punteggi di anomalia sono distanze tra caratteristiche, non probabilità, e non devono necessariamente rientrare in 0–1. Durante la costruzione, i punteggi di calibrazione OK stimano le soglie a livello di immagine e di pixel. Il moltiplicatore della soglia di inferenza è 1 per impostazione predefinita: sotto 1 è più sensibile, sopra 1 è più permissivo. Un punteggio immagine che raggiunge la soglia immagine determina NG; la maschera dei pixel dipende dalla soglia pixel. Sono statistiche diverse.</p>
+<p>I punteggi di anomalia sono distanze tra caratteristiche e non probabilità; non devono essere compresi tra 0 e 1. I moltiplicatori dell’immagine e della maschera hanno valore predefinito 1: sotto 1 sono più sensibili, sopra 1 più permissivi. Un punteggio che raggiunge la soglia dell’immagine indica NG. Il moltiplicatore dei pixel regola la maschera separatamente; il valore scelto nella valutazione si applica solo alla decisione sull’immagine.</p>
 <p>I risultati comprendono OK/NG, punteggi di anomalia, mappe di calore, sovrapposizioni, maschere, mappe dei punteggi originali e JSON/CSV. La directory di output non deve essere dentro quella delle immagini di input, per evitare che i risultati vengano elaborati nuovamente.</p>
 <p>Questo formato non è un modello ONNX generico, un normale PT di classificazione o un modello di inferenza classico; non selezionarlo nella pagina principale di verifica dell'inferenza. Sia la CPU sia una singola GPU NVIDIA usano l'ambiente indipendente del rilevamento anomalie.</p>
+<h2 id="valutazione-del-test-okng">Valutazione del test OK/NG<a class="headerlink" href="#valutazione-del-test-okng" title="Permanent link">&para;</a></h2>
+<p>Aprire Valutazione OK/NG, selezionare un modello dalla cronologia o un file locale e scegliere cartelle di test OK e NG indipendenti. Entrambe devono contenere immagini e non possono essere annidate l’una nell’altra. Le sottocartelle vengono lette ricorsivamente. Le immagini di test non devono essere state usate per creare il modello o calibrare le soglie. Lo stesso contenuto non può essere etichettato sia OK sia NG.</p>
+<p>I moltiplicatori predefiniti vanno da 0.5 a 1.5 con passo 0.1. I valori si ottengono aggiungendo il passo all’inizio; il valore finale non viene aggiunto automaticamente. Si possono confrontare fino a 201 moltiplicatori. Ogni immagine viene valutata una volta. La soglia effettiva è la soglia originale dell’immagine del modello moltiplicata per il moltiplicatore; un punteggio maggiore o uguale alla soglia è classificato NG. La valutazione aiuta a scegliere il moltiplicatore di inferenza senza sovrascrivere il file del modello.</p>
+<p>NG è la classe positiva. Un difetto non rilevato è un NG classificato OK; un falso allarme è un OK classificato NG. Il richiamo NG è TP / (TP + FN), il tasso di falsi allarmi sugli OK è FP / (FP + TN) e la precisione NG è TP / (TP + FP). Se nessuna immagine è classificata NG, la precisione è mostrata come “—”. F1 è la media armonica di precisione e richiamo. La valutazione riguarda le immagini e non misura l’accuratezza della segmentazione a livello di pixel.</p>
+<p>La directory dei risultati contiene <code>evaluation.json</code>, la tabella di confronto <code>threshold_comparison.csv</code> e i punteggi per immagine in <code>evaluation_scores.csv</code>. La tabella per immagine riporta l’etichetta reale OK/NG, il punteggio di anomalia e la previsione con il moltiplicatore originale 1. Selezionare una riga e usare il pulsante per applicare il moltiplicatore all’inferenza con lo stesso modello. Ripetere la valutazione se si cambia modello. Dopo aver scelto la soglia, verificare difetti non rilevati e falsi allarmi su un insieme separato di accettazione.</p>
 <p>Tutti gli intervalli sono nella <a href="reference/parameters.html#anomaly">tabella delle anomalie</a>.</p></div>
 
             </div>
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
+<hr><p class="help-footer">Documentazione online di ATSVisionTrainer · Windows · V1.0.0 / Build 20261120.1 · Verificare i parametri nella configurazione effettiva e nei log dell’esperimento</p>
 
         </footer>
 
@@ -260,7 +279,7 @@
         </script>
         <script src="js/base.js"></script>
         <script src="assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
+<script>window.helpTranslations = {"footer": "Documentazione online di ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 20261120.1 \u00b7 Verificare i parametri nella configurazione effettiva e nei log dell\u2019esperimento", "found": "{0} risultati trovati", "language": "Lingua della documentazione", "missing_body": "Usare la navigazione oppure tornare alla pagina iniziale.", "missing_title": "Pagina della guida non trovata", "not_found": "Nessun contenuto corrispondente. Provare un\u2019altra parola chiave.", "search_error": "Impossibile caricare l\u2019indice di ricerca. Verificare la connessione e ricaricare la pagina."};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

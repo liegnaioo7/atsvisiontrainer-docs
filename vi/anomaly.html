@@ -185,7 +185,15 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#roi-chia-o-va-hieu-chuan" class="nav-link">ROI, chia ô và hiệu chuẩn</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#nguong-va-suy-luan" class="nav-link">Ngưỡng và suy luận</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anh-gia-tap-kiem-tra-okng" class="nav-link">Đánh giá tập kiểm tra OK/NG</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -216,7 +224,7 @@
 </tr>
 <tr>
 <td>Cỡ ảnh</td>
-<td>Mặc định 256; thay đổi kích thước toàn bộ hình ảnh thành một hình vuông mà không có cạnh kéo trung tâm, khả năng thay đổi tỷ lệ hình thể; 64–1024 và nhiều của 32</td>
+<td>Mặc định 256; toàn ảnh, ROI hoặc mỗi ô được đổi thành hình vuông, có thể đổi tỷ lệ khung hình. Khoảng 64–1024, bội số của 32.</td>
 </tr>
 <tr>
 <td>Kích thước lô trích xuất đặc trưng</td>
@@ -238,18 +246,29 @@
 </table>
 <p>Kích cỡ lõi cuối cùng là <code>min(coreset feature limit, max(1, int(candidate feature count × retention fraction)))</code>Ngân hàng bộ nhớ lớn hơn và kích cỡ hình ảnh thường tăng khả năng sử dụng RAM, bộ nhớ GPU và yêu cầu tính toán từ tính.</p>
 <p>Phương pháp này không có tốc độ học, bộ tối ưu, epochs hay dừng sớm. Tiến độ gồm trích xuất đặc trưng bình thường, lấy mẫu tập đại diện và hiệu chuẩn ngưỡng bằng ảnh OK.</p>
+<h2 id="roi-chia-o-va-hieu-chuan">ROI, chia ô và hiệu chuẩn<a class="headerlink" href="#roi-chia-o-va-hieu-chuan" title="Permanent link">&para;</a></h2>
+<p>Nhấn Chọn ROI trực quan và mở ảnh tham chiếu có cùng góc chụp với dữ liệu huấn luyện. Kéo để vẽ hình chữ nhật, kéo cạnh hoặc góc để đổi kích thước. Giá trị phần trăm và vùng chọn trên ảnh được đồng bộ theo thời gian thực. Vùng tối nằm ngoài phạm vi kiểm tra. Toàn bộ ảnh khôi phục vùng chọn toàn ảnh. Áp dụng ROI bật ROI và ghi vùng chọn về trang huấn luyện; hủy giữ nguyên thiết lập trước đó. Ảnh tham chiếu dùng để xác định vùng kiểm tra; ảnh huấn luyện do thư mục huấn luyện quyết định.</p>
+<p>ROI mặc định tắt. Biên trái, trên, phải, dưới tính theo phần trăm kích thước ảnh gốc, mặc định 0, 0, 100, 100. ROI được cắt trước khi chia ô. Chia ô mặc định tắt; khi bật, cạnh ô mặc định 512 điểm ảnh và tỷ lệ chồng lấp 0.25. Mỗi ô được đổi về kích thước đầu vào mô hình. Bổ sung ô sát biên để phủ kín; vùng nhỏ hơn ô dùng kích thước thực. Vùng chồng lấp lấy đáp ứng lớn nhất. Bản đồ nhiệt và mặt nạ được đưa về tọa độ ảnh gốc. Ảnh phủ giữ nguyên ảnh gốc ngoài ROI; tỷ lệ diện tích bất thường chỉ tính các điểm ảnh trong ROI.</p>
+<p>Số láng giềng mặc định 9, khoảng 1–32, không vượt quá bộ nhớ đặc trưng. Phân vị hiệu chuẩn mặc định 0.99, khoảng 0.9–1; hệ số an toàn mặc định 1.05, khoảng 1–3. Ngưỡng ảnh và điểm ảnh được ước tính riêng từ điểm toàn ảnh và đỉnh điểm ảnh của ảnh OK hiệu chuẩn, bằng phân vị nhân với hệ số an toàn. Sau khi đổi các tham số xây dựng này, hãy xây dựng lại mô hình và so sánh lỗi bỏ sót, báo nhầm trên dữ liệu OK/NG độc lập.</p>
+<p>ROI, chia ô và số láng giềng được lưu trong mô hình, tự động đọc khi suy luận và đánh giá. Mô hình mới dùng định dạng v2 và hỗ trợ tải mô hình v1 hiện có. Mô hình cũ xử lý toàn ảnh. Chia ô tăng thời gian trích xuất và suy luận; bộ nhớ đặc trưng vẫn chịu giới hạn ứng viên, tỷ lệ giữ lại và giới hạn bộ nhớ.</p>
 <h2 id="nguong-va-suy-luan">Ngưỡng và suy luận<a class="headerlink" href="#nguong-va-suy-luan" title="Permanent link">&para;</a></h2>
+<p>Trong mục suy luận bất thường, chọn mô hình từ lịch sử huấn luyện hoặc duyệt đến tệp mô hình cục bộ. Danh sách chỉ hiển thị các bản ghi phát hiện bất thường có tệp mô hình còn tồn tại. Để nhập các lần chạy cũ, thêm thư mục lịch sử trên trang Lịch sử huấn luyện rồi làm mới danh sách mô hình. Sau khi suy luận hoàn tất, ô kết quả suy luận gần nhất hiển thị thư mục lưu thực tế. Nhấn nút bên cạnh để mở thư mục đó. Mỗi lần chạy được lưu trong một thư mục con mới có dấu thời gian bên trong thư mục kết quả.</p>
 <p>Mô hình được lưu dưới tên <code>model.patchcore.pt</code>. Mở Kiểm tra suy luận phát hiện bất thường trong cùng trang rồi chọn một ảnh hoặc thư mục ảnh.</p>
-<p>Điểm bất thường là khoảng cách đặc trưng, không phải xác suất và không nhất thiết nằm trong khoảng 0～1. Ứng dụng ước lượng ngưỡng cấp ảnh và cấp pixel từ ảnh OK hiệu chuẩn. Hệ số ngưỡng mặc định là 1. Nhỏ hơn 1 nhạy hơn, lớn hơn 1 ít nhạy hơn. Ảnh đạt ngưỡng cấp ảnh được xem là NG. Mặt nạ dùng ngưỡng cấp pixel riêng.</p>
+<p>Điểm bất thường là khoảng cách đặc trưng, không phải xác suất, nên không bắt buộc nằm trong 0–1. Hệ số phán định ảnh và mặt nạ đều mặc định 1: dưới 1 nhạy hơn, trên 1 ít nhạy hơn. Điểm đạt ngưỡng ảnh được phán định NG. Hệ số điểm ảnh điều chỉnh mặt nạ riêng; hệ số chọn trong đánh giá chỉ áp dụng cho phán định ảnh.</p>
 <p>Kết quả gồm OK/NG, điểm bất thường, bản đồ nhiệt, ảnh chồng, mặt nạ, bản đồ điểm gốc và JSON/CSV. Đặt thư mục đầu ra ngoài thư mục ảnh đầu vào để ứng dụng không đọc lại kết quả.</p>
 <p>Mô hình bất thường có định dạng riêng. Hãy chạy suy luận trong trang phát hiện bất thường. Định dạng này khác với ONNX, PT phân loại và mô hình suy luận cổ điển. CPU hoặc một GPU NVIDIA đã chọn đều dùng môi trường phát hiện bất thường riêng.</p>
+<h2 id="anh-gia-tap-kiem-tra-okng">Đánh giá tập kiểm tra OK/NG<a class="headerlink" href="#anh-gia-tap-kiem-tra-okng" title="Permanent link">&para;</a></h2>
+<p>Mở Đánh giá OK/NG, chọn mô hình từ lịch sử hoặc tệp cục bộ, rồi chọn các thư mục ảnh kiểm tra OK và NG độc lập. Cả hai phải chứa ảnh và không được chứa nhau. Các thư mục con được đọc đệ quy. Ảnh kiểm tra không được dùng trước đó để xây dựng mô hình hoặc hiệu chuẩn ngưỡng. Cùng một nội dung ảnh không được gán cả OK lẫn NG.</p>
+<p>Hệ số mặc định từ 0.5 đến 1.5, bước 0.1. Các giá trị được tạo bằng cách cộng bước vào giá trị bắt đầu; giá trị kết thúc không được tự động thêm vào. Có thể so sánh tối đa 201 hệ số. Mỗi ảnh chỉ được tính điểm một lần. Ngưỡng thực tế bằng ngưỡng ảnh gốc của mô hình nhân với hệ số; điểm lớn hơn hoặc bằng ngưỡng được phân loại NG. Đánh giá giúp chọn hệ số suy luận và không ghi đè tệp mô hình.</p>
+<p>NG là lớp dương. Bỏ sót là NG bị phân loại thành OK; báo nhầm là OK bị phân loại thành NG. Độ bao phủ NG bằng TP / (TP + FN), tỷ lệ báo nhầm trên OK bằng FP / (FP + TN), và độ chính xác NG bằng TP / (TP + FP). Khi không có ảnh nào được dự đoán là NG, độ chính xác hiển thị “—”. F1 là trung bình điều hòa của độ chính xác và độ bao phủ. Đánh giá ở cấp độ ảnh, không đo độ chính xác phân đoạn từng điểm ảnh.</p>
+<p>Thư mục kết quả chứa <code>evaluation.json</code>, bảng so sánh ngưỡng <code>threshold_comparison.csv</code> và điểm từng ảnh <code>evaluation_scores.csv</code>. Bảng từng ảnh ghi nhãn OK/NG thật, điểm bất thường và kết quả tại hệ số gốc 1. Chọn một hàng rồi nhấn nút dùng hệ số đã chọn để suy luận với cùng mô hình. Đánh giá lại sau khi đổi mô hình. Sau khi chọn ngưỡng, kiểm tra số lỗi bỏ sót và báo nhầm trên một tập nghiệm thu độc lập khác.</p>
 <p>Xem đầy đủ các phạm vi trong <a href="reference/parameters.html#anomaly">bảng tham số phát hiện bất thường</a>.</p></div>
 
             </div>
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">Tài liệu ATSVisionTrainer · Windows · V1.0.0 / Build 2026.11 · Đối chiếu tham số với cấu hình cuối cùng và nhật ký của lần chạy</p>
+<hr><p class="help-footer">Tài liệu ATSVisionTrainer · Windows · V1.0.0 / Build 20261120.1 · Đối chiếu tham số với cấu hình cuối cùng và nhật ký của lần chạy</p>
 
         </footer>
 
@@ -260,7 +279,7 @@
         </script>
         <script src="js/base.js"></script>
         <script src="assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "T\u00e0i li\u1ec7u ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 2026.11 \u00b7 \u0110\u1ed1i chi\u1ebfu tham s\u1ed1 v\u1edbi c\u1ea5u h\u00ecnh cu\u1ed1i c\u00f9ng v\u00e0 nh\u1eadt k\u00fd c\u1ee7a l\u1ea7n ch\u1ea1y", "found": "T\u00ecm th\u1ea5y {0} k\u1ebft qu\u1ea3", "language": "Ng\u00f4n ng\u1eef t\u00e0i li\u1ec7u", "missing_body": "D\u00f9ng thanh \u0111i\u1ec1u h\u01b0\u1edbng ho\u1eb7c quay l\u1ea1i trang ch\u1ee7 tr\u1ee3 gi\u00fap.", "missing_title": "Kh\u00f4ng t\u00ecm th\u1ea5y trang tr\u1ee3 gi\u00fap", "not_found": "Kh\u00f4ng t\u00ecm th\u1ea5y k\u1ebft qu\u1ea3. H\u00e3y th\u1eed t\u1eeb kh\u00f3a kh\u00e1c.", "search_error": "Kh\u00f4ng t\u1ea3i \u0111\u01b0\u1ee3c ch\u1ec9 m\u1ee5c t\u00ecm ki\u1ebfm. H\u00e3y ki\u1ec3m tra k\u1ebft n\u1ed1i v\u00e0 t\u1ea3i l\u1ea1i trang."};</script>
+<script>window.helpTranslations = {"footer": "T\u00e0i li\u1ec7u ATSVisionTrainer \u00b7 Windows \u00b7 V1.0.0 / Build 20261120.1 \u00b7 \u0110\u1ed1i chi\u1ebfu tham s\u1ed1 v\u1edbi c\u1ea5u h\u00ecnh cu\u1ed1i c\u00f9ng v\u00e0 nh\u1eadt k\u00fd c\u1ee7a l\u1ea7n ch\u1ea1y", "found": "T\u00ecm th\u1ea5y {0} k\u1ebft qu\u1ea3", "language": "Ng\u00f4n ng\u1eef t\u00e0i li\u1ec7u", "missing_body": "D\u00f9ng thanh \u0111i\u1ec1u h\u01b0\u1edbng ho\u1eb7c quay l\u1ea1i trang ch\u1ee7 tr\u1ee3 gi\u00fap.", "missing_title": "Kh\u00f4ng t\u00ecm th\u1ea5y trang tr\u1ee3 gi\u00fap", "not_found": "Kh\u00f4ng t\u00ecm th\u1ea5y k\u1ebft qu\u1ea3. H\u00e3y th\u1eed t\u1eeb kh\u00f3a kh\u00e1c.", "search_error": "Kh\u00f4ng t\u1ea3i \u0111\u01b0\u1ee3c ch\u1ec9 m\u1ee5c t\u00ecm ki\u1ebfm. H\u00e3y ki\u1ec3m tra k\u1ebft n\u1ed1i v\u00e0 t\u1ea3i l\u1ea1i trang."};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
