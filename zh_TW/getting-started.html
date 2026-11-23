@@ -234,13 +234,14 @@
 <p>顯式選擇 GPU 後，不會因顯示卡不可用而自動改用 CPU。現代、經典及異常偵測均需檢視日誌並檢查所選裝置和環境；auto 模式仍由各引擎自行選擇。</p>
 <h2 id="_3">軟體更新<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>在側邊欄開啟“軟體更新”，填寫釋出方提供的 HTTPS 更新清單地址，點選“檢查更新”檢視新版說明，再下載、校驗並安裝。離線電腦可選擇“匯入離線更新包”讀取官方 <code>.atsupdate</code> 檔案。安裝在訓練、推論、佇列和回饋操作空閒後進行；開發環境用於檢查更新，實際安裝使用完整發布包。</p>
+<p>從 1.0.1 開始，如果離線更新包附有更新說明，匯入並校驗透過後，“軟體更新”頁面會顯示該版本的“更新日誌”。你可以先閱讀，再選擇“退出並安裝更新”。</p>
 <p>請保留髮布目錄裡的 <code>package-manifest.json</code> 和 <code>Updater.exe</code>，更新會使用它們檢查版本並執行安裝。下載與備份目錄可以另選磁碟；失敗或中斷後可檢視更新記錄，必要時關閉其他實例，再執行 <code>Updater.exe</code> 嘗試恢復。</p></div>
 
             </div>
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">ATSVisionTrainer 線上文件 · Windows 版 · V1.0.0 / Build 20261120.1 · 參數以實驗最終設定和日誌為準</p>
+<hr><p class="help-footer">ATSVisionTrainer 線上文件 · Windows 版 · V1.0.1 / Build 20261123.1 · 參數以實驗最終設定和日誌為準</p>
 
         </footer>
 
@@ -251,7 +252,7 @@
         </script>
         <script src="js/base.js"></script>
         <script src="assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u7dda\u4e0a\u6587\u4ef6 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 20261120.1 \u00b7 \u53c3\u6578\u4ee5\u5be6\u9a57\u6700\u7d42\u8a2d\u5b9a\u548c\u65e5\u8a8c\u70ba\u6e96", "found": "\u627e\u5230 {0} \u7b46\u7d50\u679c", "language": "\u6587\u4ef6\u8a9e\u8a00", "missing_body": "\u8acb\u5f9e\u5c0e\u89bd\u6216\u8aaa\u660e\u9996\u9801\u9032\u5165\u3002", "missing_title": "\u627e\u4e0d\u5230\u6b64\u8aaa\u660e\u9801\u9762", "not_found": "\u627e\u4e0d\u5230\u7b26\u5408\u7684\u5167\u5bb9\uff0c\u8acb\u5617\u8a66\u5176\u4ed6\u95dc\u9375\u5b57\u3002", "search_error": "\u7121\u6cd5\u8b80\u53d6\u641c\u5c0b\u7d22\u5f15\uff0c\u8acb\u6aa2\u67e5\u7db2\u8def\u9023\u7dda\u4e26\u91cd\u65b0\u6574\u7406\u9801\u9762\u3002"};</script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u7dda\u4e0a\u6587\u4ef6 \u00b7 Windows \u7248 \u00b7 V1.0.1 / Build 20261123.1 \u00b7 \u53c3\u6578\u4ee5\u5be6\u9a57\u6700\u7d42\u8a2d\u5b9a\u548c\u65e5\u8a8c\u70ba\u6e96", "found": "\u627e\u5230 {0} \u7b46\u7d50\u679c", "language": "\u6587\u4ef6\u8a9e\u8a00", "missing_body": "\u8acb\u5f9e\u5c0e\u89bd\u6216\u8aaa\u660e\u9996\u9801\u9032\u5165\u3002", "missing_title": "\u627e\u4e0d\u5230\u6b64\u8aaa\u660e\u9801\u9762", "not_found": "\u627e\u4e0d\u5230\u7b26\u5408\u7684\u5167\u5bb9\uff0c\u8acb\u5617\u8a66\u5176\u4ed6\u95dc\u9375\u5b57\u3002", "search_error": "\u7121\u6cd5\u8b80\u53d6\u641c\u5c0b\u7d22\u5f15\uff0c\u8acb\u6aa2\u67e5\u7db2\u8def\u9023\u7dda\u4e26\u91cd\u65b0\u6574\u7406\u9801\u9762\u3002"};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

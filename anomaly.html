@@ -250,13 +250,15 @@
 <p>点击“可视化选择 ROI”，打开与训练数据视角一致的参考图片，在图上拖动绘制矩形，并拖动边角调整大小；百分比数值和图上选区实时同步。暗色区域为检测范围之外。“完整图像”恢复全图选区，“应用 ROI”自动启用 ROI 并写回训练页面，取消保留原设置。参考图片用于定位检测区域，训练图片由训练目录决定。</p>
 <p>ROI 默认关闭，启用后按原图宽高百分比设置左、上、右、下边界，分别默认为 0、0、100、100。先裁出 ROI，再在区域内切片；切片默认关闭，启用时默认边长 512 像素、重叠比例 0.25。每块缩放到“图像尺寸”，边缘自动补齐覆盖，区域不足一块时按实际尺寸处理。重叠处取最大异常响应，热力图和掩膜还原到原图坐标；叠加图在 ROI 外保留原图，异常面积比例仅统计 ROI 内像素。</p>
 <p>近邻数量默认 9，可设为 1～32，实际取值不超过特征库数量。校准分位数默认 0.99，可设为 0.9～1；安全系数默认 1.05，可设为 1～3。图像阈值和像素阈值分别由 OK 校准图片的图像分数与像素峰值估计，阈值等于指定分位数乘以安全系数。更改这些建模参数后，应重新构建模型并用独立 OK/NG 数据比较漏检和误报。</p>
-<p>ROI、切片和近邻数量保存为模型设置，推理与测试评估自动读取。新版保存模型格式 v2，并支持加载原有 v1 模型；原有模型按完整图片处理。切片会增加特征提取和推理耗时，核心集大小仍受候选上限、保留比例和特征上限约束。</p>
+<p>选择“环形 ROI”后，拖动外框贴合产品外缘，再设置内圈直径占比。内、外轮廓共用中心，只在两条轮廓之间建立特征库、校准和评分；中心孔和外部背景不计入掩膜。旧模型要使用环形 ROI，须重新训练。</p>
+<p>ROI、切片和近邻数量保存为模型设置，推理与测试评估自动读取。环形 ROI 模型使用 v3；也支持 v2 和 v1 模型，v1 按完整图片处理。切片会增加特征提取和推理耗时，核心集大小仍受候选上限、保留比例和特征上限约束。</p>
 <h2 id="_3">阈值与推理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>在“异常推理验证”中，可从“历史训练模型”选择已有模型，也可浏览本地模型文件。历史列表仅显示模型文件仍存在的异常检测记录；导入旧实验可在“历史训练”页面添加历史目录，再刷新模型列表。推理完成后，“本次推理结果”显示实际保存目录，点击旁边的“打开结果目录”可直接访问；输出位于“结果输出目录”下新建的时间戳子目录。</p>
 <p>模型保存为 <code>model.patchcore.pt</code>，推理位于本页面的“异常推理验证”。支持单图或图片文件夹。</p>
 <p>异常分数是特征距离，不是概率，不要求落在 0～1。图像判定倍率和像素掩膜倍率分别默认为 1：小于 1 更敏感，大于 1 更宽松。图像分数达到图像阈值判为 NG，像素倍率单独调整掩膜范围；测试评估中选定的倍率只应用到图像判定。</p>
 <p>结果包括 OK/NG、异常分数、热力图、叠加图、掩膜、原始分数图及 JSON/CSV。输出目录不得位于输入图片目录中，防止结果再次被当作输入。</p>
 <p>当前模型格式不是通用 ONNX、普通分类 PT 或经典推理模型；不要在主“模型推理验证”里选择它。CPU 和单张 NVIDIA GPU 均使用独立异常检测环境。</p>
+<p>推理完成后，点击“查看推理对比”并排查看原图、热力图、叠加图和掩膜。打开单张放大对比后，可按 ← / → 或点击“上一张”“下一张”，按画廊当前筛选和排序切换。</p>
 <h2 id="okng">OK/NG 测试评估<a class="headerlink" href="#okng" title="Permanent link">&para;</a></h2>
 <p>打开“OK/NG 测试评估”，选择历史模型或本地模型，分别指定独立的 OK、NG 测试图片目录。两个目录都必须有图片，且不能相互包含；支持递归读取子目录。测试图不得参与模型构建或阈值校准，同一图片内容不能同时标为 OK 和 NG。</p>
 <p>倍率默认从 0.5 到 1.5，步长 0.1；按起点加步长取值，不强制追加终点，单次最多比较 201 个倍率。每张图只评分一次，每个倍率的实际阈值等于模型原始图像阈值乘以倍率，分数大于等于阈值判为 NG。评估结果用于选择后续推理倍率，模型文件不因评估而改写。</p>
@@ -268,7 +270,7 @@
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">ATSVisionTrainer 在线文档 · Windows 版 · V1.0.0 / Build 20261120.1 · 参数以实验最终配置和日志为准</p>
+<hr><p class="help-footer">ATSVisionTrainer 在线文档 · Windows 版 · V1.0.1 / Build 20261123.1 · 参数以实验最终配置和日志为准</p>
 
         </footer>
 
@@ -279,7 +281,7 @@
         </script>
         <script src="js/base.js"></script>
         <script src="assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u5728\u7ebf\u6587\u6863 \u00b7 Windows \u7248 \u00b7 V1.0.0 / Build 20261120.1 \u00b7 \u53c2\u6570\u4ee5\u5b9e\u9a8c\u6700\u7ec8\u914d\u7f6e\u548c\u65e5\u5fd7\u4e3a\u51c6", "found": "\u627e\u5230 {0} \u6761\u7ed3\u679c", "language": "\u6587\u6863\u8bed\u8a00", "missing_body": "\u8bf7\u4ece\u5de6\u4fa7\u5bfc\u822a\u6216\u5e2e\u52a9\u9996\u9875\u8fdb\u5165\u3002", "missing_title": "\u6ca1\u6709\u627e\u5230\u8fd9\u4e2a\u5e2e\u52a9\u9875\u9762", "not_found": "\u672a\u627e\u5230\u5339\u914d\u5185\u5bb9\uff0c\u8bf7\u6362\u4e00\u4e2a\u5173\u952e\u8bcd\u3002", "search_error": "\u65e0\u6cd5\u8bfb\u53d6\u641c\u7d22\u7d22\u5f15\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc\u8fde\u63a5\u5e76\u5237\u65b0\u9875\u9762\u3002"};</script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer \u5728\u7ebf\u6587\u6863 \u00b7 Windows \u7248 \u00b7 V1.0.1 / Build 20261123.1 \u00b7 \u53c2\u6570\u4ee5\u5b9e\u9a8c\u6700\u7ec8\u914d\u7f6e\u548c\u65e5\u5fd7\u4e3a\u51c6", "found": "\u627e\u5230 {0} \u6761\u7ed3\u679c", "language": "\u6587\u6863\u8bed\u8a00", "missing_body": "\u8bf7\u4ece\u5de6\u4fa7\u5bfc\u822a\u6216\u5e2e\u52a9\u9996\u9875\u8fdb\u5165\u3002", "missing_title": "\u6ca1\u6709\u627e\u5230\u8fd9\u4e2a\u5e2e\u52a9\u9875\u9762", "not_found": "\u672a\u627e\u5230\u5339\u914d\u5185\u5bb9\uff0c\u8bf7\u6362\u4e00\u4e2a\u5173\u952e\u8bcd\u3002", "search_error": "\u65e0\u6cd5\u8bfb\u53d6\u641c\u7d22\u7d22\u5f15\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc\u8fde\u63a5\u5e76\u5237\u65b0\u9875\u9762\u3002"};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

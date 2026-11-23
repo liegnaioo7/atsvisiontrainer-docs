@@ -1256,7 +1256,7 @@
 <td><code>roi_enabled</code></td>
 <td><code>false</code></td>
 <td>See description (text, option or path)</td>
-<td>Enable a rectangular inspection ROI, disabled by default; saved in the model.</td>
+<td>Enable the inspection ROI. It is off by default and supports rectangular and ring shapes. The setting is saved in the model.</td>
 </tr>
 <tr>
 <td><code>roi_left</code></td>
@@ -1281,6 +1281,12 @@
 <td><code>100.0</code></td>
 <td>0.0～100.0</td>
 <td>Bottom ROI boundary as a percentage of original image height, default 100.</td>
+</tr>
+<tr>
+<td><code>roi_inner_ratio</code></td>
+<td><code>Not selected / use configuration</code></td>
+<td>See description (text, option or path)</td>
+<td>Ratio of the inner to outer diameter of a ring ROI. Blank for rectangles. The ring controls show a percentage with a default of 70% and a range of 5% to 98%.</td>
 </tr>
 <tr>
 <td><code>tiling_enabled</code></td>
@@ -1397,7 +1403,7 @@
         </div>
 
         <footer class="col-md-12">
-<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.0 / Build 20261120.1 · Verify parameters against the effective experiment configuration and logs</p>
+<hr><p class="help-footer">ATSVisionTrainer online documentation · Windows · V1.0.1 / Build 20261123.1 · Verify parameters against the effective experiment configuration and logs</p>
 
         </footer>
 
@@ -1408,7 +1414,7 @@
         </script>
         <script src="../js/base.js"></script>
         <script src="../assets/help-search.js"></script>
-<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.0 / Build 20261120.1 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
+<script>window.helpTranslations = {"footer": "ATSVisionTrainer online documentation \u00b7 Windows \u00b7 V1.0.1 / Build 20261123.1 \u00b7 Verify parameters against the effective experiment configuration and logs", "found": "{0} results found", "language": "Documentation language", "missing_body": "Use the navigation or return to the help home page.", "missing_title": "Help page not found", "not_found": "No matching content. Try another keyword.", "search_error": "Cannot load the search index. Check your connection and refresh this page."};</script>
 
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
