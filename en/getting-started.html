@@ -177,6 +177,10 @@
 
             <li class="nav-item" data-bs-level="1"><a href="#quick-start" class="nav-link">Quick start</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#project-annotation" class="nav-link">Projects and annotation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#three-runtime-families" class="nav-link">Three runtime families</a>
               <ul class="nav flex-column">
               </ul>
@@ -204,6 +208,10 @@
 </ol>
 <p>A task takes a parameter snapshot when started. Editing controls afterward does not change the running task; make changes before starting the next one.</p>
 <p>Closing the application asks for confirmation and defaults to cancel. Confirming exit while a task runs terminates it. Wait until training-file cleanup completes before exiting.</p>
+<h2 id="project-annotation">Projects and annotation<a class="headerlink" href="#project-annotation" title="Permanent link">&para;</a></h2>
+<p>Create a project on the home page and select an architecture. Each project uses one architecture. Follow Dataset → Annotation → Training → Results. After you have opened a project, choose “Resume last project” on a later launch to resume where you left off. For a one-off training run, choose “Train without a project” on the home page.</p>
+<p>Add images in “Dataset”, then edit or review annotations in “Annotation”. For classic object detection, choose “Add OK Folder” to import images without objects, or select several images and use “Batch Mark as No Objects”. Confirming the change clears existing boxes from the selected images. When annotation is complete, choose “Generate training dataset” and proceed to “Training”.</p>
+<p>In “Annotation”, open “Model-Assisted Annotation” and choose the model, device and confidence threshold. Modern architectures support <code>.pt</code> and <code>.onnx</code>. Predictions for <code>.onnx</code> run on the CPU. For classic architectures, select the complete exported model folder. Press <code>F8</code> to preview the current image. Batch preview processes only images with unconfirmed annotations in the chosen scope. Review and apply the proposed annotations to save them to the project.</p>
 <h2 id="three-runtime-families">Three runtime families<a class="headerlink" href="#three-runtime-families" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

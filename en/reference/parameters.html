@@ -1135,7 +1135,7 @@
 <td><code>training_options.image_size</code></td>
 <td><code>0</code></td>
 <td>0～8192</td>
-<td>Square input size for classic classification, with 0 retaining the configuration. Anomaly detection resizes the full image, ROI or each tile to this square size, within 64–1024 and a multiple of 32.</td>
+<td>Square input size for classic classification, with 0 retaining the configuration. Anomaly detection resizes the full image, ROI or each tile to this square size, at least 64 and a multiple of 32.</td>
 </tr>
 <tr>
 <td><code>training_options.workers</code></td>
@@ -1225,8 +1225,8 @@
 <tr>
 <td><code>image_size</code></td>
 <td><code>256</code></td>
-<td>64～1024</td>
-<td>Square input size for classic classification, with 0 retaining the configuration. Anomaly detection resizes the full image, ROI or each tile to this square size, within 64–1024 and a multiple of 32.</td>
+<td>See description (text, option or path)</td>
+<td>Square input size for classic classification, with 0 retaining the configuration. Anomaly detection resizes the full image, ROI or each tile to this square size, at least 64 and a multiple of 32.</td>
 </tr>
 <tr>
 <td><code>batch</code></td>

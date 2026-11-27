@@ -177,6 +177,10 @@
 
             <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">快速開始</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#project-annotation" class="nav-link">專案與標註</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">三類執行環境</a>
               <ul class="nav flex-column">
               </ul>
@@ -204,6 +208,10 @@
 </ol>
 <p>啟動任務時會讀取一份參數。隨後修改介面控制項不會改變已經啟動的任務；修改應在下一次任務啟動前完成。</p>
 <p>關閉軟體會彈出確認，預設選擇取消。任務執行期間確認退出會終止任務。軟體正在刪除訓練檔案時，需要等待清理完成後再退出。</p>
+<h2 id="project-annotation">專案與標註<a class="headerlink" href="#project-annotation" title="Permanent link">&para;</a></h2>
+<p>在首頁新建專案並選擇架構。每個專案使用一種架構，按「資料集 → 標註 → 訓練 → 結果」操作。開啟過專案後，下次啟動可透過「繼續上次專案」回到上次停留的步驟。只想執行一次訓練時，可以從首頁選擇「臨時訓練」。</p>
+<p>在「資料集」新增圖片，在「標註」編輯或檢查標註。經典目標偵測可以透過「新增 OK 資料夾」匯入無目標圖片，也可以選中多張圖片後使用「批次標記為無目標」。確認轉換會清除選中圖片的現有標註框。標註完成後，選擇「產生訓練資料集」，再進入「訓練」。</p>
+<p>在「標註」開啟「模型自動標註」，選擇模型、裝置和置信度。現代架構支援 <code>.pt</code> 和 <code>.onnx</code>，其中 <code>.onnx</code> 使用 CPU。經典架構請選擇完整的匯出模型資料夾。按 <code>F8</code> 可預覽當前圖片。批次預覽只處理所選範圍內尚未確認標註的圖片。檢查候選結果並應用後，標註才會寫入專案。</p>
 <h2 id="_2">三類執行環境<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

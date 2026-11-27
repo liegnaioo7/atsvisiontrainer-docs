@@ -177,6 +177,10 @@
 
             <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">快速开始</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#project-annotation" class="nav-link">项目与标注</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">三类运行环境</a>
               <ul class="nav flex-column">
               </ul>
@@ -204,6 +208,10 @@
 </ol>
 <p>启动任务时会读取一份参数。随后修改界面控件不会改变已经启动的任务；修改应在下一次任务启动前完成。</p>
 <p>关闭软件会弹出确认，默认选择取消。任务运行期间确认退出会终止任务。软件正在删除训练文件时，需要等待清理完成后再退出。</p>
+<h2 id="project-annotation">项目与标注<a class="headerlink" href="#project-annotation" title="Permanent link">&para;</a></h2>
+<p>在首页新建项目并选择架构。每个项目使用一种架构，按「数据集 → 标注 → 训练 → 结果」操作。打开过项目后，下次启动可通过「继续上次项目」回到上次停留的步骤。只想运行一次训练时，可以从首页选择「临时训练」。</p>
+<p>在「数据集」添加图片，在「标注」编辑或检查标注。经典目标检测可以通过「添加 OK 文件夹」导入无目标图片，也可以选中多张图片后使用「批量标记为无目标」。确认转换会清除选中图片的现有标注框。标注完成后，选择「生成训练数据集」，再进入「训练」。</p>
+<p>在「标注」打开「模型自动标注」，选择模型、设备和置信度。现代架构支持 <code>.pt</code> 和 <code>.onnx</code>，其中 <code>.onnx</code> 使用 CPU。经典架构请选择完整的导出模型文件夹。按 <code>F8</code> 可预览当前图片。批量预览只处理所选范围内尚未确认标注的图片。检查候选结果并应用后，标注才会写入项目。</p>
 <h2 id="_2">三类运行环境<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

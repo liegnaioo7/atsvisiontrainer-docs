@@ -1135,7 +1135,7 @@
 <td><code>training_options.image_size</code></td>
 <td><code>0</code></td>
 <td>0～8192</td>
-<td>经典分类为正方形边长，0 沿用配置；异常检测将完整图片、ROI 或每个切片缩放到此正方形边长，须为 64～1024 且为 32 的倍数。</td>
+<td>经典分类为正方形边长，0 沿用配置；异常检测将完整图片、ROI 或每个切片缩放到此正方形边长，最小为 64 且须为 32 的倍数。</td>
 </tr>
 <tr>
 <td><code>training_options.workers</code></td>
@@ -1225,8 +1225,8 @@
 <tr>
 <td><code>image_size</code></td>
 <td><code>256</code></td>
-<td>64～1024</td>
-<td>经典分类为正方形边长，0 沿用配置；异常检测将完整图片、ROI 或每个切片缩放到此正方形边长，须为 64～1024 且为 32 的倍数。</td>
+<td>见说明（文本、选项或路径）</td>
+<td>经典分类为正方形边长，0 沿用配置；异常检测将完整图片、ROI 或每个切片缩放到此正方形边长，最小为 64 且须为 32 的倍数。</td>
 </tr>
 <tr>
 <td><code>batch</code></td>

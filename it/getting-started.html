@@ -177,6 +177,10 @@
 
             <li class="nav-item" data-bs-level="1"><a href="#guida-rapida" class="nav-link">Guida rapida</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#project-annotation" class="nav-link">Progetti e annotazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#tre-famiglie-di-ambienti" class="nav-link">Tre famiglie di ambienti</a>
               <ul class="nav flex-column">
               </ul>
@@ -204,6 +208,10 @@
 </ol>
 <p>All'avvio l'attività acquisisce i parametri. Modificare i controlli dopo non cambia l'esecuzione in corso; applicare le modifiche prima della successiva.</p>
 <p>La chiusura richiede conferma e seleziona inizialmente Annulla. Confermare durante un'attività la termina. Prima di uscire attendere che la pulizia dei file sia completata.</p>
+<h2 id="project-annotation">Progetti e annotazione<a class="headerlink" href="#project-annotation" title="Permanent link">&para;</a></h2>
+<p>Crea un progetto dalla pagina iniziale e seleziona un’architettura. Ogni progetto usa una sola architettura. Segui il flusso Set di dati → Annotazione → Addestramento → Risultati. Dopo aver aperto un progetto, al successivo avvio puoi scegliere «Riprendi ultimo progetto» per riprendere dal passaggio in cui ti eri fermato. Per un singolo addestramento, scegli «Addestra senza progetto» dalla pagina iniziale.</p>
+<p>Aggiungi le immagini in «Set di dati», quindi modifica o verifica le annotazioni in «Annotazione». Per il rilevamento oggetti classico, usa «Aggiungi cartella OK» per importare immagini senza oggetti, oppure seleziona più immagini e usa «Contrassegna in blocco come senza oggetti». La conferma rimuove i riquadri esistenti dalle immagini selezionate. Al termine, scegli «Genera set di addestramento» e passa ad «Addestramento».</p>
+<p>In «Annotazione», apri «Annotazione assistita da modello» e scegli il modello, il dispositivo e la soglia di confidenza. Le architetture moderne supportano <code>.pt</code> e <code>.onnx</code>. L’inferenza con <code>.onnx</code> usa la CPU. Per le architetture classiche, seleziona l’intera cartella del modello esportato. Premi <code>F8</code> per visualizzare l’anteprima dell’immagine corrente. L’anteprima in blocco elabora solo le immagini con annotazioni non confermate nell’ambito scelto. Verifica e applica le proposte per salvarle nel progetto.</p>
 <h2 id="tre-famiglie-di-ambienti">Tre famiglie di ambienti<a class="headerlink" href="#tre-famiglie-di-ambienti" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
